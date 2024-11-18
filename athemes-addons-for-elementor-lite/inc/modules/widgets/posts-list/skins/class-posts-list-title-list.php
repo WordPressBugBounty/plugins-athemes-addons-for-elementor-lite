@@ -202,7 +202,7 @@ class Posts_List_Skin3 extends Skin_Base {
 					</div>
 
 					<?php if ( $settings['show_title'] ) {
-							the_title( '<' . esc_attr( $settings['title_tag'] ) . ' class="item-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . esc_attr( $settings['title_tag'] ) . '>' );
+							the_title( '<' . tag_escape( $settings['title_tag'] ) . ' class="item-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . tag_escape( $settings['title_tag'] ) . '>' );
 						}
 					?>
 				</div>

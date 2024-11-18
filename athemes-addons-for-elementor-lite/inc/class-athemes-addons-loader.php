@@ -327,7 +327,7 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 
 			$custom_js = get_transient( 'aafe_custom_js_' . $post_id );
 		
-			if ( false === $custom_js ) {
+			if ( false === $custom_js && class_exists( 'Elementor\Plugin' ) ) {
 				$document = Elementor\Plugin::$instance->documents->get_doc_for_frontend($post_id);
 		
 				if ( $document ) {

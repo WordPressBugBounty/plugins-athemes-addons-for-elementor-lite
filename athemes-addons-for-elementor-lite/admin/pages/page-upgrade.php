@@ -4,65 +4,409 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+$svg_yes 	= '<svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle opacity="0.1" cx="15.5" cy="15" r="15" fill="#3FB28F"></circle> <g clip-path="url(#clip0_9_536)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50004 15.716C8.78854 15.1843 9.36561 14.5196 10.3755 14.7855C11.2411 15.0513 11.8182 15.849 12.251 16.9123C15.7135 13.3232 18.5989 10.7975 22.0614 10C22.4942 10 22.6384 10 22.3498 10.2658C18.5989 12.6587 14.9921 16.2476 12.1067 20.9003C11.9625 21.0332 11.8182 21.0332 11.6739 20.9003C11.0968 19.571 10.664 18.2417 9.94266 16.9124C9.65417 16.2477 9.22134 15.716 8.5 15.716L8.50004 15.716Z" fill="#3FB28F"></path> </g> <defs> <clipPath id="clip0_9_536"> <rect width="14" height="14" fill="white" transform="translate(8.5 8)"></rect> </clipPath> </defs> </svg>';
+$svg_no		= '<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle opacity="0.05" cx="15" cy="15" r="15" fill="#E62424"></circle> <rect x="9.37402" y="10.6255" width="1.76777" height="14.1421" rx="0.883884" transform="rotate(-45 9.37402 10.6255)" fill="#E62424"></rect> <rect x="19.4854" y="9.4856" width="1.76777" height="14.1421" rx="0.883884" transform="rotate(45 19.4854 9.4856)" fill="#E62424"></rect> </svg>';
 ?>
 
-<?php if ( ! empty( $aafe_modules ) ) : ?>
-
-<div class="athemes-addons-modules-box">
-
-		<div class="athemes-addons-modules-list">
-
-			<?php 
-			foreach ( $aafe_modules as $aafe_module_id => $aafe_module ) : 
-				$is_upsell   = ! defined( 'ATHEMES_AFE_PRO_VERSION' ) && isset( $aafe_module['pro'] ) && true === $aafe_module['pro'];
-
-				/**
-				 * Hook 'athemes_addons_admin_module_{module_id}_list_item_class'
-				 * 
-				 * @since 1.0
-				 */
-				$module_list_item_class   = apply_filters( "athemes_addons_admin_module_{$aafe_module_id}_list_item_class", 'athemes-addons-modules-list-item' );                               
-				?>
-
-				<div class="<?php echo esc_attr( $module_list_item_class ) ?>">
-					<?php if( $is_upsell ) : ?>
-						<div class="athemes-addons-modules-list-item-badge-wrapper athemes-addons-modules-list-item-upsell">
-							<span class="athemes-addons-pro-badge athemes-addons-pro-tooltip" data-tooltip-message="<?php echo esc_attr__( 'This option is only available on aThemes Addons for Elementor Pro', 'athemes-addons-elementor' ); ?>">
-								<svg width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M7.41309 8.90723H5.58203V7.85254H7.41309C7.71257 7.85254 7.95508 7.80371 8.14062 7.70605C8.32943 7.60514 8.46777 7.46842 8.55566 7.2959C8.64355 7.12012 8.6875 6.91992 8.6875 6.69531C8.6875 6.47721 8.64355 6.27376 8.55566 6.08496C8.46777 5.89616 8.32943 5.74316 8.14062 5.62598C7.95508 5.50879 7.71257 5.4502 7.41309 5.4502H6.02148V11.5H4.67871V4.39062H7.41309C7.96647 4.39062 8.43848 4.48991 8.8291 4.68848C9.22298 4.88379 9.52246 5.1556 9.72754 5.50391C9.93587 5.84896 10.04 6.24284 10.04 6.68555C10.04 7.14453 9.93587 7.54004 9.72754 7.87207C9.52246 8.2041 9.22298 8.45964 8.8291 8.63867C8.43848 8.81771 7.96647 8.90723 7.41309 8.90723ZM11.0947 4.39062H13.6777C14.2181 4.39062 14.682 4.47201 15.0693 4.63477C15.4567 4.79753 15.7546 5.03841 15.9629 5.35742C16.1712 5.67643 16.2754 6.06868 16.2754 6.53418C16.2754 6.90202 16.2103 7.22103 16.0801 7.49121C15.9499 7.76139 15.766 7.98763 15.5283 8.16992C15.2939 8.35221 15.0173 8.49544 14.6982 8.59961L14.2783 8.81445H11.998L11.9883 7.75488H13.6924C13.9691 7.75488 14.1986 7.70605 14.3809 7.6084C14.5632 7.51074 14.6999 7.37565 14.791 7.20312C14.8854 7.0306 14.9326 6.83366 14.9326 6.6123C14.9326 6.37467 14.887 6.1696 14.7959 5.99707C14.7048 5.82129 14.5664 5.6862 14.3809 5.5918C14.1953 5.4974 13.9609 5.4502 13.6777 5.4502H12.4375V11.5H11.0947V4.39062ZM15.1084 11.5L13.4629 8.31641L14.8838 8.31152L16.5488 11.4316V11.5H15.1084ZM23.209 7.76465V8.13086C23.209 8.66797 23.1374 9.15137 22.9941 9.58105C22.8509 10.0075 22.6475 10.3704 22.3838 10.6699C22.1201 10.9694 21.806 11.1989 21.4414 11.3584C21.0768 11.5179 20.6715 11.5977 20.2256 11.5977C19.7861 11.5977 19.3825 11.5179 19.0146 11.3584C18.6501 11.1989 18.3343 10.9694 18.0674 10.6699C17.8005 10.3704 17.5938 10.0075 17.4473 9.58105C17.3008 9.15137 17.2275 8.66797 17.2275 8.13086V7.76465C17.2275 7.22428 17.3008 6.74089 17.4473 6.31445C17.5938 5.88802 17.7988 5.52507 18.0625 5.22559C18.3262 4.92285 18.6403 4.69173 19.0049 4.53223C19.3727 4.37272 19.7764 4.29297 20.2158 4.29297C20.6618 4.29297 21.0671 4.37272 21.4316 4.53223C21.7962 4.69173 22.1104 4.92285 22.374 5.22559C22.641 5.52507 22.846 5.88802 22.9893 6.31445C23.1357 6.74089 23.209 7.22428 23.209 7.76465ZM21.8516 8.13086V7.75488C21.8516 7.36751 21.8158 7.02734 21.7441 6.73438C21.6725 6.43815 21.5667 6.18913 21.4268 5.9873C21.2868 5.78548 21.1143 5.63411 20.9092 5.5332C20.7041 5.42904 20.473 5.37695 20.2158 5.37695C19.9554 5.37695 19.7243 5.42904 19.5225 5.5332C19.3239 5.63411 19.1546 5.78548 19.0146 5.9873C18.8747 6.18913 18.7673 6.43815 18.6924 6.73438C18.6208 7.02734 18.585 7.36751 18.585 7.75488V8.13086C18.585 8.51497 18.6208 8.85514 18.6924 9.15137C18.7673 9.44759 18.8747 9.69824 19.0146 9.90332C19.1579 10.1051 19.3304 10.2581 19.5322 10.3623C19.734 10.4665 19.9652 10.5186 20.2256 10.5186C20.486 10.5186 20.7171 10.4665 20.9189 10.3623C21.1208 10.2581 21.29 10.1051 21.4268 9.90332C21.5667 9.69824 21.6725 9.44759 21.7441 9.15137C21.8158 8.85514 21.8516 8.51497 21.8516 8.13086Z" fill="#3858E9"/>
-									<rect x="0.5" y="1" width="27" height="14" rx="1.5" stroke="#3858E9"/>
-								</svg>
-							</span>
-						</div>
-					<?php endif; ?>
-
-					<div class="athemes-addons-modules-list-item-content">
-						<div class="athemes-addons-modules-list-item-title">
-							<?php echo esc_html( $aafe_module['title'] ); ?>
-						</div>
-
-						<?php if ( ! empty( $aafe_module['desc'] ) ) : ?>
-							<div class="athemes-addons-modules-list-item-desc"><?php echo esc_html( $aafe_module['desc']  ); ?></div>
-						<?php endif; ?>
-
-						<div class="athemes-addons-module-actions">
-							<div>
-								<?php echo isset( $aafe_module['tutorial_url'] ) ? athemes_addons_module_help_icon( $aafe_module['tutorial_url'] ) : false; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-								<?php echo isset( $aafe_module['preview_url'] ) ? athemes_addons_module_preview_icon( $aafe_module['preview_url'] ) : false; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-							</div>
-
-							<?php $aafe_status = ( aThemes_Addons_Modules::is_module_active($aafe_module_id) ) ? 1 : 0; ?>
-
-							<?php echo athemes_addons_module_activation_switcher( $aafe_module_id, $aafe_status ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						</div>
+<div class="freevspro-table-responsive">
+	<div class="athemes-addons-modules-box">
+		<div class="freevspro-table">
+			<div class="freevspro-table__item">
+				<div class="freevspro-table__header">
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column freevspro-table__column--feature">Theme Builder</div>
+						<div class="freevspro-table__column">Free</div>
+						<div class="freevspro-table__column">Pro</div>
 					</div>
-
 				</div>
-
-			<?php endforeach; ?>
-
+				<div class="freevspro-table__body">
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column" style="text-align:left;">Theme Builder system with 40+ dedicated widgets</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+				</div>
+			</div>
+			<div class="freevspro-table__item">
+				<div class="freevspro-table__header">
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column freevspro-table__column--feature">Widgets</div>
+						<div class="freevspro-table__column">Free</div>
+						<div class="freevspro-table__column">Pro</div>
+					</div>
+				</div>
+				<div class="freevspro-table__body">
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Advanced Social</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Before After Image</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Business Hours</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Call To Action</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Contact Form7</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Countdown</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Dual Buttons</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Dual Heading</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Events Calendar</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Flip Box</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Gallery</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Gravity Forms</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Image Accordion</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Image Scroll</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Logo Carousel</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Lottie</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Ninja Forms</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Page List</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Posts Carousel</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Posts List</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Posts Timeline</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Pricing Table</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Progress Bar</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Slider</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Table</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Team Member</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Testimonials</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Video Popup</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">WeForms</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Woo Product Grid</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">WPForms</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Charts</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Offcanvas</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Click to call</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Food menu</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Advanced tabs</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Modal</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Whatsapp chat</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Video carousel</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Advanced heading</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Google reviews</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Advanced google maps</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Service box</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Timeline</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Content protection</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Mailchimp</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Pdf viewer</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Social proof</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Video playlist</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Advanced carousel</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Advanced button</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Image hotspots</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Content switcher</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Image card</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Animated heading</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Telegram chat</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Team carousel</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Video gallery</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+				</div>
+			</div>
+			<div class="freevspro-table__item">
+				<div class="freevspro-table__header">
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column freevspro-table__column--feature">Extensions</div>
+						<div class="freevspro-table__column">Free</div>
+						<div class="freevspro-table__column">Pro</div>
+					</div>
+				</div>
+				<div class="freevspro-table__body">
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Custom CSS</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Custom JS</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Page Duplicator</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Parallax</div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Animation Effects</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Content Protection</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Cursor Effects</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Display Conditions</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Dynamic Tags</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Glassmorphism</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Particles</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Sticky</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+					<div class="freevspro-table__row">
+						<div class="freevspro-table__column">Tooltips</div>
+						<div class="freevspro-table__column"><?php echo $svg_no; ?></div>
+						<div class="freevspro-table__column"><?php echo $svg_yes; ?></div>
+					</div>
+				</div>
+			</div>
 		</div>
-
+		<div class="freevspro-table__footer">
+			<a class="button button-primary button-hero" href="https://athemes.com/addons" target="_blank">Upgrade Now</a>
+		</div>
+	</div>
 </div>
-
-<?php endif; ?>

@@ -678,10 +678,6 @@
   transition: all .2s;
 }
 
-.athemes-addons-modules-list-item[data-type="pro"] {
-  display: none !important; /* Hide Pro modules temporarily */
-}
-
 .athemes-addons-modules-list-item:hover {
   -webkit-box-shadow: 0px 8px 12px 0px rgba(240, 240, 241, 0.7);
           box-shadow: 0px 8px 12px 0px rgba(240, 240, 241, 0.7);
@@ -708,6 +704,7 @@
 
 .athemes-addons-pro-badge.athemes-addons-pro-tooltip {
   position: relative;
+  font-size: 15px;
 }
 
 .athemes-addons-pro-badge.athemes-addons-pro-tooltip:before {
@@ -716,7 +713,7 @@
   right: -30px;
   bottom: calc(100% + 11px);
   color: #FFF;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 16px;
   padding: 3px 6px;
   background-color: #1E1E1E;
@@ -1087,40 +1084,6 @@ body.athemes-addons-module-disabled .athemes-addons-module-page-link-preview svg
 
 .athemes-addons-license-form-wrapper .athemes-addons-license-form input::placeholder {
   opacity: 0.75;
-}
-
-.athemes-addons-license-form-wrapper .athemes-addons-license-form button {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  grid-gap: 2px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  line-height: 1em;
-  min-height: 36px;
-  padding: 10px 40px !important;
-  background-color: transparent;
-  color: #3858E9;
-  border-color: #3858E9;
-}
-
-.athemes-addons-license-form-wrapper .athemes-addons-license-form button:hover, .athemes-addons-license-form-wrapper .athemes-addons-license-form button:focus, .athemes-addons-license-form-wrapper .athemes-addons-license-form button:active {
-  color: #FFF;
-  background-color: #3452da;
-  border-color: #3452da;
-}
-
-.athemes-addons-license-form-wrapper .athemes-addons-license-form button.athemes-addons-license-button-deactivate {
-  color: #d82c0d;
-  border-color: #d82c0d;
-}
-
-.athemes-addons-license-form-wrapper .athemes-addons-license-form button.athemes-addons-license-button-deactivate:hover, .athemes-addons-license-form-wrapper .athemes-addons-license-form button.athemes-addons-license-button-deactivate:focus, .athemes-addons-license-form-wrapper .athemes-addons-license-form button.athemes-addons-license-button-deactivate:active {
-  color: #FFF;
-  background-color: #d82c0d;
-  border-color: #d82c0d;
 }
 
 .athemes-addons-license-form-wrapper .athemes-addons-license-key-input {
@@ -1755,6 +1718,9 @@ body.athemes-addons-module-disabled .athemes-addons-module-page-link-preview svg
         -ms-flex-direction: column;
             flex-direction: column;
     grid-gap: 20px;
+  }
+  .athemes-addons-module-page-setting-title {
+    min-width: 130px;
   }
   .athemes-addons-module-page-setting-title,
   .athemes-addons-module-page-setting-fields {
@@ -2555,4 +2521,478 @@ body.athemes-addons-module-disabled .athemes-addons-module-page-link-preview svg
 .athemes-addons-display-conditions-modal-footer .athemes-addons-button-save {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+/* free vs pro */
+.freevspro-table {
+  border-radius: 7px;
+  max-width: 800px;
+}
+
+.freevspro-table__footer {
+  border-top: 1px solid #C2CFF8;
+  padding-top: 30px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.freevspro-table__header {
+  background: #F9FAFE;
+  border: 1px solid #C2CFF8;
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .freevspro-table__header {
+      position: sticky;
+      top: 0px;
+      transition: ease 300ms top;
+      z-index: 1;
+  }
+
+  /* No admin bar */
+  .freevspro-table__header {
+      top: 0;
+  }
+
+  .navbar-show .freevspro-table__header {
+      top: 59px;
+  }
+
+  .has-second-nav .freevspro-table__header {
+      top: 87px;
+  }
+
+  .dwpb-push-page .freevspro-table__header {
+      top: 40px;
+  }
+
+  .dwpb-push-page.has-second-nav .freevspro-table__header {
+      top: 127px;
+  }
+
+  .has-second-nav.navbar-show .freevspro-table__header {
+      top: 86px;
+  }
+
+  .dwpb-push-page.navbar-show .freevspro-table__header {
+      top: 98px;
+  }
+
+  .dwpb-push-page.has-second-nav.navbar-show .freevspro-table__header {
+      top: 185px;
+  }
+  
+  /* Admin bar */
+  .admin-bar .freevspro-table__header {
+      top: 91px;
+  }
+
+  .admin-bar.navbar-hide .freevspro-table__header {
+      top: 32px;
+  }
+
+  .admin-bar.has-second-nav .freevspro-table__header {
+      top: 119px;
+  }
+
+  .admin-bar.has-second-nav.navbar-show .freevspro-table__header {
+      top: 119px;
+  }
+}
+
+.freevspro-table__column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.freevspro-table__column strong {
+  font-weight: 500;
+  text-align: left;
+  color: #111827;
+}
+
+
+.freevspro-table__header .freevspro-table__column {
+  border-bottom: 0;
+}
+
+.freevspro-table__header .freevspro-table__column,
+.freevspro-table__header .freevspro-table__column--feature strong {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0em;
+  color: #111827;
+  margin: 0;
+}
+
+.freevspro-table__header .freevspro-table__column--feature p {
+  color: #b5b5b5;
+}
+
+.freevspro-table__header .freevspro-table__column--feature strong + p {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.freevspro-table__header .freevspro-table__column {
+  border-color: #C2CFF8;
+}
+
+.freevspro-table__header .freevspro-table__column:first-child {
+  border-top-left-radius: 7px;
+}
+
+.freevspro-table__header .freevspro-table__column {
+  color: #212121;
+}
+
+.freevspro-table__header .freevspro-table__column:nth-child(2) img {
+  max-width: 85%;
+}
+
+.freevspro-table__header .freevspro-table__column:nth-child(4) img {
+  max-width: 90%;
+}
+
+.freevspro-table__row {
+  display: flex;
+}
+
+.freevspro-table__column {
+  width: 100%;
+  max-width: 275px;
+  padding: 24px 23px;
+  text-align: center;
+  border-bottom: 1px solid #e7e7e7;
+  font-weight: 600;
+}
+
+.freevspro-table__column.freevspro-table__column--feature {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  max-width: none;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.freevspro-table__row.sub-item .freevspro-table__column.freevspro-table__column--feature {
+  padding-left: 25px !important;
+}
+
+.freevspro-table__row.sub-item .freevspro-table__column.freevspro-table__column--feature svg {
+  margin-right: 10px;
+}
+
+.freevspro-table__body .freevspro-table__column strong {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+
+.freevspro-table__body .freevspro-table__column:nth-child(2) strong,
+.freevspro-table__body .freevspro-table__column:nth-child(3) strong {
+  margin-left: 10px;
+}
+
+.freevspro-table__body .freevspro-table__column:nth-child(1) strong {
+  text-align: left !important;
+}
+
+.freevspro-table__body .freevspro-table__column a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.freevspro-table__body .freevspro-table__column a svg {
+  margin-top: 1px;
+  margin-left: 5px;
+}
+
+.freevspro-table__body .freevspro-table__column a:hover svg path {
+  transition: ease fill 300ms;
+}
+
+.freevspro-table__body .freevspro-table__column a:hover svg path {
+  fill: #4769d8;
+}
+
+@media(max-width: 767px) {
+  .freevspro-table__body .freevspro-table__column:not(.freevspro-table__column--feature) strong {
+      padding-left: 0 !important;
+  }
+}
+
+.freevspro-table__body .freevspro-table__column.freevspro-table__column--feature p {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.freevspro-table__row + .freevspro-table__row .freevspro-table__column,
+.freevspro-table__body .freevspro-table__row:first-child .freevspro-table__column {
+  border-top-width: 0;
+}
+
+.freevspro-table__body .freevspro-table__row:last-child .freevspro-table__column {
+  border-bottom: 0;
+}
+
+.freevspro-table__body .freevspro-table__row:last-child .freevspro-table__column:first-child {
+  border-bottom-left-radius: 7px;
+}
+
+.freevspro-table__body .freevspro-table__row:last-child .freevspro-table__column:last-child {
+  border-bottom-right-radius: 7px;
+}
+
+.freevspro-table__tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.freevspro-table__tooltip .freevspro-table__tooltip-text {
+  position: absolute;
+  bottom: calc(100% + 15px);
+  left: 50%;
+  transform: translate3d(-50%, 10px, 0);
+  transition: ease transform 300ms, ease opacity 300ms;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #182038;
+  color: #FFF;
+  width: 100%;
+  min-width: 300px;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid #323e60;
+  z-index: 2;
+}
+
+.freevspro-table__tooltip:hover .freevspro-table__tooltip-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(-50%, 0, 0);
+}
+
+@media screen and (max-width: 1239px) {
+  .freevspro-table__column.freevspro-table__column--feature {
+      min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .freevspro-table__column.freevspro-table__column--feature {
+      min-width: 230px;
+  }
+  .freevspro-table__tooltip {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .freevspro-table__header .freevspro-table__column--feature p {
+      display: none;
+  }
+  .freevspro-table-responsive {
+      max-width: 100%;
+      overflow-x: auto;
+  }
+  .freevspro-table {
+      min-width: 550px;
+      font-size: 14px;
+  }
+  .freevspro-table__column {
+      /* max-width: 140px; */
+      padding: 20px;
+      /* word-break: break-all; */
+  }
+  .freevspro-table__column:not(.freevspro-table__column--feature) svg {
+      width: 30px;
+      height: 30px;
+  }
+}
+
+/* freevspro CTA */
+.freevspro-table-cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.freevspro-table-cta .btn {
+  padding: 17px 40px;
+}
+
+.freevspro-table-cta .btn + .btn {
+  margin-left: 18px;
+}
+
+@media(min-width: 768px) {
+  .freevspro-table-cta .btn {
+      width: 190px;
+      justify-content: center;
+  }
+}
+
+@media(min-width: 990px) {
+  .freevspro-table-cta .btn {
+      width: 254px;
+  }
+}
+
+.freevspro-table-cta .download-button {
+  border-color: #4769d8 !important;
+  background-color: transparent !important;
+  color: #4769d8 !important;
+}
+
+.freevspro-table-cta .download-button:hover {
+  background-color: #4769d8 !important;
+  color: #FFF !important
+}
+
+@media screen and (max-width: 575px) {
+  .freevspro-table-cta {
+      flex-direction: column;
+      align-items: center;
+  }
+  .freevspro-table-cta .btn {
+      padding: 13px 25px;
+      margin-top: 20px;
+  }
+  .freevspro-table-cta .btn + .btn {
+      margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .freevspro-table__row.sub-item .freevspro-table__column.freevspro-table__column--feature {
+      position: relative;
+  }
+  .freevspro-table__row.sub-item .freevspro-table__column.freevspro-table__column--feature svg {
+      position: absolute;
+      top: 24px;
+      left: 20px;
+  }
+  .freevspro-table__body .freevspro-table__row.sub-item .freevspro-table__column strong {
+      padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .freevspro-table__row.sub-item .freevspro-table__column.freevspro-table__column--feature svg {
+      top: 20px;
+  }
+}
+
+/* Free VS Pro Table Alternative Style */
+.freevspro-table.freevspro-table-style-alt .freevspro-table__item + .freevspro-table__item {
+margin-top: 30px;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__header {
+border: none;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__header .freevspro-table__column {
+border: 1px solid #C2CFF8;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__header .freevspro-table__column:nth-child(1) {
+border-right: 0;
+border-bottom-left-radius: 7px;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__header .freevspro-table__column:nth-child(2) {
+border-left: 0;
+border-right: 0;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__header .freevspro-table__column:nth-child(3) {
+background-color: #3C60D4;
+border-bottom-color: #7595FF;
+color: #FFF;
+border-left: 0;
+border-right: 0;
+border-top: 0;
+border-top-right-radius: 7px;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__header .freevspro-table__column:nth-child(3) strong {
+  color: #FFF;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__body .freevspro-table__row .freevspro-table__column:last-child {
+background-color: #3C60D4;
+border-bottom-color: #3C60D4;
+  color: #FFF;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__body .freevspro-table__row .freevspro-table__column:last-child strong {
+  color: #FFF;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__body .freevspro-table__row .freevspro-table__column:last-child svg circle {
+fill: #FFF;
+opacity: 1;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__body .freevspro-table__row .freevspro-table__column:last-child svg path {
+fill: #4769D8;
+}
+
+.freevspro-table.freevspro-table-style-alt .freevspro-table__body .freevspro-table__row:nth-child(odd) .freevspro-table__column:last-child {
+background-color: #4769D8;
+border-bottom-color: #4769D8;
+}
+
+/* @media screen and (min-width: 768px) {
+.admin-bar.has-second-nav .freevspro-table.freevspro-table-style-alt .freevspro-table__header {
+  top: 83px;
+}
+
+.has-second-nav .freevspro-table.freevspro-table-style-alt .freevspro-table__header {
+  top: 52px;
+}
+
+.admin-bar.has-second-nav.navbar-show .freevspro-table.freevspro-table-style-alt .freevspro-table__header {
+  top: 142px;
+}
+
+.has-second-nav.navbar-show .freevspro-table.freevspro-table-style-alt .freevspro-table__header {
+  top: 111px;
+}
+} */
+
+/* @media (min-width: 990px) {
+.freevspro-table-cta .btn {
+  width: 204px;
+}
+} */
+
+/* Columns narrow style */
+.freevspro-table.freevspro-table-style-columns-narrow .freevspro-table__header .freevspro-table__column:nth-child(2),
+.freevspro-table.freevspro-table-style-columns-narrow .freevspro-table__header .freevspro-table__column:nth-child(3),
+.freevspro-table.freevspro-table-style-columns-narrow .freevspro-table__body .freevspro-table__column:nth-child(2),
+.freevspro-table.freevspro-table-style-columns-narrow .freevspro-table__body .freevspro-table__column:nth-child(3) {
+max-width: 110px;
+min-width: 60px;
+justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+.freevspro-table.freevspro-table-style-columns-narrow {
+  min-width: 0;
+}
 }

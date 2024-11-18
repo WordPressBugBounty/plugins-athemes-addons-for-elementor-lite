@@ -163,12 +163,10 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 					'title' => __( 'Widgets', 'athemes-addons-elementor' ),
 					'link'  => '#',
 				),
-				/*
 				'theme-builder' => array(
 					'title' => __( 'Theme Builder', 'athemes-addons-elementor' ),
 					'link'  => '#',
 				),
-				*/
 				'extensions' => array(
 					'title' => __( 'Extensions', 'athemes-addons-elementor' ),
 					'link'  => '#',
@@ -180,14 +178,14 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 				),
 				
 			);
-			/*
+
 			if ( ! defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 				$tabs['upgrade'] = array(
 					'title' => __( 'Free vs Pro', 'athemes-addons-elementor' ),
 					'link'  => '#'
 				);
 			}
-			*/
+	
 
 			/**
 			 * Hook: athemes_addons_dashboard_tabs

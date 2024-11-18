@@ -468,7 +468,7 @@ class Dual_Heading extends Widget_Base {
 		?>
 
 		<div <?php $this->print_render_attribute_string( 'wrapper' ); ?>>
-			<<?php echo esc_attr( $settings['title_tag'] ); ?> class="athemes-dual-heading">
+			<<?php echo tag_escape( $settings['title_tag'] ); ?> class="athemes-dual-heading">
 				<?php
 				if ( ! empty( $settings['link']['url'] ) ) {
 					$this->add_link_attributes( 'url', $settings['link'] );
@@ -487,7 +487,7 @@ class Dual_Heading extends Widget_Base {
 					echo '</a>';
 				}
 				?>
-			</<?php echo esc_attr( $settings['title_tag'] ); ?>>
+			</<?php echo tag_escape( $settings['title_tag'] ); ?>>
 		</div>
 
 		<?php

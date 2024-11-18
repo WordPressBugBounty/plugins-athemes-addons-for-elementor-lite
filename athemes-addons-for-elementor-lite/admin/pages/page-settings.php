@@ -10,19 +10,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="athemes-addons-modules-box">
 
 	<?php
-	/*
-	Admin_Settings::create( array(
-		'title'  => __( 'MailChimp API Key', 'athemes-addons-elementor' ),
-		'fields' => array(
-			array(
-				'id'      => 'aafe_mailchimp_api_key',
-				'type'    => 'text',
-				'title'   => '',
-				'default' => '',
+	do_action( 'athemes_addons_pro_admin_settings_before' );
+
+	if ( defined('ATHEMES_AFE_PRO_DIR') ) {
+		Admin_Settings::create( array(
+			'title'  => __( 'MailChimp API Key', 'athemes-addons-elementor' ),
+			'fields' => array(
+				array(
+					'id'      => 'aafe_mailchimp_api_key',
+					'type'    => 'text',
+					'title'   => '',
+					'default' => '',
+				),
 			),
-		),
-	) );
-	 */
+		) );
+	
+		Admin_Settings::create( array(
+			'title'  => __( 'Google Maps API Key', 'athemes-addons-elementor' ),
+			'fields' => array(
+				array(
+					'id'      => 'aafe_gmaps_api_key',
+					'type'    => 'text',
+					'title'   => '',
+					'default' => '',
+				),
+			),
+		) );
+	}
 
 	Admin_Settings::create( array(
 		'title'     => __( 'Duplicator Post Types', 'athemes-addons-elementor' ),

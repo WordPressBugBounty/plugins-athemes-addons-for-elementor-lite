@@ -24,6 +24,7 @@ trait Button_Trait {
 	protected function register_button_content_controls( $args = [] ) {
 		$default_args = [
 			'class' => '',
+			'default_class' => '.button',
 			'section_condition' => [],
 			'button_default_text' => esc_html__( 'Click here', 'athemes-addons-elementor' ),
 			'text_control_label' => esc_html__( 'Text', 'athemes-addons-elementor' ),
@@ -137,8 +138,8 @@ trait Button_Trait {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} ' . $args['class'] . '.button .elementor-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} ' . $args['class'] . '.button .elementor-align-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} ' . $args['class'] . $args['default_class'] . ' .elementor-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} ' . $args['class'] . $args['default_class'] . ' .elementor-align-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => $args['section_condition'],
 			]
@@ -274,8 +275,8 @@ trait Button_Trait {
 				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' . $args['class'] . '.button:hover, {{WRAPPER}} ' . $args['class'] . '.button:focus' => 'color: {{VALUE}};',
-					'{{WRAPPER}} ' . $args['class'] . '.button:hover svg, {{WRAPPER}} ' . $args['class'] . '.button:focus svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':hover, {{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':hover svg, {{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':focus svg' => 'fill: {{VALUE}};',
 				],
 				'condition' => $args['section_condition'],
 			]
@@ -287,7 +288,7 @@ trait Button_Trait {
 				'name' => $prefix . 'button_background_hover',
 				'types' => [ 'classic', 'gradient' ],
 				'exclude' => [ 'image' ],
-				'selector' => '{{WRAPPER}} ' . $args['class'] . '.button:hover, {{WRAPPER}} ' . $args['class'] . '.button:focus',
+				'selector' => '{{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':hover, {{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':focus',
 				'fields_options' => [
 					'background' => [
 						'default' => 'classic',
@@ -306,7 +307,7 @@ trait Button_Trait {
 					'border_border!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} ' . $args['class'] . '.button:hover, {{WRAPPER}} ' . $args['class'] . '.button:focus' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':hover, {{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':focus' => 'border-color: {{VALUE}};',
 				],
 			]
 		);

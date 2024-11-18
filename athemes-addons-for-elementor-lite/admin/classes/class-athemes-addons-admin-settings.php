@@ -182,7 +182,7 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 				<input type="hidden" name="<?php echo esc_attr( $settings['id'] ); ?>" value="" />
 			</div>
 			<?php
-		}
+		}	
 
 		/**
 		 * Save button.
