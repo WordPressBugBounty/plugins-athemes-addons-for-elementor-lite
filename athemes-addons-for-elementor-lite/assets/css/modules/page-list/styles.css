@@ -32,13 +32,14 @@
 }
 
 .athemes-addons-page-list .page-list-badge {
-	padding: 0 7px;
-	font-size: 11px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
+	padding: 2px 7px;
+	font-size: 12px;
+	font-weight: 600;
 	line-height: 1;
 	border-radius: 3px;
 	background-color: #1c1c1c;
 	color: #fff;
 	margin-left: 5px;
+	position: relative;
+	top: -1px;
 }

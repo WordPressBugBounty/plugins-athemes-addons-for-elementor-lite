@@ -1,7 +1,7 @@
 <?php
 namespace aThemes_Addons\Controls;
 
-use \Elementor\Base_Data_Control;
+use Elementor\Base_Data_Control;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

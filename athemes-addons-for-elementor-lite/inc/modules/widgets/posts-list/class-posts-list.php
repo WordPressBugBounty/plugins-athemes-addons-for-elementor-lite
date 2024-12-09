@@ -1562,13 +1562,15 @@ class Posts_List extends Widget_Base {
 
 			?>
 			<div <?php $this->print_render_attribute_string( 'wrapper' ); ?>>
+				<?php $c = 0; ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php 
 						if ( isset( $settings['item_template'] ) && '' !== $settings['item_template'] ) {
 							echo '<div class="athemes-post-item">' . Plugin::$instance->frontend->get_builder_content_for_display( $settings['item_template'] ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						} else {
-							$this->post_template();
+							$this->post_template( $c );
 						}
+						$c++;
 					?>
 				<?php endwhile; ?>
 			</div>
@@ -1593,20 +1595,20 @@ class Posts_List extends Widget_Base {
 	/**
 	 * Loop item
 	 */
-	public function post_template() {
+	public function post_template( $c ) {
 		$settings = $this->get_settings_for_display();
 
 		$terms_array = ( isset( $settings['terms_type'] ) ? get_the_terms( get_the_id(), $settings['terms_type'] ) : '' ); //get terms for selected taxonomy
 
 		$archive_meta_delimiter = $settings['delimiter'];
 
-		$this->add_render_attribute( 'post-item', 'class', 'athemes-post-item' );
+		$this->add_render_attribute( 'post-item-' . $c, 'class', 'athemes-post-item' );
 
 		if ( has_post_thumbnail() && $settings['show_thumbnail'] ) {
-			$this->add_render_attribute( 'post-item', 'class', 'has-thumbnail' );
+			$this->add_render_attribute( 'post-item-' . $c, 'class', 'has-thumbnail' );
 		}
 		?>
-		<div <?php $this->print_render_attribute_string( 'post-item' ); ?>>
+		<div <?php $this->print_render_attribute_string( 'post-item-' . $c ); ?>>
 			<?php if ( has_post_thumbnail() && $settings['show_thumbnail'] ) : ?>
 			<div class="post-item-thumb position-<?php echo esc_attr( $settings['image_position'] ); ?>">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( $settings['image_size'] ); ?></a>

@@ -150,7 +150,7 @@ if ( ! class_exists( 'Theme_Builder' ) ) {
 		 */
 		public function render_header() {
 			//Return if is elementor preview
-			if ( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+			if ( !class_exists( 'Elementor\Plugin' ) || \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 				return;
 			}
 
@@ -194,7 +194,7 @@ if ( ! class_exists( 'Theme_Builder' ) ) {
 		 */
 		public function render_sticky_header() {
 			//Return if is elementor preview
-			if ( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+			if ( !class_exists( 'Elementor\Plugin' ) || \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 				return;
 			}
 
@@ -226,7 +226,7 @@ if ( ! class_exists( 'Theme_Builder' ) ) {
 		 */
 		public function render_footer() {
 			//Return if is elementor preview
-			if ( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+			if ( !class_exists( 'Elementor\Plugin' ) || \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 				return;
 			}
 
@@ -267,7 +267,7 @@ if ( ! class_exists( 'Theme_Builder' ) ) {
 		public function render_singular() {
 
 			//Return if is elementor preview
-			if ( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+			if ( !class_exists( 'Elementor\Plugin' ) || \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 				return;
 			}
 

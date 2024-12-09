@@ -115,9 +115,7 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 			require_once ATHEMES_AFE_DIR . 'inc/classes/class-athemes-addons-svg-icons.php';
 
 			// Theme Builder.
-			if ( class_exists( 'Elementor\Plugin' ) ) {
-				require_once ATHEMES_AFE_DIR . 'inc/theme-builder/class-athemes-addons-theme-builder.php';
-			}
+			require_once ATHEMES_AFE_DIR . 'inc/theme-builder/class-athemes-addons-theme-builder.php';
 
 			// Traits.
 			require_once ATHEMES_AFE_DIR . 'inc/traits/button-trait.php';

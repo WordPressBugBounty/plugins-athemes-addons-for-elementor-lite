@@ -3,7 +3,7 @@ Tags: elementor, widgets, addons, extensions, athemes
 Requires at least: 5.5
 Tested up to: 6.6.1
 Requires PHP: 5.6
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 Contributors: aThemes
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -140,6 +140,13 @@ Absolutely not. You can enable and customize modules without any coding knowledg
 == Screenshots ==
 
 == Changelog ==
+
+= 1.0.10 =
+* Improved security
+* Fixed a bug with the Posts List widget
+* Fixed a bug with the Woo Grid widget
+* Added dashboard subpages and improved navigation
+
 = 1.0.6 =
 * Various small tweaks in preparation of pro release
 

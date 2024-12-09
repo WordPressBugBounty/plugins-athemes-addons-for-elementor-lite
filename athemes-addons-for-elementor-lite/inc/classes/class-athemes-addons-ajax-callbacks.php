@@ -199,6 +199,8 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 
 		public function posts_filter_autocomplete() {
 
+			check_ajax_referer( 'aafe-posts-widget-nonce', 'nonce' );
+
 			$post_type   = 'post';
 			$source_name = 'post_type';
 	
@@ -266,11 +268,13 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 
 		public function get_posts_value_titles() {
 
+			check_ajax_referer( 'aafe-posts-widget-nonce', 'nonce' );
+
 			if ( empty( $_POST['id'] ) ) {
 				wp_send_json_error( [] );
 			}
 	
-			if ( empty( array_filter( $_POST['id'] ) ) ) {
+			if ( empty( array_filter( $_POST['id'] ) ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 				wp_send_json_error( [] );
 			}
 			$ids         = array_map( 'intval', $_POST['id'] );
@@ -285,7 +289,7 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 						'include'    => implode( ',', $ids ),
 					];
 	
-					if ( $_POST['post_type'] !== 'all' ) {
+					if ( isset( $_POST['post_type'] ) && $_POST['post_type'] !== 'all' ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 						$args['taxonomy'] = sanitize_text_field( $_POST['post_type'] );
 					}
 	
@@ -303,9 +307,10 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 					$response = $users;
 					break;
 				default:
+					$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( $_POST['post_type'] ) : 'post';
 					$post_info = get_posts( [
-						'post_type' => sanitize_text_field( $_POST['post_type'] ),
-						'include'   => implode( ',', $ids )
+						'post_type' => $post_type,
+						'include'   => implode( ',', $ids ),
 					] );
 					$response  = wp_list_pluck( $post_info, 'post_title', 'ID' );
 			}
@@ -317,7 +322,7 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 			}
 
 			wp_die();
-		}		
+		}       
 	}
 
 	new aThemes_Addons_Ajax_Callbacks();

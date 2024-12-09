@@ -1521,7 +1521,7 @@ class Woo_Product_Grid extends Widget_Base {
 	 *
 	 * @param string $template
 	 */
-	protected function load_product_template( $settings ) {	
+	protected function load_product_template( $settings ) { 
 
 		$file = ATHEMES_AFE_DIR . 'inc/modules/widgets/woo-product-grid/templates/product-template-' . esc_attr( $settings['product_template'] ) . '.php';
 

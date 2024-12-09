@@ -58,6 +58,8 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 			add_action( 'wp_ajax_athemes_addons_notifications_read', array( $this, 'ajax_notifications_read' ) );
+
+			add_action('admin_footer', array( $this, 'footer_internal_scripts' ));
 		}
 
 		/**
@@ -77,6 +79,48 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 				ATHEMES_AFE_URI . 'assets/images/athemes-addons-logo.svg',
 				$this->priority
 			);
+
+			add_submenu_page(
+				$this->plugin_slug,
+				esc_html__( 'Widgets', 'athemes-addons-elementor' ),
+				esc_html__( 'Widgets', 'athemes-addons-elementor' ),
+				'manage_options',
+				$this->plugin_slug,
+				'',
+				1
+			);
+
+			add_submenu_page(
+				$this->plugin_slug,
+				esc_html__( 'Extensions', 'athemes-addons-elementor' ),
+				esc_html__( 'Extensions', 'athemes-addons-elementor' ),
+				'manage_options',
+				'admin.php?page=' . $this->plugin_slug . '&section=extensions',
+				'',
+				2
+			);
+
+			add_submenu_page(
+				$this->plugin_slug,
+				esc_html__( 'Settings', 'athemes-addons-elementor' ),
+				esc_html__( 'Settings', 'athemes-addons-elementor' ),
+				'manage_options',
+				'admin.php?page=' . $this->plugin_slug . '&section=settings',
+				'',
+				3
+			);
+
+			if ( ! defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
+				add_submenu_page(
+					$this->plugin_slug,
+					esc_html__('Upgrade to Pro', 'athemes-addons-elementor'),
+					esc_html__('Upgrade to Pro', 'athemes-addons-elementor'), 
+					'manage_options',
+					'https://athemes.com/addons?utm_source=theme_submenu_page&utm_medium=button&utm_campaign=Addons',
+					'',
+					4
+				);
+			}
 		}
 
 		/**
@@ -161,20 +205,20 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 			$tabs = array(
 				'widgets' => array(
 					'title' => __( 'Widgets', 'athemes-addons-elementor' ),
-					'link'  => '#',
+					'link'  => 'admin.php?page=athemes-addons&section=widgets',
 				),
 				'theme-builder' => array(
 					'title' => __( 'Theme Builder', 'athemes-addons-elementor' ),
-					'link'  => '#',
+					'link'  => 'admin.php?page=athemes-addons&section=theme-builder',
 				),
 				'extensions' => array(
 					'title' => __( 'Extensions', 'athemes-addons-elementor' ),
-					'link'  => '#',
+					'link'  => 'admin.php?page=athemes-addons&section=extensions',
 				),
 				
 				'settings' => array(
 					'title' => __( 'Settings', 'athemes-addons-elementor' ),
-					'link'  => '#',
+					'link'  => 'admin.php?page=athemes-addons&section=settings',
 				),
 				
 			);
@@ -182,7 +226,7 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 			if ( ! defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 				$tabs['upgrade'] = array(
 					'title' => __( 'Free vs Pro', 'athemes-addons-elementor' ),
-					'link'  => '#'
+					'link'  => 'admin.php?page=athemes-addons&section=upgrade',
 				);
 			}
 	
@@ -193,6 +237,63 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 			 * @since 1.0
 			 */
 			return apply_filters( 'athemes_addons_dashboard_tabs', $tabs );
+		}
+
+				/**
+		 * Footer internal scripts
+		 *
+		 * @return void
+		 */
+		public function footer_internal_scripts() {
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? str_replace( '/wp-admin/', '', $_SERVER['REQUEST_URI'] ) : '';
+			?>
+			<style>
+				#adminmenu .toplevel_page_athemes-addons .wp-submenu li.current a {
+                    color: rgba(240, 246, 252, 0.7);
+                    font-weight: 400;
+                }
+
+				#adminmenu .toplevel_page_athemes-addons .wp-submenu li a[href="<?php echo $request_uri; //phpcs:ignore ?>"] {
+					color: #fff;
+                    font-weight: 600;
+				}
+
+				#adminmenu .toplevel_page_athemes-addons .wp-submenu a[href="https://athemes.com/addons?utm_source=theme_submenu_page&utm_medium=button&utm_campaign=Addons"] {
+					color: #05d105;
+				}
+			</style>
+            <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function () {
+
+					if (typeof URLSearchParams !== 'undefined') {
+						const params = new URLSearchParams(window.location.search);
+						const section = params.get('section');
+						if (section) {
+							const tabNavItem = document.querySelector(`.athemes-addons-tab-nav-item[data-tab="${section}"]`);
+							if (tabNavItem) {
+								const siblings = tabNavItem.parentElement.children;
+								for (let sibling of siblings) {
+									sibling.classList.remove('active');
+								}
+								tabNavItem.classList.add('active');
+							}
+						}
+					}
+
+                    const AddonsUpsellMenuItem = document.querySelector('#adminmenu .toplevel_page_athemes-addons .wp-submenu a[href="https://athemes.com/addons?utm_source=theme_submenu_page&utm_medium=button&utm_campaign=Addons"]');
+
+                    if (AddonsUpsellMenuItem) {
+                        AddonsUpsellMenuItem.addEventListener('click', function (e) {
+                            e.preventDefault();
+
+                            const href = this.getAttribute('href');
+                            window.open(href, '_blank');
+                        });
+                    }
+                });
+            </script>
+			<?php
 		}
 	}
 

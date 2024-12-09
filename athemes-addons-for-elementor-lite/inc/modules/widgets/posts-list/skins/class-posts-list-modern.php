@@ -188,8 +188,10 @@ class Posts_List_Skin1 extends Skin_Base {
 
 			?>
 			<div <?php $this->parent->print_render_attribute_string( 'wrapper' ); ?>>
+				<?php $c = 0; ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<?php $this->post_template(); ?>
+					<?php $this->post_template( $c ); ?>
+					<?php $c++; ?>
 				<?php endwhile; ?>
 			</div>
 			<?php 
@@ -207,18 +209,18 @@ class Posts_List_Skin1 extends Skin_Base {
 		/**
 	 * Loop item
 	 */
-	public function post_template() {
+	public function post_template( $c ) {
 		$settings = $this->parent->get_settings_for_display();
 
 		$archive_meta_delimiter = $settings['delimiter'];
 
-		$this->parent->add_render_attribute( 'post-item', 'class', 'athemes-post-item' );
+		$this->parent->add_render_attribute( 'post-item-' . $c, 'class', 'athemes-post-item' );
 
 		if ( has_post_thumbnail() && $settings['show_thumbnail'] ) {
-			$this->parent->add_render_attribute( 'post-item', 'class', 'has-thumbnail' );
+			$this->parent->add_render_attribute( 'post-item-' . $c, 'class', 'has-thumbnail' );
 		}
 		?>
-		<div <?php $this->parent->print_render_attribute_string( 'post-item' ); ?>>
+		<div <?php $this->parent->print_render_attribute_string( 'post-item-' . $c ); ?>>
 			<?php if ( has_post_thumbnail() && $settings['show_thumbnail'] ) : ?>
 			<div class="post-item-thumb position-<?php echo esc_attr( $settings['image_position'] ); ?>">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( $settings['image_size'] ); ?></a>

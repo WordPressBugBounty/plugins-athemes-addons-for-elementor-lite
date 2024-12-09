@@ -88,6 +88,7 @@
                             post_type: obj.data.source_type,
                             source_name: obj.data.source_name,
                             term: params.term,
+                            nonce: AAFESettings.nonce,
                         }
                     },
                 },
@@ -116,7 +117,8 @@
                                 action: 'aafe_get_posts_value_titles',
                                 post_type: obj.data.source_type, 
                                 source_name: obj.data.source_name, 
-                                id: ids
+                                id: ids,
+                                nonce: AAFESettings.nonce,
                             }
                         }).done(function (response) {
                             if (response.success && typeof response.data.results != 'undefined') {
