@@ -276,7 +276,7 @@ $aafe_dashboard_tabs = $this->dashboard_tabs();
 		</div>
 
 		<?php foreach ( $aafe_dashboard_tabs as $aafe_tab_id => $aafe_tab ) : ?>
-			<div id="<?php echo esc_attr( $aafe_tab_id ); ?>" class="athemes-addons-dashboard-tab-page <?php echo ( ( isset( $_GET['section'] ) && $_GET['section'] === $aafe_tab_id ) || !isset( $_GET['section'] ) ) ? 'active' : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended  ?>">
+			<div id="<?php echo esc_attr( $aafe_tab_id ); ?>" class="athemes-addons-dashboard-tab-page <?php echo ( ( isset( $_GET['section'] ) && $_GET['section'] === $aafe_tab_id ) || !isset( $_GET['section'] ) && 'widgets' === $aafe_tab_id ) ? 'active' : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended  ?>">
 				<?php require_once ATHEMES_AFE_DIR . 'admin/pages/page-' . $aafe_tab_id . '.php'; ?>
 			</div>
 		<?php endforeach; ?>

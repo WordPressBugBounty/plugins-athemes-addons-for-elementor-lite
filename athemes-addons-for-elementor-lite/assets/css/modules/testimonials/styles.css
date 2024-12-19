@@ -53,6 +53,10 @@
 	border-radius: 5px;
 }
 
+.testimonials-pagination .swiper-pagination-bullet-active {
+	background-color: #1c1c1c;
+}
+
 .athemes-addons-testimonials-container .swiper-button-next,
 .athemes-addons-testimonials-container .swiper-button-prev {
 	background-image: none !important;

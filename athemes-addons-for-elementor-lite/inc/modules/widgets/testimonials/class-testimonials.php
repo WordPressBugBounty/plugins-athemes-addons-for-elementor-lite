@@ -95,14 +95,14 @@ class Testimonials extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return [ $this->get_name() . '-styles' ];
+		return [ 'swiper', $this->get_name() . '-styles' ];
 	}   
 
 	/**
 	 * Enqueue scripts.
 	 */
 	public function get_script_depends() {
-		return [ $this->get_name() . '-scripts' ];
+		return [ 'swiper', $this->get_name() . '-scripts' ];
 	}
 
 	/**

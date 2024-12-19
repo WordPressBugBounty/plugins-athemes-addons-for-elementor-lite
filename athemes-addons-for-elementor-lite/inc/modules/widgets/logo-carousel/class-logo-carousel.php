@@ -95,7 +95,7 @@ class Logo_Carousel extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return [ $this->get_name() . '-styles' ];
+		return [ 'swiper', $this->get_name() . '-styles' ];
 	}   
 
 	/**

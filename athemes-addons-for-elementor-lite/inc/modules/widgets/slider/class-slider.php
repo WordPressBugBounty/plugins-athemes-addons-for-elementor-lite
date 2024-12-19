@@ -70,7 +70,7 @@ class Slider extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return [ 'athemes-addons-animations', $this->get_name() . '-styles' ];
+		return [ 'swiper', 'athemes-addons-animations', $this->get_name() . '-styles' ];
 	}
 
 	/**
