@@ -119,19 +119,17 @@ function athemes_addons_get_widgets() {
 			'has_styles'    => true,
 			'has_scripts'   => false,
 		),
-		/*
 		'creative-button' => array(
 			'pro'           => true,
 			'category'      => 'content',
 			'title'         => esc_html__( 'Creative Button', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Multiple creative buttons designs', 'athemes-addons-elementor' ),
+			'desc'           => esc_html__( 'Multiple creative button designs', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/creative-button/',
 			'preview_url'   => 'https://addons.athemes.com/widget/creative-button/',
 			'class'         => 'aThemes_Addons\Widgets\Creative_Button',
-			'has_styles'    => true,
+			'has_styles'    => false, // Styles are registered in the loader and loaded from the widget for the selected button style
 			'has_scripts'   => false,
 		),
-		*/
 		'whatsapp-chat' => array(
 			'pro'           => true,
 			'category'      => 'social',
@@ -758,8 +756,8 @@ function athemes_addons_get_extensions() {
 			'pro'           => true,
 			'title'         => esc_html__( 'Content Protection', 'athemes-addons-elementor' ),
 			'desc'          => esc_html__( 'Protect a section through password or user-role', 'athemes-addons-elementor' ),
-			'tutorial_url'  => 'https://docs.athemes.com/article/content-protection/',
-			'preview_url'   => 'https://addons.athemes.com/widget/content-protection/',
+			'tutorial_url'  => '',
+			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Content_Protection',
 			'has_styles'    => false,
 			'has_scripts'   => false,

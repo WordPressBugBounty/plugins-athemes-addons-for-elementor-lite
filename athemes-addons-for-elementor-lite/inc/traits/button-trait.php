@@ -396,7 +396,7 @@ trait Button_Trait {
 	
 		$instance->add_render_attribute( $prefix . 'wrapper', 'class', 'elementor-button-wrapper' );
 	
-		$instance->add_render_attribute( $prefix . 'button', 'class', 'button aafe-button' );
+		$instance->add_render_attribute( $prefix . 'button', 'class', 'button aafe-button roll-button' );
 
 		$instance->add_render_attribute( $prefix . 'button', 'class', $selector );
 	
