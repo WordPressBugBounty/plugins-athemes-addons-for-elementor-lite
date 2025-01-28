@@ -1,9 +1,9 @@
 === aThemes Addons for Elementor ===
 Tags: elementor, widgets, addons, extensions, athemes
 Requires at least: 5.5
-Tested up to: 6.6.1
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.0.12
+Stable tag: 1.0.13
 Contributors: aThemes
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -140,6 +140,10 @@ Absolutely not. You can enable and customize modules without any coding knowledg
 == Screenshots ==
 
 == Changelog ==
+
+= 1.0.13 =
+* fixed some issues with the button trait
+* fixed some warnings
 
 = 1.0.12 =
 * added creative button widget to pro widget list

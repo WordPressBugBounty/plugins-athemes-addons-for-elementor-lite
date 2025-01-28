@@ -119,6 +119,7 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 
 			// Traits.
 			require_once ATHEMES_AFE_DIR . 'inc/traits/button-trait.php';
+			require_once ATHEMES_AFE_DIR . 'inc/traits/upsell-section-trait.php';
 
 			/**
 			 * Hook 'athemes_addons_admin_after_include_modules_classes'.

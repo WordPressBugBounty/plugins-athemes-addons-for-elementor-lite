@@ -13,6 +13,7 @@ use Elementor\Group_Control_Image_Size;
 use Elementor\Icons_Manager;
 use Elementor\Control_Media;
 use aThemes_Addons_SVG_Icons;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -24,7 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class Image_Scroll extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	/**
 	 * Get widget name.
 	 *
@@ -107,6 +109,18 @@ class Image_Scroll extends Widget_Base {
 	 */
 	public function get_categories() {
 		return [ 'athemes-addons-elements' ];
+	}
+
+	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/image-scroll/';
 	}
 
 	/**
@@ -483,6 +497,9 @@ class Image_Scroll extends Widget_Base {
 		);
 
 		$this->end_controls_section();
+
+		//Register upsell section
+		$this->register_upsell_section();
 	}
 
 	/**

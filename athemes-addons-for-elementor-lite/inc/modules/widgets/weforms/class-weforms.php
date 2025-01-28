@@ -11,6 +11,7 @@ use Elementor\Widget_Base;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -24,7 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class weForms extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	public function __construct( $data = [], $args = null ) {
 		parent::__construct( $data, $args );
 		$this->add_script_depends('weforms');
@@ -107,6 +109,18 @@ class weForms extends Widget_Base {
 		return [ 'athemes-addons-elements' ];
 	}
 
+	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/weforms/';
+	}
+	
 	/**
 	 * Register icon list widget controls.
 	 *
@@ -781,6 +795,9 @@ class weForms extends Widget_Base {
 		);
 
 		$this->end_controls_section();      
+
+		//Register upsell section
+		$this->register_upsell_section();
 	}
 
 	public function forms() {

@@ -12,6 +12,7 @@ use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Icons_Manager;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -24,7 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class Posts_Timeline extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	/**
 	 * Get widget name.
 	 *
@@ -81,6 +83,18 @@ class Posts_Timeline extends Widget_Base {
 	 */
 	public function get_categories() {
 		return [ 'athemes-addons-elements' ];
+	}
+
+	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/posts-timeline/';
 	}
 
 	/**
@@ -1238,6 +1252,9 @@ class Posts_Timeline extends Widget_Base {
 		);
 
 		$this->end_controls_section();
+
+		//Register upsell section
+		$this->register_upsell_section();
 	}
 
 	/**

@@ -14,6 +14,7 @@ use Elementor\Icons_Manager;
 use Elementor\Control_Media;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 /**
  * Progress bar widget.
@@ -21,7 +22,8 @@ use Elementor\Group_Control_Text_Shadow;
  * @since 1.0.0
  */
 class Progress_Bar extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
@@ -66,6 +68,18 @@ class Progress_Bar extends Widget_Base {
 	 */
 	public function get_categories() {
 		return [ 'athemes-addons-elements' ];
+	}
+
+	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/progress-bar/';
 	}
 
 	/**
@@ -633,6 +647,9 @@ class Progress_Bar extends Widget_Base {
 		);
 
 		$this->end_controls_section();
+
+		//Register upsell section
+		$this->register_upsell_section();
 	}
 
 	/**

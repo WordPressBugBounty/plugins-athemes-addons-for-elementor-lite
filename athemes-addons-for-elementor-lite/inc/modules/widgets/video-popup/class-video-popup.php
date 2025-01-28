@@ -15,6 +15,7 @@ use Elementor\Modules\DynamicTags\Module as TagsModule;
 use Elementor\Group_Control_Css_Filter;
 use Elementor\Embed;
 use Elementor\Icons_Manager;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 use aThemes_Addons\Traits\Button_Trait;
 
@@ -30,7 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class Video_Popup extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	use Button_Trait;
 
 	/**
@@ -108,6 +110,18 @@ class Video_Popup extends Widget_Base {
 	 */
 	public function get_categories() {
 		return [ 'athemes-addons-elements' ];
+	}
+
+	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/video-popup/';
 	}
 
 	/**
@@ -875,6 +889,9 @@ class Video_Popup extends Widget_Base {
 		);
 
 		$this->end_controls_section();
+
+		//Register upsell section
+		$this->register_upsell_section();
 	}
 
 	/**

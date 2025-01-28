@@ -14,6 +14,7 @@ use Elementor\Repeater;
 use Elementor\Icons_Manager;
 use Elementor\Control_Media;
 use aThemes_Addons\Traits\Button_Trait;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 /**
  * Animated heading widget.
@@ -21,7 +22,8 @@ use aThemes_Addons\Traits\Button_Trait;
  * @since 1.0.0
  */
 class Image_Accordion extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	use Button_Trait;
 
 	/**
@@ -104,6 +106,18 @@ class Image_Accordion extends Widget_Base {
 	 */
 	public function get_categories() {
 		return [ 'athemes-addons-elements' ];
+	}
+
+	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/image-accordion/';
 	}
 
 	/**
@@ -702,6 +716,9 @@ class Image_Accordion extends Widget_Base {
 		$this->register_button_style_controls( $args = array( 'class' => 'image-accordion-button' ) );
 
 		$this->end_controls_section();
+
+		//Register upsell section
+		$this->register_upsell_section();
 	}
 
 	/**
@@ -730,7 +747,7 @@ class Image_Accordion extends Widget_Base {
 					<div class="image-accordion-item <?php echo esc_attr( $active_item ); ?> elementor-repeater-item-<?php echo esc_attr($item['_id']); ?>">
 						<?php Group_Control_Image_Size::print_attachment_image_html( $item, 'thumb', 'image' ); ?>
 						<div class="image-accordion-content">
-							<<?php echo esc_attr( $settings['title_html_tag'] ); ?> class="image-accordion-title"><?php echo esc_html( $item['title'] ); ?></<?php echo esc_attr( $settings['title_html_tag'] ); ?>>
+							<<?php echo tag_escape( $settings['title_html_tag'] ); ?> class="image-accordion-title"><?php echo esc_html( $item['title'] ); ?></<?php echo tag_escape( $settings['title_html_tag'] ); ?>>
 							<div class="image-accordion-text"><?php echo wp_kses_post( $item['text'] ); ?></div>
 							<?php if ( 'yes' === $item['show_button'] ) : ?>
 								<a href="<?php echo esc_url( $item['button_link']['url'] ); ?>" class="button image-accordion-button"><?php echo esc_html( $item['button_text'] ); ?></a>

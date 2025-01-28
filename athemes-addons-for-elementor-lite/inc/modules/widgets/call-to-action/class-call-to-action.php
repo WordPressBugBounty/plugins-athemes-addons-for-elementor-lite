@@ -12,6 +12,7 @@ use Elementor\Widget_Base;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Icons_Manager;
 use Elementor\Control_Media;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 use aThemes_Addons\Traits\Button_Trait;
 
@@ -25,7 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class Call_To_Action extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	use Button_Trait;
 
 	/**
@@ -103,6 +105,18 @@ class Call_To_Action extends Widget_Base {
 	 */
 	public function get_categories() {
 		return [ 'athemes-addons-elements' ];
+	}
+
+	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/call-to-action/';
 	}
 
 	/**
@@ -879,6 +893,9 @@ class Call_To_Action extends Widget_Base {
 		$this->register_button_style_controls( $args = array( 'class' => 'second_button', 'background_color' => '#333333', 'section_condition' => array( 'number_of_buttons' => '2' ) ) );
 
 		$this->end_controls_section();
+
+		//Register upsell section
+		$this->register_upsell_section();       
 	}
 
 	/**

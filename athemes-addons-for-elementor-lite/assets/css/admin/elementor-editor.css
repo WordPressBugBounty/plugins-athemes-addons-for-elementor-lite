@@ -38,3 +38,23 @@
 .elementor-panel .elementor-element .title {
   text-transform: capitalize;
 }
+
+.aafe-editor-upsell-section {
+  font-size: var(--control-title-size);
+  line-height: 1.35;
+}
+.aafe-editor-upsell-section p {
+  margin-bottom: 8px;
+}
+.aafe-editor-upsell-section p:first-of-type,
+.aafe-editor-upsell-section ul {
+  margin-bottom: 15px;
+}
+.aafe-editor-upsell-section i {
+  color: var(--e-a-btn-bg-success);
+  margin-right: 6px;
+}
+.aafe-editor-upsell-section li {
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}

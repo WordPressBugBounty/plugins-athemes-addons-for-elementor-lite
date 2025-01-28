@@ -12,6 +12,7 @@ use Elementor\Widget_Base;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Icons_Manager;
 use Elementor\Control_Media;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -23,7 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class Before_After_Image extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
@@ -71,6 +73,18 @@ class Before_After_Image extends Widget_Base {
 	 */
 	public function get_icon() {
 		return 'eicon-image-before-after aafe-elementor-icon';
+	}
+
+	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/before-after-image/';
 	}
 
 	/**
@@ -507,6 +521,9 @@ class Before_After_Image extends Widget_Base {
 			]
 		);
 		$this->end_controls_section();
+
+		//Register upsell section
+		$this->register_upsell_section();       
 	}
 
 	/**

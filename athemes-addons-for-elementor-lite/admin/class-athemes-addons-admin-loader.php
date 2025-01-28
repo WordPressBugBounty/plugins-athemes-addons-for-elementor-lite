@@ -55,6 +55,9 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 			require_once ATHEMES_AFE_DIR . 'inc/theme-builder/class-athemes-addons-theme-builder-admin.php';
 			$themeBuilderAdmin = Theme_Builder_Admin::instance();
 			$themeBuilderAdmin->includes();
+
+			// Plugin installer.
+			require_once ATHEMES_AFE_DIR . 'admin/classes/class-athemes-addons-plugin-installer.php';
 		}
 
 		/**

@@ -56,10 +56,35 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 		 * Constructor.
 		 */
 		public function __construct() {
+			if( $this->is_patcher_page() ) {
+				add_action('admin_enqueue_scripts', array( $this, 'enqueue_patcher_scripts' ));
+			}
+
 			add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 			add_action( 'wp_ajax_athemes_addons_notifications_read', array( $this, 'ajax_notifications_read' ) );
 
 			add_action('admin_footer', array( $this, 'footer_internal_scripts' ));
+		}
+
+		/**
+		 * Is aThemes Patcher page.
+		 * 
+		 * @return bool
+		 */
+		public function is_patcher_page() {
+			global $pagenow;
+
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return $pagenow === 'admin.php' && ( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] === 'athemes-patcher-preview-ap' );
+		}
+
+		/**
+		 * Enqueue aThemes Patcher preview scripts and styles.
+		 * 
+		 * @return void
+		 */
+		public function enqueue_patcher_scripts() {
+			wp_enqueue_style( 'wp-components' );
 		}
 
 		/**
@@ -108,6 +133,17 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 				'admin.php?page=' . $this->plugin_slug . '&section=settings',
 				'',
 				3
+			);
+
+			// Add 'aThemes Patcher' link
+			add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page
+				$this->plugin_slug,
+				esc_html__('Patcher', 'athemes-addons-elementor'),
+				esc_html__('Patcher', 'athemes-addons-elementor'),
+				'manage_options',
+				'athemes-patcher-preview-ap',
+				array( $this, 'html_patcher' ),
+				4
 			);
 
 			if ( ! defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
@@ -294,6 +330,15 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
                 });
             </script>
 			<?php
+		}
+
+		/**
+		 * HTML aThemes Patcher.
+		 *
+		 * @return void 
+		 */
+		public function html_patcher() {
+			require_once ATHEMES_AFE_DIR . 'admin/pages/page-patcher.php';
 		}
 	}
 

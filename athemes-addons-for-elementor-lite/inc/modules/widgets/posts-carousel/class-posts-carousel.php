@@ -11,6 +11,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Group_Control_Image_Size;
+use aThemes_Addons\Traits\Upsell_Section_Trait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -23,7 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class Posts_Carousel extends Widget_Base {
-
+	use Upsell_Section_Trait;
+	
 	/**
 	 * Get widget name.
 	 *
@@ -83,6 +85,18 @@ class Posts_Carousel extends Widget_Base {
 	}
 
 	/**
+	 * Get help URL.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Help URL.
+	 */
+	public function get_custom_help_url() {
+		return 'https://docs.athemes.com/article/posts-carousel/';
+	}
+
+	/**
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
@@ -109,7 +123,7 @@ class Posts_Carousel extends Widget_Base {
 			'section_blog',
 			[
 				'label' => __( 'Layout', 'athemes-addons-elementor' ),
-			]
+				]
 		);
 
 		$this->add_responsive_control(
@@ -1302,9 +1316,11 @@ class Posts_Carousel extends Widget_Base {
 			]
 		);
 
-
 		//end section
-		$this->end_controls_section();      
+		$this->end_controls_section();   
+		
+		//Register upsell section
+		$this->register_upsell_section();
 	}
 
 	/**
