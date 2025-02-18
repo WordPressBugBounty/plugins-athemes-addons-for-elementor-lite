@@ -62,6 +62,9 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 			// Include extensions.
 			add_action( 'elementor/init', array( $this, 'include_extensions' ) );
 
+			// Include library.
+			add_action( 'elementor/init', array( $this, 'include_library' ) );
+
 			// Enqueue scripts.
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles_scripts' ) );
 
@@ -232,6 +235,14 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 			$classes[] = 'athemes-addons-theme-' . strtolower( esc_attr( $theme->name ) );
 
 			return $classes;
+		}
+
+		/**
+		 * Include library.
+		 */
+		public function include_library() {
+			require_once ATHEMES_AFE_DIR . 'inc/library/library-manager.php';
+			require_once ATHEMES_AFE_DIR . 'inc/library/library-source.php';
 		}
 
 		/**

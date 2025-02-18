@@ -398,6 +398,18 @@ class Team_Member extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'show_social',
+			array(
+				'label'        => esc_html__( 'Show Social Icons', 'athemes-addons-elementor' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Show', 'athemes-addons-elementor' ),
+				'label_off'    => esc_html__( 'Hide', 'athemes-addons-elementor' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
+		);
+
 		//$repeater->add_control choose icon
 		$repeater = new Repeater();
 
@@ -1007,7 +1019,7 @@ class Team_Member extends Widget_Base {
 					<?php if ( ! empty( $settings['short_bio'] ) ) : ?>
 						<div class="team-member-short-bio"><?php echo wp_kses_post( $settings['short_bio'] ); ?></div>
 					<?php endif; ?>
-					<?php if ( ! empty( $settings['social'] ) ) : ?>
+					<?php if ( 'yes' === $settings['show_social'] && ! empty( $settings['social'] ) ) : ?>
 						<div class="team-member-social">
 							<?php foreach ( $settings['social'] as $item ) : ?>
 								<a href="<?php echo esc_url( $item['link']['url'] ); ?>" target="<?php echo esc_attr( $item['link']['is_external'] ? '_blank' : '_self' ); ?>">

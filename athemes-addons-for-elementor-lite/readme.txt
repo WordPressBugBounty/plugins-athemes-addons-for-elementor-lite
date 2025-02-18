@@ -3,7 +3,7 @@ Tags: elementor, widgets, addons, extensions, athemes
 Requires at least: 5.5
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 Contributors: aThemes
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -140,6 +140,10 @@ Absolutely not. You can enable and customize modules without any coding knowledg
 == Screenshots ==
 
 == Changelog ==
+
+= 1.0.14 =
+* added Addons Studio
+* fixed some small issues
 
 = 1.0.13 =
 * fixed some issues with the button trait

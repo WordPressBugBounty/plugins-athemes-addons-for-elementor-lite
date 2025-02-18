@@ -41,6 +41,10 @@ class aThemes_Addons_Review_Notice {
 		$ignored_notice           = get_user_meta( $user_id, 'athemes_addons_disable_review_notice', true );
 		$ignored_notice_partially = get_user_meta( $user_id, 'delay_athemes_addons_disable_review_notice_partially', true );
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		if ( ( get_option( 'athemes_addons_installed_time' ) > strtotime( '-14 day' ) ) || ( $ignored_notice_partially > strtotime( '-14 day' ) ) || ( $ignored_notice ) ) {
 			return;
 		}
