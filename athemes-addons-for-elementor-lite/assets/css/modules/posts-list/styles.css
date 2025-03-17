@@ -48,8 +48,8 @@ div[class^='athemes-addons-custom-'] {
 .athemes-post-item {
 	transition: all 0.3s ease;
 }
-.athemes-post-item .post-item-thumb,
-.athemes-post-item .post-content > * {
+.athemes-addons-posts-list .athemes-post-item .post-item-thumb,
+.athemes-addons-posts-list .athemes-post-item .post-content > * {
 	margin-bottom: 12px;
 }
 .athemes-post-item .post-content > *:last-child {

@@ -332,7 +332,7 @@ if ( ! class_exists( 'Theme_Builder' ) ) {
 			$template_id = athemes_addons_templates_display_conditions( 'product' );
 
 			if ( $template_id && $this->is_built_with_elementor( $template_id ) ) {
-				add_action( 'template_include', array( $this, 'add_canvas_template' ) );
+				add_action( 'template_include', array( $this, 'add_woo_canvas_template' ) );
 				
 				//Add the custom content
 				add_action( 'athemes_addons_do_content', function() use ( $template_id ) {

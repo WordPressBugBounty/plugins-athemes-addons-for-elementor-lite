@@ -829,6 +829,105 @@ class Events_Calendar extends Widget_Base {
 
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'section_modal_style',
+			[
+				'label' => __( 'Modal', 'athemes-addons-elementor' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'modal_padding',
+			[
+				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .athemes-addons-events-calendar .event-modal' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'modal_border_radius',
+			[
+				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'selectors' => [
+					'{{WRAPPER}} .event-modal' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'modal_background_color',
+			[
+				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .event-modal' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'modal_title_color',
+			[
+				'label' => __( 'Title Color', 'athemes-addons-elementor' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .event-modal .modal-header h3' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'modal_text_color',
+			[
+				'label'     => __( 'Text Color', 'athemes-addons-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .athemes-addons-events-calendar .modal-meta span' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'modal_link_color',
+			[
+				'label'     => __( 'Link Color', 'athemes-addons-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .event-modal a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'modal_link_hover_color',
+			[
+				'label'     => __( 'Link Hover Color', 'athemes-addons-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .event-modal a:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'modal_close_color',
+			[
+				'label'     => __( 'Close Button Color', 'athemes-addons-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .event-modal .close-modal' => 'color: {{VALUE}};border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
 		//Register upsell section
 		$this->register_upsell_section();
 	}

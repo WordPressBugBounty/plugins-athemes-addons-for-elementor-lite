@@ -1658,7 +1658,7 @@ class Pricing_Table extends Widget_Base {
 				</div>
 				<div class="plan-header">
 					<?php if ( ! empty( $settings['header_title'] ) ) : ?>
-						<<?php echo esc_attr( $settings['header_title_tag'] ); ?> class="plan-title"><?php echo esc_html( $settings['header_title'] ); ?></<?php echo esc_attr( $settings['header_title_tag'] ); ?>>
+						<<?php echo tag_escape( $settings['header_title_tag'] ); ?> class="plan-title"><?php echo esc_html( $settings['header_title'] ); ?></<?php echo tag_escape( $settings['header_title_tag'] ); ?>>
 					<?php endif; ?>
 					<?php if ( ! empty( $settings['header_subtitle'] ) ) : ?>
 						<div class="plan-subtitle"><?php echo esc_html( $settings['header_subtitle'] ); ?></div>

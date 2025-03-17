@@ -31,9 +31,15 @@ class Template_Library_Manager {
         wp_enqueue_script( 'athemes-addons-template-library-script', ATHEMES_AFE_URI . 'inc/library/template-library.min.js', [ 'elementor-editor', 'jquery-hover-intent' ], '1.0.0', true );
 		wp_enqueue_style( 'athemes-addons-template-library-style', ATHEMES_AFE_URI . 'inc/library/template-library.min.css', '1.0.0' );
 
+		if ( !defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
+			$isProActive = false;
+		} else {
+			$isProActive = true;
+		}
+
 		$localized_data = [
             'aafeProWidgets' => [],
-			'isProActive' => false,
+			'isProActive' => $isProActive,
 			'i18n' => [
 				'templatesEmptyTitle' => esc_html__( 'No Templates Found', 'athemes-addons-elementor' ),
 				'templatesEmptyMessage' => esc_html__( 'Try different category or sync for new templates.', 'athemes-addons-elementor' ),
