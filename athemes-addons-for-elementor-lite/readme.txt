@@ -3,7 +3,7 @@ Tags: elementor, widgets, addons, extensions, athemes
 Requires at least: 5.5
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.0.15
+Stable tag: 1.0.16
 Contributors: aThemes
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -141,11 +141,14 @@ Absolutely not. You can enable and customize modules without any coding knowledg
 
 == Changelog ==
 
+= 1.0.16 =
+* WPML integration
+* fixed some small issues
+
 = 1.0.15 =
 * expanded Studio sections
 * added new News Ticker widget
 * added Google Calendar modal styling options
-* added new options to the Posts List widget
 * fixed some small issues
 
 = 1.0.14 =

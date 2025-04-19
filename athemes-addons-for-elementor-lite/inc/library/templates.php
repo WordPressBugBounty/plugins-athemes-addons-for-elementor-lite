@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <script type="text/template" id="template-athemes-addons-templateLibrary-header-back">
 	<i class="eicon-" aria-hidden="true"></i>
-	<span><?php echo __( 'Back to Library', 'athemes-addons-elementor' ); ?></span>
+	<span><?php echo esc_html__( 'Back to Library', 'athemes-addons-elementor' ); ?></span>
 </script>
 
 <script type="text/template" id="template-athemes-addons-TemplateLibrary_header-menu">
@@ -76,9 +76,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<option class="athemes-addons-templateLibrary-category-filter-item active" value="" data-tag=""><?php esc_html_e( 'Filter', 'athemes-addons-elementor' ); ?></option>
 
 				<?php
-					$cats = aThemesAddons\Template_Library_Source::get_library_data()['categories'];
-					foreach ( $cats as $cat  ) : ?>
-						<option class="athemes-addons-templateLibrary-category-filter-item" value="<?php echo esc_html( $cat['slug'] ); ?>" data-tag="<?php echo $cat['slug']; ?>"><?php echo esc_html( $cat['name'] ); ?></option>
+					$aafe_cats = aThemesAddons\Template_Library_Source::get_library_data()['categories'];
+					foreach ( $aafe_cats as $aafe_cat  ) : ?>
+						<option class="athemes-addons-templateLibrary-category-filter-item" value="<?php echo esc_html( $aafe_cat['slug'] ); ?>" data-tag="<?php echo esc_attr( $aafe_cat['slug'] ); ?>"><?php echo esc_html( $aafe_cat['name'] ); ?></option>
 					<?php endforeach;
 				?>
 			</select>

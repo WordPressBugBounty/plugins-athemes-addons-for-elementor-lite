@@ -23,13 +23,12 @@ class Template_Library_Manager {
 	}
 
 	public static function enqueue_preview_styles() {
-		wp_enqueue_style( 'athemes-addons-template-preview-style', ATHEMES_AFE_URI . 'inc/library/template-preview.min.css', '1.0.0' );
-
+		wp_enqueue_style( 'athemes-addons-template-preview-style', ATHEMES_AFE_URI . 'inc/library/template-preview.min.css', [], ATHEMES_AFE_VERSION );
 	}
 
 	public static function editor_scripts() {
-        wp_enqueue_script( 'athemes-addons-template-library-script', ATHEMES_AFE_URI . 'inc/library/template-library.min.js', [ 'elementor-editor', 'jquery-hover-intent' ], '1.0.0', true );
-		wp_enqueue_style( 'athemes-addons-template-library-style', ATHEMES_AFE_URI . 'inc/library/template-library.min.css', '1.0.0' );
+        wp_enqueue_script( 'athemes-addons-template-library-script', ATHEMES_AFE_URI . 'inc/library/template-library.min.js', [ 'elementor-editor', 'jquery-hover-intent' ], ATHEMES_AFE_VERSION, true );
+		wp_enqueue_style( 'athemes-addons-template-library-style', ATHEMES_AFE_URI . 'inc/library/template-library.min.css', [], ATHEMES_AFE_VERSION );
 
 		if ( !defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 			$isProActive = false;
@@ -45,7 +44,7 @@ class Template_Library_Manager {
 				'templatesEmptyMessage' => esc_html__( 'Try different category or sync for new templates.', 'athemes-addons-elementor' ),
 				'templatesNoResultsTitle' => esc_html__( 'No Results Found', 'athemes-addons-elementor' ),
 				'templatesNoResultsMessage' => esc_html__( 'Please make sure your search is spelled correctly or try a different word.', 'athemes-addons-elementor' ),
-			]
+			],
 	
         ];
 
@@ -75,7 +74,7 @@ class Template_Library_Manager {
 				$editor_post_id = absint( $data['editor_post_id'] );
 
 				if ( ! get_post( $editor_post_id ) ) {
-					throw new \Exception( __( 'Post not found.', 'athemes-addons-elementor' ) );
+					throw new \Exception( esc_html__( 'Post not found.', 'athemes-addons-elementor' ) );
 				}
 
 				\Elementor\Plugin::instance()->db->switch_to_post( $editor_post_id );
@@ -95,14 +94,14 @@ class Template_Library_Manager {
 				$editor_post_id = absint( $data['editor_post_id'] );
 
 				if ( ! get_post( $editor_post_id ) ) {
-					throw new \Exception( __( 'Post not found', 'athemes-addons-elementor' ) );
+					throw new \Exception( esc_html__( 'Post not found', 'athemes-addons-elementor' ) );
 				}
 
 				\Elementor\Plugin::instance()->db->switch_to_post( $editor_post_id );
 			}
 
 			if ( empty( $data['template_id'] ) ) {
-				throw new \Exception( __( 'Template id missing', 'athemes-addons-elementor' ) );
+				throw new \Exception( esc_html__( 'Template id missing', 'athemes-addons-elementor' ) );
 			}
 
 			$result = self::get_template_data( $data );

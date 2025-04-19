@@ -359,11 +359,16 @@ if ( ! class_exists( 'aThemes_Addons_Posts_Helper' ) ) {
 		 */
 		public static function get_terms_list( $taxonomy = 'category', $key = 'term_id' ) {
 			$options = array();
-			
-			$terms = get_terms( array(
-				'taxonomy' => $taxonomy,
+
+			$args = array(  
 				'hide_empty' => true,
-			) );
+			);
+			
+			if ( 'all' !== $taxonomy ) {
+				$args['taxonomy'] = $taxonomy;
+			}
+
+			$terms = get_terms( $args );
 	
 			if ( !empty( $terms ) && !is_wp_error( $terms ) ) {
 				foreach ( $terms as $term ) {

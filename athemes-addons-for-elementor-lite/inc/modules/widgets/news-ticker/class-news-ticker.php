@@ -130,19 +130,19 @@ class News_Ticker extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' 		=> __( 'Title', 'athemes-addons-elementor' ),
-				'type' 			=> Controls_Manager::TEXT,
-				'default' 		=> __( 'Latest News', 'athemes-addons-elementor' ),
+				'label'         => __( 'Title', 'athemes-addons-elementor' ),
+				'type'          => Controls_Manager::TEXT,
+				'default'       => __( 'Latest News', 'athemes-addons-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'main_title_tag',
 			[
-				'label' 		=> __( 'Title tag', 'athemes-addons-elementor' ),
-				'type' 			=> Controls_Manager::SELECT,
-				'default' 		=> 'h4',
-				'options' 		=> [
+				'label'         => __( 'Title tag', 'athemes-addons-elementor' ),
+				'type'          => Controls_Manager::SELECT,
+				'default'       => 'h4',
+				'options'       => [
 					'h1'    => __( 'H1', 'athemes-addons-elementor' ),
 					'h2'    => __( 'H2', 'athemes-addons-elementor' ),
 					'h3'    => __( 'H3', 'athemes-addons-elementor' ),
@@ -163,9 +163,9 @@ class News_Ticker extends Widget_Base {
 				'type' => Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => [
-					'none' 			=> __( 'None', 'athemes-addons-elementor' ),
-					'arrow-small' 	=> __( 'Arrow small', 'athemes-addons-elementor' ),
-					'arrow-large' 	=> __( 'Arrow large', 'athemes-addons-elementor' ),
+					'none'          => __( 'None', 'athemes-addons-elementor' ),
+					'arrow-small'   => __( 'Arrow small', 'athemes-addons-elementor' ),
+					'arrow-large'   => __( 'Arrow large', 'athemes-addons-elementor' ),
 					'diagonal-left' => __( 'Diagonal left', 'athemes-addons-elementor' ),
 					'diagonal-right' => __( 'Diagonal right', 'athemes-addons-elementor' ),
 				],

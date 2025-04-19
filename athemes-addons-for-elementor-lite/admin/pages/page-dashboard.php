@@ -179,7 +179,7 @@ $aafe_dashboard_tabs = $this->dashboard_tabs();
 
 <div class="wrap athemes-addons-wrap">
 	<?php 
-	$aafe_widgets = athemes_addons_get_widgets();
+	$aafe_widgets = athemes_addons_get_translated_widgets();
 
 	$aafe_active_modules = 0;
 	$aafe_option_modules = get_option( 'athemes-addons-modules', array() );

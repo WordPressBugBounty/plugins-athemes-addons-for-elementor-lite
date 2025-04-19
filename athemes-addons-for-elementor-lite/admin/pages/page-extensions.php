@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$aafe_extensions = athemes_addons_get_extensions();
+$aafe_extensions = athemes_addons_get_translated_extensions();
 ?>
 
 <div class="athemes-addons-modules-box">

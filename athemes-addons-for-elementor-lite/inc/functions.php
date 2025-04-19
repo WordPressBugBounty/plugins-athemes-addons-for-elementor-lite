@@ -17,8 +17,6 @@ function athemes_addons_get_widgets() {
 		'posts-list' => array(
 			'pro'           => false,
 			'category'      => 'posts',
-			'title'         => esc_html__( 'Posts list', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Display a list of posts with multiple skins', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/posts-list/',
 			'preview_url'   => 'https://addons.athemes.com/widget/posts-list/',
 			'class'         => 'aThemes_Addons\Widgets\Posts_List',
@@ -30,8 +28,6 @@ function athemes_addons_get_widgets() {
 		'posts-carousel' => array(
 			'pro'           => false,
 			'category'      => 'posts',
-			'title'         => esc_html__( 'Post Carousel', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Display a carousel of posts with multiple skins', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/post-carousel/',
 			'preview_url'   => 'https://addons.athemes.com/widget/posts-carousel/',
 			'class'         => 'aThemes_Addons\Widgets\Posts_Carousel',
@@ -43,8 +39,6 @@ function athemes_addons_get_widgets() {
 		'advanced-button' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Advanced Button', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Create advanced buttons with hover effects', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/advanced-button/',
 			'preview_url'   => 'https://addons.athemes.com/widget/advanced-button/',
 			'class'         => 'aThemes_Addons\Widgets\Advanced_Button',
@@ -54,8 +48,6 @@ function athemes_addons_get_widgets() {
 		'advanced-tabs' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Advanced Tabs', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Tabs with custom content and templates support', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/advanced-tabs/',
 			'preview_url'   => 'https://addons.athemes.com/widget/advanced-tabs/',
 			'class'         => 'aThemes_Addons\Widgets\Advanced_Tabs',
@@ -65,8 +57,6 @@ function athemes_addons_get_widgets() {
 		'advanced-carousel' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Advanced Carousel', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Carousel with support for images, custom content, videos and templates', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/advanced-carousel/',
 			'preview_url'   => 'https://addons.athemes.com/widget/advanced-carousel/',
 			'class'         => 'aThemes_Addons\Widgets\Advanced_Carousel',
@@ -76,8 +66,6 @@ function athemes_addons_get_widgets() {
 		'testimonials'  => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Testimonials', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Display testimonials in a carousel', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/testimonials/',
 			'preview_url'   => 'https://addons.athemes.com/widget/testimonials/',
 			'class'         => 'aThemes_Addons\Widgets\Testimonials',
@@ -89,8 +77,6 @@ function athemes_addons_get_widgets() {
 		'animated-heading'  => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Animated Heading', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Typing effect for any heading or text', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/animated-heading/',
 			'preview_url'   => 'https://addons.athemes.com/widget/animated-heading/',
 			'class'         => 'aThemes_Addons\Widgets\Animated_Heading',
@@ -100,8 +86,6 @@ function athemes_addons_get_widgets() {
 		'dual-heading'  => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Dual Heading', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Style two parts of a heading individually for amazing effects', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/dual-heading/',
 			'preview_url'   => 'https://addons.athemes.com/widget/dual-heading/',
 			'class'         => 'aThemes_Addons\Widgets\Dual_Heading',
@@ -111,8 +95,6 @@ function athemes_addons_get_widgets() {
 		'advanced-heading' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Advanced Heading', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Create advanced headings with multiple styles', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/advanced-heading/',
 			'preview_url'   => 'https://addons.athemes.com/widget/advanced-heading/',
 			'class'         => 'aThemes_Addons\Widgets\Advanced_Heading',
@@ -122,8 +104,6 @@ function athemes_addons_get_widgets() {
 		'creative-button' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Creative Button', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Multiple creative button designs', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/creative-button/',
 			'preview_url'   => 'https://addons.athemes.com/widget/creative-button/',
 			'class'         => 'aThemes_Addons\Widgets\Creative_Button',
@@ -133,8 +113,6 @@ function athemes_addons_get_widgets() {
 		'whatsapp-chat' => array(
 			'pro'           => true,
 			'category'      => 'social',
-			'title'         => esc_html__( 'WhatsApp Chat', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Add a WhatsApp chat button to your site', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/whatsapp-chat/',
 			'preview_url'   => 'https://addons.athemes.com/widget/whatsapp-chat/',
 			'class'         => 'aThemes_Addons\Widgets\WhatsApp_Chat',
@@ -144,8 +122,6 @@ function athemes_addons_get_widgets() {
 		'telegram-chat' => array(
 			'pro'           => true,
 			'category'      => 'social',
-			'title'         => esc_html__( 'Telegram Chat', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Add a Telegram chat button to your site', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/telegram-chat/',
 			'preview_url'   => 'https://addons.athemes.com/widget/telegram-chat/',
 			'class'         => 'aThemes_Addons\Widgets\Telegram_Chat',
@@ -155,8 +131,6 @@ function athemes_addons_get_widgets() {
 		'google-reviews' => array(
 			'pro'           => true,
 			'category'      => 'social',
-			'title'         => esc_html__( 'Google Reviews', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Display your Google Reviews', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/google-reviews/',
 			'preview_url'   => 'https://addons.athemes.com/widget/google-reviews/',
 			'class'         => 'aThemes_Addons\Widgets\Google_Reviews',
@@ -167,8 +141,6 @@ function athemes_addons_get_widgets() {
 		'advanced-google-maps' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Advanced Google Maps', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Embed interactive maps with ease', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/advanced-google-maps/',
 			'preview_url'   => 'https://addons.athemes.com/widget/advanced-google-maps/',
 			'class'         => 'aThemes_Addons\Widgets\Advanced_Google_Maps',
@@ -178,8 +150,6 @@ function athemes_addons_get_widgets() {
 		'image-hotspots' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Image Hotspots', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Add animated hotposts over any image', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/image-hotspots/',
 			'preview_url'   => 'https://addons.athemes.com/widget/image-hotspots/',
 			'class'         => 'aThemes_Addons\Widgets\Image_Hotspots',
@@ -189,8 +159,6 @@ function athemes_addons_get_widgets() {
 		'image-card' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Image Card', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Combine visuals and text seamlessly', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/image-card/',
 			'preview_url'   => 'https://addons.athemes.com/widget/image-card/',
 			'class'         => 'aThemes_Addons\Widgets\Image_Card',
@@ -200,8 +168,6 @@ function athemes_addons_get_widgets() {
 		'social-proof' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Social Proof', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display social proof in a stylish manner', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/social-proof/',
 			'preview_url'   => 'https://addons.athemes.com/widget/social-proof/',
 			'class'         => 'aThemes_Addons\Widgets\Social_Proof',
@@ -211,8 +177,6 @@ function athemes_addons_get_widgets() {
 		'modal' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Modal', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Create modals with custom content', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/modal/',
 			'preview_url'   => 'https://addons.athemes.com/widget/modal/',
 			'class'         => 'aThemes_Addons\Widgets\Modal',
@@ -222,8 +186,6 @@ function athemes_addons_get_widgets() {
 		'click-to-call' => array(
 			'pro'           => true,
 			'category'      => 'social',
-			'title'         => esc_html__( 'Click to Call', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Add a click to call button to your pages', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/click-to-call/',
 			'preview_url'   => 'https://addons.athemes.com/widget/click-to-call/',
 			'class'         => 'aThemes_Addons\Widgets\Click_To_Call',
@@ -233,8 +195,6 @@ function athemes_addons_get_widgets() {
 		'service-box' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Service Box', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display your services with multiple skins', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/service-box/',
 			'preview_url'   => 'https://addons.athemes.com/widget/service-box/',
 			'class'         => 'aThemes_Addons\Widgets\Service_Box',
@@ -245,8 +205,6 @@ function athemes_addons_get_widgets() {
 		'service-group' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Service Group', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display your services in a group', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/service-group/',
 			'preview_url'   => 'https://addons.athemes.com/widget/service-group/',
 			'class'         => 'aThemes_Addons\Widgets\Service_Group',
@@ -256,8 +214,6 @@ function athemes_addons_get_widgets() {
 		'contact-form7' => array(
 			'pro'           => false,
 			'category'      => 'forms',
-			'title'         => esc_html__( 'Contact Form 7', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Full styling control for any form built with Contact Form 7', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/contact-form-7/',
 			'preview_url'   => 'https://addons.athemes.com/widget/contact-form-7/',
 			'class'         => 'aThemes_Addons\Widgets\Contact_Form_7',
@@ -267,8 +223,6 @@ function athemes_addons_get_widgets() {
 		'ninja-forms' => array(
 			'pro'           => false,
 			'category'      => 'forms',
-			'title'         => esc_html__( 'Ninja Forms', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Full styling control for any form built with Ninja Forms', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/ninja-forms/',
 			'preview_url'   => 'https://addons.athemes.com/widget/ninja-forms/',
 			'class'         => 'aThemes_Addons\Widgets\Ninja_Forms',
@@ -278,8 +232,6 @@ function athemes_addons_get_widgets() {
 		'wpforms' => array(
 			'pro'           => false,
 			'category'      => 'forms',
-			'title'         => esc_html__( 'WPForms', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Full styling control for any form built with WPForms', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/wpforms/',
 			'preview_url'   => 'https://addons.athemes.com/widget/wpforms/',
 			'class'         => 'aThemes_Addons\Widgets\WPForms',
@@ -289,8 +241,6 @@ function athemes_addons_get_widgets() {
 		'gravity-forms' => array(
 			'pro'           => false,
 			'category'      => 'forms',
-			'title'         => esc_html__( 'Gravity Forms', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Full styling control for any form built with Gravity Forms', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/gravity-forms/',
 			'preview_url'   => 'https://addons.athemes.com/widget/gravity-forms/',
 			'class'         => 'aThemes_Addons\Widgets\Gravity_Forms',
@@ -300,8 +250,6 @@ function athemes_addons_get_widgets() {
 		'weforms'       => array(
 			'pro'           => false,
 			'category'      => 'forms',
-			'title'         => esc_html__( 'weForms', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Full styling control for any form built with weForms', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/weforms/',
 			'preview_url'   => 'https://addons.athemes.com/widget/weforms/',
 			'class'         => 'aThemes_Addons\Widgets\weForms',
@@ -311,8 +259,6 @@ function athemes_addons_get_widgets() {
 		'mailchimp' => array(
 			'pro'           => true,
 			'category'      => 'forms',
-			'title'         => esc_html__( 'Mailchimp', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Connect a form to any Mailchimp list', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/mailchimp/',
 			'preview_url'   => 'https://addons.athemes.com/widget/mailchimp/',
 			'class'         => 'aThemes_Addons\Widgets\Mailchimp',
@@ -322,8 +268,6 @@ function athemes_addons_get_widgets() {
 		'content-switcher' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Content Switcher', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Interactive toggle for seamless content display', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/content-switcher/',
 			'preview_url'   => 'https://addons.athemes.com/widget/content-switcher/',
 			'class'         => 'aThemes_Addons\Widgets\Content_Switcher',
@@ -333,8 +277,6 @@ function athemes_addons_get_widgets() {
 		'business-hours' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Business Hours', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Display your business hours with full styling', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/business-hours/',
 			'preview_url'   => 'https://addons.athemes.com/widget/business-hours/',
 			'class'         => 'aThemes_Addons\Widgets\Business_Hours',
@@ -345,8 +287,6 @@ function athemes_addons_get_widgets() {
 		'before-after-image' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Before/After Image', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Compare two images by dragging a slider', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/before-after-image/',
 			'preview_url'   => 'https://addons.athemes.com/widget/before-after-image-comparison/',
 			'class'         => 'aThemes_Addons\Widgets\Before_After_Image',
@@ -356,8 +296,6 @@ function athemes_addons_get_widgets() {
 		'team-member' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Team Member', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Display a team member with bio and socials', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/team-member/',
 			'preview_url'   => 'https://addons.athemes.com/widget/team-member/',
 			'class'         => 'aThemes_Addons\Widgets\Team_Member',
@@ -368,8 +306,6 @@ function athemes_addons_get_widgets() {
 		'team-carousel' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Team Carousel', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Display a carousel of team members', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/team-carousel/',
 			'preview_url'   => 'https://addons.athemes.com/widget/team-carousel/',
 			'class'         => 'aThemes_Addons\Widgets\Team_Carousel',
@@ -379,8 +315,6 @@ function athemes_addons_get_widgets() {
 		'content-reveal' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Content Reveal', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Save up space and reveal content on click', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/content-reveal/',
 			'preview_url'   => 'https://addons.athemes.com/widget/content-reveal/',
 			'class'         => 'aThemes_Addons\Widgets\Content_Reveal',
@@ -390,8 +324,6 @@ function athemes_addons_get_widgets() {
 		'countdown' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Countdown', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Countdown timer with multiple skins', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/countdown/',
 			'preview_url'   => 'https://addons.athemes.com/widget/countdown/',
 			'class'         => 'aThemes_Addons\Widgets\Countdown',
@@ -401,8 +333,6 @@ function athemes_addons_get_widgets() {
 		'flip-box' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Flip Box', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'A fancy and interactive way to display content', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/flip-box/',
 			'preview_url'   => 'https://addons.athemes.com/widget/flip-box/',
 			'class'         => 'aThemes_Addons\Widgets\Flip_Box',
@@ -412,8 +342,6 @@ function athemes_addons_get_widgets() {
 		'offcanvas' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Offcanvas Content', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Create offcanvas content with ease', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/offcanvas/',
 			'preview_url'   => 'https://addons.athemes.com/widget/offcanvas/',
 			'class'         => 'aThemes_Addons\Widgets\Offcanvas',
@@ -423,8 +351,6 @@ function athemes_addons_get_widgets() {
 		'dual-buttons' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Dual Buttons', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Two side-by-side buttons with individual styling', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/dual-buttons/',
 			'preview_url'   => 'https://addons.athemes.com/widget/dual-buttons/',
 			'class'         => 'aThemes_Addons\Widgets\Dual_Buttons',
@@ -434,8 +360,6 @@ function athemes_addons_get_widgets() {
 		'image-scroll' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Image Scroll', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Scroll an image by hovering', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/image-scroll/',
 			'preview_url'   => 'https://addons.athemes.com/widget/image-scroll/',
 			'class'         => 'aThemes_Addons\Widgets\Image_Scroll',
@@ -445,8 +369,6 @@ function athemes_addons_get_widgets() {
 		'timeline' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Timeline', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display events in a timeline layout', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/timeline/',
 			'preview_url'   => 'https://addons.athemes.com/widget/timeline/',
 			'class'         => 'aThemes_Addons\Widgets\Timeline',
@@ -456,8 +378,6 @@ function athemes_addons_get_widgets() {
 		'video-gallery' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Video Gallery', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Create and display a gallery of videos', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/video-gallery/',
 			'preview_url'   => 'https://addons.athemes.com/widget/video-gallery/',
 			'class'         => 'aThemes_Addons\Widgets\Video_Gallery',
@@ -467,8 +387,6 @@ function athemes_addons_get_widgets() {
 		'video-playlist' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Video Playlist', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Organize and display videos in a playlist', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/video-playlist/',
 			'preview_url'   => 'https://addons.athemes.com/widget/video-playlist/',
 			'class'         => 'aThemes_Addons\Widgets\Video_Playlist',
@@ -478,8 +396,6 @@ function athemes_addons_get_widgets() {
 		'video-carousel' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Video Carousel', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display a carousel of videos', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/video-carousel/',
 			'preview_url'   => 'https://addons.athemes.com/widget/video-carousel/',
 			'class'         => 'aThemes_Addons\Widgets\Video_Carousel',
@@ -489,8 +405,6 @@ function athemes_addons_get_widgets() {
 		'lottie' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Lottie', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Add Lottie animations to your pages', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/lottie/',
 			'preview_url'   => 'https://addons.athemes.com/widget/lottie/',
 			'class'         => 'aThemes_Addons\Widgets\Lottie',
@@ -500,8 +414,6 @@ function athemes_addons_get_widgets() {
 		'pricing-table' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Pricing Table', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Create advanced pricing tables with ease', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/pricing-table/',
 			'preview_url'   => 'https://addons.athemes.com/widget/pricing-table/',
 			'class'         => 'aThemes_Addons\Widgets\Pricing_Table',
@@ -511,8 +423,6 @@ function athemes_addons_get_widgets() {
 		'pricing-list' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Pricing List', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Easily list your pricing plans with style', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/pricing-list/',
 			'preview_url'   => 'https://addons.athemes.com/widget/pricing-list/',
 			'class'         => 'aThemes_Addons\Widgets\Pricing_List',
@@ -522,8 +432,6 @@ function athemes_addons_get_widgets() {
 		'call-to-action' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Call to Action', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Quickly draw attention and increase conversions', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/call-to-action/',
 			'preview_url'   => 'https://addons.athemes.com/widget/call-to-action/',
 			'class'         => 'aThemes_Addons\Widgets\Call_To_Action',
@@ -535,8 +443,6 @@ function athemes_addons_get_widgets() {
 		'slider' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Slider', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Engaging and responsive content slider', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/slider/',
 			'preview_url'   => 'https://addons.athemes.com/widget/slider/',
 			'class'         => 'aThemes_Addons\Widgets\Slider',
@@ -546,8 +452,6 @@ function athemes_addons_get_widgets() {
 		'food-menu' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Food Menu', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Easily display your restaurant menu', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/food-menu/',
 			'preview_url'   => 'https://addons.athemes.com/widget/food-menu/',
 			'class'         => 'aThemes_Addons\Widgets\Food_Menu',
@@ -557,8 +461,6 @@ function athemes_addons_get_widgets() {
 		'page-list' => array(
 			'pro'           => false,
 			'category'      => 'posts',
-			'title'         => esc_html__( 'Page List', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display a list of pages or custom links', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/page-list/',
 			'preview_url'   => 'https://addons.athemes.com/widget/page-list/',
 			'class'         => 'aThemes_Addons\Widgets\Page_List',
@@ -568,8 +470,6 @@ function athemes_addons_get_widgets() {
 		'gallery' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Gallery', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Create beautiful galleries with ease', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/gallery/',
 			'preview_url'   => 'https://addons.athemes.com/widget/gallery/',
 			'class'         => 'aThemes_Addons\Widgets\Gallery',
@@ -581,8 +481,6 @@ function athemes_addons_get_widgets() {
 		'image-accordion' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Image accordion', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Showcase images inside an accordion', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/image-accordion/',
 			'preview_url'   => 'https://addons.athemes.com/widget/image-accordion/',
 			'class'         => 'aThemes_Addons\Widgets\Image_Accordion',
@@ -593,8 +491,6 @@ function athemes_addons_get_widgets() {
 		'advanced-social' => array(
 			'pro'           => false,
 			'category'      => 'social',
-			'title'         => esc_html__( 'Advanced Social Icons', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display social icons with advanced styling options', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/advanced-social-icons/',
 			'preview_url'   => 'https://addons.athemes.com/widget/advanced-social/',
 			'class'         => 'aThemes_Addons\Widgets\Advanced_Social',
@@ -605,8 +501,6 @@ function athemes_addons_get_widgets() {
 		'woo-product-grid'  => array(
 			'pro'           => false,
 			'category'      => 'woocommerce',
-			'title'         => esc_html__( 'Woo Product Grid', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Highly-customizable WooCommerce product grid', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/woo-product-grid/',
 			'preview_url'   => 'https://addons.athemes.com/widget/woo-products-grid/',
 			'class'         => 'aThemes_Addons\Widgets\Woo_Product_Grid',
@@ -617,8 +511,6 @@ function athemes_addons_get_widgets() {
 		'logo-carousel' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Logo Carousel', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display your clients logos in a carousel', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/logo-carousel/',
 			'preview_url'   => 'https://addons.athemes.com/widget/logo-carousel/',
 			'class'         => 'aThemes_Addons\Widgets\Logo_Carousel',
@@ -629,8 +521,6 @@ function athemes_addons_get_widgets() {
 		'table' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Table', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Create responsive tables with ease', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/table/',
 			'preview_url'   => 'https://addons.athemes.com/widget/table/',
 			'class'         => 'aThemes_Addons\Widgets\Table',
@@ -641,8 +531,6 @@ function athemes_addons_get_widgets() {
 		'pdf-viewer' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'PDF Viewer', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Embed PDF files with a viewer', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/pdf-viewer/',
 			'preview_url'   => 'https://addons.athemes.com/widget/pdf-viewer/',
 			'class'         => 'aThemes_Addons\Widgets\PDF_Viewer',
@@ -653,8 +541,6 @@ function athemes_addons_get_widgets() {
 		'coupon-code' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Coupon Code', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display a coupon code with custom styling', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/coupon-code/',
 			'preview_url'   => 'https://addons.athemes.com/widget/coupon-code/',
 			'class'         => 'aThemes_Addons\Widgets\Coupon_Code',
@@ -665,8 +551,6 @@ function athemes_addons_get_widgets() {
 		'charts' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Charts', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display animated charts with custom data', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/charts/',
 			'preview_url'   => 'https://addons.athemes.com/widget/charts/',
 			'class'         => 'aThemes_Addons\Widgets\Charts',
@@ -677,8 +561,6 @@ function athemes_addons_get_widgets() {
 		'progress-bar' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Progress Bar', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display progress bars with custom styles', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/progress-bar/',
 			'preview_url'   => 'https://addons.athemes.com/widget/progress-bar/',
 			'class'         => 'aThemes_Addons\Widgets\Progress_Bar',
@@ -689,8 +571,6 @@ function athemes_addons_get_widgets() {
 		'events-calendar' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Google Calendar', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display events from your Google Calendar', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/google-calendar/',
 			'preview_url'   => 'https://addons.athemes.com/widget/google-calendar/',
 			'class'         => 'aThemes_Addons\Widgets\Events_Calendar',
@@ -701,8 +581,6 @@ function athemes_addons_get_widgets() {
 		'posts-timeline' => array(
 			'pro'           => false,
 			'category'      => 'posts',
-			'title'         => esc_html__( 'Post Timeline', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display posts in a timeline layout', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/post-timeline/',
 			'preview_url'   => 'https://addons.athemes.com/widget/posts-timeline/',
 			'class'         => 'aThemes_Addons\Widgets\Posts_Timeline',
@@ -713,8 +591,6 @@ function athemes_addons_get_widgets() {
 		'news-ticker' => array(
 			'pro'           => false,
 			'category'      => 'posts',
-			'title'         => esc_html__( 'News Ticker', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Display posts in a news ticker', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/news-ticker/',
 			'preview_url'   => 'https://addons.athemes.com/widget/news-ticker/',
 			'class'         => 'aThemes_Addons\Widgets\News_Ticker',
@@ -725,8 +601,6 @@ function athemes_addons_get_widgets() {
 		'video-popup' => array(
 			'pro'           => false,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Video Popup', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Open videos in a lightbox popup', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/video-popup/',
 			'preview_url'   => 'https://addons.athemes.com/widget/video-popup/',
 			'class'         => 'aThemes_Addons\Widgets\Video_Popup',
@@ -737,8 +611,6 @@ function athemes_addons_get_widgets() {
 		'content-protection' => array(
 			'pro'           => true,
 			'category'      => 'content',
-			'title'         => esc_html__( 'Content Protection', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Protect a template through password or user-role', 'athemes-addons-elementor' ),
 			'tutorial_url'  => 'https://docs.athemes.com/article/content-protection/',
 			'preview_url'   => 'https://addons.athemes.com/widget/content-protection/',
 			'class'         => 'aThemes_Addons\Widgets\Content_Protection',
@@ -746,9 +618,319 @@ function athemes_addons_get_widgets() {
 			'has_scripts'   => false,
 			'default'       => false,
 		),
+		'taxonomy-terms' => array(
+			'pro'           => true,
+			'category'      => 'general',
+			'tutorial_url'  => 'https://docs.athemes.com/article/pro-taxonomy-terms/',
+			'preview_url'   => 'https://addons.athemes.com/widget/taxonomy-terms/',
+			'class'         => 'aThemes_Addons\Widgets\Taxonomy_Terms',
+			'has_styles'    => true,
+			'has_scripts'   => false,
+		),  
+		'audio-player' => array(
+			'pro'           => true,
+			'category'      => 'content',
+			'tutorial_url'  => 'https://docs.athemes.com/article/pro-audio-player/',
+			'preview_url'   => 'https://addons.athemes.com/widget/audio-player/',
+			'class'         => 'aThemes_Addons\Widgets\Audio_Player',
+			'has_styles'    => false,
+			'has_scripts'   => false,
+			'default'       => false,
+		),  
 	);
 
 	return apply_filters( 'athemes_addons_widgets', $widgets );
+}
+
+/**
+ * Get the translated widgets
+ * 
+ * @return array
+ */
+function athemes_addons_get_translated_widgets() {
+	$widgets = athemes_addons_get_widgets();
+	$translation_data = athemes_addons_get_widgets_translation_data();
+
+	foreach ( $widgets as $widget_id => $widget ) {
+		$widgets[ $widget_id ]['title'] = $translation_data[ $widget_id ]['title'];
+		$widgets[ $widget_id ]['desc'] = $translation_data[ $widget_id ]['desc'];
+	}
+
+	return $widgets;
+}
+
+/**
+ * Get the translation data for the widgets
+ * 
+ * @return array
+ */
+function athemes_addons_get_widgets_translation_data() {
+	return apply_filters( 'athemes_addons_widgets_translation_data', array(
+		'posts-list' => array(
+			'title' => esc_html__( 'Posts list', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display a list of posts with multiple skins', 'athemes-addons-elementor' ),
+		),
+		'posts-carousel' => array(
+			'title' => esc_html__( 'Post Carousel', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display a carousel of posts with multiple skins', 'athemes-addons-elementor' ),
+		),
+		'advanced-button' => array(
+			'title' => esc_html__( 'Advanced Button', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Create advanced buttons with hover effects', 'athemes-addons-elementor' ),
+		),
+		'advanced-tabs' => array(
+			'title' => esc_html__( 'Advanced Tabs', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Tabs with custom content and templates support', 'athemes-addons-elementor' ),
+		),
+		'advanced-carousel' => array(
+			'title' => esc_html__( 'Advanced Carousel', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Carousel with support for images, custom content, videos and templates', 'athemes-addons-elementor' ),
+		),
+		'testimonials' => array(
+			'title' => esc_html__( 'Testimonials', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display testimonials in a carousel', 'athemes-addons-elementor' ),
+		),
+		'animated-heading' => array(
+			'title' => esc_html__( 'Animated Heading', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Typing effect for any heading or text', 'athemes-addons-elementor' ),
+		),
+		'dual-heading' => array(
+			'title' => esc_html__( 'Dual Heading', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Style two parts of a heading individually for amazing effects', 'athemes-addons-elementor' ),
+		),
+		'advanced-heading' => array(
+			'title' => esc_html__( 'Advanced Heading', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Create advanced headings with multiple styles', 'athemes-addons-elementor' ),
+		),
+		'creative-button' => array(
+			'title' => esc_html__( 'Creative Button', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Multiple creative button designs', 'athemes-addons-elementor' ),
+		),
+		'whatsapp-chat' => array(
+			'title' => esc_html__( 'WhatsApp Chat', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add a WhatsApp chat button to your site', 'athemes-addons-elementor' ),
+		),
+		'telegram-chat' => array(
+			'title' => esc_html__( 'Telegram Chat', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add a Telegram chat button to your site', 'athemes-addons-elementor' ),
+		),
+		'google-reviews' => array(
+			'title' => esc_html__( 'Google Reviews', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display your Google Reviews', 'athemes-addons-elementor' ),
+		),
+		'advanced-google-maps' => array(
+			'title' => esc_html__( 'Advanced Google Maps', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Embed interactive maps with ease', 'athemes-addons-elementor' ),
+		),
+		'image-hotspots' => array(
+			'title' => esc_html__( 'Image Hotspots', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add animated hotposts over any image', 'athemes-addons-elementor' ),
+		),
+		'image-card' => array(
+			'title' => esc_html__( 'Image Card', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Combine visuals and text seamlessly', 'athemes-addons-elementor' ),
+		),
+		'social-proof' => array(
+			'title' => esc_html__( 'Social Proof', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display social proof in a stylish manner', 'athemes-addons-elementor' ),
+		),
+		'modal' => array(
+			'title' => esc_html__( 'Modal', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Create modals with custom content', 'athemes-addons-elementor' ),
+		),
+		'click-to-call' => array(
+			'title' => esc_html__( 'Click to Call', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add a click to call button to your pages', 'athemes-addons-elementor' ),
+		),
+		'service-box' => array(
+			'title' => esc_html__( 'Service Box', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display your services with multiple skins', 'athemes-addons-elementor' ),
+		),
+		'service-group' => array(
+			'title' => esc_html__( 'Service Group', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display your services in a group', 'athemes-addons-elementor' ),
+		),
+		'contact-form7' => array(
+			'title' => esc_html__( 'Contact Form 7', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Full styling control for any form built with Contact Form 7', 'athemes-addons-elementor' ),
+		),
+		'ninja-forms' => array(
+			'title' => esc_html__( 'Ninja Forms', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Full styling control for any form built with Ninja Forms', 'athemes-addons-elementor' ),
+		),
+		'wpforms' => array(
+			'title' => esc_html__( 'WPForms', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Full styling control for any form built with WPForms', 'athemes-addons-elementor' ),
+		),
+		'gravity-forms' => array(
+			'title' => esc_html__( 'Gravity Forms', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Full styling control for any form built with Gravity Forms', 'athemes-addons-elementor' ),
+		),
+		'weforms' => array(
+			'title' => esc_html__( 'weForms', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Full styling control for any form built with weForms', 'athemes-addons-elementor' ),
+		),
+		'mailchimp' => array(
+			'title' => esc_html__( 'Mailchimp', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Connect a form to any Mailchimp list', 'athemes-addons-elementor' ),
+		),
+		'content-switcher' => array(
+			'title' => esc_html__( 'Content Switcher', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Interactive toggle for seamless content display', 'athemes-addons-elementor' ),
+		),
+		'business-hours' => array(
+			'title' => esc_html__( 'Business Hours', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display your business hours with full styling', 'athemes-addons-elementor' ),
+		),
+		'before-after-image' => array(
+			'title' => esc_html__( 'Before/After Image', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Compare two images by dragging a slider', 'athemes-addons-elementor' ),
+		),
+		'team-member' => array(
+			'title' => esc_html__( 'Team Member', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display a team member with bio and socials', 'athemes-addons-elementor' ),
+		),
+		'team-carousel' => array(
+			'title' => esc_html__( 'Team Carousel', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display a carousel of team members', 'athemes-addons-elementor' ),
+		),
+		'content-reveal' => array(
+			'title' => esc_html__( 'Content Reveal', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Save up space and reveal content on click', 'athemes-addons-elementor' ),
+		),
+		'countdown' => array(
+			'title' => esc_html__( 'Countdown', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Countdown timer with multiple skins', 'athemes-addons-elementor' ),
+		),
+		'flip-box' => array(
+			'title' => esc_html__( 'Flip Box', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'A fancy and interactive way to display content', 'athemes-addons-elementor' ),
+		),
+		'offcanvas' => array(
+			'title' => esc_html__( 'Offcanvas Content', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Create offcanvas content with ease', 'athemes-addons-elementor' ),
+		),
+		'dual-buttons' => array(
+			'title' => esc_html__( 'Dual Buttons', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Two side-by-side buttons with individual styling', 'athemes-addons-elementor' ),
+		),
+		'image-scroll' => array(
+			'title' => esc_html__( 'Image Scroll', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Scroll an image by hovering', 'athemes-addons-elementor' ),
+		),
+		'timeline' => array(
+			'title' => esc_html__( 'Timeline', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display events in a timeline layout', 'athemes-addons-elementor' ),
+		),
+		'video-gallery' => array(
+			'title' => esc_html__( 'Video Gallery', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Create and display a gallery of videos', 'athemes-addons-elementor' ),
+		),
+		'video-playlist' => array(
+			'title' => esc_html__( 'Video Playlist', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Organize and display videos in a playlist', 'athemes-addons-elementor' ),
+		),
+		'video-carousel' => array(
+			'title' => esc_html__( 'Video Carousel', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display a carousel of videos', 'athemes-addons-elementor' ),
+		),
+		'lottie' => array(
+			'title' => esc_html__( 'Lottie', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add Lottie animations to your pages', 'athemes-addons-elementor' ),
+		),
+		'pricing-table' => array(
+			'title' => esc_html__( 'Pricing Table', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Create advanced pricing tables with ease', 'athemes-addons-elementor' ),
+		),
+		'pricing-list' => array(
+			'title' => esc_html__( 'Pricing List', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Easily list your pricing plans with style', 'athemes-addons-elementor' ),
+		),
+		'call-to-action' => array(
+			'title' => esc_html__( 'Call to Action', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Quickly draw attention and increase conversions', 'athemes-addons-elementor' ),
+		),
+		'slider' => array(
+			'title' => esc_html__( 'Slider', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Engaging and responsive content slider', 'athemes-addons-elementor' ),
+		),
+		'food-menu' => array(
+			'title' => esc_html__( 'Food Menu', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Easily display your restaurant menu', 'athemes-addons-elementor' ),
+		),
+		'page-list' => array(
+			'title' => esc_html__( 'Page List', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display a list of pages or custom links', 'athemes-addons-elementor' ),
+		),
+		'gallery' => array(
+			'title' => esc_html__( 'Gallery', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Create beautiful galleries with ease', 'athemes-addons-elementor' ),
+		),
+		'image-accordion' => array(
+			'title' => esc_html__( 'Image accordion', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Showcase images inside an accordion', 'athemes-addons-elementor' ),
+		),
+		'advanced-social' => array(
+			'title' => esc_html__( 'Advanced Social Icons', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display social icons with advanced styling options', 'athemes-addons-elementor' ),
+		),
+		'woo-product-grid' => array(
+			'title' => esc_html__( 'Woo Product Grid', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Highly-customizable WooCommerce product grid', 'athemes-addons-elementor' ),
+		),
+		'logo-carousel' => array(
+			'title' => esc_html__( 'Logo Carousel', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display your clients logos in a carousel', 'athemes-addons-elementor' ),
+		),
+		'table' => array(
+			'title' => esc_html__( 'Table', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Create responsive tables with ease', 'athemes-addons-elementor' ),
+		),
+		'pdf-viewer' => array(
+			'title' => esc_html__( 'PDF Viewer', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Embed PDF files with a viewer', 'athemes-addons-elementor' ),
+		),
+		'coupon-code' => array(
+			'title' => esc_html__( 'Coupon Code', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display a coupon code with custom styling', 'athemes-addons-elementor' ),
+		),
+		'charts' => array(
+			'title' => esc_html__( 'Charts', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display animated charts with custom data', 'athemes-addons-elementor' ),
+		),
+		'progress-bar' => array(
+			'title' => esc_html__( 'Progress Bar', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display progress bars with custom styles', 'athemes-addons-elementor' ),
+		),
+		'events-calendar' => array(
+			'title' => esc_html__( 'Google Calendar', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display events from your Google Calendar', 'athemes-addons-elementor' ),
+		),
+		'posts-timeline' => array(
+			'title' => esc_html__( 'Post Timeline', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display posts in a timeline layout', 'athemes-addons-elementor' ),
+		),
+		'news-ticker' => array(
+			'title' => esc_html__( 'News Ticker', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display posts in a news ticker', 'athemes-addons-elementor' ),
+		),
+		'video-popup' => array(
+			'title' => esc_html__( 'Video Popup', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Open videos in a lightbox popup', 'athemes-addons-elementor' ),
+		),
+		'content-protection' => array(
+			'title' => esc_html__( 'Content Protection', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Protect a template through password or user-role', 'athemes-addons-elementor' ),
+		),
+		'taxonomy-terms' => array(
+			'title' => esc_html__( 'Taxonomy Terms', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display taxonomy terms in a grid or list layout', 'athemes-addons-elementor' ),
+		),
+		'audio-player' => array(
+			'title' => esc_html__( 'Audio Player', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Display an audio player with custom styles', 'athemes-addons-elementor' ),
+		),
+	) );
 }
 
 /**
@@ -760,8 +942,6 @@ function athemes_addons_get_extensions() {
 	$extensions = array(
 		'custom-css' => array(
 			'pro'           => false,
-			'title'         => esc_html__( 'Custom CSS', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Add custom CSS to any element', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Custom_CSS',
@@ -770,8 +950,6 @@ function athemes_addons_get_extensions() {
 		),
 		'page-duplicator' => array(
 			'pro'           => false,
-			'title'         => esc_html__( 'Page Duplicator', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Duplicate any kind of page with a single click', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Page_Duplicator',
@@ -780,8 +958,6 @@ function athemes_addons_get_extensions() {
 		),
 		'custom-js' => array(
 			'pro'           => false,
-			'title'         => esc_html__( 'Custom Javascript', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Add custom JS to specific pages', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Custom_JS',
@@ -790,8 +966,6 @@ function athemes_addons_get_extensions() {
 		),
 		'parallax' => array(
 			'pro'           => false,
-			'title'         => esc_html__( 'Parallax', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Easy-to-use parallax effects', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Parallax',
@@ -800,8 +974,6 @@ function athemes_addons_get_extensions() {
 		),
 		'content-protection' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Content Protection', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Protect a section through password or user-role', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Content_Protection',
@@ -810,8 +982,6 @@ function athemes_addons_get_extensions() {
 		),
 		'cursor-effects' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Cursor Effects', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Add custom cursor effects to your site', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Cursor_Effects',
@@ -820,8 +990,6 @@ function athemes_addons_get_extensions() {
 		),
 		'dynamic-tags' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Dynamic Tags', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Easily add dynamic data', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Dynamic_Tags',
@@ -830,8 +998,6 @@ function athemes_addons_get_extensions() {
 		),
 		'display-conditions' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Display Conditions', 'athemes-addons-elementor' ),
-			'desc'          => esc_html__( 'Show or hide elements based on conditions', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Display_Conditions',
@@ -840,8 +1006,6 @@ function athemes_addons_get_extensions() {
 		),
 		'animation-effects' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Animation Effects', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Add animation effects to any element', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Animation_Effects',
@@ -850,8 +1014,6 @@ function athemes_addons_get_extensions() {
 		),
 		'glassmorphism' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Glassmorphism', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Create a frosted glass effect', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Glassmorphism',
@@ -860,8 +1022,6 @@ function athemes_addons_get_extensions() {
 		),
 		'particles' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Particles', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Add animated particles to any section', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Particles',
@@ -870,8 +1030,6 @@ function athemes_addons_get_extensions() {
 		),
 		'sticky' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Sticky', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Make any section sticky on scroll', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Sticky',
@@ -880,8 +1038,6 @@ function athemes_addons_get_extensions() {
 		),
 		'tooltips' => array(
 			'pro'           => true,
-			'title'         => esc_html__( 'Tooltips', 'athemes-addons-elementor' ),
-			'desc'           => esc_html__( 'Add tooltips to any element', 'athemes-addons-elementor' ),
 			'tutorial_url'  => '',
 			'preview_url'   => '',
 			'class'         => 'aThemes_Addons\Extensions\Tooltips',
@@ -892,6 +1048,85 @@ function athemes_addons_get_extensions() {
 
 	return apply_filters( 'athemes_addons_extensions', $extensions );
 }
+
+/** 
+ * Get the translated extensions
+ * 
+ * @return array
+ */
+function athemes_addons_get_translated_extensions() {
+	$extensions = athemes_addons_get_extensions();
+	$translation_data = athemes_addons_get_extensions_translation_data();
+
+	foreach ( $extensions as $extension_id => $extension ) {
+		$extensions[ $extension_id ]['title'] = $translation_data[ $extension_id ]['title'];
+		$extensions[ $extension_id ]['desc'] = $translation_data[ $extension_id ]['desc'];
+	}
+
+	return $extensions;
+}
+
+/**
+ * Get the translation data for the extensions
+ * 
+ * @return array
+ */
+function athemes_addons_get_extensions_translation_data() {
+	return apply_filters( 'athemes_addons_extensions_translation_data', array(
+		'custom-css' => array(
+			'title' => esc_html__( 'Custom CSS', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add custom CSS to any element', 'athemes-addons-elementor' ),
+		),
+		'glassmorphism' => array(
+			'title' => esc_html__( 'Glassmorphism', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add glassmorphism effect to any element', 'athemes-addons-elementor' ),
+		),
+		'particles' => array(
+			'title' => esc_html__( 'Particles', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add animated particles to any section', 'athemes-addons-elementor' ),
+		),
+		'sticky' => array(
+			'title' => esc_html__( 'Sticky', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Make any section sticky on scroll', 'athemes-addons-elementor' ),
+		),
+		'tooltips' => array(
+			'title' => esc_html__( 'Tooltips', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add tooltips to any element', 'athemes-addons-elementor' ),
+		),
+		'page-duplicator' => array(
+			'title' => esc_html__( 'Page Duplicator', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Duplicate any kind of page with a single click', 'athemes-addons-elementor' ),
+		),
+		'custom-js' => array(
+			'title' => esc_html__( 'Custom Javascript', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add custom JS to specific pages', 'athemes-addons-elementor' ),
+		),
+		'parallax' => array(
+			'title' => esc_html__( 'Parallax', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Easy-to-use parallax effects', 'athemes-addons-elementor' ),
+		),
+		'content-protection' => array(
+			'title' => esc_html__( 'Content Protection', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Protect a section through password or user-role', 'athemes-addons-elementor' ),
+		),
+		'cursor-effects' => array(
+			'title' => esc_html__( 'Cursor Effects', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add custom cursor effects to your site', 'athemes-addons-elementor' ),
+		),
+		'dynamic-tags' => array(
+			'title' => esc_html__( 'Dynamic Tags', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Easily add dynamic data', 'athemes-addons-elementor' ),
+		),
+		'display-conditions' => array(
+			'title' => esc_html__( 'Display Conditions', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Show or hide elements based on conditions', 'athemes-addons-elementor' ),
+		),
+		'animation-effects' => array(
+			'title' => esc_html__( 'Animation Effects', 'athemes-addons-elementor' ),
+			'desc'  => esc_html__( 'Add animation effects to any element', 'athemes-addons-elementor' ),
+		),
+	) );
+}   
 
 /**
  * Get the post date

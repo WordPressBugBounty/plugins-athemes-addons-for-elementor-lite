@@ -116,7 +116,7 @@ class Pricing_Table extends Widget_Base {
 	 */
 	public function get_custom_help_url() {
 		return 'https://docs.athemes.com/article/pricing-table/';
-	}	
+	}   
 
 	/**
 	 * Register icon list widget controls.
