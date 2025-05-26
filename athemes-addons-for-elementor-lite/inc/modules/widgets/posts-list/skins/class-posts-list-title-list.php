@@ -45,7 +45,7 @@ class Posts_List_Skin3 extends Skin_Base {
 	 * Get the title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Title List', 'athemes-addons-elementor' );
+		return esc_html__( 'Title List', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -58,7 +58,7 @@ class Posts_List_Skin3 extends Skin_Base {
 		$controls->start_controls_section(
 			'section_counter_style',
 			[
-				'label' => __( 'Counter', 'athemes-addons-elementor' ),
+				'label' => __( 'Counter', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'_skin' => $this->get_id(),
@@ -69,7 +69,7 @@ class Posts_List_Skin3 extends Skin_Base {
 		$controls->add_control(
 			'counter_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .list-counter' => 'color: {{VALUE}};',

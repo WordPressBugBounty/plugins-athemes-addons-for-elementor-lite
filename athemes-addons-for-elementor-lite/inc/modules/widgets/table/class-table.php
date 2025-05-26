@@ -45,7 +45,7 @@ class Table extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Table', 'athemes-addons-elementor' );
+		return __( 'Table', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -130,19 +130,19 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_table',
 			[
-				'label' => __( 'Source', 'athemes-addons-elementor' ),
+				'label' => __( 'Source', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'source',
 			array(
-				'label'   => __( 'Source', 'athemes-addons-elementor' ),
+				'label'   => __( 'Source', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'manual',
 				'options' => array(
-					'manual'    => __( 'Manual', 'athemes-addons-elementor' ),
-					'csv'       => __( 'CSV File', 'athemes-addons-elementor' ),
+					'manual'    => __( 'Manual', 'athemes-addons-for-elementor-lite' ),
+					'csv'       => __( 'CSV File', 'athemes-addons-for-elementor-lite' ),
 				),
 			)
 		);
@@ -150,12 +150,12 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'csv_file',
 			[
-				'label' => __( 'CSV File', 'athemes-addons-elementor' ),
+				'label' => __( 'CSV File', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'media_types' => [
 					'csv',
 				],
-				'description' => __( 'Upload a CSV file.', 'athemes-addons-elementor' ),
+				'description' => __( 'Upload a CSV file.', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'source' => 'csv',
 				],
@@ -165,7 +165,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'csv_delimiter',
 			[
-				'label' => __( 'Delimiter', 'athemes-addons-elementor' ),
+				'label' => __( 'Delimiter', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => ',',
 				'condition' => [
@@ -177,10 +177,10 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'csv_header',
 			[
-				'label' => __( 'Import first row as header', 'athemes-addons-elementor' ),
+				'label' => __( 'Import first row as header', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'condition' => [
@@ -195,7 +195,7 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_table_header',
 			[
-				'label' => __( 'Header', 'athemes-addons-elementor' ),
+				'label' => __( 'Header', 'athemes-addons-for-elementor-lite' ),
 			]
 		);  
 
@@ -204,9 +204,9 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'header_name',
 			[
-				'label' => __( 'Name', 'athemes-addons-elementor' ),
+				'label' => __( 'Name', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Name', 'athemes-addons-elementor' ),
+				'default' => __( 'Name', 'athemes-addons-for-elementor-lite' ),
 				'show_label' => true,
 			]
 		);
@@ -214,8 +214,8 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'header_span',
 			[
-				'label' => __( 'Span', 'athemes-addons-elementor' ),
-				'description' => __( 'How many columns this header should span.', 'athemes-addons-elementor' ),
+				'label' => __( 'Span', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'How many columns this header should span.', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 1,
 				'show_label' => true,
@@ -225,10 +225,10 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'header_icon_switcher',
 			[
-				'label' => __( 'Icon', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'show_label' => true,
@@ -238,15 +238,15 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'header_icon_type',
 			[
-				'label' => __( 'Icon Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'icon' => [
-						'title' => __( 'Icon', 'athemes-addons-elementor' ),
+						'title' => __( 'Icon', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-star',
 					],
 					'image' => [
-						'title' => __( 'Image', 'athemes-addons-elementor' ),
+						'title' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-image',
 					],
 				],
@@ -261,7 +261,7 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'header_icon',
 			[
-				'label' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'default' => [
@@ -278,7 +278,7 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'header_image',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'condition' => [
 					'header_icon_switcher'  => 'yes',
@@ -294,22 +294,22 @@ class Table extends Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'header_name' => __( 'Column #1', 'athemes-addons-elementor' ),
+						'header_name' => __( 'Column #1', 'athemes-addons-for-elementor-lite' ),
 						'header_span' => 1,
 						'header_icon_switcher' => 'no',
 					],
 					[
-						'header_name' => __( 'Column #2', 'athemes-addons-elementor' ),
+						'header_name' => __( 'Column #2', 'athemes-addons-for-elementor-lite' ),
 						'header_span' => 1,
 						'header_icon_switcher' => 'no',
 					],
 					[
-						'header_name' => __( 'Column #3', 'athemes-addons-elementor' ),
+						'header_name' => __( 'Column #3', 'athemes-addons-for-elementor-lite' ),
 						'header_span' => 1,
 						'header_icon_switcher' => 'no',
 					],
 					[
-						'header_name' => __( 'Column #4', 'athemes-addons-elementor' ),
+						'header_name' => __( 'Column #4', 'athemes-addons-for-elementor-lite' ),
 						'header_span' => 1,
 						'header_icon_switcher' => 'no',
 					],
@@ -321,10 +321,10 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'disable_header',
 			[
-				'label' => __( 'Disable Header', 'athemes-addons-elementor' ),
+				'label' => __( 'Disable Header', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'show_label' => true,
@@ -337,7 +337,7 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_table_content',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -346,11 +346,11 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'element_type',
 			[
-				'label' => __( 'Element Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Element Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'row'       => __( 'Row', 'athemes-addons-elementor' ),
-					'column'    => __( 'Column', 'athemes-addons-elementor' ),
+					'row'       => __( 'Row', 'athemes-addons-for-elementor-lite' ),
+					'column'    => __( 'Column', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'row',
 				'show_label' => true,
@@ -362,34 +362,34 @@ class Table extends Widget_Base {
 		$repeater->start_controls_tab(
 			'cell_content',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$repeater->add_control(
 			'cell_content_type',
 			[
-				'label' => __( 'Content Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Content Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'text' => [
-						'title' => __( 'Text', 'athemes-addons-elementor' ),
+						'title' => __( 'Text', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-field',
 					],
 					'icon' => [
-						'title' => __( 'Icon', 'athemes-addons-elementor' ),
+						'title' => __( 'Icon', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-star',
 					],
 					'image' => [
-						'title' => __( 'Image', 'athemes-addons-elementor' ),
+						'title' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-image',
 					],
 					'wywiwyg' => [
-						'title' => __( 'WYSIWYG', 'athemes-addons-elementor' ),
+						'title' => __( 'WYSIWYG', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-area',
 					],
 					'template' => [
-						'title' => __( 'Template', 'athemes-addons-elementor' ),
+						'title' => __( 'Template', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-document-file',
 					],
 				],
@@ -401,9 +401,9 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_text',
 			[
-				'label' => __( 'Text', 'athemes-addons-elementor' ),
+				'label' => __( 'Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Text', 'athemes-addons-elementor' ),
+				'default' => __( 'Text', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'cell_content_type' => 'text',
 				],
@@ -414,7 +414,7 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_icon',
 			[
-				'label' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'default' => [
@@ -430,7 +430,7 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_image',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'condition' => [
 					'cell_content_type' => 'image',
@@ -441,9 +441,9 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_wysiwyg',
 			[
-				'label' => __( 'WYSIWYG', 'athemes-addons-elementor' ),
+				'label' => __( 'WYSIWYG', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::WYSIWYG,
-				'default' => __( 'WYSIWYG', 'athemes-addons-elementor' ),
+				'default' => __( 'WYSIWYG', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'cell_content_type' => 'wywiwyg',
 				],
@@ -453,11 +453,24 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_template',
 			[
-				'label' => __( 'Template', 'athemes-addons-elementor' ),
+				'label' => __( 'Template', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => $this->get_available_templates(),
 				'condition' => [
 					'cell_content_type' => 'template',
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'template_link',
+			[
+				'label' => '',
+				'type' => 'aafe-template-link',
+				'connected_option' => 'cell_template',
+				'condition' => [
+					'cell_content_type' => 'template',
+					'cell_template!' => '',
 				],
 			]
 		);
@@ -467,15 +480,15 @@ class Table extends Widget_Base {
 		$repeater->start_controls_tab(
 			'cell_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$repeater->add_control(
 			'cell_span',
 			[
-				'label' => __( 'Span', 'athemes-addons-elementor' ),
-				'description' => __( 'How many columns this cell should span.', 'athemes-addons-elementor' ),
+				'label' => __( 'Span', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'How many columns this cell should span.', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 1,
 				'show_label' => true,
@@ -485,8 +498,8 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_row_span',
 			[
-				'label' => __( 'Row Span', 'athemes-addons-elementor' ),
-				'description' => __( 'How many rows this cell should span.', 'athemes-addons-elementor' ),
+				'label' => __( 'Row Span', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'How many rows this cell should span.', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 1,
 				'show_label' => true,
@@ -496,10 +509,10 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_header',
 			[
-				'label' => __( 'Use as Header', 'athemes-addons-elementor' ),
+				'label' => __( 'Use as Header', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'show_label' => true,
@@ -510,7 +523,7 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'color: {{VALUE}}',
@@ -522,7 +535,7 @@ class Table extends Widget_Base {
 		$repeater->add_control(
 			'cell_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'background-color: {{VALUE}}',
@@ -543,7 +556,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'row',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -551,7 +564,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'column',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text #1', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text #1', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -559,7 +572,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'column',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text #2', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text #2', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -567,7 +580,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'column',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text #3', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text #3', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -575,7 +588,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'column',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text #4', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text #4', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -583,7 +596,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'row',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -591,7 +604,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'column',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text #5', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text #5', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -599,7 +612,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'column',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text #6', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text #6', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -607,7 +620,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'column',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text #7', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text #7', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -615,7 +628,7 @@ class Table extends Widget_Base {
 					[
 						'element_type' => 'column',
 						'cell_content_type' => 'text',
-						'cell_text' => __( 'Text #8', 'athemes-addons-elementor' ),
+						'cell_text' => __( 'Text #8', 'athemes-addons-for-elementor-lite' ),
 						'cell_span' => 1,
 						'cell_row_span' => 1,
 						'cell_header' => 'no',
@@ -630,20 +643,20 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'highlight_mode',
 			[
-				'label' => __( 'Highlight Mode', 'athemes-addons-elementor' ),
+				'label' => __( 'Highlight Mode', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'none'          => __( 'None', 'athemes-addons-elementor' ),
-					'row'           => __( 'Row', 'athemes-addons-elementor' ),
-					'rowcolumn'     => __( 'Row &amp; column', 'athemes-addons-elementor' ),
-					'cell'          => __( 'Cell', 'athemes-addons-elementor' ),
+					'none'          => __( 'None', 'athemes-addons-for-elementor-lite' ),
+					'row'           => __( 'Row', 'athemes-addons-for-elementor-lite' ),
+					'rowcolumn'     => __( 'Row &amp; column', 'athemes-addons-for-elementor-lite' ),
+					'cell'          => __( 'Cell', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'row',
 				'prefix_class' => 'aafe-table-highlight-',
@@ -653,10 +666,10 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'enable_sorting',
 			[
-				'label' => __( 'Enable Sorting', 'athemes-addons-elementor' ),
+				'label' => __( 'Enable Sorting', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'show_label' => true,
@@ -666,10 +679,10 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'enable_search',
 			[
-				'label' => __( 'Enable Search', 'athemes-addons-elementor' ),
+				'label' => __( 'Enable Search', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'show_label' => true,
@@ -679,10 +692,10 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'enable_pagination',
 			[
-				'label' => __( 'Enable Pagination', 'athemes-addons-elementor' ),
+				'label' => __( 'Enable Pagination', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'show_label' => true,
@@ -692,7 +705,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'rows_per_page',
 			[
-				'label' => __( 'Rows per Page', 'athemes-addons-elementor' ),
+				'label' => __( 'Rows per Page', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 10,
 				'condition' => [
@@ -705,19 +718,19 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_alignment',
 			[
-				'label' => __( 'Pagination Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Pagination Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -736,17 +749,17 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_responsive',
 			[
-				'label' => __( 'Responsive', 'athemes-addons-elementor' ),
+				'label' => __( 'Responsive', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'enable_responsive',
 			[
-				'label' => __( 'Enable horizontal table scroll', 'athemes-addons-elementor' ),
+				'label' => __( 'Enable horizontal table scroll', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'show_label' => true,
@@ -757,7 +770,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'width',
 			[
-				'label' => __( 'Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -784,7 +797,7 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_wrapper_style',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -792,7 +805,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -804,7 +817,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -816,7 +829,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'wrapper_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table' => 'background-color: {{VALUE}};',
@@ -829,7 +842,7 @@ class Table extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'wrapper_border',
-				'label'     => esc_html__( 'Border', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .athemes-addons-table',
 				'separator' => 'before',
 			]
@@ -838,7 +851,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -850,7 +863,7 @@ class Table extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'wrapper_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-table',
 			]
 		);
@@ -858,7 +871,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_max_width',
 			[
-				'label' => __( 'Max Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Max Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -878,7 +891,7 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_table_style',
 			[
-				'label' => __( 'Table', 'athemes-addons-elementor' ),
+				'label' => __( 'Table', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);      
@@ -887,7 +900,7 @@ class Table extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'table_border',
-				'label'     => esc_html__( 'Border', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .athemes-addons-table table',
 			]
 		);
@@ -895,7 +908,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'table_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table table' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -908,11 +921,11 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'table_border_collapse',
 			[
-				'label' => __( 'Border Collapse', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Collapse', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'collapse'  => __( 'Collapse', 'athemes-addons-elementor' ),
-					'separate'  => __( 'Separate', 'athemes-addons-elementor' ),
+					'collapse'  => __( 'Collapse', 'athemes-addons-for-elementor-lite' ),
+					'separate'  => __( 'Separate', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'collapse',
 				'selectors' => [
@@ -927,7 +940,7 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_table_header_style',
 			[
-				'label' => __( 'Header', 'athemes-addons-elementor' ),
+				'label' => __( 'Header', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -935,7 +948,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -947,7 +960,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;',
@@ -962,19 +975,19 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_alignment',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -995,19 +1008,19 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_alignment_csv',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -1024,7 +1037,7 @@ class Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'header_typography',
-				'label' => __( 'Typography', 'athemes-addons-elementor' ),
+				'label' => __( 'Typography', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .aafe-table-header',
 			]
 		);
@@ -1032,7 +1045,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_icon_size',
 			[
-				'label' => __( 'Icon Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'range' => [
@@ -1053,12 +1066,12 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'header_icon_position',
 			[
-				'label' => __( 'Icon Position', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Position', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'before'    => __( 'Before', 'athemes-addons-elementor' ),
-					'after'     => __( 'After', 'athemes-addons-elementor' ),
-					'top'       => __( 'Top', 'athemes-addons-elementor' ),
+					'before'    => __( 'Before', 'athemes-addons-for-elementor-lite' ),
+					'after'     => __( 'After', 'athemes-addons-for-elementor-lite' ),
+					'top'       => __( 'Top', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'before',
 			]
@@ -1070,14 +1083,14 @@ class Table extends Widget_Base {
 		$this->start_controls_tab(
 			'header_normal',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'header_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-header' => 'color: {{VALUE}};',
@@ -1089,7 +1102,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'header_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-header' => 'background-color: {{VALUE}};',
@@ -1101,7 +1114,7 @@ class Table extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'header_border',
-				'label'     => esc_html__( 'Border', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .athemes-addons-table th',
 			]
 		);
@@ -1111,14 +1124,14 @@ class Table extends Widget_Base {
 		$this->start_controls_tab(
 			'header_hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'header_hover_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-header:hover' => 'color: {{VALUE}};',
@@ -1131,7 +1144,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'header_hover_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-header:hover' => 'background-color: {{VALUE}};',
@@ -1142,7 +1155,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'header_hover_border',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table th' => 'border-color: {{VALUE}};',
@@ -1159,7 +1172,7 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_table_content_style',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1167,7 +1180,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -1180,7 +1193,7 @@ class Table extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'content_border',
-				'label'     => esc_html__( 'Border', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .athemes-addons-table td',
 			]
 		);
@@ -1189,7 +1202,7 @@ class Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'content_typography',
-				'label' => __( 'Typography', 'athemes-addons-elementor' ),
+				'label' => __( 'Typography', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-table td',
 			]
 		);
@@ -1197,7 +1210,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'content_icon_color',
 			[
-				'label' => __( 'Icon Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table td svg' => 'fill: {{VALUE}};',
@@ -1210,14 +1223,14 @@ class Table extends Widget_Base {
 		$this->start_controls_tab(
 			'odd',
 			[
-				'label' => __( 'Odd', 'athemes-addons-elementor' ),
+				'label' => __( 'Odd', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'odd_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table tr:nth-child(odd) td' => 'color: {{VALUE}};',
@@ -1228,7 +1241,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'odd_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table tr:nth-child(odd) td' => 'background-color: {{VALUE}};',
@@ -1241,14 +1254,14 @@ class Table extends Widget_Base {
 		$this->start_controls_tab(
 			'even',
 			[
-				'label' => __( 'Even', 'athemes-addons-elementor' ),
+				'label' => __( 'Even', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'even_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table tr:nth-child(even) td' => 'color: {{VALUE}};',
@@ -1259,7 +1272,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'even_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table tr:nth-child(even) td' => 'background-color: {{VALUE}};',
@@ -1272,14 +1285,14 @@ class Table extends Widget_Base {
 		$this->start_controls_tab(
 			'hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table td:hover' => 'color: {{VALUE}};',
@@ -1290,7 +1303,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'hover_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-table td:hover' => 'background-color: {{VALUE}};',
@@ -1303,19 +1316,19 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'content_alignment',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -1330,7 +1343,7 @@ class Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_pagination_style',
 			[
-				'label' => __( 'Pagination', 'athemes-addons-elementor' ),
+				'label' => __( 'Pagination', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'enable_pagination' => 'yes',
@@ -1341,7 +1354,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -1353,7 +1366,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1373,14 +1386,14 @@ class Table extends Widget_Base {
 		$this->start_controls_tab(
 			'pagination_normal',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'pagination_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span' => 'color: {{VALUE}};',
@@ -1391,7 +1404,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'pagination_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span' => 'background-color: {{VALUE}};',
@@ -1402,7 +1415,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'pagination_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span' => 'border-color: {{VALUE}};',
@@ -1415,14 +1428,14 @@ class Table extends Widget_Base {
 		$this->start_controls_tab(
 			'pagination_hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'pagination_hover_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span:hover' => 'color: {{VALUE}};',
@@ -1433,7 +1446,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'pagination_hover_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span:hover' => 'background-color: {{VALUE}};',
@@ -1444,7 +1457,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'pagination_hover_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span:hover' => 'border-color: {{VALUE}};',
@@ -1457,14 +1470,14 @@ class Table extends Widget_Base {
 		$this->start_controls_tab(
 			'pagination_active',
 			[
-				'label' => __( 'Active', 'athemes-addons-elementor' ),
+				'label' => __( 'Active', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'pagination_active_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span.active' => 'color: {{VALUE}};',
@@ -1475,7 +1488,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'pagination_active_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span.active' => 'background-color: {{VALUE}};',
@@ -1486,7 +1499,7 @@ class Table extends Widget_Base {
 		$this->add_control(
 			'pagination_active_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span.active' => 'border-color: {{VALUE}};',
@@ -1501,7 +1514,7 @@ class Table extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .aafe-table-pagination span' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1546,7 +1559,7 @@ class Table extends Widget_Base {
 		<div <?php $this->print_render_attribute_string( 'table' ); ?> >
 			<?php if ( 'yes' === $settings['enable_search'] ) : ?>
 			<div class="aafe-table-search">
-				<input type="search" class="aafe-table-search-input" placeholder="<?php esc_attr_e( 'Search...', 'athemes-addons-elementor' ); ?>">
+				<input type="search" class="aafe-table-search-input" placeholder="<?php esc_attr_e( 'Search...', 'athemes-addons-for-elementor-lite' ); ?>">
 			</div>
 			<?php endif; ?>
 			<?php if ( 'manual' === $settings['source'] ) : ?>
@@ -1734,7 +1747,7 @@ class Table extends Widget_Base {
 	
 		$csv = $settings['csv_file']['url'];
 		if ( empty( $csv ) ) {
-			echo '<p>' . esc_html__( 'Please select a CSV file.', 'athemes-addons-elementor' ) . '</p>';
+			echo '<p>' . esc_html__( 'Please select a CSV file.', 'athemes-addons-for-elementor-lite' ) . '</p>';
 			return;
 		}
 	
@@ -1796,7 +1809,7 @@ class Table extends Widget_Base {
 			}
 			fclose( $handle ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose
 		} else {
-			echo '<p>' . esc_html__( 'Failed to open CSV file.', 'athemes-addons-elementor' ) . '</p>';
+			echo '<p>' . esc_html__( 'Failed to open CSV file.', 'athemes-addons-for-elementor-lite' ) . '</p>';
 		}
 
 		echo '</table>';

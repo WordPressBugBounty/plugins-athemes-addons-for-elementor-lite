@@ -58,7 +58,7 @@ class Before_After_Image extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Before/After Image', 'athemes-addons-elementor' );
+		return __( 'Before/After Image', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -141,14 +141,14 @@ class Before_After_Image extends Widget_Base {
 		$this->start_controls_section(
 			'section_images',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'image_before',
 			[
-				'label' => esc_html__( 'Image Before', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Image Before', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
@@ -162,17 +162,17 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'image_before_label',
 			[
-				'label' => __( 'Label', 'athemes-addons-elementor' ),
+				'label' => __( 'Label', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'show_label' => true,
-				'default' => __( 'Before', 'athemes-addons-elementor' ),
+				'default' => __( 'Before', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'image_after',
 			[
-				'label' => esc_html__( 'Image After', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Image After', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
@@ -187,10 +187,10 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'image_after_label',
 			[
-				'label' => __( 'Label', 'athemes-addons-elementor' ),
+				'label' => __( 'Label', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'show_label' => true,
-				'default' => __( 'After', 'athemes-addons-elementor' ),
+				'default' => __( 'After', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -199,19 +199,19 @@ class Before_After_Image extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'orientation',
 			[
-				'label' => __( 'Orientation', 'athemes-addons-elementor' ),
+				'label' => __( 'Orientation', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'horizontal',
 				'options' => [
-					'horizontal'    => __( 'Horizontal', 'athemes-addons-elementor' ),
-					'vertical'      => __( 'Vertical', 'athemes-addons-elementor' ),
+					'horizontal'    => __( 'Horizontal', 'athemes-addons-for-elementor-lite' ),
+					'vertical'      => __( 'Vertical', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -219,7 +219,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'offset',
 			[
-				'label' => __( 'Offset', 'athemes-addons-elementor' ),
+				'label' => __( 'Offset', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],        
 				'range' => [
@@ -239,10 +239,10 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'no_overlay',
 			[
-				'label' => __( 'Hide overlay', 'athemes-addons-elementor' ),
+				'label' => __( 'Hide overlay', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => true,
 				'default' => 'no',
 			]
@@ -251,10 +251,10 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'move_on_hover',
 			[
-				'label' => __( 'Move on hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Move on hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => true,
 				'default' => 'no',
 				'separator' => 'before',
@@ -264,10 +264,10 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'click_to_move',
 			[
-				'label' => __( 'Click to move', 'athemes-addons-elementor' ),
+				'label' => __( 'Click to move', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => true,
 				'default' => 'no',
 			]
@@ -278,7 +278,7 @@ class Before_After_Image extends Widget_Base {
 		$this->start_controls_section(
 			'section_image',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);      
@@ -286,7 +286,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_responsive_control(
 			'image_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],      
 				'selectors' => [
@@ -298,7 +298,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'image_border_radius',
 			[
-				'label' => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],      
 				'selectors' => [
@@ -328,7 +328,7 @@ class Before_After_Image extends Widget_Base {
 		$this->start_controls_section(
 			'section_overlay',
 			[
-				'label' => __( 'Overlay', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -336,7 +336,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'overlay_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-overlay:hover' => 'background-color: {{VALUE}};',
@@ -349,7 +349,7 @@ class Before_After_Image extends Widget_Base {
 		$this->start_controls_section(
 			'section_label',
 			[
-				'label' => __( 'Labels', 'athemes-addons-elementor' ),
+				'label' => __( 'Labels', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -357,7 +357,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'label_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-before-label::before, {{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-after-label::before' => 'color: {{VALUE}};',
@@ -368,7 +368,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'label_background_color',
 			[
-				'label' => __( 'Background color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-before-label::before, {{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-after-label::before' => 'background-color: {{VALUE}};',
@@ -379,7 +379,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'label_border_radius',
 			[
-				'label' => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],      
 				'selectors' => [
@@ -401,7 +401,7 @@ class Before_After_Image extends Widget_Base {
 		$this->start_controls_section(
 			'section_handle',
 			[
-				'label' => __( 'Handle', 'athemes-addons-elementor' ),
+				'label' => __( 'Handle', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -409,7 +409,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'handle_bg_color',
 			[
-				'label' => __( 'Background color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-handle' => 'background-color: {{VALUE}};',
@@ -420,7 +420,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'handle_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-left-arrow' => 'border-right-color: {{VALUE}};',
@@ -432,7 +432,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'handle_border_radius',
 			[
-				'label' => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],      
 				'selectors' => [
@@ -444,7 +444,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_responsive_control(
 			'handle_width',
 			[
-				'label' => __( 'Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],      
 				'range' => [
@@ -469,7 +469,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_responsive_control(
 			'handle_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],      
 				'range' => [
@@ -512,7 +512,7 @@ class Before_After_Image extends Widget_Base {
 		$this->add_control(
 			'divider_color',
 			[
-				'label' => __( 'Divider color', 'athemes-addons-elementor' ),
+				'label' => __( 'Divider color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-handle::after, {{WRAPPER}} .athemes-addons-before-after-image .twentytwenty-handle::before' => 'background-color: {{VALUE}};',

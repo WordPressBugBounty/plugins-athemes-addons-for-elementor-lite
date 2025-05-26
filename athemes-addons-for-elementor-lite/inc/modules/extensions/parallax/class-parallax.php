@@ -78,7 +78,7 @@ class Parallax {
 			'aafe_parallax_section',
 			[
                 'tab'   => Controls_Manager::TAB_ADVANCED,
-				'label' => '<i style="top:1px;" class="aafe-ele-svg-logo"></i>' . __( 'Parallax', 'athemes-addons-elementor' ),
+				'label' => '<i style="top:1px;" class="aafe-ele-svg-logo"></i>' . __( 'Parallax', 'athemes-addons-for-elementor-lite' ),
 			]
         );
 	
@@ -87,9 +87,9 @@ class Parallax {
 			[
 				'type' => Controls_Manager::RAW_HTML,
 				'raw' => '<div class="aafe-update-preview" style="display: flex;align-items:center;">
-					<div class="elementor-update-preview-title">' . __( 'Update changes', 'athemes-addons-elementor' ) . '</div>
+					<div class="elementor-update-preview-title">' . __( 'Update changes', 'athemes-addons-for-elementor-lite' ) . '</div>
 					<div class="elementor-update-preview-button-wrapper">
-						<button class="elementor-update-preview-button elementor-button">' . __( 'Apply', 'athemes-addons-elementor' ) . '</button>
+						<button class="elementor-update-preview-button elementor-button">' . __( 'Apply', 'athemes-addons-for-elementor-lite' ) . '</button>
 					</div>
 				</div>',
 				'separator' => 'after',
@@ -99,10 +99,10 @@ class Parallax {
 		$element->add_control(
 			'enable_background_parallax',
 			[
-				'label'        => __( 'Enable Background Parallax', 'athemes-addons-elementor' ),
+				'label'        => __( 'Enable Background Parallax', 'athemes-addons-for-elementor-lite' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off'    => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'     => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off'    => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'prefix_class' => 'aafe-bg-parallax-',
@@ -113,7 +113,7 @@ class Parallax {
 		$element->add_control(
 			'background_parallax_speed',
 			[
-				'label'     => __( 'Parallax Speed', 'athemes-addons-elementor' ),
+				'label'     => __( 'Parallax Speed', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 0.5,
 				'min'       => -1,
@@ -129,10 +129,10 @@ class Parallax {
 		$element->add_control(
 			'background_parallax_disable_mobile',
 			[
-				'label'        => __( 'Disable on Mobile', 'athemes-addons-elementor' ),
+				'label'        => __( 'Disable on Mobile', 'athemes-addons-for-elementor-lite' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off'    => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'     => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off'    => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'condition'    => [
@@ -145,10 +145,10 @@ class Parallax {
 		$element->add_control(
 			'enable_multilayer_parallax',
 			[
-				'label'        => __( 'Enable Multilayer Parallax', 'athemes-addons-elementor' ),
+				'label'        => __( 'Enable Multilayer Parallax', 'athemes-addons-for-elementor-lite' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off'    => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'     => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off'    => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'prefix_class' => 'aafe-ml-parallax-',
@@ -162,13 +162,13 @@ class Parallax {
 		$repeater->add_control(
 			'effect',
 			[
-				'label'   => __( 'Effect', 'athemes-addons-elementor' ),
+				'label'   => __( 'Effect', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'move',
 				'options' => [
-					'move'      => __( 'Mouse Move', 'athemes-addons-elementor' ),
-					'scroll'    => __( 'Scroll', 'athemes-addons-elementor' ),
-					'tilt'      => __( 'Tilt', 'athemes-addons-elementor' ),
+					'move'      => __( 'Mouse Move', 'athemes-addons-for-elementor-lite' ),
+					'scroll'    => __( 'Scroll', 'athemes-addons-for-elementor-lite' ),
+					'tilt'      => __( 'Tilt', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -176,7 +176,7 @@ class Parallax {
 		$repeater->add_control(
             'ml_image',
 			[
-                'label' => esc_html__('Choose Image', 'athemes-addons-elementor'),
+                'label' => esc_html__('Choose Image', 'athemes-addons-for-elementor-lite'),
                 'type' => Controls_Manager::MEDIA,
             ]
         );
@@ -185,7 +185,7 @@ class Parallax {
 		$repeater->add_control(
 			'speed',
 			[
-				'label'   => __( 'Speed', 'athemes-addons-elementor' ),
+				'label'   => __( 'Speed', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 30,
 				'min'     => 0,
@@ -197,7 +197,7 @@ class Parallax {
 		$repeater->add_control(
 			'ml_rotate',
 			[
-				'label'   => __( 'Rotate', 'athemes-addons-elementor' ),
+				'label'   => __( 'Rotate', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SLIDER,
 				'range'   => [
 					'px' => [
@@ -215,7 +215,7 @@ class Parallax {
 		$repeater->add_control(
 			'ml_position_x',
 			[
-				'label'   => __( 'Position X', 'athemes-addons-elementor' ),
+				'label'   => __( 'Position X', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SLIDER,
 				'range'   => [
 					'px' => [
@@ -230,7 +230,7 @@ class Parallax {
 		$repeater->add_control(
 			'ml_position_y',
 			[
-				'label'   => __( 'Position Y', 'athemes-addons-elementor' ),
+				'label'   => __( 'Position Y', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SLIDER,
 				'range'   => [
 					'px' => [
@@ -245,7 +245,7 @@ class Parallax {
 		$repeater->add_control(
 			'ml_opacity',
 			[
-				'label'   => __( 'Opacity', 'athemes-addons-elementor' ),
+				'label'   => __( 'Opacity', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SLIDER,
 				'range'   => [
 					'px' => [
@@ -263,7 +263,7 @@ class Parallax {
 		$repeater->add_control(
 			'ml_size',
 			[
-				'label'   => __( 'Size', 'athemes-addons-elementor' ),
+				'label'   => __( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SLIDER,
 				'range'   => [
 					'px' => [
@@ -281,7 +281,7 @@ class Parallax {
 		$repeater->add_control(
 			'depth',
 			[
-				'label'   => __( 'Depth', 'athemes-addons-elementor' ),
+				'label'   => __( 'Depth', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 0,
 				'min'     => -100,
@@ -293,7 +293,7 @@ class Parallax {
 		$element->add_control(
 			'ml_layers',
 			[
-				'label'       => __( 'Layers', 'athemes-addons-elementor' ),
+				'label'       => __( 'Layers', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'title_field' => '{{{ effect }}}',

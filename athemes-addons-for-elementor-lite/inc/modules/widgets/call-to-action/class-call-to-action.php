@@ -55,7 +55,7 @@ class Call_To_Action extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Call to action', 'athemes-addons-elementor' );
+		return __( 'Call to action', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -131,14 +131,14 @@ class Call_To_Action extends Widget_Base {
 		$this->start_controls_section(
 			'section_image',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'image',
 			[
-				'label' => esc_html__( 'Image', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
@@ -153,8 +153,8 @@ class Call_To_Action extends Widget_Base {
 			Group_Control_Image_Size::get_type(),
 			[
 				'name' => 'thumb',
-				'label' => __( 'Image Size', 'athemes-addons-elementor' ),
-				'exclude' => [ 'custom' ],
+				'label' => __( 'Image Size', 'athemes-addons-for-elementor-lite' ),
+				'exclude' => [ 'custom' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'include' => [],
 				'default' => 'large',
 			]
@@ -163,12 +163,12 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'image_position',
 			[
-				'label' => __( 'Image Position', 'athemes-addons-elementor' ),
+				'label' => __( 'Image Position', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'inline',
 				'options' => [
-					'inline' => __( 'Inline', 'athemes-addons-elementor' ),
-					'before' => __( 'Before', 'athemes-addons-elementor' ),
+					'inline' => __( 'Inline', 'athemes-addons-for-elementor-lite' ),
+					'before' => __( 'Before', 'athemes-addons-for-elementor-lite' ),
 				],
 				'prefix_class' => 'cta-image-position-',
 				'condition' => [
@@ -180,15 +180,15 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'image_alignment',
 			[
-				'label' => __( 'Image Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Image Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'0' => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'10' => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -208,20 +208,20 @@ class Call_To_Action extends Widget_Base {
 		$this->start_controls_section(
 			'section_content',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'icon_type',
 			[
-				'label' => esc_html__( 'Icon Type', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => [
-					'none' => esc_html__( 'None', 'athemes-addons-elementor' ),
-					'icon' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
-					'image' => esc_html__( 'Image', 'athemes-addons-elementor' ),
+					'none' => esc_html__( 'None', 'athemes-addons-for-elementor-lite' ),
+					'icon' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
+					'image' => esc_html__( 'Image', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);      
@@ -229,7 +229,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'content_icon',
 			[
-				'label' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-star',
@@ -245,7 +245,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'icon_image',
 			[
-				'label'     => esc_html__( 'Image', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default'   => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -259,12 +259,12 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'content_layout',
 			[
-				'label'     => esc_html__( 'Content layout', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Content layout', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'block',
 				'options'   => [
-					'inline'   => esc_html__( 'Inline', 'athemes-addons-elementor' ),
-					'block'    => esc_html__( 'Block', 'athemes-addons-elementor' ),
+					'inline'   => esc_html__( 'Inline', 'athemes-addons-for-elementor-lite' ),
+					'block'    => esc_html__( 'Block', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'before',
 				'condition' => [
@@ -276,7 +276,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'before_title',
 			[
-				'label'         => esc_html__( 'Before title', 'athemes-addons-elementor' ),
+				'label'         => esc_html__( 'Before title', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::TEXT,
 			]
 		);      
@@ -284,39 +284,39 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label'         => esc_html__( 'Title', 'athemes-addons-elementor' ),
+				'label'         => esc_html__( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::TEXT,
-				'default'       => esc_html__( 'This is the heading', 'athemes-addons-elementor' ),
-				'placeholder'   => esc_html__( 'Enter your title', 'athemes-addons-elementor' ),
+				'default'       => esc_html__( 'This is the heading', 'athemes-addons-for-elementor-lite' ),
+				'placeholder'   => esc_html__( 'Enter your title', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'content',
 			[
-				'label'         => esc_html__( 'Content', 'athemes-addons-elementor' ),
+				'label'         => esc_html__( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::WYSIWYG,
-				'default'       => esc_html__( 'This is the content', 'athemes-addons-elementor' ),
-				'placeholder'   => esc_html__( 'Enter your content', 'athemes-addons-elementor' ),
+				'default'       => esc_html__( 'This is the content', 'athemes-addons-for-elementor-lite' ),
+				'placeholder'   => esc_html__( 'Enter your content', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'title_html_tag',
 			[
-				'label'     => esc_html__( 'Title HTML Tag', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Title HTML Tag', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'h2',
 				'options'   => [
-					'h1'    => esc_html__( 'H1', 'athemes-addons-elementor' ),
-					'h2'    => esc_html__( 'H2', 'athemes-addons-elementor' ),
-					'h3'    => esc_html__( 'H3', 'athemes-addons-elementor' ),
-					'h4'    => esc_html__( 'H4', 'athemes-addons-elementor' ),
-					'h5'    => esc_html__( 'H5', 'athemes-addons-elementor' ),
-					'h6'    => esc_html__( 'H6', 'athemes-addons-elementor' ),
-					'div'   => esc_html__( 'div', 'athemes-addons-elementor' ),
-					'span'  => esc_html__( 'span', 'athemes-addons-elementor' ),
-					'p'     => esc_html__( 'p', 'athemes-addons-elementor' ),
+					'h1'    => esc_html__( 'H1', 'athemes-addons-for-elementor-lite' ),
+					'h2'    => esc_html__( 'H2', 'athemes-addons-for-elementor-lite' ),
+					'h3'    => esc_html__( 'H3', 'athemes-addons-for-elementor-lite' ),
+					'h4'    => esc_html__( 'H4', 'athemes-addons-for-elementor-lite' ),
+					'h5'    => esc_html__( 'H5', 'athemes-addons-for-elementor-lite' ),
+					'h6'    => esc_html__( 'H6', 'athemes-addons-for-elementor-lite' ),
+					'div'   => esc_html__( 'div', 'athemes-addons-for-elementor-lite' ),
+					'span'  => esc_html__( 'span', 'athemes-addons-for-elementor-lite' ),
+					'p'     => esc_html__( 'p', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'before',
 			]
@@ -325,23 +325,23 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'content_alignment',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'athemes-addons-elementor' ),
+						'title' => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'athemes-addons-elementor' ),
+						'title' => __( 'Justified', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-justify',
 					],
 				],
@@ -357,19 +357,19 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'content_vertical_alignment',
 			[
-				'label' => __( 'Vertical Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Vertical Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'top' => [
-						'title' => __( 'Top', 'athemes-addons-elementor' ),
+						'title' => __( 'Top', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'middle' => [
-						'title' => __( 'Middle', 'athemes-addons-elementor' ),
+						'title' => __( 'Middle', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-middle',
 					],
 					'bottom' => [
-						'title' => __( 'Bottom', 'athemes-addons-elementor' ),
+						'title' => __( 'Bottom', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -393,19 +393,19 @@ class Call_To_Action extends Widget_Base {
 		$this->start_controls_section(
 			'section_button',
 			[
-				'label' => __( 'Buttons', 'athemes-addons-elementor' ),
+				'label' => __( 'Buttons', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'number_of_buttons',
 			[
-				'label' => esc_html__( 'Number of Buttons', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Number of Buttons', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '2',
 				'options' => [
-					'1' => esc_html__( 'One', 'athemes-addons-elementor' ),
-					'2' => esc_html__( 'Two', 'athemes-addons-elementor' ),
+					'1' => esc_html__( 'One', 'athemes-addons-for-elementor-lite' ),
+					'2' => esc_html__( 'Two', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'after',
 			]
@@ -414,7 +414,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'first_button_heading',
 			[
-				'label' => __( 'First Button', 'athemes-addons-elementor' ),
+				'label' => __( 'First Button', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -430,7 +430,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'second_button_heading',
 			[
-				'label' => __( 'Second Button', 'athemes-addons-elementor' ),
+				'label' => __( 'Second Button', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -439,7 +439,7 @@ class Call_To_Action extends Widget_Base {
 			]
 		);      
 
-		$this->register_button_content_controls( $args = array( 'button_default_text' => __( 'Read more', 'athemes-addons-elementor' ), 'class' => 'second_button', 'alignment_control_prefix_class' => 'button-align-', 'section_condition' => array( 'number_of_buttons' => '2' ) ) );
+		$this->register_button_content_controls( $args = array( 'button_default_text' => __( 'Read more', 'athemes-addons-for-elementor-lite' ), 'class' => 'second_button', 'alignment_control_prefix_class' => 'button-align-', 'section_condition' => array( 'number_of_buttons' => '2' ) ) );
 
 		$this->remove_control( 'second_button_align' );
 
@@ -448,7 +448,7 @@ class Call_To_Action extends Widget_Base {
 		$this->start_controls_section(
 			'section_wrapper_style',
 			[
-				'label' => esc_html__( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -456,7 +456,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'vh' ],
 				'range' => [
@@ -478,7 +478,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -490,7 +490,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -502,7 +502,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'wrapper_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-call-to-action' => 'background-color: {{VALUE}};',
@@ -521,7 +521,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -543,7 +543,7 @@ class Call_To_Action extends Widget_Base {
 		$this->start_controls_section(
 			'section_image_style',
 			[
-				'label' => esc_html__( 'Image', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -551,7 +551,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'image_overlay_color',
 			[
-				'label' => __( 'Overlay Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => 'rgba(0,0,0,0.5)',
 				'selectors' => [
@@ -566,7 +566,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'image_width',
 			[
-				'label' => __( 'Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px','%' ],
 				'range' => [
@@ -593,7 +593,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'image_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px','%' ],
 				'selectors' => [
@@ -621,7 +621,7 @@ class Call_To_Action extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => esc_html__( 'Content', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -629,7 +629,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px','em','rem' ],
 				'selectors' => [
@@ -641,7 +641,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'content_max_width',
 			[
-				'label' => __( 'Max Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Max Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px','%' ],
 				'default' => [
@@ -667,7 +667,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'icon_style_heading',
 			[
-				'label' => __( 'Icon', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'condition' => [
 					'icon_type!' => 'none',
@@ -678,7 +678,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => __( 'Icon Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px','em','rem' ],
 				'range' => [
@@ -709,7 +709,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Icon Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .call-to-action-content .content-icon div' => 'color: {{VALUE}};',
@@ -724,7 +724,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'before_title_style_heading',
 			[
-				'label' => __( 'Before Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Before Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -736,7 +736,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'before_title_color',
 			[
-				'label' => __( 'Before Title Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Before Title Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .call-to-action-content .call-to-action-before-title' => 'color: {{VALUE}};',
@@ -761,7 +761,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'before_title_margin',
 			[
-				'label' => __( 'Title Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px','em','rem' ],
 				'selectors' => [
@@ -776,7 +776,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'title_style_heading',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -785,7 +785,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Title Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .call-to-action-content .call-to-action-title' => 'color: {{VALUE}};',
@@ -804,7 +804,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px','em','rem' ],
 				'selectors' => [
@@ -816,7 +816,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'content_style_heading',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -825,7 +825,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'content_color',
 			[
-				'label' => __( 'Content Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Content Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .call-to-action-content .call-to-action-text' => 'color: {{VALUE}};',
@@ -844,7 +844,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_responsive_control(
 			'content_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px','em','rem' ],
 				'selectors' => [
@@ -859,7 +859,7 @@ class Call_To_Action extends Widget_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			[
-				'label' => esc_html__( 'Buttons', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Buttons', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -867,7 +867,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'first_button_heading_style',
 			[
-				'label' => __( 'First Button', 'athemes-addons-elementor' ),
+				'label' => __( 'First Button', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -881,7 +881,7 @@ class Call_To_Action extends Widget_Base {
 		$this->add_control(
 			'second_button_heading_style',
 			[
-				'label' => __( 'Second Button', 'athemes-addons-elementor' ),
+				'label' => __( 'Second Button', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [

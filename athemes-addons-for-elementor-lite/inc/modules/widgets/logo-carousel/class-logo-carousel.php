@@ -53,7 +53,7 @@ class Logo_Carousel extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Logo Carousel', 'athemes-addons-elementor' );
+		return __( 'Logo Carousel', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -133,7 +133,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_slides',
 			[
-				'label' => __( 'Logos', 'athemes-addons-elementor' ),
+				'label' => __( 'Logos', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -144,7 +144,7 @@ class Logo_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label' => __( 'Choose image', 'athemes-addons-elementor' ),
+				'label' => __( 'Choose image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -155,7 +155,7 @@ class Logo_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 			]
@@ -164,10 +164,10 @@ class Logo_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'hover_image',
 			[
-				'label' => __( 'Different image on hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Different image on hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'separator' => 'before',
 			]
@@ -176,7 +176,7 @@ class Logo_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'hover_image_image',
 			[
-				'label' => __( 'Choose image', 'athemes-addons-elementor' ),
+				'label' => __( 'Choose image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -190,12 +190,12 @@ class Logo_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'image_link_to',
 			[
-				'label' => __( 'Link to', 'athemes-addons-elementor' ),
+				'label' => __( 'Link to', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' => __( 'None', 'athemes-addons-elementor' ),
-					'file' => __( 'Media File', 'athemes-addons-elementor' ),
-					'custom' => __( 'Custom URL', 'athemes-addons-elementor' ),
+					'' => __( 'None', 'athemes-addons-for-elementor-lite' ),
+					'file' => __( 'Media File', 'athemes-addons-for-elementor-lite' ),
+					'custom' => __( 'Custom URL', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => '',
 				'separator' => 'before',
@@ -205,9 +205,9 @@ class Logo_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'image_link',
 			[
-				'label' => __( 'Link', 'athemes-addons-elementor' ),
+				'label' => __( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => __( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'default' => [
 					'url' => '',
 				],
@@ -221,7 +221,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'slides',
 			[
-				'label' => __( 'Logos', 'athemes-addons-elementor' ),
+				'label' => __( 'Logos', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::REPEATER,
 				'default' => [
 					[
@@ -249,15 +249,15 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'slides_to_show',
 			[
-				'label' => __( 'Columns', 'athemes-addons-elementor' ),
+				'label' => __( 'Columns', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					1 => __( '1', 'athemes-addons-elementor' ),
-					2 => __( '2', 'athemes-addons-elementor' ),
-					3 => __( '3', 'athemes-addons-elementor' ),
-					4 => __( '4', 'athemes-addons-elementor' ),
-					5 => __( '5', 'athemes-addons-elementor' ),
-					6 => __( '6', 'athemes-addons-elementor' ),
+					1 => __( '1', 'athemes-addons-for-elementor-lite' ),
+					2 => __( '2', 'athemes-addons-for-elementor-lite' ),
+					3 => __( '3', 'athemes-addons-for-elementor-lite' ),
+					4 => __( '4', 'athemes-addons-for-elementor-lite' ),
+					5 => __( '5', 'athemes-addons-for-elementor-lite' ),
+					6 => __( '6', 'athemes-addons-for-elementor-lite' ),
 				],
 				'desktop_default' => 4,
 				'tablet_default' => 2,
@@ -272,7 +272,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -289,11 +289,11 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'object_fit',
 			[
-				'label' => __( 'Image Fit', 'athemes-addons-elementor' ),
+				'label' => __( 'Image Fit', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'cover'     => __( 'Cover', 'athemes-addons-elementor' ),
-					'contain'   => __( 'Contain', 'athemes-addons-elementor' ),
+					'cover'     => __( 'Cover', 'athemes-addons-for-elementor-lite' ),
+					'contain'   => __( 'Contain', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'contain',
 				'selectors_dictionary' => [
@@ -309,7 +309,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			[
-				'label' => __( 'Image Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Image Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'vh' ],
 				'range' => [
@@ -340,10 +340,10 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'show_arrows',
 			[
-				'label' => __( 'Arrows', 'athemes-addons-elementor' ),
+				'label' => __( 'Arrows', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'separator' => 'before',
@@ -354,10 +354,10 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'show_dots',
 			[
-				'label' => __( 'Dots', 'athemes-addons-elementor' ),
+				'label' => __( 'Dots', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -366,7 +366,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'image_gap',
 			[
-				'label' => __( 'Image Gap', 'athemes-addons-elementor' ),
+				'label' => __( 'Image Gap', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -388,7 +388,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'transition_speed',
 			[
-				'label' => __( 'Transition Speed', 'athemes-addons-elementor' ),
+				'label' => __( 'Transition Speed', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 500,
 			]
@@ -398,10 +398,10 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label' => __( 'Autoplay', 'athemes-addons-elementor' ),
+				'label' => __( 'Autoplay', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Off', 'athemes-addons-elementor' ),
+				'label_on' => __( 'On', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Off', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -411,7 +411,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label' => __( 'Autoplay Speed', 'athemes-addons-elementor' ),
+				'label' => __( 'Autoplay Speed', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 5000,
 				'condition' => [
@@ -424,10 +424,10 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label' => __( 'Infinite Loop', 'athemes-addons-elementor' ),
+				'label' => __( 'Infinite Loop', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Off', 'athemes-addons-elementor' ),
+				'label_on' => __( 'On', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Off', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'frontend_available' => true,
 			]
@@ -437,10 +437,10 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'pause_on_hover',
 			[
-				'label' => __( 'Pause on Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Pause on Hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Off', 'athemes-addons-elementor' ),
+				'label_on' => __( 'On', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Off', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -452,7 +452,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_wrapper_style',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -460,7 +460,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -472,7 +472,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -484,7 +484,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'wrapper_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel-container' => 'background-color: {{VALUE}};',
@@ -497,7 +497,7 @@ class Logo_Carousel extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'wrapper_border',
-				'label'     => esc_html__( 'Border', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .athemes-addons-logo-carousel-container',
 				'separator' => 'before',
 			]
@@ -506,7 +506,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel-container' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -518,7 +518,7 @@ class Logo_Carousel extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'wrapper_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-logo-carousel-container',
 			]
 		);
@@ -528,7 +528,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_image',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -538,14 +538,14 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_image_normal',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'image_bg_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel .slide-image' => 'background-color: {{VALUE}};',
@@ -556,7 +556,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'image_border_radius',
 			[
-				'label' => __( 'Image Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Image Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -569,7 +569,7 @@ class Logo_Carousel extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'image_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-logo-carousel .slide-image',
 			]
 		);
@@ -577,7 +577,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'image_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -590,7 +590,7 @@ class Logo_Carousel extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'image_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-logo-carousel .slide-image',
 			]
 		);
@@ -598,7 +598,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'image_opacity',
 			[
-				'label' => __( 'Opacity', 'athemes-addons-elementor' ),
+				'label' => __( 'Opacity', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -627,14 +627,14 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_image_hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'image_bg_color_hover',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel .slide-image:hover' => 'background-color: {{VALUE}};',
@@ -645,7 +645,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'image_border_radius_hover',
 			[
-				'label' => __( 'Image Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Image Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -658,7 +658,7 @@ class Logo_Carousel extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'image_border_hover',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-logo-carousel .slide-image:hover',
 			]
 		);
@@ -666,7 +666,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'image_padding_hover',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -679,7 +679,7 @@ class Logo_Carousel extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'image_box_shadow_hover',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-logo-carousel .slide-image:hover',
 			]
 		);
@@ -687,7 +687,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'image_opacity_hover',
 			[
-				'label' => __( 'Opacity', 'athemes-addons-elementor' ),
+				'label' => __( 'Opacity', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -720,7 +720,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_title_text',
 			[
-				'label' => __( 'Titles', 'athemes-addons-elementor' ),
+				'label' => __( 'Titles', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -729,7 +729,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Title Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel .slide-title' => 'color: {{VALUE}};',
@@ -752,7 +752,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_arrows',
 			[
-				'label' => __( 'Arrows', 'athemes-addons-elementor' ),
+				'label' => __( 'Arrows', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -761,7 +761,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'arrows_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel .swiper-button-prev svg' => 'fill: {{VALUE}};',
@@ -774,7 +774,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'arrows_bg_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel .swiper-button-prev' => 'background-color: {{VALUE}};',
@@ -787,7 +787,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'arrows_color_hover',
 			[
-				'label' => __( 'Color Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Color Hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel .swiper-button-prev:hover svg' => 'fill: {{VALUE}};',
@@ -801,7 +801,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'arrows_bg_color_hover',
 			[
-				'label' => __( 'Background Color Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color Hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-logo-carousel .swiper-button-prev:hover' => 'background-color: {{VALUE}};',
@@ -817,7 +817,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_dots',
 			[
-				'label' => __( 'Dots', 'athemes-addons-elementor' ),
+				'label' => __( 'Dots', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -826,7 +826,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-pagination-bullet' => 'background-color: {{VALUE}};',
@@ -838,7 +838,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_color_active',
 			[
-				'label' => __( 'Color Active', 'athemes-addons-elementor' ),
+				'label' => __( 'Color Active', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-pagination-bullet-active' => 'background-color: {{VALUE}};',
@@ -849,7 +849,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -868,7 +868,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_width',
 			[
-				'label' => __( 'Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -886,7 +886,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -904,7 +904,7 @@ class Logo_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [

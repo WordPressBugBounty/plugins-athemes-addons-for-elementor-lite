@@ -7,24 +7,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 $tb_elements = athemes_addons_get_theme_builder_elements();
 
 // Icon and text for the action button.
-$action_text        = esc_html__( 'Upgrade', 'athemes-addons-elementor' );
+$action_text        = esc_html__( 'Upgrade', 'athemes-addons-for-elementor-lite' );
 $action_icon        = 'dashicons-lock';
 $create_template    = 'aafe-upgrade';
 
 if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
-	$action_text        = esc_html__( 'Create', 'athemes-addons-elementor' );
+	$action_text        = esc_html__( 'Create', 'athemes-addons-for-elementor-lite' );
 	$action_icon        = 'dashicons-plus-alt2';
 	$create_template    = 'aafe-create-template';
 }
 ?>
 
 <div class="athemes-addons-modules-box">
-	<h3><?php esc_html_e( 'What are you building today?', 'athemes-addons-elementor' ); ?></h3>
+	<h3><?php esc_html_e( 'What are you building today?', 'athemes-addons-for-elementor-lite' ); ?></h3>
 
 	<?php if ( !defined( 'ATHEMES_AFE_PRO_VERSION' ) ) : ?>
 	<div class="athemes-addons-tb-upgrade-notice">
-		<p><?php esc_html_e( 'This feature requires aThemes Addons Pro. Upgrade and unlock the theme builder and much more.', 'athemes-addons-elementor' ); ?></p>
-		<a href="https://athemes.com/addons/" target="_blank"><?php esc_html_e( 'Upgrade now', 'athemes-addons-elementor' ); ?></a>
+		<p><?php esc_html_e( 'This feature requires aThemes Addons Pro. Upgrade and unlock the theme builder and much more.', 'athemes-addons-for-elementor-lite' ); ?></p>
+		<a href="https://athemes.com/addons/" target="_blank"><?php esc_html_e( 'Upgrade now', 'athemes-addons-for-elementor-lite' ); ?></a>
 	</div>
 	<?php endif; ?>
 
@@ -46,7 +46,7 @@ if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 	<hr>
 
 	<?php if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) : ?>
-	<h3><?php esc_html_e( 'Your templates', 'athemes-addons-elementor' ); ?></h3>
+	<h3><?php esc_html_e( 'Your templates', 'athemes-addons-for-elementor-lite' ); ?></h3>
 
 	<div class="athemes-addons-theme-builder-elements" data-type="templates">
 		<?php
@@ -92,13 +92,13 @@ if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 						<div class="tb-element-actions">
 							<?php if ( 'header' === $template_type ) : ?>							
 							<label class="athemes-addons-header-type-select">
-								<span class="saved-label"><?php echo esc_html__( 'Saved!', 'athemes-addons-elementor' ); ?></span>
+								<span class="saved-label"><?php echo esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ); ?></span>
 								<select name="ahf_header_type" class="aafe-header-type-select">
-									<option value="regular" <?php selected( $header_type, 'regular' ); ?>><?php esc_html_e( 'Regular', 'athemes-addons-elementor' ); ?></option>
-									<option value="transparent" <?php selected( $header_type, 'transparent' ); ?>><?php esc_html_e( 'Transparent', 'athemes-addons-elementor' ); ?></option>
-									<option value="sticky" <?php selected( $header_type, 'sticky' ); ?>><?php esc_html_e( 'Sticky', 'athemes-addons-elementor' ); ?></option>
+									<option value="regular" <?php selected( $header_type, 'regular' ); ?>><?php esc_html_e( 'Regular', 'athemes-addons-for-elementor-lite' ); ?></option>
+									<option value="transparent" <?php selected( $header_type, 'transparent' ); ?>><?php esc_html_e( 'Transparent', 'athemes-addons-for-elementor-lite' ); ?></option>
+									<option value="sticky" <?php selected( $header_type, 'sticky' ); ?>><?php esc_html_e( 'Sticky', 'athemes-addons-for-elementor-lite' ); ?></option>
 								</select>
-								<span class="tooltip"><?php esc_html_e( 'Note: if you create a sticky header, you also need a regular or transparent header.', 'athemes-addons-elementor' ); ?></span>
+								<span class="tooltip"><?php esc_html_e( 'Note: if you create a sticky header, you also need a regular or transparent header.', 'athemes-addons-for-elementor-lite' ); ?></span>
 							</label>
 							
 							<?php endif; ?>
@@ -107,7 +107,7 @@ if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 							<div class="athemes-addons-display-conditions-control" data-condition-settings="<?php echo esc_attr( json_encode( $settings ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.json_encode_json_encode ?>">
 								<span class="athemes-addons-display-conditions-modal-toggle" style="width:100%;">
 									<span class="dashicons dashicons-admin-generic"></span>
-									<span style="min-width:130px;margin-left:-65px;" class="tooltip"><?php esc_html_e( 'Display conditions', 'athemes-addons-elementor' ); ?></span>
+									<span style="min-width:130px;margin-left:-65px;" class="tooltip"><?php esc_html_e( 'Display conditions', 'athemes-addons-for-elementor-lite' ); ?></span>
 								</span>
 								<div class="athemes-addons-display-conditions-modal">
 								<!-- Modal content goes here -->
@@ -118,12 +118,12 @@ if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 
 							<div class="aafe-edit-template">
 								<span class="dashicons dashicons-edit"></span>
-								<span class="tooltip"><?php esc_html_e( 'Edit', 'athemes-addons-elementor' ); ?></span>
+								<span class="tooltip"><?php esc_html_e( 'Edit', 'athemes-addons-for-elementor-lite' ); ?></span>
 							</div>	
 
 							<div class="aafe-delete-template">
 								<span class="dashicons dashicons-trash"></span>
-								<span class="tooltip"><?php esc_html_e( 'Delete', 'athemes-addons-elementor' ); ?></span>
+								<span class="tooltip"><?php esc_html_e( 'Delete', 'athemes-addons-for-elementor-lite' ); ?></span>
 							</div>
 						</div>
 					</div>
@@ -135,7 +135,7 @@ if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 
 		if ( $no_templates ) {
 			?>
-			<p><?php esc_html_e( 'No templates found.', 'athemes-addons-elementor' ); ?></p>
+			<p><?php esc_html_e( 'No templates found.', 'athemes-addons-for-elementor-lite' ); ?></p>
 			<?php
 		}
 		?>		

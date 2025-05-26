@@ -46,7 +46,7 @@ class Testimonials_Skin4 extends Skin_Base {
 	 * Get the title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Centered', 'athemes-addons-elementor' );
+		return esc_html__( 'Centered', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**

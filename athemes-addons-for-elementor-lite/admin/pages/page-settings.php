@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	if ( defined('ATHEMES_AFE_PRO_DIR') ) {
 		Admin_Settings::create( array(
-			'title'  => __( 'MailChimp API Key', 'athemes-addons-elementor' ),
+			'title'  => __( 'MailChimp API Key', 'athemes-addons-for-elementor-lite' ),
 			'fields' => array(
 				array(
 					'id'      => 'aafe_mailchimp_api_key',
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		) );
 	
 		Admin_Settings::create( array(
-			'title'  => __( 'Google Maps API Key', 'athemes-addons-elementor' ),
+			'title'  => __( 'Google Maps API Key', 'athemes-addons-for-elementor-lite' ),
 			'fields' => array(
 				array(
 					'id'      => 'aafe_gmaps_api_key',
@@ -39,8 +39,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 
 	Admin_Settings::create( array(
-		'title'     => __( 'Duplicator Post Types', 'athemes-addons-elementor' ),
-		'subtitle'  => __( 'Select the post types you want enable the duplicator for.', 'athemes-addons-elementor' ),
+		'title'     => __( 'Duplicator Post Types', 'athemes-addons-for-elementor-lite' ),
+		'subtitle'  => __( 'Select the post types you want enable the duplicator for.', 'athemes-addons-for-elementor-lite' ),
 		'fields'    => array(
 			array(
 				'id'      => 'aafe_duplicator_post_types',

@@ -14,7 +14,7 @@ if ( ! function_exists( 'athemes_addons_module_activation_switcher' ) ) {
 	function athemes_addons_module_activation_switcher( $module_id, $value, $is_upsell = false ) {
 		?>
 			<div class="athemes-addons-toggle-switch athemes-addons-module-page-button-action-<?php echo ( $value ) ? 'deactivate' : 'activate'; ?> " data-module="<?php echo esc_attr( $module_id ); ?>">
-				<span class="saved-label"><?php echo esc_html__( 'Saved!', 'athemes-addons-elementor' ); ?></span>
+				<span class="saved-label"><?php echo esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ); ?></span>
 				<input type="checkbox" id="<?php echo esc_attr( $module_id ); ?>" name="aafe[<?php echo esc_attr( $module_id ); ?>]" value="1" <?php checked( $value, 1, true ); ?>
 						class="toggle-switch-checkbox"/>
 				<label class="toggle-switch-label" for="<?php echo esc_attr( $module_id ); ?>">
@@ -42,7 +42,7 @@ if ( ! function_exists( 'athemes_addons_module_help_icon' ) ) {
 					<path d="M6.66602 5.83325H13.3327V7.49992H6.66602V5.83325ZM6.66602 9.16659H13.3327V10.8333H6.66602V9.16659ZM6.66602 12.4999H10.8327V14.1666H6.66602V12.4999Z" fill="#5C5F62"/>
 				</svg>
 			</a>
-			<span class="athemes-addons-module-tooltip"><?php esc_html_e( 'Help', 'athemes-addons-elementor' ); ?></span>
+			<span class="athemes-addons-module-tooltip"><?php esc_html_e( 'Help', 'athemes-addons-for-elementor-lite' ); ?></span>
 		</div>
 		<?php
 	}
@@ -60,7 +60,7 @@ if ( ! function_exists( 'athemes_addons_module_preview_icon' ) ) {
 					<path d="M1.66699 1.66675H18.3337V3.33341H17.5003V15.0001H12.012L15.3453 18.3334L14.167 19.5117L10.0003 15.3451L5.83366 19.5117L4.65533 18.3334L7.98866 15.0001H2.50033V3.33341H1.66699V1.66675ZM4.16699 3.33341V13.3334H15.8337V3.33341H4.16699ZM8.33366 5.41675L12.2228 8.33341L8.33366 11.2501V5.41675Z" fill="#5C5F62"/>
 				</svg>
 			</a>
-			<span class="athemes-addons-module-tooltip"><?php esc_html_e( 'Preview', 'athemes-addons-elementor' ); ?></span>
+			<span class="athemes-addons-module-tooltip"><?php esc_html_e( 'Preview', 'athemes-addons-for-elementor-lite' ); ?></span>
 		</div>
 		<?php
 	}
@@ -70,18 +70,16 @@ if ( ! function_exists( 'athemes_addons_module_preview_icon' ) ) {
  * Get all widget categories from the modules list.
  */
 if ( ! function_exists( 'athemes_addons_get_widget_categories' ) ) {
-	function athemes_addons_get_widget_categories( $aafe_modules ) {
-		$categories = array();
-		
-		foreach ( $aafe_modules as $aafe_module_id => $aafe_module ) : 
-			if ( isset( $aafe_module['category'] ) ) {
-				if ( !in_array( $aafe_module['category'], $categories, true ) ) {
-					$categories[] = $aafe_module['category'];
-				}
-			}
-		endforeach;
-
-		return $categories;
+	function athemes_addons_get_widget_categories() {
+		return array(
+			'posts'                  => esc_html__( 'Posts', 'athemes-addons-for-elementor-lite' ),
+			'content'                => esc_html__( 'Content', 'athemes-addons-for-elementor-lite' ),
+			'media'                  => esc_html__( 'Media', 'athemes-addons-for-elementor-lite' ),
+			'business-commerce'      => esc_html__( 'Business &amp; Commerce', 'athemes-addons-for-elementor-lite' ),
+			'social-communications'  => esc_html__( 'Social &amp; Communications', 'athemes-addons-for-elementor-lite' ),
+			'forms'                  => esc_html__( 'Forms', 'athemes-addons-for-elementor-lite' ),
+			'utilities'              => esc_html__( 'Utilities', 'athemes-addons-for-elementor-lite' ),
+		);
 	}
 }
 
@@ -92,31 +90,31 @@ if ( ! function_exists( 'athemes_addons_get_theme_builder_elements' ) ) {
 	function athemes_addons_get_theme_builder_elements() {
 		$tb_elements = array(
 			'header' => array(
-				'title' => esc_html__( 'Header', 'athemes-addons-elementor' ),
+				'title' => esc_html__( 'Header', 'athemes-addons-for-elementor-lite' ),
 			),
 			'footer' => array(
-				'title' => esc_html__( 'Footer', 'athemes-addons-elementor' ),
+				'title' => esc_html__( 'Footer', 'athemes-addons-for-elementor-lite' ),
 			),
 			'singular' => array(
-				'title' => esc_html__( 'Singular', 'athemes-addons-elementor' ),
+				'title' => esc_html__( 'Singular', 'athemes-addons-for-elementor-lite' ),
 			),
 			'archive' => array(
-				'title' => esc_html__( 'Archive', 'athemes-addons-elementor' ),
+				'title' => esc_html__( 'Archive', 'athemes-addons-for-elementor-lite' ),
 			),
 			'archive-item' => array(
-				'title' => esc_html__( 'Archive Item', 'athemes-addons-elementor' ),
+				'title' => esc_html__( 'Archive Item', 'athemes-addons-for-elementor-lite' ),
 			),
 			'error404' => array(
-				'title' => esc_html__( '404', 'athemes-addons-elementor' ),
+				'title' => esc_html__( '404', 'athemes-addons-for-elementor-lite' ),
 			),
 		);
 		
 		$woo_elements = array(
 			'shop' => array(
-				'title' => esc_html__( 'Product Archive', 'athemes-addons-elementor' ),
+				'title' => esc_html__( 'Product Archive', 'athemes-addons-for-elementor-lite' ),
 			),
 			'product' => array(
-				'title' => esc_html__( 'Product', 'athemes-addons-elementor' ),
+				'title' => esc_html__( 'Product', 'athemes-addons-for-elementor-lite' ),
 			),
 		);
 		
@@ -138,7 +136,7 @@ if ( ! function_exists( 'athemes_addons_get_post_types' ) ) {
 
 		$filtered_post_types = array();
 
-		$filtered_post_types['all'] = esc_html__( 'All', 'athemes-addons-elementor' );
+		$filtered_post_types['all'] = esc_html__( 'All', 'athemes-addons-for-elementor-lite' );
 
 		foreach ( $post_types as $post_type ) {
 			if ( ! in_array( $post_type->name, $exclude_post_types, true ) ) {

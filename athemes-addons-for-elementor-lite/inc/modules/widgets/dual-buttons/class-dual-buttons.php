@@ -51,7 +51,7 @@ class Dual_Buttons extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dual buttons', 'athemes-addons-elementor' );
+		return __( 'Dual buttons', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -130,14 +130,14 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_responsive_control(
 			'width',
 			[
-				'label' => __( 'Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'default' => [
@@ -161,19 +161,19 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -185,12 +185,12 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'text_separator',
 			[
-				'label' => esc_html__( 'Separator', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Separator', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => esc_html__( 'or', 'athemes-addons-elementor' ),
+				'default' => esc_html__( 'or', 'athemes-addons-for-elementor-lite' ),
 				'separator' => 'before',
 			]
 		);      
@@ -200,31 +200,31 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_section(
 			'section_first_button',
 			[
-				'label' => __( 'First button', 'athemes-addons-elementor' ),
+				'label' => __( 'First button', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 		$this->add_control(
 			'text_first',
 			[
-				'label' => esc_html__( 'Text', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => esc_html__( 'Start here', 'athemes-addons-elementor' ),
-				'placeholder' => esc_html__( 'Click here', 'athemes-addons-elementor' ),
+				'default' => esc_html__( 'Start here', 'athemes-addons-for-elementor-lite' ),
+				'placeholder' => esc_html__( 'Click here', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'link',
 			[
-				'label' => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => esc_html__( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'default' => [
 					'url' => '#',
 				],
@@ -234,7 +234,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'selected_icon_first',
 			[
-				'label' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'label_block' => false,
@@ -244,12 +244,12 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'icon_align_first',
 			[
-				'label' => esc_html__( 'Icon Position', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Position', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'left',
 				'options' => [
-					'left' => esc_html__( 'Before', 'athemes-addons-elementor' ),
-					'right' => esc_html__( 'After', 'athemes-addons-elementor' ),
+					'left' => esc_html__( 'Before', 'athemes-addons-for-elementor-lite' ),
+					'right' => esc_html__( 'After', 'athemes-addons-for-elementor-lite' ),
 				],
 				'condition' => [
 					'selected_icon_first[value]!' => '',
@@ -260,7 +260,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'icon_indent',
 			[
-				'label' => esc_html__( 'Icon Spacing', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -281,31 +281,31 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_section(
 			'section_second_button',
 			[
-				'label' => __( 'Second button', 'athemes-addons-elementor' ),
+				'label' => __( 'Second button', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
         $this->add_control(
 			'text_second',
 			[
-				'label' => esc_html__( 'Text', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => esc_html__( 'Get in touch', 'athemes-addons-elementor' ),
-				'placeholder' => esc_html__( 'Click here', 'athemes-addons-elementor' ),
+				'default' => esc_html__( 'Get in touch', 'athemes-addons-for-elementor-lite' ),
+				'placeholder' => esc_html__( 'Click here', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'link_second',
 			[
-				'label' => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => esc_html__( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'default' => [
 					'url' => '#',
 				],
@@ -315,7 +315,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'selected_icon_second',
 			[
-				'label' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'label_block' => false,
@@ -325,12 +325,12 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'icon_align_second',
 			[
-				'label' => esc_html__( 'Icon Position', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Position', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'left',
 				'options' => [
-					'left' => esc_html__( 'Before', 'athemes-addons-elementor' ),
-					'right' => esc_html__( 'After', 'athemes-addons-elementor' ),
+					'left' => esc_html__( 'Before', 'athemes-addons-for-elementor-lite' ),
+					'right' => esc_html__( 'After', 'athemes-addons-for-elementor-lite' ),
 				],
 				'condition' => [
 					'selected_icon_second[value]!' => '',
@@ -341,7 +341,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'icon_indent_second',
 			[
-				'label' => esc_html__( 'Icon Spacing', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -358,7 +358,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'view_second',
 			[
-				'label' => esc_html__( 'View', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'View', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			]
@@ -369,7 +369,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => esc_html__( 'First button', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'First button', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -395,14 +395,14 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -415,9 +415,9 @@ class Dual_Buttons extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'label' => esc_html__( 'Background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} .dual-buttons-first .elementor-button',
 				'fields_options' => [
 					'background' => [
@@ -435,14 +435,14 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .dual-buttons-first .elementor-button:hover, {{WRAPPER}} .dual-buttons-first .elementor-button:focus' => 'color: {{VALUE}};',
@@ -455,9 +455,9 @@ class Dual_Buttons extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'button_background_hover',
-				'label' => esc_html__( 'Background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} .dual-buttons-first .elementor-button:hover, {{WRAPPER}} .dual-buttons-first .elementor-button:focus',
 				'fields_options' => [
 					'background' => [
@@ -473,7 +473,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'button_hover_border_color',
 			[
-				'label' => esc_html__( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'border_border!' => '',
@@ -487,7 +487,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => esc_html__( 'Hover Animation', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover Animation', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 			]
 		);
@@ -508,7 +508,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -528,7 +528,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_responsive_control(
 			'first_button_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'default' => [
@@ -554,7 +554,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_section(
 			'section_sep_style',
 			[
-				'label' => esc_html__( 'Separator', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Separator', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -562,7 +562,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'sep_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -574,7 +574,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'sep_bg_color',
 			[
-				'label' => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -586,7 +586,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_responsive_control(
 			'sep_size',
 			[
-				'label' => __( 'Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -623,7 +623,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'sep_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .dual-buttons-sep' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -647,7 +647,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_second',
 			[
-				'label' => esc_html__( 'Second button', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Second button', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -673,14 +673,14 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal_second',
 			[
-				'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color_second',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -693,9 +693,9 @@ class Dual_Buttons extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background_second',
-				'label' => esc_html__( 'Background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} .dual-buttons-last .elementor-button',
 				'fields_options' => [
 					'background' => [
@@ -713,14 +713,14 @@ class Dual_Buttons extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover_second',
 			[
-				'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color_second',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .dual-buttons-last .elementor-button:hover, {{WRAPPER}} .dual-buttons-last .elementor-button:focus' => 'color: {{VALUE}};',
@@ -733,9 +733,9 @@ class Dual_Buttons extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'button_background_hover_second',
-				'label' => esc_html__( 'Background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} .dual-buttons-last .elementor-button:hover, {{WRAPPER}} .dual-buttons-last .elementor-button:focus',
 				'fields_options' => [
 					'background' => [
@@ -751,7 +751,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'button_hover_border_color_second',
 			[
-				'label' => esc_html__( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'border_border!' => '',
@@ -765,7 +765,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'hover_animation_second',
 			[
-				'label' => esc_html__( 'Hover Animation', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover Animation', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 			]
 		);
@@ -786,7 +786,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_control(
 			'border_radius_second',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -806,7 +806,7 @@ class Dual_Buttons extends Widget_Base {
 		$this->add_responsive_control(
 			'second_button_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'default' => [

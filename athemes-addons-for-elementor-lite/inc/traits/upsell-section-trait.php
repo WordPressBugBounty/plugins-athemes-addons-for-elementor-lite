@@ -20,10 +20,10 @@ trait Upsell_Section_Trait {
 		}
 
 		$default_args = [
-			'title'         => esc_html__( 'Unlock More Features', 'athemes-addons-elementor' ),
-			'description'   => esc_html__( 'Take your site to the next level with aThemes Addons Pro.', 'athemes-addons-elementor' ),
-			'description2'  => esc_html__( 'You\'ll get access to:', 'athemes-addons-elementor' ),
-			'button_text'   => esc_html__( 'Upgrade to Pro', 'athemes-addons-elementor' ),
+			'title'         => esc_html__( 'Unlock More Features', 'athemes-addons-for-elementor-lite' ),
+			'description'   => esc_html__( 'Take your site to the next level with aThemes Addons Pro.', 'athemes-addons-for-elementor-lite' ),
+			'description2'  => esc_html__( 'You\'ll get access to:', 'athemes-addons-for-elementor-lite' ),
+			'button_text'   => esc_html__( 'Upgrade to Pro', 'athemes-addons-for-elementor-lite' ),
 			'button_url'    => 'https://athemes.com/addons?utm_source=widget_upsell&utm_medium=button&utm_campaign=Addons',
 		];
 	
@@ -45,11 +45,11 @@ trait Upsell_Section_Trait {
 				. '<p>' . esc_html( $args['description'] ) . '</p>'
 				. '<p>' . esc_html( $args['description2']). '</p>'
 				. '<ul>' . 
-					'<li><i class="eicon-check"></i>' . esc_html__( 'Many More Widgets &amp; Extensions', 'athemes-addons-elementor' ) . '</li>' .
-					'<li><i class="eicon-check"></i>' . esc_html__( 'Theme Builder System', 'athemes-addons-elementor' ) . '</li>' .
-					'<li><i class="eicon-check"></i>' . esc_html__( 'Premium email support', 'athemes-addons-elementor' ) . '</li>' .
-					'<li><i class="eicon-check"></i>' . esc_html__( 'Regular updates', 'athemes-addons-elementor' ) . '</li>' .
-					'<li><i class="eicon-check"></i><a href="' . esc_url( $args['button_url'] ) . '" target="_blank">' . esc_html__( '&hellip; and many more premium features', 'athemes-addons-elementor' ) . '</a></li>'
+					'<li><i class="eicon-check"></i>' . esc_html__( 'Many More Widgets &amp; Extensions', 'athemes-addons-for-elementor-lite' ) . '</li>' .
+					'<li><i class="eicon-check"></i>' . esc_html__( 'Theme Builder System', 'athemes-addons-for-elementor-lite' ) . '</li>' .
+					'<li><i class="eicon-check"></i>' . esc_html__( 'Premium email support', 'athemes-addons-for-elementor-lite' ) . '</li>' .
+					'<li><i class="eicon-check"></i>' . esc_html__( 'Regular updates', 'athemes-addons-for-elementor-lite' ) . '</li>' .
+					'<li><i class="eicon-check"></i><a href="' . esc_url( $args['button_url'] ) . '" target="_blank">' . esc_html__( '&hellip; and many more premium features', 'athemes-addons-for-elementor-lite' ) . '</a></li>'
 				. '</ul>'
 				. '<a href="' . esc_url( $args['button_url'] ) . '" class="elementor-button elementor-button-success" target="_blank">' . esc_html( $args['button_text'] ) . '</a>'
 				. '</div>',

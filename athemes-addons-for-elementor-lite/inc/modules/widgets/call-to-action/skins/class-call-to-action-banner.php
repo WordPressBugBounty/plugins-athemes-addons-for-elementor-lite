@@ -50,7 +50,7 @@ class Call_To_Action_Skin2 extends Skin_Base {
 	 * Get the title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Banner', 'athemes-addons-elementor' );
+		return esc_html__( 'Banner', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**

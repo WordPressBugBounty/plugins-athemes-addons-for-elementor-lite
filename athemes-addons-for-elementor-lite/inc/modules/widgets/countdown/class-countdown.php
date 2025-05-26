@@ -48,7 +48,7 @@ class Countdown extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Countdown', 'athemes-addons-elementor' );
+		return __( 'Countdown', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -129,19 +129,19 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_timer',
 			[
-				'label' => esc_html__( 'Timer', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Timer', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'type',
 			[
-				'label' => esc_html__( 'Type', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fixed',
 				'options' => [
-					'fixed'     => esc_html__( 'Fixed', 'athemes-addons-elementor' ),
-					'evergreen' => esc_html__( 'Evergreen', 'athemes-addons-elementor' ),
+					'fixed'     => esc_html__( 'Fixed', 'athemes-addons-for-elementor-lite' ),
+					'evergreen' => esc_html__( 'Evergreen', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -149,7 +149,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'end_date',
 			[
-				'label' => esc_html__( 'End Date', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'End Date', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DATE_TIME,
 				'default' => gmdate( 'Y-m-d H:i:s', strtotime( '+1 week' ) ),
 				'condition' => [
@@ -161,7 +161,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'hours',
 			[
-				'label' => esc_html__( 'Hours', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hours', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 3,
 				'condition' => [
@@ -173,7 +173,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'minutes',
 			[
-				'label' => esc_html__( 'Minutes', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Minutes', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 15,
 				'condition' => [
@@ -185,11 +185,11 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'reset',
 			[
-				'label' => esc_html__( 'Reset', 'athemes-addons-elementor' ),
-				'description' => esc_html__( 'Allow the countdown to reset when it expires.', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Reset', 'athemes-addons-for-elementor-lite' ),
+				'description' => esc_html__( 'Allow the countdown to reset when it expires.', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => esc_html__( 'No', 'athemes-addons-elementor' ),
+				'label_on' => esc_html__( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => esc_html__( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'condition' => [
@@ -201,19 +201,19 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'athemes-addons-elementor' ),
+						'title' => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -226,10 +226,10 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'separator',
 			[
-				'label' => __( 'Number separator', 'athemes-addons-elementor' ),
+				'label' => __( 'Number separator', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -240,7 +240,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_content',
 			[
-				'label' => esc_html__( 'Content', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Content', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -249,43 +249,43 @@ class Countdown extends Widget_Base {
 		$this->start_controls_tab(
 			'labels_singular',
 			[
-				'label' => __( 'Singular', 'athemes-addons-elementor' ),
+				'label' => __( 'Singular', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'label_days_singular',
 			[
-				'label' => __( 'Days', 'athemes-addons-elementor' ),
+				'label' => __( 'Days', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Day', 'athemes-addons-elementor' ),
+				'default' => __( 'Day', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'label_hours_singular',
 			[
-				'label' => __( 'Hours', 'athemes-addons-elementor' ),
+				'label' => __( 'Hours', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Hour', 'athemes-addons-elementor' ),
+				'default' => __( 'Hour', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'label_minutes_singular',
 			[
-				'label' => __( 'Minutes', 'athemes-addons-elementor' ),
+				'label' => __( 'Minutes', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Minute', 'athemes-addons-elementor' ),
+				'default' => __( 'Minute', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'label_seconds_singular',
 			[
-				'label' => __( 'Seconds', 'athemes-addons-elementor' ),
+				'label' => __( 'Seconds', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Second', 'athemes-addons-elementor' ),
+				'default' => __( 'Second', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -294,43 +294,43 @@ class Countdown extends Widget_Base {
 		$this->start_controls_tab(
 			'labels_plural',
 			[
-				'label' => __( 'Plural', 'athemes-addons-elementor' ),
+				'label' => __( 'Plural', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'label_days_plural',
 			[
-				'label' => __( 'Days', 'athemes-addons-elementor' ),
+				'label' => __( 'Days', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Days', 'athemes-addons-elementor' ),
+				'default' => __( 'Days', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'label_hours_plural',
 			[
-				'label' => __( 'Hours', 'athemes-addons-elementor' ),
+				'label' => __( 'Hours', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Hours', 'athemes-addons-elementor' ),
+				'default' => __( 'Hours', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'label_minutes_plural',
 			[
-				'label' => __( 'Minutes', 'athemes-addons-elementor' ),
+				'label' => __( 'Minutes', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Minutes', 'athemes-addons-elementor' ),
+				'default' => __( 'Minutes', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'label_seconds_plural',
 			[
-				'label' => __( 'Seconds', 'athemes-addons-elementor' ),
+				'label' => __( 'Seconds', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Seconds', 'athemes-addons-elementor' ),
+				'default' => __( 'Seconds', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 	
@@ -343,21 +343,21 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_expire_action',
 			[
-				'label' => esc_html__( 'Expire Action', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Expire Action', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'expire_action',
 			[
-				'label' => esc_html__( 'Expire Action', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Expire Action', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'nothing',
 				'options' => [
-					'nothing'   => esc_html__( 'Nothing', 'athemes-addons-elementor' ),
-					'text'      => esc_html__( 'Show text', 'athemes-addons-elementor' ),
-					'template'  => esc_html__( 'Show Template', 'athemes-addons-elementor' ),
-					'url'       => esc_html__( 'Redirect to URL', 'athemes-addons-elementor' ),
+					'nothing'   => esc_html__( 'Nothing', 'athemes-addons-for-elementor-lite' ),
+					'text'      => esc_html__( 'Show text', 'athemes-addons-for-elementor-lite' ),
+					'template'  => esc_html__( 'Show Template', 'athemes-addons-for-elementor-lite' ),
+					'url'       => esc_html__( 'Redirect to URL', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -365,9 +365,9 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'expire_text',
 			[
-				'label' => esc_html__( 'Expire Text', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Expire Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::WYSIWYG,
-				'default' => esc_html__( 'The countdown is finished!', 'athemes-addons-elementor' ),
+				'default' => esc_html__( 'The countdown is finished!', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'expire_action' => 'text',
 				],
@@ -377,7 +377,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'expire_template',
 			[
-				'label' => esc_html__( 'Expire Template', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Expire Template', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT2,
 				'options' => $this->get_available_templates(),
 				'condition' => [
@@ -389,9 +389,9 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'expire_url',
 			[
-				'label' => esc_html__( 'Expire URL', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Expire URL', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'default' => [
 					'url' => '',
 				],
@@ -407,7 +407,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_wrapper_style',
 			[
-				'label' => esc_html__( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -415,7 +415,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -427,7 +427,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'wrapper_background_color',
 			[
-				'label' => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .countdown-timer' => 'background-color: {{VALUE}};',
@@ -446,7 +446,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -468,7 +468,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_element_style',
 			[
-				'label' => esc_html__( 'Elements', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Elements', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -476,7 +476,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'element_size',
 			[
-				'label' => __( 'Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -502,7 +502,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'element_gap',
 			[
-				'label' => __( 'Gap', 'athemes-addons-elementor' ),
+				'label' => __( 'Gap', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -524,7 +524,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'element_background_color',
 			[
-				'label' => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .countdown-element' => 'background-color: {{VALUE}};',
@@ -543,7 +543,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'element_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -565,7 +565,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_number_style',
 			[
-				'label' => esc_html__( 'Numbers', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Numbers', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -573,7 +573,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'number_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -585,7 +585,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'number_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'em', 'px', '%' ],
 				'selectors' => [
@@ -597,7 +597,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'number_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -609,7 +609,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'number_color',
 			[
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .timer-element' => 'color: {{VALUE}};',
@@ -620,7 +620,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'number_background_color',
 			[
-				'label' => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .timer-element' => 'background-color: {{VALUE}};',
@@ -641,7 +641,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_label_style',
 			[
-				'label' => esc_html__( 'Labels', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Labels', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -649,7 +649,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'label_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -661,7 +661,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'label_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -673,7 +673,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'label_bg_color',
 			[
-				'label' => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .label-element' => 'background-color: {{VALUE}};',
@@ -685,7 +685,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'label_color',
 			[
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .label-element' => 'color: {{VALUE}};',
@@ -706,7 +706,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_expired_style',
 			[
-				'label' => esc_html__( 'Expired Content', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Expired Content', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'expire_action' => [ 'text' ],
@@ -717,7 +717,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'expired_content_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'default' => [ 'top' => 20, 'right' => 20, 'bottom' => 20, 'left' => 20 ],
@@ -730,7 +730,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'expired_text_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .countdown-expired-content' => 'color: {{VALUE}};',
@@ -741,7 +741,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'expired_text_background_color',
 			[
-				'label' => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .countdown-expired-content' => 'background-color: {{VALUE}};',
@@ -754,7 +754,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_separator_style',
 			[
-				'label' => esc_html__( 'Separator', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Separator', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'separator' => 'yes',
@@ -765,7 +765,7 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'separator_color',
 			[
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#000000',
 				'selectors' => [
@@ -777,7 +777,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_size',
 			[
-				'label' => __( 'Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [

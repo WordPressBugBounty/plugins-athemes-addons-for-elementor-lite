@@ -29,7 +29,7 @@ class Template_Library_Source extends Source_Base {
 	}
 
 	public function get_title() {
-		return __( 'Template Library', 'athemes-addons-elementor' );
+		return __( 'Template Library', 'athemes-addons-for-elementor-lite' );
 	}
 
 	public function register_data() {}
@@ -195,7 +195,7 @@ class Template_Library_Source extends Source_Base {
 		$data = json_decode( $data, true );
 
 		if ( empty( $data ) || empty( $data['content'] ) ) {
-			throw new \Exception( esc_html__( 'Template does not have any content', 'athemes-addons-elementor' ) );
+			throw new \Exception( esc_html__( 'Template does not have any content', 'athemes-addons-for-elementor-lite' ) );
 		}
 
 		$data['content'] = $this->replace_elements_ids( $data['content'] );

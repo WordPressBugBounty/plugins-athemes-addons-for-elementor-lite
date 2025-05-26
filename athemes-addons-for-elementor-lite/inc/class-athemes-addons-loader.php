@@ -86,8 +86,10 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 			// Add Elementor custom query control.
 			add_action( 'elementor/controls/controls_registered', function( $controls_manager ) {
 				require_once ATHEMES_AFE_DIR . 'inc/controls/class-query-control.php';
+				require_once ATHEMES_AFE_DIR . 'inc/controls/class-template-link.php';
 
 				$controls_manager->register_control( 'aafe-query', new aThemes_Addons\Controls\Query_Control() );
+				$controls_manager->register_control( 'aafe-template-link', new aThemes_Addons\Controls\Template_Link_Control() );
 			} );
 		}
 
@@ -219,7 +221,7 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 			$elements_manager->add_category(
 				'athemes-addons-elements',
 				array(
-					'title' => __( 'aThemes Addons', 'athemes-addons-elementor' ),
+					'title' => __( 'aThemes Addons', 'athemes-addons-for-elementor-lite' ),
 					'icon'  => 'eicon-star-o',
 				)
 			);
@@ -289,8 +291,8 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 									'nonce'                 => wp_create_nonce( 'aafe-posts-widget-nonce' ),
 									'nonce_mailchimp'       => wp_create_nonce( 'aafe-mailchimp-nonce' ),
 									'nonce_product_filter'  => wp_create_nonce( 'aafe-product-filter-nonce' ),
-									'view_event'            => esc_html__( 'View Event', 'athemes-addons-elementor' ),
-									'search_text'           => esc_html__( 'Search', 'athemes-addons-elementor' ),
+									'view_event'            => esc_html__( 'View Event', 'athemes-addons-for-elementor-lite' ),
+									'search_text'           => esc_html__( 'Search', 'athemes-addons-for-elementor-lite' ),
 								)
 							);
 						}
@@ -317,14 +319,17 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 		 * Enqueue editor scripts
 		 */
 		public function enqueue_editor_scripts() {
-			wp_enqueue_script( 'athemes-addons-elementor-editor', ATHEMES_AFE_URI . 'assets/js/admin/elementor-editor.min.js', array( 'jquery' ), ATHEMES_AFE_VERSION, true );
+			wp_enqueue_script( 'athemes-addons-elementor-editor', ATHEMES_AFE_URI . 'assets/js/admin/elementor-editor.min.js', array( 'jquery', 'elementor-editor' ), ATHEMES_AFE_VERSION, true );
 
 			wp_localize_script(
 				'athemes-addons-elementor-editor',
 				'AAFESettings',
 				array(
-					'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
-					'nonce'   => wp_create_nonce( 'aafe-posts-widget-nonce' ),
+					'ajaxurl'   			=> esc_url( admin_url( 'admin-ajax.php' ) ),
+					'admin_url' 			=> esc_url( admin_url() ),
+					'nonce'     			=> wp_create_nonce( 'aafe-posts-widget-nonce' ),
+					'edit_template'         => esc_html__( 'Edit Template', 'athemes-addons-for-elementor-lite' ),
+					'no_template_selected'  => esc_html__( 'No template selected', 'athemes-addons-for-elementor-lite' ),
 				)
 			);
 		}

@@ -52,7 +52,7 @@ class Gravity_Forms extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Gravity Forms', 'athemes-addons-elementor' );
+		return __( 'Gravity Forms', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -130,7 +130,7 @@ class Gravity_Forms extends Widget_Base {
             $this->start_controls_section(
                 'missing_plugin_notice_section',
                 [
-                    'label' => __( 'Missing plugin: Gravity Forms', 'athemes-addons-elementor' ),
+                    'label' => __( 'Missing plugin: Gravity Forms', 'athemes-addons-for-elementor-lite' ),
                 ]
             );
 
@@ -139,7 +139,7 @@ class Gravity_Forms extends Widget_Base {
                 [
                     'type'            => Controls_Manager::RAW_HTML,
 					'raw'             => __('Please install <a href="https://www.gravityforms.com/" target="_blank">Gravity Forms</a> to use this widget.',
-					'athemes-addons-elementor'),
+					'athemes-addons-for-elementor-lite'),
                 ]
             );
 
@@ -150,7 +150,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->start_controls_section(
 			'section_forms',
 			[
-				'label' => __( 'Gravity Forms', 'athemes-addons-elementor' ),
+				'label' => __( 'Gravity Forms', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -158,7 +158,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'contact_forms',
 			[
-				'label' => __('Select your form', 'athemes-addons-elementor'),
+				'label' => __('Select your form', 'athemes-addons-for-elementor-lite'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 0,
 				'options' => $this->forms(),
@@ -168,10 +168,10 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'form_title',
 			[
-				'label' => __( 'Form title', 'athemes-addons-elementor' ),
+				'label' => __( 'Form title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'  => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -180,10 +180,10 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'form_description',
 			[
-				'label' => __( 'Form description', 'athemes-addons-elementor' ),
+				'label' => __( 'Form description', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'  => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -192,10 +192,10 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'ajax',
 			[
-				'label' => __( 'AJAX', 'athemes-addons-elementor' ),
+				'label' => __( 'AJAX', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'  => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -204,19 +204,19 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => esc_html__( 'Form alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Form alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -236,19 +236,19 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'content_align',
 			[
-				'label' => esc_html__( 'Content alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Content alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -262,7 +262,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'size',
 			[
-				'label' => __( 'Form width', 'athemes-addons-elementor' ),
+				'label' => __( 'Form width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -299,7 +299,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'contact_button_heading',
 			[
-				'label' => __( 'Button', 'athemes-addons-elementor' ),
+				'label' => __( 'Button', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -308,10 +308,10 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'stretch_button',
 			[
-				'label' => __( 'Stretch button?', 'athemes-addons-elementor' ),
+				'label' => __( 'Stretch button?', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'  => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'selectors_dictionary' => [
@@ -327,7 +327,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'button_size',
 			[
-				'label' => __( 'Button max. width', 'athemes-addons-elementor' ),
+				'label' => __( 'Button max. width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -355,19 +355,19 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'align_button',
 			[
-				'label' => esc_html__( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -390,7 +390,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_container',
 			[
-				'label' => __( 'Container', 'athemes-addons-elementor' ),
+				'label' => __( 'Container', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -399,7 +399,7 @@ class Gravity_Forms extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'container_background',
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .athemes-addons-form-inner',
 			]
@@ -408,7 +408,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'container_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],
@@ -443,7 +443,7 @@ class Gravity_Forms extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'container_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-form-inner',
 			]
 		);
@@ -452,7 +452,7 @@ class Gravity_Forms extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'container_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-form-inner',
 			]
 		);
@@ -463,7 +463,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_title',
 			[
-				'label' => __( 'Title & description', 'athemes-addons-elementor' ),
+				'label' => __( 'Title & description', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -471,7 +471,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'form_title_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gform_title' => 'color: {{VALUE}};',
@@ -490,7 +490,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'form_description_color',
 			[
-				'label'     => __( 'Description color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Description color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gform_description' => 'color: {{VALUE}};',
@@ -513,7 +513,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_labels',
 			[
-				'label' => __( 'Labels', 'athemes-addons-elementor' ),
+				'label' => __( 'Labels', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -521,7 +521,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'form_labels_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-form-inner label, {{WRAPPER}} .athemes-addons-form-inner legend, {{WRAPPER}} .athemes-addons-form-inner .gfield_description' => 'color: {{VALUE}};',
@@ -543,7 +543,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_fields',
 			[
-				'label' => __( 'Fields', 'athemes-addons-elementor' ),
+				'label' => __( 'Fields', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -551,7 +551,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'field_background_color',
 			[
-				'label'     => __( 'Background color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-form-inner input:not([type="submit"]), {{WRAPPER}} .athemes-addons-form-inner textarea, {{WRAPPER}} .athemes-addons-form-inner select' => 'background-color: {{VALUE}};',
@@ -562,7 +562,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'field_text_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-form-inner input:not([type="submit"]), {{WRAPPER}} .athemes-addons-form-inner textarea, {{WRAPPER}} .athemes-addons-form-inner select' => 'color: {{VALUE}};',
@@ -573,7 +573,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'field_placeholder_color',
 			[
-				'label'     => __( 'Placeholder color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Placeholder color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} input:not([type="submit"])::placeholder,
@@ -585,7 +585,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'field_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -599,7 +599,7 @@ class Gravity_Forms extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'field_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-form-inner input:not([type="submit"]), {{WRAPPER}} .athemes-addons-form-inner textarea, {{WRAPPER}} .athemes-addons-form-inner select',
 			]
 		);
@@ -607,7 +607,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'field_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],         
@@ -620,7 +620,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'field_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -642,7 +642,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => esc_html__( 'Button', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Button', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -668,14 +668,14 @@ class Gravity_Forms extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -688,9 +688,9 @@ class Gravity_Forms extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'label' => esc_html__( 'Background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)), {{WRAPPER}} --gf-color-primary',
 				'fields_options' => [
 					'background' => [
@@ -706,14 +706,14 @@ class Gravity_Forms extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover, {{WRAPPER}} .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):focus' => 'color: {{VALUE}};',
@@ -726,9 +726,9 @@ class Gravity_Forms extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'button_background_hover',
-				'label' => esc_html__( 'Background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover, {{WRAPPER}} .gform-theme.gform-theme--framework.gform_wrapper .button:where(:not(.gform-theme-no-framework):not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):focus, {{WRAPPER}} --gf-ctrl-btn-bg-color-hover-primary',
 				'fields_options' => [
 					'background' => [
@@ -741,7 +741,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'button_hover_border_color',
 			[
-				'label' => esc_html__( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'border_border!' => '',
@@ -769,7 +769,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -789,7 +789,7 @@ class Gravity_Forms extends Widget_Base {
 		$this->add_responsive_control(
 			'text_padding',
 			[
-				'label' => esc_html__( 'Padding', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [

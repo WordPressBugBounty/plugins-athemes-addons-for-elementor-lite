@@ -169,7 +169,7 @@ if ( ! class_exists( 'aThemes_Addons_Posts_Helper' ) ) {
 				}
 			}
 	
-			$post_args['post__not_in'] = $excluded_posts;
+			$post_args['post__not_in'] = $excluded_posts; // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
 	
 			return $post_args;
 		}       
@@ -222,7 +222,7 @@ if ( ! class_exists( 'aThemes_Addons_Posts_Helper' ) ) {
 			$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : '';
 
 			if ( empty( $post_type ) ) {
-				wp_send_json_error( __( 'There are no posts.', 'athemes-addons-elementor' ) );
+				wp_send_json_error( __( 'There are no posts.', 'athemes-addons-for-elementor-lite' ) );
 			}
 
 			$list = get_posts(
@@ -343,7 +343,7 @@ if ( ! class_exists( 'aThemes_Addons_Posts_Helper' ) ) {
 			}
 
 			?>
-			<nav class="pagination-container" role="navigation" aria-label="<?php echo esc_attr( __( 'Pagination', 'athemes-addons-elementor' ) ); ?>">
+			<nav class="pagination-container" role="navigation" aria-label="<?php echo esc_attr( __( 'Pagination', 'athemes-addons-for-elementor-lite' ) ); ?>">
 				<?php echo wp_kses_post( implode( PHP_EOL, $nav_links ) ); ?>
 			</nav>
 			<?php

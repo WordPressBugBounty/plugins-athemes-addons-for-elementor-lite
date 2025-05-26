@@ -48,7 +48,7 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 
 				$options = get_option( 'athemes-addons-settings', array() );
 		
-				$fields = ( isset( $_POST['fields'] ) ) ? $_POST['fields'] : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized in foreach.
+				$fields = ( isset( $_POST['fields'] ) ) ? wp_unslash( $_POST['fields'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized in foreach.
 		
 				foreach ( $fields as $field_id => $field_value ) {
 					$sanitized_value  = isset( $field_value ) ? sanitize_text_field( wp_unslash( $field_value ) ) : '';
@@ -190,7 +190,7 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 		public static function save_button() {
 			?>
 			<div class="athemes-addons-module-page-setting-save">
-				<button class="button button-primary button-hero aafe-save-settings"><?php esc_html_e( 'Save', 'athemes-addons-elementor' ); ?></button>
+				<button class="button button-primary button-hero aafe-save-settings"><?php esc_html_e( 'Save', 'athemes-addons-for-elementor-lite' ); ?></button>
 			</div>
 			<?php
 		}

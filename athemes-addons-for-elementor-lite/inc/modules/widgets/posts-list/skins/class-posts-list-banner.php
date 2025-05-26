@@ -46,7 +46,7 @@ class Posts_List_Skin2 extends Skin_Base {
 	 * Get the title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Banner', 'athemes-addons-elementor' );
+		return esc_html__( 'Banner', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Posts_List_Skin2 extends Skin_Base {
 		$controls->add_responsive_control(
 			'card_padding_' . $this->get_id(),
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'default' => [
@@ -86,7 +86,7 @@ class Posts_List_Skin2 extends Skin_Base {
 		$controls->add_control(
 			'card_border_radius_' . $this->get_id(),
 			[
-				'label' => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'default' => [
@@ -120,10 +120,10 @@ class Posts_List_Skin2 extends Skin_Base {
 		$controls->add_control(
 			'show_excerpt_' . $this->get_id(),
 			[
-				'label' => __( 'Show excerpt', 'athemes-addons-elementor' ),
+				'label' => __( 'Show excerpt', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'  => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',      
 				'condition' => [

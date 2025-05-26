@@ -41,15 +41,17 @@ class Page_Duplicator {
 
 		global $pagenow;
 		global $post;
-		
-		$enabled_on = get_option( 'athemes-addons-settings' )['aafe_duplicator_post_types'];
+
+		$settings = get_option( 'athemes-addons-settings' );
+
+		$enabled_on = ( empty( $settings ) ) ? 'all' : $settings['aafe_duplicator_post_types'];
 
 		$enabled_on = explode( ',', $enabled_on );
 
 		if ( current_user_can( 'edit_others_posts' ) && ( in_array( 'all', $enabled_on, true ) || in_array( $post->post_type, $enabled_on, true ) ) ) {
 			$duplicate_url            = admin_url( 'admin.php?action=aafe_duplicate&post=' . $post->ID );
 			$duplicate_url            = wp_nonce_url( $duplicate_url, 'aafe_duplicator' );
-			$actions['aafe_duplicate'] = sprintf( '<a href="%s" title="%s">%s</a>', $duplicate_url, __( 'Duplicate ' . esc_attr( $post->post_title ), 'athemes-addons-elementor' ), __( 'aThemes Duplicator', 'athemes-addons-elementor' ) );
+			$actions['aafe_duplicate'] = sprintf( '<a href="%s" title="%s">%s</a>', $duplicate_url, __( 'Duplicate ' . esc_attr( $post->post_title ), 'athemes-addons-for-elementor-lite' ), __( 'aThemes Duplicator', 'athemes-addons-for-elementor-lite' ) ); // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
 		}
 
 		return $actions;
@@ -66,7 +68,7 @@ class Page_Duplicator {
 
 		$post_id = absint( $_GET['post'] );
 
-		if ( ! current_user_can( 'edit_others_posts' ) || ! wp_verify_nonce( sanitize_text_field( $_GET['_wpnonce'] ), 'aafe_duplicator' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
+		if ( ! current_user_can( 'edit_others_posts' ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'aafe_duplicator' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 			return;
 		}
 
@@ -77,7 +79,7 @@ class Page_Duplicator {
 		}
 
 		$new_post_id = wp_insert_post( array(
-			'post_title'    => $post->post_title . ' - ' . __( 'Copy', 'athemes-addons-elementor' ),
+			'post_title'    => $post->post_title . ' - ' . __( 'Copy', 'athemes-addons-for-elementor-lite' ),
 			'post_content'  => $post->post_content,
 			'post_status'   => 'draft',
 			'post_type'     => $post->post_type,

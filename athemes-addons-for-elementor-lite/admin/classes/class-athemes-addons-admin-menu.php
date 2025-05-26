@@ -107,8 +107,8 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 
 			add_submenu_page(
 				$this->plugin_slug,
-				esc_html__( 'Widgets', 'athemes-addons-elementor' ),
-				esc_html__( 'Widgets', 'athemes-addons-elementor' ),
+				esc_html__( 'Widgets', 'athemes-addons-for-elementor-lite' ),
+				esc_html__( 'Widgets', 'athemes-addons-for-elementor-lite' ),
 				'manage_options',
 				$this->plugin_slug,
 				'',
@@ -117,8 +117,8 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 
 			add_submenu_page(
 				$this->plugin_slug,
-				esc_html__( 'Extensions', 'athemes-addons-elementor' ),
-				esc_html__( 'Extensions', 'athemes-addons-elementor' ),
+				esc_html__( 'Extensions', 'athemes-addons-for-elementor-lite' ),
+				esc_html__( 'Extensions', 'athemes-addons-for-elementor-lite' ),
 				'manage_options',
 				'admin.php?page=' . $this->plugin_slug . '&section=extensions',
 				'',
@@ -127,8 +127,8 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 
 			add_submenu_page(
 				$this->plugin_slug,
-				esc_html__( 'Settings', 'athemes-addons-elementor' ),
-				esc_html__( 'Settings', 'athemes-addons-elementor' ),
+				esc_html__( 'Settings', 'athemes-addons-for-elementor-lite' ),
+				esc_html__( 'Settings', 'athemes-addons-for-elementor-lite' ),
 				'manage_options',
 				'admin.php?page=' . $this->plugin_slug . '&section=settings',
 				'',
@@ -138,8 +138,8 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 			// Add 'aThemes Patcher' link
 			add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page
 				$this->plugin_slug,
-				esc_html__('Patcher', 'athemes-addons-elementor'),
-				esc_html__('Patcher', 'athemes-addons-elementor'),
+				esc_html__('Patcher', 'athemes-addons-for-elementor-lite'),
+				esc_html__('Patcher', 'athemes-addons-for-elementor-lite'),
 				'manage_options',
 				'athemes-patcher-preview-ap',
 				array( $this, 'html_patcher' ),
@@ -149,8 +149,8 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 			if ( ! defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 				add_submenu_page(
 					$this->plugin_slug,
-					esc_html__('Upgrade to Pro', 'athemes-addons-elementor'),
-					esc_html__('Upgrade to Pro', 'athemes-addons-elementor'), 
+					esc_html__('Upgrade to Pro', 'athemes-addons-for-elementor-lite'),
+					esc_html__('Upgrade to Pro', 'athemes-addons-for-elementor-lite'), 
 					'manage_options',
 					'https://athemes.com/addons?utm_source=theme_submenu_page&utm_medium=button&utm_campaign=Addons',
 					'',
@@ -240,20 +240,20 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 		public function dashboard_tabs() {
 			$tabs = array(
 				'widgets' => array(
-					'title' => __( 'Widgets', 'athemes-addons-elementor' ),
+					'title' => __( 'Widgets', 'athemes-addons-for-elementor-lite' ),
 					'link'  => 'admin.php?page=athemes-addons&section=widgets',
 				),
 				'theme-builder' => array(
-					'title' => __( 'Theme Builder', 'athemes-addons-elementor' ),
+					'title' => __( 'Theme Builder', 'athemes-addons-for-elementor-lite' ),
 					'link'  => 'admin.php?page=athemes-addons&section=theme-builder',
 				),
 				'extensions' => array(
-					'title' => __( 'Extensions', 'athemes-addons-elementor' ),
+					'title' => __( 'Extensions', 'athemes-addons-for-elementor-lite' ),
 					'link'  => 'admin.php?page=athemes-addons&section=extensions',
 				),
 				
 				'settings' => array(
-					'title' => __( 'Settings', 'athemes-addons-elementor' ),
+					'title' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 					'link'  => 'admin.php?page=athemes-addons&section=settings',
 				),
 				
@@ -261,7 +261,7 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 
 			if ( ! defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 				$tabs['upgrade'] = array(
-					'title' => __( 'Free vs Pro', 'athemes-addons-elementor' ),
+					'title' => __( 'Free vs Pro', 'athemes-addons-for-elementor-lite' ),
 					'link'  => 'admin.php?page=athemes-addons&section=upgrade',
 				);
 			}
@@ -282,7 +282,7 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 		 */
 		public function footer_internal_scripts() {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-			$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? str_replace( '/wp-admin/', '', $_SERVER['REQUEST_URI'] ) : '';
+			$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? str_replace( '/wp-admin/', '', wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
 			?>
 			<style>
 				#adminmenu .toplevel_page_athemes-addons .wp-submenu li.current a {

@@ -37,7 +37,7 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 			$api_key = get_option( 'athemes-addons-settings' )['aafe_mailchimp_api_key'];
 
 			if ( empty( $api_key ) ) {
-				wp_send_json_error( __( 'Mailchimp API key is not set', 'athemes-addons-elementor' ) );
+				wp_send_json_error( __( 'Mailchimp API key is not set', 'athemes-addons-for-elementor-lite' ) );
 			}
 
 			check_ajax_referer( 'aafe-mailchimp-nonce', 'nonce' );
@@ -114,14 +114,14 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 			$page_id            = ( isset( $_POST['page_id'] ) ) ? sanitize_text_field( wp_unslash( $_POST['page_id'] ) ) : '';
 
 			if ( empty( $widget_id ) || empty( $page_id ) ) {
-				wp_send_json_error( __( 'Invalid widget ID or page ID', 'athemes-addons-elementor' ) );
+				wp_send_json_error( __( 'Invalid widget ID or page ID', 'athemes-addons-for-elementor-lite' ) );
 			}
 
 			// Get widget settings.
 			$settings = aThemes_Addons_Helper::get_widget_settings( $page_id, $widget_id );
 
 			if ( empty( $settings ) ) {
-				wp_send_json_error( __( 'Invalid widget settings', 'athemes-addons-elementor' ) );
+				wp_send_json_error( __( 'Invalid widget settings', 'athemes-addons-for-elementor-lite' ) );
 			}
 			
 			$query_args = array(
@@ -165,7 +165,7 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 				unset( $query_args['offset'] );
 
 				if ( $current_page > $max_pages ) {
-					wp_send_json_error( __( 'No more products to load', 'athemes-addons-elementor' ) );
+					wp_send_json_error( __( 'No more products to load', 'athemes-addons-for-elementor-lite' ) );
 				}
 			}
 
@@ -205,14 +205,14 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 			$source_name = 'post_type';
 	
 			if ( ! empty( $_POST['post_type'] ) ) {
-				$post_type = sanitize_text_field( $_POST['post_type'] );
+				$post_type = sanitize_text_field( wp_unslash( $_POST['post_type'] ) );
 			}
 	
 			if ( ! empty( $_POST['source_name'] ) ) {
-				$source_name = sanitize_text_field( $_POST['source_name'] );
+				$source_name = sanitize_text_field( wp_unslash( $_POST['source_name'] ) );
 			}
 	
-			$search  = ! empty( $_POST['term'] ) ? sanitize_text_field( $_POST['term'] ) : '';
+			$search  = ! empty( $_POST['term'] ) ? sanitize_text_field( wp_unslash( $_POST['term'] ) ) : '';
 			$results = $post_list = [];
 			switch ( $source_name ) {
 				case 'taxonomy':
@@ -274,11 +274,11 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 				wp_send_json_error( [] );
 			}
 	
-			if ( empty( array_filter( $_POST['id'] ) ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			if ( empty( array_filter( wp_unslash( $_POST['id'] ) ) ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 				wp_send_json_error( [] );
 			}
 			$ids         = array_map( 'intval', $_POST['id'] );
-			$source_name = ! empty( $_POST['source_name'] ) ? sanitize_text_field( $_POST['source_name'] ) : '';
+			$source_name = ! empty( $_POST['source_name'] ) ? sanitize_text_field( wp_unslash( $_POST['source_name'] ) ) : '';
 	
 			switch ( $source_name ) {
 				case 'taxonomy':
@@ -290,7 +290,7 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 					];
 	
 					if ( isset( $_POST['post_type'] ) && $_POST['post_type'] !== 'all' ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-						$args['taxonomy'] = sanitize_text_field( $_POST['post_type'] );
+						$args['taxonomy'] = sanitize_text_field( wp_unslash( $_POST['post_type'] ) );
 					}
 	
 					$response = wp_list_pluck( get_terms( $args ), 'name', 'term_id' );
@@ -307,7 +307,7 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 					$response = $users;
 					break;
 				default:
-					$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( $_POST['post_type'] ) : 'post';
+					$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'post';
 					$post_info = get_posts( [
 						'post_type' => $post_type,
 						'include'   => implode( ',', $ids ),

@@ -166,3 +166,94 @@
 
     });
 }(jQuery));
+
+/**
+ * Template Link Control JavaScript
+ * 
+ */
+(function($) {
+    'use strict';
+
+    var TemplateLink = elementor.modules.controls.BaseData.extend({
+        
+        ui: function() {
+            var ui = elementor.modules.controls.BaseData.prototype.ui.apply(this, arguments);
+            ui.templateContainer = '.aafe-template-link-container';
+            ui.templateValue = '.aafe-template-value';
+            return ui;
+        },
+        
+        onReady: function() {
+            this.initControl();
+        },
+        
+        /**
+         * Initialize the control
+         */
+        initControl: function() {
+            var self = this;
+            var connectedOption = this.getConnectedOption();
+            
+            if (!connectedOption) {
+                return;
+            }
+            
+            // Update value when initialized
+            this.updateTemplateValue();
+            
+            // Listen for changes in other controls
+            this.listenTo(this.container.settings, 'change:' + connectedOption, this.updateTemplateValue);
+        },
+        
+        /**
+         * Get the name of the connected option
+         */
+        getConnectedOption: function() {
+            return this.model.get('connected_option');
+        },
+        
+        /**
+         * Update the template value display
+         */
+        updateTemplateValue: function() {
+            var connectedOption = this.getConnectedOption();
+            if (!connectedOption) {
+                return;
+            }
+            
+            var templateId = this.container.settings.get(connectedOption);
+            
+            // Clear content if no template is selected
+            if (!templateId) {
+                this.ui.templateValue.empty();
+                return;
+            }
+            
+            // Create the edit link
+            var editUrl = this.getTemplateEditUrl(templateId);
+            var linkHtml = '<a style="margin-top: -10px;border:0!important;" href="' + editUrl + '" target="_blank" class="elementor-button elementor-button-default">' + AAFESettings.edit_template + '</a>';
+            
+            this.ui.templateValue.html(linkHtml);
+        },
+        
+        /**
+         * Get the edit URL for a template
+         */
+        getTemplateEditUrl: function(templateId) {
+            if (typeof AAFESettings.admin_url !== 'undefined') {
+                return AAFESettings.admin_url + 
+                       'post.php?post=' + templateId + 
+                       '&action=elementor';
+            }
+            
+            // Fallback
+            return window.location.origin + 
+                   '/wp-admin/post.php?post=' + templateId + 
+                   '&action=elementor';
+        },
+    });
+
+    // Register the control
+    elementor.addControlView('aafe-template-link', TemplateLink);
+    
+})(jQuery); 

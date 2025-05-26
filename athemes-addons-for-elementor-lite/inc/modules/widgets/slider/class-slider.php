@@ -51,7 +51,7 @@ class Slider extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Slider', 'athemes-addons-elementor' );
+		return __( 'Slider', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -134,7 +134,7 @@ class Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_slider_items',
 			[
-				'label' => __( 'Slides', 'athemes-addons-elementor' ),
+				'label' => __( 'Slides', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -142,17 +142,17 @@ class Slider extends Widget_Base {
 
 		$repeater->start_controls_tabs( 'slides_options' );
 
-		$repeater->start_controls_tab( 'slider_content', [ 'label' => __( 'Content', 'athemes-addons-elementor' ) ] );
+		$repeater->start_controls_tab( 'slider_content', [ 'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$repeater->add_control(
 			'content_type',
 			[
-				'label' => __( 'Content type', 'athemes-addons-elementor' ),
+				'label' => __( 'Content type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'custom',
 				'options' => [
-					'custom'    => __( 'Custom', 'athemes-addons-elementor' ),
-					'template'  => __( 'Template', 'athemes-addons-elementor' ),
+					'custom'    => __( 'Custom', 'athemes-addons-for-elementor-lite' ),
+					'template'  => __( 'Template', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -160,9 +160,9 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'slide_heading',
 			[
-				'label' => __( 'Title & Description', 'athemes-addons-elementor' ),
+				'label' => __( 'Title & Description', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Slide Heading', 'athemes-addons-elementor' ),
+				'default' => __( 'Slide Heading', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'content_type' => 'custom',
 				],
@@ -172,9 +172,9 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'slide_description',
 			[
-				'label' => __( 'Description', 'athemes-addons-elementor' ),
+				'label' => __( 'Description', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::WYSIWYG,
-				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'athemes-addons-elementor' ),
+				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'athemes-addons-for-elementor-lite' ),
 				'show_label' => false,
 				'condition' => [
 					'content_type' => 'custom',
@@ -185,9 +185,9 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'button_text',
 			[
-				'label' => __( 'Button text', 'athemes-addons-elementor' ),
+				'label' => __( 'Button text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Click me', 'athemes-addons-elementor' ),
+				'default' => __( 'Click me', 'athemes-addons-for-elementor-lite' ),
 				'show_label' => true,
 				'condition' => [
 					'content_type' => 'custom',
@@ -198,7 +198,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'button_url',
 			[
-				'label' => __( 'Button URL', 'athemes-addons-elementor' ),
+				'label' => __( 'Button URL', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
 				'default' => [
 					'url' => '#',
@@ -213,7 +213,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'template_id',
 			[
-				'label' => __( 'Template', 'athemes-addons-elementor' ),
+				'label' => __( 'Template', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => $this->get_available_templates(),
@@ -222,21 +222,34 @@ class Slider extends Widget_Base {
 				],
 			]
 		);
+
+		$repeater->add_control(
+			'template_link',
+			[
+				'label' => '',
+				'type' => 'aafe-template-link',
+				'connected_option' => 'template_id',
+				'condition' => [
+					'content_type' => 'template',
+					'template_id!' => '',
+				],
+			]
+		);
 			
 		$repeater->add_control(
 			'content_animation',
 			[
-				'label'     => __( 'Content Animation', 'athemes-addons-elementor' ),
+				'label'     => __( 'Content Animation', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'none',
 				'options'   => [
-					'none'              => __( 'None', 'athemes-addons-elementor' ),
-					'aafe-fadeIn'       => __( 'Fade in', 'athemes-addons-elementor' ),
-					'aafe-fadeInDown'   => __( 'Fade in down', 'athemes-addons-elementor' ),
-					'aafe-fadeInUp'     => __( 'Fade in up', 'athemes-addons-elementor' ),
-					'aafe-fadeInRight'  => __( 'Fade in right', 'athemes-addons-elementor' ),
-					'aafe-fadeInLeft'   => __( 'Fade in left', 'athemes-addons-elementor' ),
-					'aafe-zoomIn'       => __( 'Zoom in', 'athemes-addons-elementor' ),
+					'none'              => __( 'None', 'athemes-addons-for-elementor-lite' ),
+					'aafe-fadeIn'       => __( 'Fade in', 'athemes-addons-for-elementor-lite' ),
+					'aafe-fadeInDown'   => __( 'Fade in down', 'athemes-addons-for-elementor-lite' ),
+					'aafe-fadeInUp'     => __( 'Fade in up', 'athemes-addons-for-elementor-lite' ),
+					'aafe-fadeInRight'  => __( 'Fade in right', 'athemes-addons-for-elementor-lite' ),
+					'aafe-fadeInLeft'   => __( 'Fade in left', 'athemes-addons-for-elementor-lite' ),
+					'aafe-zoomIn'       => __( 'Zoom in', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -244,7 +257,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'kenburns',
 			[
-				'label' => __( 'Kenburns effect', 'athemes-addons-elementor' ),
+				'label' => __( 'Kenburns effect', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',  
 				'return_value' => 'yes',
@@ -253,26 +266,26 @@ class Slider extends Widget_Base {
 				
 		$repeater->end_controls_tab();
 
-		$repeater->start_controls_tab( 'slider_style', [ 'label' => __( 'Style', 'athemes-addons-elementor' ) ] );
+		$repeater->start_controls_tab( 'slider_style', [ 'label' => __( 'Style', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$repeater->add_control(
 			'content_alignment',
 			[
-				'label' => __( 'Content alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Content alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'default'   => 'center',
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'athemes-addons-elementor' ),
+						'title' => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -290,21 +303,21 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'content_vertical_alignment',
 			[
-				'label' => __( 'Vertical alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Vertical alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'default'   => 'center',
 				'options' => [
 					'top' => [
-						'title' => __( 'Top', 'athemes-addons-elementor' ),
+						'title' => __( 'Top', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'center' => [
-						'title' => __( 'Center', 'athemes-addons-elementor' ),
+						'title' => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-middle',
 					],
 					'bottom' => [
-						'title' => __( 'Bottom', 'athemes-addons-elementor' ),
+						'title' => __( 'Bottom', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -323,7 +336,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'background_color',
 			[
-				'label' => __( 'Background color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#787c80',
 				'selectors' => [
@@ -335,7 +348,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'background_image',
 			[
-				'label' => __( 'Background Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => '',
@@ -346,13 +359,13 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'background_size',
 			[
-				'label' => __( 'Background size', 'athemes-addons-elementor' ),
+				'label' => __( 'Background size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'cover',
 				'options' => [
-					'cover'     => __( 'Cover', 'athemes-addons-elementor' ),
-					'contain'   => __( 'Contain', 'athemes-addons-elementor' ),
-					'auto'      => __( 'Auto', 'athemes-addons-elementor' ),
+					'cover'     => __( 'Cover', 'athemes-addons-for-elementor-lite' ),
+					'contain'   => __( 'Contain', 'athemes-addons-for-elementor-lite' ),
+					'auto'      => __( 'Auto', 'athemes-addons-for-elementor-lite' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'background-size: {{VALUE}}',
@@ -372,7 +385,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'enable_overlay',
 			[
-				'label' => __( 'Enable overlay', 'athemes-addons-elementor' ),
+				'label' => __( 'Enable overlay', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 				'conditions' => [
@@ -390,7 +403,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'overlay_color',
 			[
-				'label' => __( 'Overlay color', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => 'rgba(0,0,0,0.5)',
 				'selectors' => [
@@ -411,7 +424,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'heading_color',
 			[
-				'label' => __( 'Heading color', 'athemes-addons-elementor' ),
+				'label' => __( 'Heading color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -426,7 +439,7 @@ class Slider extends Widget_Base {
 		$repeater->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text color', 'athemes-addons-elementor' ),
+				'label' => __( 'Text color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -445,18 +458,18 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'slides_controls',
 			[
-				'label' => __( 'Slides', 'athemes-addons-elementor' ),
+				'label' => __( 'Slides', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'slide_heading' => __( 'Welcome to our website', 'athemes-addons-elementor' ),
-						'slide_description' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc rutrum libero posuere rutrum vel a nibh.', 'athemes-addons-elementor' ),
+						'slide_heading' => __( 'Welcome to our website', 'athemes-addons-for-elementor-lite' ),
+						'slide_description' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc rutrum libero posuere rutrum vel a nibh.', 'athemes-addons-for-elementor-lite' ),
 						'background_color'  => '#071555',
 					],
 					[
-						'slide_heading' => __( 'Feel free to explore', 'athemes-addons-elementor' ),
-						'slide_description' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc rutrum libero posuere rutrum vel a nibh.', 'athemes-addons-elementor' ),
+						'slide_heading' => __( 'Feel free to explore', 'athemes-addons-for-elementor-lite' ),
+						'slide_description' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc rutrum libero posuere rutrum vel a nibh.', 'athemes-addons-for-elementor-lite' ),
 						'background_color'  => '#0124c5',                   
 					],
 				],              
@@ -470,22 +483,22 @@ class Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_slider_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'slide_effect',
 			[
-				'label' => __( 'Effect', 'athemes-addons-elementor' ),
+				'label' => __( 'Effect', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fade',
 				'options' => [
-					'slide'     => __( 'Slide', 'athemes-addons-elementor' ),
-					'fade'      => __( 'Fade', 'athemes-addons-elementor' ),
-					'cube'      => __( 'Cube', 'athemes-addons-elementor' ),
-					'coverflow' => __( 'Coverflow', 'athemes-addons-elementor' ),
-					'flip'      => __( 'Flip', 'athemes-addons-elementor' ),
+					'slide'     => __( 'Slide', 'athemes-addons-for-elementor-lite' ),
+					'fade'      => __( 'Fade', 'athemes-addons-for-elementor-lite' ),
+					'cube'      => __( 'Cube', 'athemes-addons-for-elementor-lite' ),
+					'coverflow' => __( 'Coverflow', 'athemes-addons-for-elementor-lite' ),
+					'flip'      => __( 'Flip', 'athemes-addons-for-elementor-lite' ),
 				],
 				'render_type' => 'template',
 			]
@@ -494,7 +507,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'slider_height',
 			[
-				'label' => __( 'Slider height', 'athemes-addons-elementor' ),
+				'label' => __( 'Slider height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 500,
@@ -515,7 +528,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label' => __( 'Autoplay speed [ms]', 'athemes-addons-elementor' ),
+				'label' => __( 'Autoplay speed [ms]', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 3000,
 				'range' => [
@@ -528,7 +541,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'show_pagination',
 			[
-				'label' => __( 'Show pagination', 'athemes-addons-elementor' ),
+				'label' => __( 'Show pagination', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',   
 				'return_value' => 'yes',   
@@ -539,7 +552,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'show_navigation',
 			[
-				'label' => __( 'Show navigation', 'athemes-addons-elementor' ),
+				'label' => __( 'Show navigation', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',  
 				'return_value' => 'yes',
@@ -550,7 +563,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'pause_on_hover',
 			[
-				'label' => __( 'Pause on hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Pause on hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',  
 				'return_value' => 'yes',
@@ -560,7 +573,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'pause_on_interaction',
 			[
-				'label' => __( 'Pause on interaction', 'athemes-addons-elementor' ),
+				'label' => __( 'Pause on interaction', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',  
 				'return_value' => 'yes',
@@ -570,7 +583,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'loop',
 			[
-				'label' => __( 'Loop', 'athemes-addons-elementor' ),
+				'label' => __( 'Loop', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',  
 				'return_value' => 'yes',
@@ -580,7 +593,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'show_thumbs',
 			[
-				'label' => __( 'Show thumbs', 'athemes-addons-elementor' ),
+				'label' => __( 'Show thumbs', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',  
 				'return_value' => 'yes',
@@ -594,7 +607,7 @@ class Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_wrapper_style',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -602,7 +615,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -615,7 +628,7 @@ class Slider extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'wrapper_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-slider',
 				'separator' => 'before',
 			]
@@ -624,7 +637,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -645,7 +658,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'slide_padding',
 			[
-				'label' => __( 'Slide inner padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Slide inner padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -657,7 +670,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'slide_content_width',
 			[
-				'label' => __( 'Slide content width', 'athemes-addons-elementor' ),
+				'label' => __( 'Slide content width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 600,
@@ -680,7 +693,7 @@ class Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_title_style',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -688,7 +701,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -700,7 +713,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
@@ -722,7 +735,7 @@ class Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_text_style',
 			[
-				'label' => __( 'Text', 'athemes-addons-elementor' ),
+				'label' => __( 'Text', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -730,7 +743,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'text_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -742,7 +755,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
@@ -764,7 +777,7 @@ class Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			[
-				'label' => __( 'Button', 'athemes-addons-elementor' ),
+				'label' => __( 'Button', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -782,14 +795,14 @@ class Slider extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label' => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -801,7 +814,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} a.button' => 'background-color: {{VALUE}};',
@@ -814,14 +827,14 @@ class Slider extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label' => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} a.button:hover' => 'color: {{VALUE}};',
@@ -832,7 +845,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'button_background_hover_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} a.button:hover' => 'background-color: {{VALUE}};',
@@ -843,7 +856,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'button_hover_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'border_border!' => '',
@@ -857,7 +870,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => __( 'Hover Animation', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover Animation', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 			]
 		);
@@ -880,7 +893,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -900,7 +913,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'text_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -915,7 +928,7 @@ class Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_navigation_style',
 			[
-				'label' => __( 'Navigation', 'athemes-addons-elementor' ),
+				'label' => __( 'Navigation', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -923,7 +936,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'arrows_heading',
 			[
-				'label' => __( 'Arrows', 'athemes-addons-elementor' ),
+				'label' => __( 'Arrows', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -931,7 +944,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_size',
 			[
-				'label' => __( 'Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 40,
@@ -954,14 +967,14 @@ class Slider extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_arrows_normal',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'arrows_bg_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-button-prev, {{WRAPPER}} .swiper-button-next' => 'background-color: {{VALUE}};',
@@ -972,7 +985,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'arrows_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-button-prev, {{WRAPPER}} .swiper-button-next' => 'color: {{VALUE}};',
@@ -985,14 +998,14 @@ class Slider extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_arrows_hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'arrows_hover_bg_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-button-prev:hover, {{WRAPPER}} .swiper-button-next:hover' => 'background-color: {{VALUE}};',
@@ -1003,7 +1016,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'arrows_hover_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-button-prev:hover, {{WRAPPER}} .swiper-button-next:hover' => 'color: {{VALUE}};',
@@ -1018,7 +1031,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'arrows_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'default' => [
@@ -1037,7 +1050,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'dots_heading',
 			[
-				'label' => __( 'Dots', 'athemes-addons-elementor' ),
+				'label' => __( 'Dots', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1046,7 +1059,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'dots_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-pagination-bullet' => 'background-color: {{VALUE}};',
@@ -1057,7 +1070,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_width',
 			[
-				'label' => __( 'Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 20,
@@ -1077,7 +1090,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 6,
@@ -1097,7 +1110,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'default' => [
@@ -1116,7 +1129,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'thumbs_heading',
 			[
-				'label' => __( 'Thumbs', 'athemes-addons-elementor' ),
+				'label' => __( 'Thumbs', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1128,7 +1141,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors' => [
@@ -1143,7 +1156,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_max_width',
 			[
-				'label' => __( 'Max width', 'athemes-addons-elementor' ),
+				'label' => __( 'Max width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'units' => [ '%' ],
 				'default' => [
@@ -1168,7 +1181,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 80,
@@ -1191,7 +1204,7 @@ class Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_border_radius',
 			[
-				'label' => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'default' => [
@@ -1213,7 +1226,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'active_thumb_border_color',
 			[
-				'label' => __( 'Active thumb border color', 'athemes-addons-elementor' ),
+				'label' => __( 'Active thumb border color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1c1c1c',
 				'selectors' => [
@@ -1228,7 +1241,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'grayscale_effect',
 			[
-				'label' => __( 'Grayscale effect', 'athemes-addons-elementor' ),
+				'label' => __( 'Grayscale effect', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',  
 				'return_value' => 'yes',

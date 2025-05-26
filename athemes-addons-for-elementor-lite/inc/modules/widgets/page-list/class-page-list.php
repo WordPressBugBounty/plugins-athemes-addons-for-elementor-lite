@@ -50,7 +50,7 @@ class Page_List extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Page List', 'athemes-addons-elementor' );
+		return __( 'Page List', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -127,7 +127,7 @@ class Page_List extends Widget_Base {
 		$this->start_controls_section(
 			'section_list',
 			[
-				'label' => __( 'List', 'athemes-addons-elementor' ),
+				'label' => __( 'List', 'athemes-addons-for-elementor-lite' ),
 			]
 		);  
 
@@ -136,12 +136,12 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'item_type',
 			[
-				'label' => __( 'Item type', 'athemes-addons-elementor' ),
+				'label' => __( 'Item type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'custom',
 				'options' => [
-					'page'      => __( 'Page', 'athemes-addons-elementor' ),
-					'custom'    => __( 'Custom link', 'athemes-addons-elementor' ),
+					'page'      => __( 'Page', 'athemes-addons-for-elementor-lite' ),
+					'custom'    => __( 'Custom link', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -149,7 +149,7 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'page',
 			[
-				'label' => __( 'Page', 'athemes-addons-elementor' ),
+				'label' => __( 'Page', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT2,
 				'options' => $this->get_pages(),
 				'condition' => [
@@ -162,9 +162,9 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'item_title',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Item name', 'athemes-addons-elementor' ),
+				'default' => __( 'Item name', 'athemes-addons-for-elementor-lite' ),
 				'separator' => 'before',
 				'condition' => [
 					'item_type' => 'custom',
@@ -175,18 +175,18 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'item_subtitle',
 			[
-				'label' => __( 'Subtitle', 'athemes-addons-elementor' ),
+				'label' => __( 'Subtitle', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Item subtitle', 'athemes-addons-elementor' ),
+				'default' => __( 'Item subtitle', 'athemes-addons-for-elementor-lite' ),
 			]
 		);      
 		
 		$repeater->add_control(
 			'item_link',
 			[
-				'label' => __( 'Link', 'athemes-addons-elementor' ),
+				'label' => __( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => __( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'default' => [
 					'url' => '#',
 				],
@@ -200,7 +200,7 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'item_icon',
 			[
-				'label' => __( 'Icon', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'default' => [
@@ -214,7 +214,7 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'show_badge',
 			[
-				'label' => __( 'Show Badge', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Badge', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 				'return_value' => 'yes',
@@ -225,9 +225,9 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'badge_text',
 			[
-				'label' => __( 'Badge Text', 'athemes-addons-elementor' ),
+				'label' => __( 'Badge Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Hot', 'athemes-addons-elementor' ),
+				'default' => __( 'Hot', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'show_badge' => 'yes',
 				],
@@ -237,7 +237,7 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'badge_bg_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}} .page-list-badge' => 'background-color: {{VALUE}}',
@@ -251,7 +251,7 @@ class Page_List extends Widget_Base {
 		$repeater->add_control(
 			'badge_text_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}} .page-list-badge' => 'color: {{VALUE}}',
@@ -265,13 +265,13 @@ class Page_List extends Widget_Base {
 		$this->add_control(
 			'items',
 			[
-				'label' => __( 'List', 'athemes-addons-elementor' ),
+				'label' => __( 'List', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'item_title' => __( 'Item #1', 'athemes-addons-elementor' ),
-						'item_subtitle' => __( 'Item subtitle', 'athemes-addons-elementor' ),
+						'item_title' => __( 'Item #1', 'athemes-addons-for-elementor-lite' ),
+						'item_subtitle' => __( 'Item subtitle', 'athemes-addons-for-elementor-lite' ),
 						'item_link' => [
 							'url' => '#',
 						],
@@ -281,8 +281,8 @@ class Page_List extends Widget_Base {
 						],
 					],
 					[
-						'item_title' => __( 'Item #2', 'athemes-addons-elementor' ),
-						'item_subtitle' => __( 'Item subtitle', 'athemes-addons-elementor' ),
+						'item_title' => __( 'Item #2', 'athemes-addons-for-elementor-lite' ),
+						'item_subtitle' => __( 'Item subtitle', 'athemes-addons-for-elementor-lite' ),
 						'item_link' => [
 							'url' => '#',
 						],
@@ -293,8 +293,8 @@ class Page_List extends Widget_Base {
 						'show_badge' => 'yes',
 					],
 					[
-						'item_title' => __( 'Item #3', 'athemes-addons-elementor' ),
-						'item_subtitle' => __( 'Item subtitle', 'athemes-addons-elementor' ),
+						'item_title' => __( 'Item #3', 'athemes-addons-for-elementor-lite' ),
+						'item_subtitle' => __( 'Item subtitle', 'athemes-addons-for-elementor-lite' ),
 						'item_link' => [
 							'url' => '#',
 						],
@@ -311,16 +311,16 @@ class Page_List extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => esc_html__( 'Layout', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Layout', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'default' => 'traditional',
 				'options' => [
 					'traditional' => [
-						'title' => esc_html__( 'Default', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Default', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-editor-list-ul',
 					],
 					'inline' => [
-						'title' => esc_html__( 'Inline', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Inline', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-ellipsis-h',
 					],
 				],
@@ -331,19 +331,19 @@ class Page_List extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'athemes-addons-elementor' ),
+						'title' => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -357,7 +357,7 @@ class Page_List extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => __( 'General', 'athemes-addons-elementor' ),
+				'label' => __( 'General', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -365,7 +365,7 @@ class Page_List extends Widget_Base {
 		$this->add_responsive_control(
 			'item_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 
@@ -379,7 +379,7 @@ class Page_List extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'item_background',
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .page-list-item',
 			]
@@ -389,7 +389,7 @@ class Page_List extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'item_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .page-list-item',
 			]
 		);
@@ -397,7 +397,7 @@ class Page_List extends Widget_Base {
 		$this->add_responsive_control(
 			'item_gap',
 			[
-				'label' => __( 'Item Gap', 'athemes-addons-elementor' ),
+				'label' => __( 'Item Gap', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 
@@ -420,7 +420,7 @@ class Page_List extends Widget_Base {
 		$this->add_control(
 			'item_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors' => [
@@ -433,7 +433,7 @@ class Page_List extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'item_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .page-list-item',
 			]
 		);
@@ -443,7 +443,7 @@ class Page_List extends Widget_Base {
 		$this->start_controls_section(
 			'section_icon_style',
 			[
-				'label' => __( 'Icon', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -451,7 +451,7 @@ class Page_List extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .page-list-icon' => 'color: {{VALUE}};fill: {{VALUE}}',
@@ -462,7 +462,7 @@ class Page_List extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 
@@ -484,7 +484,7 @@ class Page_List extends Widget_Base {
 		$this->start_controls_section(
 			'section_title_style',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -492,7 +492,7 @@ class Page_List extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .page-list-title' => 'color: {{VALUE}}',
@@ -503,7 +503,7 @@ class Page_List extends Widget_Base {
 		$this->add_control(
 			'title_hover_color',
 			[
-				'label' => __( 'Hover Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .page-list-title:hover' => 'color: {{VALUE}}',
@@ -524,7 +524,7 @@ class Page_List extends Widget_Base {
 		$this->start_controls_section(
 			'section_subtitle_style',
 			[
-				'label' => __( 'Subtitle', 'athemes-addons-elementor' ),
+				'label' => __( 'Subtitle', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -532,7 +532,7 @@ class Page_List extends Widget_Base {
 		$this->add_control(
 			'subtitle_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .page-list-subtitle' => 'color: {{VALUE}}',

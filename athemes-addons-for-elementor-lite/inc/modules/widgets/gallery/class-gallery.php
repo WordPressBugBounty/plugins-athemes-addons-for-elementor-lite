@@ -46,7 +46,7 @@ class Gallery extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Filterable gallery', 'athemes-addons-elementor' );
+		return __( 'Filterable gallery', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -130,14 +130,14 @@ class Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_layout',
 			[
-				'label' => __( 'Layout', 'athemes-addons-elementor' ),
+				'label' => __( 'Layout', 'athemes-addons-for-elementor-lite' ),
 			]
 		);  
 
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label' => __( 'Columns', 'athemes-addons-elementor' ),
+				'label' => __( 'Columns', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 3,
 				'tablet_default' => 2,
@@ -156,7 +156,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'gutter',
 			[
-				'label' => __( 'Gutter', 'athemes-addons-elementor' ),
+				'label' => __( 'Gutter', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 30,
@@ -180,7 +180,7 @@ class Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_items',
 			[
-				'label' => __( 'Gallery', 'athemes-addons-elementor' ),
+				'label' => __( 'Gallery', 'athemes-addons-for-elementor-lite' ),
 			]
 		);  
 
@@ -191,7 +191,7 @@ class Gallery extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'label_block' => true,
 				'default' => [
@@ -203,18 +203,18 @@ class Gallery extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'placeholder' => __( 'Title', 'athemes-addons-elementor' ),
-				'default' => __( 'Item title', 'athemes-addons-elementor' ),
+				'placeholder' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
+				'default' => __( 'Item title', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$repeater->add_control(
 			'content',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::WYSIWYG,
 			]
 		);
@@ -222,7 +222,7 @@ class Gallery extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'athemes-addons-elementor' ),
+				'label' => __( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
 			]
 		);  
@@ -230,11 +230,11 @@ class Gallery extends Widget_Base {
 		$repeater->add_control(
 			'lightbox_content',
 			[
-				'label' => __( 'Lightbox Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Lightbox Content', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'image' => __( 'Image', 'athemes-addons-elementor' ),
-					'video' => __( 'Video', 'athemes-addons-elementor' ),
+					'image' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
+					'video' => __( 'Video', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'image',
 			]
@@ -243,7 +243,7 @@ class Gallery extends Widget_Base {
 		$repeater->add_control(
 			'video_link',
 			[
-				'label' => __( 'Video Link', 'athemes-addons-elementor' ),
+				'label' => __( 'Video Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'condition' => [
 					'lightbox_content' => 'video',
@@ -254,40 +254,40 @@ class Gallery extends Widget_Base {
 		$repeater->add_control(
 			'term',
 			[
-				'label'         => __( 'Filter term', 'athemes-addons-elementor' ),
+				'label'         => __( 'Filter term', 'athemes-addons-for-elementor-lite' ),
 				'description'   => sprintf(
 					/* translators: %s: example */
-					__( 'Categories that this item belongs to. One per line, in this format: %s', 'athemes-addons-elementor' ),
+					__( 'Categories that this item belongs to. One per line, in this format: %s', 'athemes-addons-for-elementor-lite' ),
 					'<br><strong>logo-design:Logo design</strong>'
 				),
 				'type'          => Controls_Manager::TEXTAREA,
 				'default'       => 'logo-design:Logo Design',
-				'placeholder'   => __( 'logo-design:Logo Design', 'athemes-addons-elementor' ),
+				'placeholder'   => __( 'logo-design:Logo Design', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 		
 		$this->add_control(
 			'portfolio_list',
 			[
-				'label' => __( 'Items list', 'athemes-addons-elementor' ),
+				'label' => __( 'Items list', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'title' => __( 'Site branding', 'athemes-addons-elementor' ),
+						'title' => __( 'Site branding', 'athemes-addons-for-elementor-lite' ),
 						'image' => [
 							'url' => Utils::get_placeholder_image_src(),
 						],
 					],
 					[
-						'title' => __( 'Site development', 'athemes-addons-elementor' ),
+						'title' => __( 'Site development', 'athemes-addons-for-elementor-lite' ),
 						'term' => 'development:Development',
 						'image' => [
 							'url' => Utils::get_placeholder_image_src(),
 						],
 					],  
 					[
-						'title' => __( 'Logo design', 'athemes-addons-elementor' ),
+						'title' => __( 'Logo design', 'athemes-addons-for-elementor-lite' ),
 						'term' => 'logo-design:Logo Design',
 						'image' => [
 							'url' => Utils::get_placeholder_image_src(),
@@ -304,14 +304,14 @@ class Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);  
 
 		$this->add_control(
 			'filter_settings_heading',
 			[
-				'label' => __( 'Filter', 'athemes-addons-elementor' ),
+				'label' => __( 'Filter', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -319,10 +319,10 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'show_filter',
 			[
-				'label' => __( 'Show filter', 'athemes-addons-elementor' ),
+				'label' => __( 'Show filter', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -331,10 +331,10 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'show_all_text',
 			[
-				'label' => __( 'Show all text', 'athemes-addons-elementor' ),
+				'label' => __( 'Show all text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __( 'Show all', 'athemes-addons-elementor' ),
+				'default' => __( 'Show all', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'show_filter' => 'yes',
 				],
@@ -344,19 +344,19 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_alignment',
 			[
-				'label' => esc_html__( 'Filter Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Filter Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'flex-end' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -373,7 +373,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'image_settings_heading',
 			[
-				'label' => __( 'Images', 'athemes-addons-elementor' ),
+				'label' => __( 'Images', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);      
@@ -381,10 +381,10 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'open_lightbox',
 			[
-				'label' => __( 'Open lightbox', 'athemes-addons-elementor' ),
+				'label' => __( 'Open lightbox', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -393,13 +393,13 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'image_hover_effect',
 			array(
-				'label'   => __( 'Image Hover Effect', 'athemes-addons-elementor' ),
+				'label'   => __( 'Image Hover Effect', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
-					'none'      => __( 'None', 'athemes-addons-elementor' ),
-					'zoomin'    => __( 'Zoom in', 'athemes-addons-elementor' ),
-					'opacity'   => __( 'Opacity', 'athemes-addons-elementor' ),
-					'rotate'    => __( 'Zoom & Rotate', 'athemes-addons-elementor' ),
+					'none'      => __( 'None', 'athemes-addons-for-elementor-lite' ),
+					'zoomin'    => __( 'Zoom in', 'athemes-addons-for-elementor-lite' ),
+					'opacity'   => __( 'Opacity', 'athemes-addons-for-elementor-lite' ),
+					'rotate'    => __( 'Zoom & Rotate', 'athemes-addons-for-elementor-lite' ),
 				),
 				'default' => 'none',
 			)
@@ -408,7 +408,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'transition_duration',
 			[
-				'label' => __( 'Transition Duration', 'athemes-addons-elementor' ),
+				'label' => __( 'Transition Duration', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 0.4,
 				'min' => 0,
@@ -426,7 +426,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'content_settings_heading',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -434,19 +434,19 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'content_vertical_alignment',
 			[
-				'label' => esc_html__( 'Vertical Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Vertical Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => esc_html__( 'Top', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Top', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'center' => [
-						'title' => esc_html__( 'Middle', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Middle', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-middle',
 					],
 					'flex-end' => [
-						'title' => esc_html__( 'Bottom', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Bottom', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -459,19 +459,19 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'content_alignment',
 			[
-				'label' => esc_html__( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -490,7 +490,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'title_html_tag',
 			[
-				'label' => __( 'Item title HTML tag', 'athemes-addons-elementor' ),
+				'label' => __( 'Item title HTML tag', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -512,14 +512,14 @@ class Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_icons',
 			[
-				'label' => __( 'Icons', 'athemes-addons-elementor' ),
+				'label' => __( 'Icons', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'lightbox_icon',
 			[
-				'label' => esc_html__( 'Lightbox icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Lightbox icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'default' => [
@@ -532,7 +532,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'link_icon',
 			[
-				'label' => esc_html__( 'Link icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'default' => [
@@ -545,7 +545,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'video_icon',
 			[
-				'label' => esc_html__( 'Video icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Video icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'default' => [
@@ -560,7 +560,7 @@ class Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_style',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -568,7 +568,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'gallery_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-gallery' => 'background-color: {{VALUE}};',
@@ -579,7 +579,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'gallery_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -591,7 +591,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'gallery_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -604,7 +604,7 @@ class Gallery extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'gallery_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-gallery',
 			]
 		);
@@ -612,7 +612,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'gallery_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -625,7 +625,7 @@ class Gallery extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'gallery_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-gallery',
 			]
 		);
@@ -635,7 +635,7 @@ class Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_filter_style',
 			[
-				'label' => __( 'Filter', 'athemes-addons-elementor' ),
+				'label' => __( 'Filter', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_filter' => 'yes',
@@ -646,7 +646,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_style_heading',
 			[
-				'label' => __( 'General', 'athemes-addons-elementor' ),
+				'label' => __( 'General', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -654,7 +654,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter' => 'background-color: {{VALUE}};',
@@ -665,7 +665,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -677,7 +677,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -695,7 +695,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_items_style_heading',
 			[
-				'label' => __( 'Filter items', 'athemes-addons-elementor' ),
+				'label' => __( 'Filter items', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -712,7 +712,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_items_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -724,7 +724,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_items_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -743,7 +743,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_items_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -754,12 +754,12 @@ class Gallery extends Widget_Base {
 
 		$this->start_controls_tabs( 'filter_items_style_tabs' );
 
-		$this->start_controls_tab( 'filter_items_style_normal_tab', [ 'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'filter_items_style_normal_tab', [ 'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_control(
 			'filter_items_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a:not(.active)' => 'color: {{VALUE}};',
@@ -770,7 +770,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_items_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a:not(.active)' => 'background-color: {{VALUE}};',
@@ -781,7 +781,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_items_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a:not(.active)' => 'border-color: {{VALUE}};',
@@ -791,12 +791,12 @@ class Gallery extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'filter_items_style_hover_tab', [ 'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'filter_items_style_hover_tab', [ 'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_control(
 			'filter_items_hover_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a:not(.active):hover' => 'color: {{VALUE}};',
@@ -807,7 +807,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_items_hover_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a:not(.active):hover' => 'background-color: {{VALUE}};',
@@ -818,7 +818,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_items_hover_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a:not(.active):hover' => 'border-color: {{VALUE}};',
@@ -828,12 +828,12 @@ class Gallery extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'filter_items_style_active_tab', [ 'label' => esc_html__( 'Active', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'filter_items_style_active_tab', [ 'label' => esc_html__( 'Active', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_control(
 			'filter_items_active_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a.active' => 'color: {{VALUE}};',
@@ -844,7 +844,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_items_active_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a.active' => 'background-color: {{VALUE}};',
@@ -855,7 +855,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'filter_items_active_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-filter a.active' => 'border-color: {{VALUE}};',
@@ -872,7 +872,7 @@ class Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_item_style',
 			[
-				'label' => __( 'Items', 'athemes-addons-elementor' ),
+				'label' => __( 'Items', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -880,7 +880,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'item_style_heading',
 			[
-				'label' => __( 'General', 'athemes-addons-elementor' ),
+				'label' => __( 'General', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -888,7 +888,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'item_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -901,7 +901,7 @@ class Gallery extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'item_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .aafe-gallery-item',
 			]
 		);
@@ -909,7 +909,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'item_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -922,7 +922,7 @@ class Gallery extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'item_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .aafe-gallery-item',
 			]
 		);
@@ -930,7 +930,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'item_content_style_heading',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -939,7 +939,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'item_overlay_padding',
 			[
-				'label' => __( 'Overlay padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -952,7 +952,7 @@ class Gallery extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'item_overlay_background',
-				'label' => esc_html__( 'Overlay background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Overlay background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .gallery-item-content',
 				'separator' => 'after',
@@ -962,7 +962,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'item_content_padding',
 			[
-				'label' => __( 'Content padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Content padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -979,7 +979,7 @@ class Gallery extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'item_content_background',
-				'label' => esc_html__( 'Content background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Content background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .gallery-item-ext-content',
 				'separator' => 'after',
@@ -993,7 +993,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'item_title_color',
 			[
-				'label' => __( 'Title Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .item-title' => 'color: {{VALUE}};',
@@ -1013,7 +1013,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'item_content_color',
 			[
-				'label' => __( 'Content Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Content Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .item-content' => 'color: {{VALUE}};',
@@ -1035,7 +1035,7 @@ class Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_icons_style',
 			[
-				'label' => __( 'Icons', 'athemes-addons-elementor' ),
+				'label' => __( 'Icons', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1043,7 +1043,7 @@ class Gallery extends Widget_Base {
 		$this->add_responsive_control(
 			'icons_size',
 			[
-				'label' => __( 'Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'range' => [
@@ -1061,12 +1061,12 @@ class Gallery extends Widget_Base {
 
 		$this->start_controls_tabs( 'icons_style_tabs' );
 
-		$this->start_controls_tab( 'icons_style_normal_tab', [ 'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'icons_style_normal_tab', [ 'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_control(
 			'icons_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-item-icons a' => 'background-color: {{VALUE}};',
@@ -1078,7 +1078,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'icons_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-item-icons a' => 'color: {{VALUE}};fill: {{VALUE}};',
@@ -1089,12 +1089,12 @@ class Gallery extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'icons_style_hover_tab', [ 'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'icons_style_hover_tab', [ 'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_control(
 			'icons_hover_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-item-icons a:hover' => 'background-color: {{VALUE}};',
@@ -1106,7 +1106,7 @@ class Gallery extends Widget_Base {
 		$this->add_control(
 			'icons_hover_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .gallery-item-icons a:hover' => 'color: {{VALUE}};fill: {{VALUE}};',

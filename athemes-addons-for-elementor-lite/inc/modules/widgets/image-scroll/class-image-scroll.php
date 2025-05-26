@@ -52,7 +52,7 @@ class Image_Scroll extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Image Scroll', 'athemes-addons-elementor' );
+		return __( 'Image Scroll', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -135,14 +135,14 @@ class Image_Scroll extends Widget_Base {
 		$this->start_controls_section(
 			'section_images',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'image',
 			[
-				'label' => esc_html__( 'Image', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
@@ -157,8 +157,8 @@ class Image_Scroll extends Widget_Base {
 			Group_Control_Image_Size::get_type(),
 			[
 				'name' => 'thumb',
-				'label' => __( 'Image Size', 'athemes-addons-elementor' ),
-				'exclude' => [ 'custom' ],
+				'label' => __( 'Image Size', 'athemes-addons-for-elementor-lite' ),
+				'exclude' => [ 'custom' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'include' => [],
 				'default' => 'large',
 			]
@@ -167,7 +167,7 @@ class Image_Scroll extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -190,9 +190,9 @@ class Image_Scroll extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'athemes-addons-elementor' ),
+				'label' => __( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => __( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'separator' => 'before',
 			]
 		);
@@ -202,17 +202,17 @@ class Image_Scroll extends Widget_Base {
 		$this->start_controls_section(
 			'section_overlay',
 			[
-				'label' => __( 'Overlay', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'show_overlay',
 			[
-				'label' => __( 'Show Overlay', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Overlay', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -221,13 +221,13 @@ class Image_Scroll extends Widget_Base {
 		$this->add_control(
 			'overlay_element',
 			[
-				'label' => __( 'Overlay Element', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay Element', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => [
-					'none' => __( 'None', 'athemes-addons-elementor' ),
-					'text' => __( 'Text', 'athemes-addons-elementor' ),
-					'icon' => __( 'Icon', 'athemes-addons-elementor' ),
+					'none' => __( 'None', 'athemes-addons-for-elementor-lite' ),
+					'text' => __( 'Text', 'athemes-addons-for-elementor-lite' ),
+					'icon' => __( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				],
 				'condition' => [
 					'show_overlay' => 'yes',
@@ -238,9 +238,9 @@ class Image_Scroll extends Widget_Base {
 		$this->add_control(
 			'overlay_text',
 			[
-				'label' => __( 'Overlay Text', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'View image', 'athemes-addons-elementor' ),
+				'default' => __( 'View image', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'show_overlay' => 'yes',
 					'overlay_element' => 'text',
@@ -253,21 +253,21 @@ class Image_Scroll extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'direction',
 			[
-				'label' => __( 'Direction', 'athemes-addons-elementor' ),
+				'label' => __( 'Direction', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'ttb',
 				'options' => [
-					'ltr'   => __( 'Left to Right', 'athemes-addons-elementor' ),
-					'rtl'   => __( 'Right to Left', 'athemes-addons-elementor' ),
-					'ttb'   => __( 'Top to Bottom', 'athemes-addons-elementor' ),
-					'btt'   => __( 'Bottom to Top', 'athemes-addons-elementor' ),
+					'ltr'   => __( 'Left to Right', 'athemes-addons-for-elementor-lite' ),
+					'rtl'   => __( 'Right to Left', 'athemes-addons-for-elementor-lite' ),
+					'ttb'   => __( 'Top to Bottom', 'athemes-addons-for-elementor-lite' ),
+					'btt'   => __( 'Bottom to Top', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -275,12 +275,12 @@ class Image_Scroll extends Widget_Base {
 		$this->add_control(
 			'trigger_type',
 			[
-				'label' => __( 'Trigger Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Trigger Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'hover',
 				'options' => [
-					'hover'     => __( 'Hover', 'athemes-addons-elementor' ),
-					'mouse'     => __( 'Mouse scroll', 'athemes-addons-elementor' ),
+					'hover'     => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
+					'mouse'     => __( 'Mouse scroll', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -288,7 +288,7 @@ class Image_Scroll extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label' => __( 'Speed', 'athemes-addons-elementor' ),
+				'label' => __( 'Speed', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 's' ],
 				'range' => [
@@ -316,7 +316,7 @@ class Image_Scroll extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_wrapper',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -324,7 +324,7 @@ class Image_Scroll extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -338,7 +338,7 @@ class Image_Scroll extends Widget_Base {
 		$this->start_controls_tab(
 			'wrapper_style_normal_tab',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -346,7 +346,7 @@ class Image_Scroll extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'wrapper_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-scroll',
 			]
 		);
@@ -355,7 +355,7 @@ class Image_Scroll extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'wrapper_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-scroll',
 			]
 		);
@@ -365,7 +365,7 @@ class Image_Scroll extends Widget_Base {
 		$this->start_controls_tab(
 			'wrapper_style_hover_tab',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -373,7 +373,7 @@ class Image_Scroll extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'wrapper_hover_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-scroll:hover',
 			]
 		);
@@ -382,7 +382,7 @@ class Image_Scroll extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'wrapper_hover_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-scroll:hover',
 			]
 		);
@@ -396,7 +396,7 @@ class Image_Scroll extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_overlay',
 			[
-				'label' => __( 'Overlay', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_overlay' => 'yes',
@@ -407,7 +407,7 @@ class Image_Scroll extends Widget_Base {
 		$this->add_control(
 			'overlay_color',
 			[
-				'label' => __( 'Overlay Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Overlay Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => 'rgba(0,0,0,0.5)',
 				'selectors' => [
@@ -419,7 +419,7 @@ class Image_Scroll extends Widget_Base {
 		$this->add_control(
 			'overlay_text_color',
 			[
-				'label' => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
@@ -434,7 +434,7 @@ class Image_Scroll extends Widget_Base {
 		$this->add_control(
 			'overlay_icon_color',
 			[
-				'label' => __( 'Icon Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
@@ -449,7 +449,7 @@ class Image_Scroll extends Widget_Base {
 		$this->add_responsive_control(
 			'overlay_text_size',
 			[
-				'label' => __( 'Text Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -474,7 +474,7 @@ class Image_Scroll extends Widget_Base {
 		$this->add_responsive_control(
 			'overlay_size',
 			[
-				'label' => __( 'Icon Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [

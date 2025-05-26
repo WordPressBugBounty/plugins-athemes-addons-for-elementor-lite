@@ -49,7 +49,7 @@ class Image_Accordion extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Image accordion', 'athemes-addons-elementor' );
+		return __( 'Image accordion', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -132,7 +132,7 @@ class Image_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'section_image_accordion',
 			[
-				'label' => __( 'Image accordion', 'athemes-addons-elementor' ),
+				'label' => __( 'Image accordion', 'athemes-addons-for-elementor-lite' ),
 			]
 		);  
 
@@ -141,7 +141,7 @@ class Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -161,15 +161,15 @@ class Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'image_position',
 			[
-				'label' => __( 'Image position', 'athemes-addons-elementor' ),
+				'label' => __( 'Image position', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'center',
 				'options' => [
-					'top'       => __( 'Top', 'athemes-addons-elementor' ),
-					'bottom'    => __( 'Bottom', 'athemes-addons-elementor' ),
-					'left'      => __( 'Left', 'athemes-addons-elementor' ),
-					'right'     => __( 'Right', 'athemes-addons-elementor' ),
-					'center'    => __( 'Center', 'athemes-addons-elementor' ),
+					'top'       => __( 'Top', 'athemes-addons-for-elementor-lite' ),
+					'bottom'    => __( 'Bottom', 'athemes-addons-for-elementor-lite' ),
+					'left'      => __( 'Left', 'athemes-addons-for-elementor-lite' ),
+					'right'     => __( 'Right', 'athemes-addons-for-elementor-lite' ),
+					'center'    => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}} img' => 'object-position: {{VALUE}};',
@@ -181,7 +181,7 @@ class Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 			]
 		);  
@@ -189,7 +189,7 @@ class Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'text',
 			[
-				'label' => __( 'Description', 'athemes-addons-elementor' ),
+				'label' => __( 'Description', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::WYSIWYG,
 			]
 		);
@@ -197,7 +197,7 @@ class Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'show_button',
 			[
-				'label' => __( 'Show button', 'athemes-addons-elementor' ),
+				'label' => __( 'Show button', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -206,9 +206,9 @@ class Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'button_text',
 			[
-				'label' => __( 'Button text', 'athemes-addons-elementor' ),
+				'label' => __( 'Button text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Read more', 'athemes-addons-elementor' ),
+				'default' => __( 'Read more', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'show_button' => 'yes',
 				],
@@ -218,9 +218,9 @@ class Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'button_link',
 			[
-				'label' => __( 'Button link', 'athemes-addons-elementor' ),
+				'label' => __( 'Button link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => __( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'default' => [
 					'url' => '#',
 				],
@@ -233,8 +233,8 @@ class Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'active_image',
 			[
-				'label' => __( 'Active image', 'athemes-addons-elementor' ),
-				'description' => __( 'This accordion item will be opened by default.', 'athemes-addons-elementor' ),
+				'label' => __( 'Active image', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'This accordion item will be opened by default.', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 				'return_value' => 'yes',
@@ -246,39 +246,39 @@ class Image_Accordion extends Widget_Base {
 			'image_accordion',
 			[
 				'type' => Controls_Manager::REPEATER,
-				'label' => __( 'Items', 'athemes-addons-elementor' ),
+				'label' => __( 'Items', 'athemes-addons-for-elementor-lite' ),
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'image' => [
 							'url'       => Utils::get_placeholder_image_src(),
 						],
-						'title'         => __( 'Accordion title 1', 'athemes-addons-elementor' ),
-						'text'          => __( 'Lorem ipsum dolor sit amet', 'athemes-addons-elementor' ),
+						'title'         => __( 'Accordion title 1', 'athemes-addons-for-elementor-lite' ),
+						'text'          => __( 'Lorem ipsum dolor sit amet', 'athemes-addons-for-elementor-lite' ),
 						'show_button'   => 'yes',
 					],
 					[
 						'image' => [
 							'url'       => Utils::get_placeholder_image_src(),
 						],
-						'title'         => __( 'Accordion title 2', 'athemes-addons-elementor' ),
-						'text'          => __( 'Lorem ipsum dolor sit amet', 'athemes-addons-elementor' ),
+						'title'         => __( 'Accordion title 2', 'athemes-addons-for-elementor-lite' ),
+						'text'          => __( 'Lorem ipsum dolor sit amet', 'athemes-addons-for-elementor-lite' ),
 						'show_button'   => 'yes',
 					],
 					[
 						'image' => [
 							'url'       => Utils::get_placeholder_image_src(),
 						],
-						'title'         => __( 'Accordion title 3', 'athemes-addons-elementor' ),
-						'text'          => __( 'Lorem ipsum dolor sit amet', 'athemes-addons-elementor' ),
+						'title'         => __( 'Accordion title 3', 'athemes-addons-for-elementor-lite' ),
+						'text'          => __( 'Lorem ipsum dolor sit amet', 'athemes-addons-for-elementor-lite' ),
 						'show_button'   => 'yes',
 					],
 					[
 						'image' => [
 							'url'       => Utils::get_placeholder_image_src(),
 						],
-						'title'         => __( 'Accordion title 4', 'athemes-addons-elementor' ),
-						'text'          => __( 'Lorem ipsum dolor sit amet', 'athemes-addons-elementor' ),
+						'title'         => __( 'Accordion title 4', 'athemes-addons-for-elementor-lite' ),
+						'text'          => __( 'Lorem ipsum dolor sit amet', 'athemes-addons-for-elementor-lite' ),
 						'show_button'   => 'yes',
 					],                  
 				],              
@@ -291,19 +291,19 @@ class Image_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'direction',
 			[
-				'label' => __( 'Direction', 'athemes-addons-elementor' ),
+				'label' => __( 'Direction', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'horizontal',
 				'options' => [
-					'horizontal'    => __( 'Horizontal', 'athemes-addons-elementor' ),
-					'vertical'      => __( 'Vertical', 'athemes-addons-elementor' ),
+					'horizontal'    => __( 'Horizontal', 'athemes-addons-for-elementor-lite' ),
+					'vertical'      => __( 'Vertical', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -311,12 +311,12 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'open_mode',
 			[
-				'label' => __( 'Open mode', 'athemes-addons-elementor' ),
+				'label' => __( 'Open mode', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'hover',
 				'options' => [
-					'hover'     => __( 'Hover', 'athemes-addons-elementor' ),
-					'click'     => __( 'Click', 'athemes-addons-elementor' ),
+					'hover'     => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
+					'click'     => __( 'Click', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'after',
 			]
@@ -325,7 +325,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'vh' ],
 				'range' => [
@@ -355,7 +355,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -382,8 +382,8 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'growth_rate',
 			[
-				'label' => __( 'Growth rate', 'athemes-addons-elementor' ),
-				'description' => __( 'The rate at which the active item will grow.', 'athemes-addons-elementor' ),
+				'label' => __( 'Growth rate', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'The rate at which the active item will grow.', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 4,
 				'min' => 2,
@@ -399,7 +399,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'transition_time',
 			[
-				'label' => __( 'Transition time', 'athemes-addons-elementor' ),
+				'label' => __( 'Transition time', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 0.6,
 				'min' => 0.1,
@@ -415,19 +415,19 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'content_vertical_alignment',
 			[
-				'label' => esc_html__( 'Vertical Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Vertical Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => esc_html__( 'Top', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Top', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'center' => [
-						'title' => esc_html__( 'Middle', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Middle', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-middle',
 					],
 					'flex-end' => [
-						'title' => esc_html__( 'Bottom', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Bottom', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -440,19 +440,19 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'content_alignment',
 			[
-				'label' => esc_html__( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -472,7 +472,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'title_html_tag',
 			[
-				'label' => __( 'Title HTML Tag', 'athemes-addons-elementor' ),
+				'label' => __( 'Title HTML Tag', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1'    => 'H1',
@@ -494,7 +494,7 @@ class Image_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'section_wrapper_style',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -502,7 +502,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'wrapper_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-image-accordion' => 'background-color: {{VALUE}};',
@@ -513,7 +513,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -525,7 +525,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -538,7 +538,7 @@ class Image_Accordion extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'wrapper_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-accordion',
 			]
 		);
@@ -546,7 +546,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -559,7 +559,7 @@ class Image_Accordion extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'wrapper_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-accordion',
 			]
 		);
@@ -569,7 +569,7 @@ class Image_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'section_item_style',
 			[
-				'label' => __( 'Item', 'athemes-addons-elementor' ),
+				'label' => __( 'Item', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -577,7 +577,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'item_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -590,7 +590,7 @@ class Image_Accordion extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'item_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-accordion .image-accordion-item',
 			]
 		);
@@ -598,7 +598,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'item_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -611,7 +611,7 @@ class Image_Accordion extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'item_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-accordion .image-accordion-item',
 			]
 		);
@@ -620,9 +620,9 @@ class Image_Accordion extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'overlay_color',
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'default' => 'rgba(0,0,0,0.5)',
 				'selector' => '{{WRAPPER}} .athemes-addons-image-accordion .image-accordion-item:after',
 			]
@@ -633,7 +633,7 @@ class Image_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -641,7 +641,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Title Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-image-accordion .image-accordion-title' => 'color: {{VALUE}};',
@@ -653,7 +653,7 @@ class Image_Accordion extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'label' => __( 'Title Typography', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Typography', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-accordion .image-accordion-title',
 			]
 		);
@@ -661,7 +661,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Title Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -674,7 +674,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-image-accordion .image-accordion-text' => 'color: {{VALUE}};',
@@ -686,7 +686,7 @@ class Image_Accordion extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'text_typography',
-				'label' => __( 'Text Typography', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Typography', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-image-accordion .image-accordion-text',
 			]
 		);
@@ -694,7 +694,7 @@ class Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'text_margin',
 			[
-				'label' => __( 'Text Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -708,7 +708,7 @@ class Image_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			[
-				'label' => __( 'Button', 'athemes-addons-elementor' ),
+				'label' => __( 'Button', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);

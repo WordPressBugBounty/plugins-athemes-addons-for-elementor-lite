@@ -51,7 +51,7 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 			if ( in_array( $post_type, $types, true ) && ( 'attachment' !== $post_type ) ) {
 				add_meta_box(
 					'aafe_templates_metabox'
-					,__( 'Templates', 'athemes-addons-elementor' )
+					,__( 'Templates', 'athemes-addons-for-elementor-lite' )
 					,array( $this, 'render_meta_box_content' )
 					,'aafe_templates'
 					,'normal'
@@ -70,7 +70,7 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 				if (get_post_status( $post_id ) == 'auto-draft') { //phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 
 					if ( isset( $_GET['ahf_template_type'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-						$ahf_template_type = sanitize_text_field( $_GET['ahf_template_type'] ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+						$ahf_template_type = sanitize_text_field( wp_unslash( $_GET['ahf_template_type'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 						update_post_meta($post_id, '_ahf_template_type', $ahf_template_type);
 					}
 				}
@@ -81,7 +81,7 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 		 * Save the metabox.
 		 */
 		public function save( $post_id ) {
-			if ( ! isset( $_POST['athemes_display_rules_nonce'] ) || !wp_verify_nonce( $_POST['athemes_display_rules_nonce'], 'athemes_display_rules_nonce' ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			if ( ! isset( $_POST['athemes_display_rules_nonce'] ) || !wp_verify_nonce( wp_unslash( $_POST['athemes_display_rules_nonce'] ), 'athemes_display_rules_nonce' ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 				return;
 			}
 			
@@ -96,7 +96,7 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 			$old = get_post_meta($post_id, 'ahf_display_rules', true);
 			$new = array();
 			
-			$selects = isset( $_POST['select'] ) ? array_map( 'sanitize_text_field', $_POST['select'] ) : array();
+			$selects = isset( $_POST['select'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['select'] ) ) : array();
 			
 			if ( isset( $selects ) ) {
 				$count = count( $selects );
@@ -114,7 +114,7 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 	
 			//Save template type
 			$templates = array( 'header', 'footer', 'content', 'archive', 'archive-item', 'single', 'content', 'error404', 'product', 'shop', 'cart', 'checkout' );
-			$template_type = $this->sanitize_selects( sanitize_text_field( $_POST['ahf_template_type'] ), $templates ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
+			$template_type = $this->sanitize_selects( sanitize_text_field( wp_unslash( $_POST['ahf_template_type'] ) ), $templates ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 			update_post_meta( $post_id, '_ahf_template_type', $template_type );
 			
 			//Save hooks type
@@ -123,7 +123,7 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 			foreach ( $hooks as $hook_group ) {
 				$all_hooks = array_merge( $all_hooks, array_keys( $hook_group['group'] ) );
 			}
-			$hooks_type = $this->sanitize_selects( sanitize_text_field( $_POST['ahf_hook_type'] ), $all_hooks ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
+			$hooks_type = $this->sanitize_selects( sanitize_text_field( wp_unslash( $_POST['ahf_hook_type'] ) ), $all_hooks ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 			update_post_meta( $post_id, '_ahf_hook_type', $hooks_type );
 	
 			//Save hooks priority
@@ -254,67 +254,67 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 				<div class="target-rules-column">
 					<?php $template_type = get_post_meta( $post->ID, '_ahf_template_type', true ); ?>
 					<div class="ahf-template-group">
-						<h4><?php echo esc_html__( 'What would you like to build?', 'athemes-addons-elementor' ); ?></h4>
+						<h4><?php echo esc_html__( 'What would you like to build?', 'athemes-addons-for-elementor-lite' ); ?></h4>
 						<div>
 							<label>
 								<input class="ahf-template-select" type="radio" name="ahf_template_type" value="header" <?php checked( $template_type, 'header' ); ?>>
 								<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/header.svg' ); ?>"/>
-								<?php esc_attr_e( 'Header', 'athemes-addons-elementor' ); ?>
+								<?php esc_attr_e( 'Header', 'athemes-addons-for-elementor-lite' ); ?>
 							</label>
 							<label>
 								<input class="ahf-template-select" type="radio" name="ahf_template_type" value="footer" <?php checked( $template_type, 'footer' ); ?>>
 								<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/footer.svg' ); ?>"/>
 	
-								<?php esc_attr_e( 'Footer', 'athemes-addons-elementor' ); ?>
+								<?php esc_attr_e( 'Footer', 'athemes-addons-for-elementor-lite' ); ?>
 							</label>
 							<label>
 								<input class="ahf-template-select" type="radio" name="ahf_template_type" value="archive" <?php checked( $template_type, 'archive' ); ?>>
 								<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/archive.svg' ); ?>"/>
 	
-								<?php esc_attr_e( 'Archive', 'athemes-addons-elementor' ); ?>
+								<?php esc_attr_e( 'Archive', 'athemes-addons-for-elementor-lite' ); ?>
 							</label>
 							<label>
 								<input class="ahf-template-select" type="radio" name="ahf_template_type" value="archive-item" <?php checked( $template_type, 'archive-item' ); ?>>
 								<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/archive-item.svg' ); ?>"/>
 	
-								<?php esc_attr_e( 'Archive item', 'athemes-addons-elementor' ); ?>
+								<?php esc_attr_e( 'Archive item', 'athemes-addons-for-elementor-lite' ); ?>
 							</label>
 							<label>
 								<input class="ahf-template-select" type="radio" name="ahf_template_type" value="single" <?php checked( $template_type, 'single' ); ?>>
 								<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/singular.svg' ); ?>"/>
 	
-								<?php esc_attr_e( 'Single', 'athemes-addons-elementor' ); ?>
+								<?php esc_attr_e( 'Single', 'athemes-addons-for-elementor-lite' ); ?>
 							</label>
 							<label>
 								<input class="ahf-template-select" type="radio" name="ahf_template_type" value="content" <?php checked( $template_type, 'content' ); ?>>
 								<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/content.svg' ); ?>"/>
-								<?php esc_attr_e( 'Content block', 'athemes-addons-elementor' ); ?>
+								<?php esc_attr_e( 'Content block', 'athemes-addons-for-elementor-lite' ); ?>
 							</label>
 							<label>
 								<input class="ahf-template-select" type="radio" name="ahf_template_type" value="error404" <?php checked( $template_type, 'error404' ); ?>>
 								<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/error404.svg' ); ?>"/>
-								<?php esc_attr_e( '404 page', 'athemes-addons-elementor' ); ?>
+								<?php esc_attr_e( '404 page', 'athemes-addons-for-elementor-lite' ); ?>
 							</label>
 							<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 								<label>
 									<input class="ahf-template-select" type="radio" name="ahf_template_type" value="shop" <?php checked( $template_type, 'shop' ); ?>>
 									<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/shop.svg' ); ?>"/>
-									<?php esc_attr_e( 'Shop', 'athemes-addons-elementor' ); ?>
+									<?php esc_attr_e( 'Shop', 'athemes-addons-for-elementor-lite' ); ?>
 								</label>
 								<label>
 									<input class="ahf-template-select" type="radio" name="ahf_template_type" value="product" <?php checked( $template_type, 'product' ); ?>>
 									<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/product.svg' ); ?>"/>
-									<?php esc_attr_e( 'Product', 'athemes-addons-elementor' ); ?>
+									<?php esc_attr_e( 'Product', 'athemes-addons-for-elementor-lite' ); ?>
 								</label>
 								<label>
 									<input class="ahf-template-select" type="radio" name="ahf_template_type" value="cart" <?php checked( $template_type, 'cart' ); ?>>
 									<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/cart.svg' ); ?>"/>
-									<?php esc_attr_e( 'Cart', 'athemes-addons-elementor' ); ?>
+									<?php esc_attr_e( 'Cart', 'athemes-addons-for-elementor-lite' ); ?>
 								</label>	
 								<label>
 									<input class="ahf-template-select" type="radio" name="ahf_template_type" value="checkout" <?php checked( $template_type, 'checkout' ); ?>>
 									<img src="<?php echo esc_url( ATHEMES_AFE_URI . 'assets/images/theme-builder/checkout.svg' ); ?>"/>
-									<?php esc_attr_e( 'Checkout', 'athemes-addons-elementor' ); ?>
+									<?php esc_attr_e( 'Checkout', 'athemes-addons-for-elementor-lite' ); ?>
 								</label>															
 							<?php endif; ?>
 						</div>
@@ -325,9 +325,9 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 					<?php $hook_type = get_post_meta( $post->ID, '_ahf_hook_type', true ); ?>
 					<?php $hooks = $this->hooks(); ?>
 					<div class="ahf-hook-group">
-						<h4><?php echo esc_html__( 'Hook type', 'athemes-addons-elementor' ); ?></h4>
+						<h4><?php echo esc_html__( 'Hook type', 'athemes-addons-for-elementor-lite' ); ?></h4>
 						<p>
-						<label for="ahf_hook_type"><?php esc_html_e( 'Select hook', 'athemes-addons-elementor' ); ?></label>
+						<label for="ahf_hook_type"><?php esc_html_e( 'Select hook', 'athemes-addons-for-elementor-lite' ); ?></label>
 						<select class="ahf-hook-select" style="max-width:500px;width:100%;" name="ahf_hook_type">
 							<?php foreach ( $hooks as $group => $data ) : ?>
 	
@@ -342,7 +342,7 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 						</select>
 						</p>		
 						<p>
-						<label for="ahf_hook_priority"><?php esc_html_e( 'Priority', 'athemes-addons-elementor' ); ?></label>
+						<label for="ahf_hook_priority"><?php esc_html_e( 'Priority', 'athemes-addons-for-elementor-lite' ); ?></label>
 						<input style="max-width:500px;width:100%;" type="number" name="ahf_hook_priority" value="<?php echo esc_attr( $priority ); ?>"/>
 						</p>
 					</div>
@@ -360,26 +360,26 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 			//Theme hooks
 			$locations = array(
 				'theme'         => array(
-					'label' => esc_html__( 'Sydney', 'athemes-addons-elementor' ), 
+					'label' => esc_html__( 'Sydney', 'athemes-addons-for-elementor-lite' ), 
 					'group' => array(
-						'sydney_before_site'                    => esc_html__( 'Before site (sydney_before_site)', 'athemes-addons-elementor' ),
-						'sydney_after_site'                     => esc_html__( 'After site (sydney_after_site)', 'athemes-addons-elementor' ),
-						'sydney_before_header'                  => esc_html__( 'Before header (sydney_before_header)', 'athemes-addons-elementor' ),
-						'sydney_header'                         => esc_html__( 'Header (sydney_header)', 'athemes-addons-elementor' ),
-						'sydney_after_header'                   => esc_html__( 'After header (sydney_after_header)', 'athemes-addons-elementor' ),
-						'sydney_main_container_start'           => esc_html__( 'Main container start (sydney_main_container_start)', 'athemes-addons-elementor' ),
-						'sydney_main_container_end'             => esc_html__( 'Main container end (sydney_main_container_end)', 'athemes-addons-elementor' ),
-						'sydney_before_content'                 => esc_html__( 'Before content (sydney_before_content)', 'athemes-addons-elementor' ),
-						'sydney_after_content'                  => esc_html__( 'After content (sydney_after_content)', 'athemes-addons-elementor' ),
-						'sydney_before_loop_entry'              => esc_html__( 'Before loop post (sydney_before_loop_entry)', 'athemes-addons-elementor' ),
-						'sydney_after_loop_entry'               => esc_html__( 'After loop post (sydney_after_loop_entry)', 'athemes-addons-elementor' ),
-						'sydney_before_single_entry'            => esc_html__( 'Before single post (sydney_before_single_entry)', 'athemes-addons-elementor' ),
-						'sydney_after_single_entry'             => esc_html__( 'After single post (sydney_after_single_entry)', 'athemes-addons-elementor' ),
-						'sydney_404_content'                    => esc_html__( '404 content (sydney_404_content)', 'athemes-addons-elementor' ),
-						'sydney_before_footer'                  => esc_html__( 'Before footer (sydney_before_footer)', 'athemes-addons-elementor' ),
-						'sydney_footer'                         => esc_html__( 'Footer (sydney_before_footer)', 'athemes-addons-elementor' ),
-						'sydney_after_footer'                   => esc_html__( 'After footer (sydney_after_footer)', 'athemes-addons-elementor' ),
-						'sydney_after_hero'                     => esc_html__( 'After hero (sydney_after_hero)', 'athemes-addons-elementor' ),
+						'sydney_before_site'                    => esc_html__( 'Before site (sydney_before_site)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_after_site'                     => esc_html__( 'After site (sydney_after_site)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_before_header'                  => esc_html__( 'Before header (sydney_before_header)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_header'                         => esc_html__( 'Header (sydney_header)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_after_header'                   => esc_html__( 'After header (sydney_after_header)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_main_container_start'           => esc_html__( 'Main container start (sydney_main_container_start)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_main_container_end'             => esc_html__( 'Main container end (sydney_main_container_end)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_before_content'                 => esc_html__( 'Before content (sydney_before_content)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_after_content'                  => esc_html__( 'After content (sydney_after_content)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_before_loop_entry'              => esc_html__( 'Before loop post (sydney_before_loop_entry)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_after_loop_entry'               => esc_html__( 'After loop post (sydney_after_loop_entry)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_before_single_entry'            => esc_html__( 'Before single post (sydney_before_single_entry)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_after_single_entry'             => esc_html__( 'After single post (sydney_after_single_entry)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_404_content'                    => esc_html__( '404 content (sydney_404_content)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_before_footer'                  => esc_html__( 'Before footer (sydney_before_footer)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_footer'                         => esc_html__( 'Footer (sydney_before_footer)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_after_footer'                   => esc_html__( 'After footer (sydney_after_footer)', 'athemes-addons-for-elementor-lite' ),
+						'sydney_after_hero'                     => esc_html__( 'After hero (sydney_after_hero)', 'athemes-addons-for-elementor-lite' ),
 					),
 				),
 			);
@@ -387,19 +387,19 @@ if ( ! class_exists( 'Theme_Builder_Metabox' ) ) {
 			//Woocommerce hooks
 			if ( class_exists( 'Woocommerce' ) ) {
 				$locations['woocommerce'] = array(
-					'label' => esc_html__( 'WooCommerce', 'athemes-addons-elementor' ), 
+					'label' => esc_html__( 'WooCommerce', 'athemes-addons-for-elementor-lite' ), 
 					'group' => array(
-						'woocommerce_before_main_content'           => esc_html__( 'Before content (woocommerce_before_main_content)', 'athemes-addons-elementor' ),
-						'woocommerce_after_main_content'            => esc_html__( 'After content (woocommerce_after_main_content)', 'athemes-addons-elementor' ),
-						'woocommerce_before_shop_loop'              => esc_html__( 'Before shop loop (woocommerce_before_shop_loop)', 'athemes-addons-elementor' ),
-						'woocommerce_after_shop_loop'               => esc_html__( 'After shop loop (woocommerce_after_shop_loop)', 'athemes-addons-elementor' ),
-						'woocommerce_before_shop_loop_item'         => esc_html__( 'Before shop loop item (woocommerce_before_shop_loop_item)', 'athemes-addons-elementor' ),
-						'woocommerce_after_shop_loop_item'          => esc_html__( 'After shop loop item (woocommerce_after_shop_loop_item)', 'athemes-addons-elementor' ),
-						'woocommerce_before_single_product'         => esc_html__( 'Before single product (woocommerce_before_single_product)', 'athemes-addons-elementor' ),
-						'woocommerce_before_single_product_summary' => esc_html__( 'Before single product summary (woocommerce_before_single_product_summary)', 'athemes-addons-elementor' ),
-						'woocommerce_single_product_summary'        => esc_html__( 'Single product summary (woocommerce_single_product_summary)', 'athemes-addons-elementor' ),
-						'woocommerce_after_single_product_summary'  => esc_html__( 'After single product summary (woocommerce_after_single_product_summary)', 'athemes-addons-elementor' ),
-						'woocommerce_after_single_product'          => esc_html__( 'After single product (woocommerce_after_single_product)', 'athemes-addons-elementor' ),
+						'woocommerce_before_main_content'           => esc_html__( 'Before content (woocommerce_before_main_content)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_after_main_content'            => esc_html__( 'After content (woocommerce_after_main_content)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_before_shop_loop'              => esc_html__( 'Before shop loop (woocommerce_before_shop_loop)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_after_shop_loop'               => esc_html__( 'After shop loop (woocommerce_after_shop_loop)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_before_shop_loop_item'         => esc_html__( 'Before shop loop item (woocommerce_before_shop_loop_item)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_after_shop_loop_item'          => esc_html__( 'After shop loop item (woocommerce_after_shop_loop_item)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_before_single_product'         => esc_html__( 'Before single product (woocommerce_before_single_product)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_before_single_product_summary' => esc_html__( 'Before single product summary (woocommerce_before_single_product_summary)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_single_product_summary'        => esc_html__( 'Single product summary (woocommerce_single_product_summary)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_after_single_product_summary'  => esc_html__( 'After single product summary (woocommerce_after_single_product_summary)', 'athemes-addons-for-elementor-lite' ),
+						'woocommerce_after_single_product'          => esc_html__( 'After single product (woocommerce_after_single_product)', 'athemes-addons-for-elementor-lite' ),
 					),
 				);
 			}

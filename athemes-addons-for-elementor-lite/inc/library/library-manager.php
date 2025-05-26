@@ -40,10 +40,10 @@ class Template_Library_Manager {
             'aafeProWidgets' => [],
 			'isProActive' => $isProActive,
 			'i18n' => [
-				'templatesEmptyTitle' => esc_html__( 'No Templates Found', 'athemes-addons-elementor' ),
-				'templatesEmptyMessage' => esc_html__( 'Try different category or sync for new templates.', 'athemes-addons-elementor' ),
-				'templatesNoResultsTitle' => esc_html__( 'No Results Found', 'athemes-addons-elementor' ),
-				'templatesNoResultsMessage' => esc_html__( 'Please make sure your search is spelled correctly or try a different word.', 'athemes-addons-elementor' ),
+				'templatesEmptyTitle' => esc_html__( 'No Templates Found', 'athemes-addons-for-elementor-lite' ),
+				'templatesEmptyMessage' => esc_html__( 'Try different category or sync for new templates.', 'athemes-addons-for-elementor-lite' ),
+				'templatesNoResultsTitle' => esc_html__( 'No Results Found', 'athemes-addons-for-elementor-lite' ),
+				'templatesNoResultsMessage' => esc_html__( 'Please make sure your search is spelled correctly or try a different word.', 'athemes-addons-for-elementor-lite' ),
 			],
 	
         ];
@@ -74,7 +74,7 @@ class Template_Library_Manager {
 				$editor_post_id = absint( $data['editor_post_id'] );
 
 				if ( ! get_post( $editor_post_id ) ) {
-					throw new \Exception( esc_html__( 'Post not found.', 'athemes-addons-elementor' ) );
+					throw new \Exception( esc_html__( 'Post not found.', 'athemes-addons-for-elementor-lite' ) );
 				}
 
 				\Elementor\Plugin::instance()->db->switch_to_post( $editor_post_id );
@@ -94,14 +94,14 @@ class Template_Library_Manager {
 				$editor_post_id = absint( $data['editor_post_id'] );
 
 				if ( ! get_post( $editor_post_id ) ) {
-					throw new \Exception( esc_html__( 'Post not found', 'athemes-addons-elementor' ) );
+					throw new \Exception( esc_html__( 'Post not found', 'athemes-addons-for-elementor-lite' ) );
 				}
 
 				\Elementor\Plugin::instance()->db->switch_to_post( $editor_post_id );
 			}
 
 			if ( empty( $data['template_id'] ) ) {
-				throw new \Exception( esc_html__( 'Template id missing', 'athemes-addons-elementor' ) );
+				throw new \Exception( esc_html__( 'Template id missing', 'athemes-addons-for-elementor-lite' ) );
 			}
 
 			$result = self::get_template_data( $data );

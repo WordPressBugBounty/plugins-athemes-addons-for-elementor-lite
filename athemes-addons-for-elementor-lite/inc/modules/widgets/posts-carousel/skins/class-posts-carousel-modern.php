@@ -50,7 +50,7 @@ class Posts_Carousel_Skin1 extends Skin_Base {
 		$controls->add_control(
 			'image_border_radius_' . $this->get_id(),
 			[
-				'label' => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'default' => [
@@ -85,12 +85,12 @@ class Posts_Carousel_Skin1 extends Skin_Base {
 		$controls->add_control(
 			'cat_display_' . $this->get_id(),
 			[
-				'label' => __( 'Category display', 'athemes-addons-elementor' ),
+				'label' => __( 'Category display', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'label',
 				'options' => [
-					'link'      => __( 'Link', 'athemes-addons-elementor' ),
-					'label'     => __( 'Label', 'athemes-addons-elementor' ),
+					'link'      => __( 'Link', 'athemes-addons-for-elementor-lite' ),
+					'label'     => __( 'Label', 'athemes-addons-for-elementor-lite' ),
 				],
 				'condition' => [
 					'show_cats' => 'yes',
@@ -113,7 +113,7 @@ class Posts_Carousel_Skin1 extends Skin_Base {
 	 * Get the title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Modern', 'athemes-addons-elementor' );
+		return esc_html__( 'Modern', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**

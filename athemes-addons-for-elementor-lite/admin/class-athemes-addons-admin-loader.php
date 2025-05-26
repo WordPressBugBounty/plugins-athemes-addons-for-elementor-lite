@@ -78,9 +78,9 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 					'nonce'    => wp_create_nonce( 'athemes-addons-elementor' ),
 					'ajax_url' => admin_url( 'admin-ajax.php' ),
 					'admin_url'=> admin_url(),
-					'save'     => esc_html__( 'Save', 'athemes-addons-elementor' ),
-					'saving'   => esc_html__( 'Saving...', 'athemes-addons-elementor' ),
-					'saved'    => esc_html__( 'Saved!', 'athemes-addons-elementor' ),
+					'save'     => esc_html__( 'Save', 'athemes-addons-for-elementor-lite' ),
+					'saving'   => esc_html__( 'Saving...', 'athemes-addons-for-elementor-lite' ),
+					'saved'    => esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ),
 				) );
 
 				wp_enqueue_script( 'athemes-addons-admin-select2', ATHEMES_AFE_URI . 'assets/js/vendor/select2.min.js', array( 'jquery' ), ATHEMES_AFE_VERSION, true );
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 			$page_url = add_query_arg( array( 'page' => 'athemes-addons-elementor' ), admin_url( 'themes.php' ) );
 
 			$action_links = array(
-				'settings' => '<a href="' . esc_url( $page_url ) . '">' . esc_html__( 'Settings', 'athemes-addons-elementor' ) . '</a>',
+				'settings' => '<a href="' . esc_url( $page_url ) . '">' . esc_html__( 'Settings', 'athemes-addons-for-elementor-lite' ) . '</a>',
 			);
 
 			return array_merge( $action_links, $links );
@@ -116,8 +116,8 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 				
 				if ( empty( $module ) ) {
 					
-					$text .= sprintf( '<a href="https://www.facebook.com/groups/245922400035997" target="_blank" class="athemes-addons-admin-footer-text-link">%s</a>', esc_html__( 'Join our community', 'athemes-addons-elementor' ) );
-					$text .= esc_html__( 'to discuss about the product and ask for support or help the community.', 'athemes-addons-elementor' );
+					$text .= sprintf( '<a href="https://www.facebook.com/groups/245922400035997" target="_blank" class="athemes-addons-admin-footer-text-link">%s</a>', esc_html__( 'Join our community', 'athemes-addons-for-elementor-lite' ) );
+					$text .= esc_html__( 'to discuss about the product and ask for support or help the community.', 'athemes-addons-for-elementor-lite' );
 					
 				}
 				

@@ -55,7 +55,7 @@ class aThemes_Addons_Review_Notice {
 				printf(
 				    /* Translators: %1$s current user display name. */
 					esc_html__(
-						'Hey, %1$s! You\'ve been using aThemes Addons for more than two weeks now and we hope you\'re happy with it. If you have a few minutes, we would love to get a 5 star review from you.', 'athemes-addons-elementor'
+						'Hey, %1$s! You\'ve been using aThemes Addons for more than two weeks now and we hope you\'re happy with it. If you have a few minutes, we would love to get a 5 star review from you.', 'athemes-addons-for-elementor-lite'
 					),
 					'<strong>' . esc_html( $current_user->display_name ) . '</strong>'
 				);
@@ -63,11 +63,11 @@ class aThemes_Addons_Review_Notice {
 			</p>
 
 			<p>
-				<a href="https://wordpress.org/support/plugin/athemes-addons-for-elementor-lite/reviews/?filter=5#new-post" class="btn button-primary" target="_blank"><?php esc_html_e( 'Sure', 'athemes-addons-elementor' ); ?></a>
+				<a href="https://wordpress.org/support/plugin/athemes-addons-for-elementor-lite/reviews/?filter=5#new-post" class="btn button-primary" target="_blank"><?php esc_html_e( 'Sure', 'athemes-addons-for-elementor-lite' ); ?></a>
 				
-				<a href="?delay_athemes_addons_disable_review_notice_partially=0" class="btn button-secondary"><?php esc_html_e( 'Maybe later', 'athemes-addons-elementor' ); ?></a>
+				<a href="?delay_athemes_addons_disable_review_notice_partially=0" class="btn button-secondary"><?php esc_html_e( 'Maybe later', 'athemes-addons-for-elementor-lite' ); ?></a>
 
-				<a href="?nag_athemes_addons_disable_review_notice=0" class="btn button-secondary"><?php esc_html_e( 'I already did', 'athemes-addons-elementor' ); ?></a>
+				<a href="?nag_athemes_addons_disable_review_notice=0" class="btn button-secondary"><?php esc_html_e( 'I already did', 'athemes-addons-for-elementor-lite' ); ?></a>
 			</p>
 
 			<a class="notice-dismiss" href="?nag_athemes_addons_disable_review_notice=0" style="text-decoration:none;"></a>

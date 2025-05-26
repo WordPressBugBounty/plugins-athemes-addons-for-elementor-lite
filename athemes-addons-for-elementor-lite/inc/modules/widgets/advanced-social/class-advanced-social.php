@@ -51,7 +51,7 @@ class Advanced_Social extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Advanced Social icons', 'athemes-addons-elementor' );
+		return __( 'Advanced Social icons', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -125,20 +125,20 @@ class Advanced_Social extends Widget_Base {
 		$this->start_controls_section(
 			'section_social_icon',
 			[
-				'label' => esc_html__( 'Social Icons', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Social Icons', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'display_mode',
 			[
-				'label' => esc_html__( 'Display Mode', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Display Mode', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'icons_text',
 				'options' => [
-					'icons'         => esc_html__( 'Icons', 'athemes-addons-elementor' ),
-					'text'          => esc_html__( 'Text', 'athemes-addons-elementor' ),
-					'icons_text'    => esc_html__( 'Icons & Text', 'athemes-addons-elementor' ),
+					'icons'         => esc_html__( 'Icons', 'athemes-addons-for-elementor-lite' ),
+					'text'          => esc_html__( 'Text', 'athemes-addons-for-elementor-lite' ),
+					'icons_text'    => esc_html__( 'Icons & Text', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -148,7 +148,7 @@ class Advanced_Social extends Widget_Base {
 		$repeater->add_control(
 			'social_icon',
 			[
-				'label' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'social',
 				'default' => [
@@ -166,7 +166,6 @@ class Advanced_Social extends Widget_Base {
 						'deviantart',
 						'digg',
 						'dribbble',
-						'athemes-addons-elementor',
 						'facebook',
 						'flickr',
 						'foursquare',
@@ -224,16 +223,16 @@ class Advanced_Social extends Widget_Base {
 		$repeater->add_control(
 			'social_label',
 			[
-				'label' => esc_html__( 'Label', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Label', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Facebook', 'athemes-addons-elementor' ),
+				'default' => esc_html__( 'Facebook', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$repeater->add_control(
 			'link',
 			[
-				'label' => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
 				'default' => [
 					'is_external' => 'true',
@@ -247,11 +246,11 @@ class Advanced_Social extends Widget_Base {
 		$repeater->add_control(
 			'social_tooltip',
 			[
-				'label' => esc_html__( 'Tooltip', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Tooltip', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
-				'label_on' => esc_html__( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => esc_html__( 'No', 'athemes-addons-elementor' ),
+				'label_on' => esc_html__( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => esc_html__( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -259,9 +258,9 @@ class Advanced_Social extends Widget_Base {
 		$repeater->add_control(
 			'social_tooltip_text',
 			[
-				'label' => esc_html__( 'Tooltip Text', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Tooltip Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Follow us', 'athemes-addons-elementor' ),
+				'default' => esc_html__( 'Follow us', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'social_tooltip' => 'yes',
 				],
@@ -271,12 +270,12 @@ class Advanced_Social extends Widget_Base {
 		$repeater->add_control(
 			'item_icon_color',
 			[
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => [
-					'default' => esc_html__( 'Official Color', 'athemes-addons-elementor' ),
-					'custom' => esc_html__( 'Custom', 'athemes-addons-elementor' ),
+					'default' => esc_html__( 'Official Color', 'athemes-addons-for-elementor-lite' ),
+					'custom' => esc_html__( 'Custom', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -284,7 +283,7 @@ class Advanced_Social extends Widget_Base {
 		$repeater->add_control(
 			'item_icon_primary_color',
 			[
-				'label' => esc_html__( 'Primary Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Primary Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'item_icon_color' => 'custom',
@@ -298,7 +297,7 @@ class Advanced_Social extends Widget_Base {
 		$repeater->add_control(
 			'item_icon_secondary_color',
 			[
-				'label' => esc_html__( 'Secondary Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Secondary Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'item_icon_color' => 'custom',
@@ -313,7 +312,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'social_icon_list',
 			[
-				'label' => esc_html__( 'Social Icons', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Social Icons', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -346,11 +345,11 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label' => esc_html__( 'Columns', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Columns', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '0',
 				'options' => [
-					'0' => esc_html__( 'Auto', 'athemes-addons-elementor' ),
+					'0' => esc_html__( 'Auto', 'athemes-addons-for-elementor-lite' ),
 					'1' => '1',
 					'2' => '2',
 					'3' => '3',
@@ -368,7 +367,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'full_width',
 			[
-				'label' => esc_html__( 'Full Width', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Full Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'columns' => '1',
@@ -385,19 +384,19 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => esc_html__( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left'    => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -412,12 +411,12 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label' => esc_html__( 'Icon Position', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Position', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '0',
 				'options' => [
-					'0'     => esc_html__( 'Before', 'athemes-addons-elementor' ),
-					'10'    => esc_html__( 'After', 'athemes-addons-elementor' ),
+					'0'     => esc_html__( 'Before', 'athemes-addons-for-elementor-lite' ),
+					'10'    => esc_html__( 'After', 'athemes-addons-for-elementor-lite' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} .social-icon' => 'order: {{VALUE}};',
@@ -428,7 +427,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => esc_html__( 'View', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'View', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			]
@@ -439,7 +438,7 @@ class Advanced_Social extends Widget_Base {
 		$this->start_controls_section(
 			'section_social_style',
 			[
-				'label' => esc_html__( 'Element', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Element', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -447,12 +446,12 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => [
-					'default' => esc_html__( 'Official Color', 'athemes-addons-elementor' ),
-					'custom' => esc_html__( 'Custom', 'athemes-addons-elementor' ),
+					'default' => esc_html__( 'Official Color', 'athemes-addons-for-elementor-lite' ),
+					'custom' => esc_html__( 'Custom', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -460,7 +459,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'icon_primary_color',
 			[
-				'label' => esc_html__( 'Primary Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Primary Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'icon_color' => 'custom',
@@ -474,7 +473,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'icon_secondary_color',
 			[
-				'label' => esc_html__( 'Secondary Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Secondary Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'icon_color' => 'custom',
@@ -489,7 +488,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => esc_html__( 'Size', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				// The `%' and `em` units are not supported as the widget implements icons differently then other icons.
 				'size_units' => [ 'px', 'rem', 'vw', 'custom' ],
@@ -508,7 +507,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_padding',
 			[
-				'label' => esc_html__( 'Horizontal padding', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Horizontal padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-social-icon' => '--icon-padding-horizontal: {{SIZE}}{{UNIT}}',
@@ -534,7 +533,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_padding_vertical',
 			[
-				'label' => esc_html__( 'Vertical padding', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Vertical padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-social-icon' => '--icon-padding-vertical: {{SIZE}}{{UNIT}}',
@@ -560,7 +559,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_spacing',
 			[
-				'label' => esc_html__( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -580,7 +579,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'row_gap',
 			[
-				'label' => esc_html__( 'Rows Gap', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Rows Gap', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -609,7 +608,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
@@ -631,7 +630,7 @@ class Advanced_Social extends Widget_Base {
 		$this->start_controls_section(
 			'section_social_hover',
 			[
-				'label' => esc_html__( 'Element Hover', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Element Hover', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -639,7 +638,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'hover_primary_color',
 			[
-				'label' => esc_html__( 'Primary Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Primary Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'condition' => [
@@ -654,7 +653,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'hover_secondary_color',
 			[
-				'label' => esc_html__( 'Secondary Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Secondary Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'condition' => [
@@ -670,7 +669,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'hover_border_color',
 			[
-				'label' => esc_html__( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'condition' => [
@@ -693,7 +692,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => esc_html__( 'Hover Animation', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover Animation', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 			]
 		);
@@ -701,11 +700,11 @@ class Advanced_Social extends Widget_Base {
 		$this->add_control(
 			'show_label_on_hover',
 			[
-				'label' => esc_html__( 'Show Label on Hover', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Show Label on Hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
-				'label_on' => esc_html__( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => esc_html__( 'No', 'athemes-addons-elementor' ),
+				'label_on' => esc_html__( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => esc_html__( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'condition' => [
 					'display_mode' => 'icons_text',
@@ -716,7 +715,7 @@ class Advanced_Social extends Widget_Base {
 		$this->add_responsive_control(
 			'hover_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [

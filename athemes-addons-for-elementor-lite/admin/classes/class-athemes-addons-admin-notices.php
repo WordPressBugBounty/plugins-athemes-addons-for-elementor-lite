@@ -56,12 +56,12 @@ if ( ! class_exists( 'Admin_Notices' ) ) {
 
 				$message = sprintf(
 					/* translators: 1: aThemes Addons, 2: Elementor */
-					esc_html__( 'To use %1$s, please install %2$s.', 'athemes-addons-elementor' ),
-					'<strong>' . esc_html__( 'aThemes Addons', 'athemes-addons-elementor' ) . '</strong>',
-					'<strong>' . esc_html__( 'Elementor', 'athemes-addons-elementor' ) . '</strong>'
+					esc_html__( 'To use %1$s, please install %2$s.', 'athemes-addons-for-elementor-lite' ),
+					'<strong>' . esc_html__( 'aThemes Addons', 'athemes-addons-for-elementor-lite' ) . '</strong>',
+					'<strong>' . esc_html__( 'Elementor', 'athemes-addons-for-elementor-lite' ) . '</strong>'
 				);
 
-				$button_text = esc_html__( 'Install Elementor', 'athemes-addons-elementor' );
+				$button_text = esc_html__( 'Install Elementor', 'athemes-addons-for-elementor-lite' );
 
 				$this->notice( $message, $button_text, $elementor_install_url );
 			} elseif ( !is_plugin_active( 'elementor/elementor.php' ) ) { // Check if Elementor is activated.
@@ -78,12 +78,12 @@ if ( ! class_exists( 'Admin_Notices' ) ) {
 
 				$message = sprintf(
 					/* translators: 1: aThemes Addons, 2: Elementor */
-					esc_html__( 'To use %1$s, please activate %2$s.', 'athemes-addons-elementor' ),
-					'<strong>' . esc_html__( 'aThemes Addons', 'athemes-addons-elementor' ) . '</strong>',
-					'<strong>' . esc_html__( 'Elementor', 'athemes-addons-elementor' ) . '</strong>'
+					esc_html__( 'To use %1$s, please activate %2$s.', 'athemes-addons-for-elementor-lite' ),
+					'<strong>' . esc_html__( 'aThemes Addons', 'athemes-addons-for-elementor-lite' ) . '</strong>',
+					'<strong>' . esc_html__( 'Elementor', 'athemes-addons-for-elementor-lite' ) . '</strong>'
 				);
 
-				$button_text = esc_html__( 'Activate Elementor', 'athemes-addons-elementor' );
+				$button_text = esc_html__( 'Activate Elementor', 'athemes-addons-for-elementor-lite' );
 
 				$this->notice( $message, $button_text, $elementor_activate_url );
 			}

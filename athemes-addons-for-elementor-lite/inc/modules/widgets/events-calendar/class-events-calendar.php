@@ -57,7 +57,7 @@ class Events_Calendar extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Google Calendar', 'athemes-addons-elementor' );
+		return __( 'Google Calendar', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -140,19 +140,19 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_section(
 			'section_data',
 			[
-				'label' => __( 'Calendar data', 'athemes-addons-elementor' ),
+				'label' => __( 'Calendar data', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'google_api_key',
 			[
-				'label'         => __( 'Google API Key', 'athemes-addons-elementor' ),
+				'label'         => __( 'Google API Key', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::TEXT,
 				'description' => sprintf(
 					/* translators: %s: link to the documentation */
-					__( 'Learn how to obtain your API key %s.', 'athemes-addons-elementor' ),
-					sprintf('<a href="%s" target="_blank">%s</a>', 'https://docs.athemes.com/calendar-id-api-key/#key', __('here', 'athemes-addons-elementor'))
+					__( 'Learn how to obtain your API key %s.', 'athemes-addons-for-elementor-lite' ),
+					sprintf('<a href="%s" target="_blank">%s</a>', 'https://docs.athemes.com/calendar-id-api-key/#key', __('here', 'athemes-addons-for-elementor-lite'))
 				),
 			]
 		);
@@ -160,12 +160,12 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'calendar_id',
 			[
-				'label'         => __( 'Calendar ID', 'athemes-addons-elementor' ),
+				'label'         => __( 'Calendar ID', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::TEXT,
 				'description' => sprintf(
 					/* translators: %s: link to the documentation */
-					__( 'Learn how to obtain your Calendar ID %s.', 'athemes-addons-elementor' ),
-					sprintf('<a href="%s" target="_blank">%s</a>', 'https://docs.athemes.com/calendar-id-api-key/#id', __('here', 'athemes-addons-elementor'))
+					__( 'Learn how to obtain your Calendar ID %s.', 'athemes-addons-for-elementor-lite' ),
+					sprintf('<a href="%s" target="_blank">%s</a>', 'https://docs.athemes.com/calendar-id-api-key/#id', __('here', 'athemes-addons-for-elementor-lite'))
 				),
 			]
 		);
@@ -175,14 +175,14 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);  
 
         $this->add_control(
             'locale',
             [
-                'label' => __( 'Language', 'athemes-addons-elementor' ),
+                'label' => __( 'Language', 'athemes-addons-for-elementor-lite' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'af' => 'Afrikaans',
@@ -249,14 +249,14 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'initial_view',
 			[
-				'label'     => __( 'Initial View', 'athemes-addons-elementor' ),
+				'label'     => __( 'Initial View', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'dayGridMonth',
 				'options'   => [
-                    'timeGridDay'   => __('Day', 'athemes-addons-elementor'),
-                    'timeGridWeek'  => __('Week', 'athemes-addons-elementor'),
-                    'dayGridMonth'  => __('Month', 'athemes-addons-elementor'),
-                    'listMonth'     => __('List', 'athemes-addons-elementor'),
+                    'timeGridDay'   => __('Day', 'athemes-addons-for-elementor-lite'),
+                    'timeGridWeek'  => __('Week', 'athemes-addons-for-elementor-lite'),
+                    'dayGridMonth'  => __('Month', 'athemes-addons-for-elementor-lite'),
+                    'listMonth'     => __('List', 'athemes-addons-for-elementor-lite'),
 				],
 			]
 		);
@@ -264,10 +264,10 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'format_24',
 			[
-				'label'         => __( '24-hour Time Format', 'athemes-addons-elementor' ),
+				'label'         => __( '24-hour Time Format', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::SWITCHER,
-				'label_on'      => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off'     => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'      => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off'     => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value'  => 'yes',
 			]
 		);
@@ -275,17 +275,17 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'first_day',
 			[
-				'label'     => __( 'First Day of the Week', 'athemes-addons-elementor' ),
+				'label'     => __( 'First Day of the Week', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => '1',
 				'options'   => [
-					'0' => __( 'Sunday', 'athemes-addons-elementor' ),
-					'1' => __( 'Monday', 'athemes-addons-elementor' ),
-					'2' => __( 'Tuesday', 'athemes-addons-elementor' ),
-					'3' => __( 'Wednesday', 'athemes-addons-elementor' ),
-					'4' => __( 'Thursday', 'athemes-addons-elementor' ),
-					'5' => __( 'Friday', 'athemes-addons-elementor' ),
-					'6' => __( 'Saturday', 'athemes-addons-elementor' ),
+					'0' => __( 'Sunday', 'athemes-addons-for-elementor-lite' ),
+					'1' => __( 'Monday', 'athemes-addons-for-elementor-lite' ),
+					'2' => __( 'Tuesday', 'athemes-addons-for-elementor-lite' ),
+					'3' => __( 'Wednesday', 'athemes-addons-for-elementor-lite' ),
+					'4' => __( 'Thursday', 'athemes-addons-for-elementor-lite' ),
+					'5' => __( 'Friday', 'athemes-addons-for-elementor-lite' ),
+					'6' => __( 'Saturday', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -293,10 +293,10 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'hide_past_events',
 			[
-				'label'         => __( 'Hide Past Events', 'athemes-addons-elementor' ),
+				'label'         => __( 'Hide Past Events', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::SWITCHER,
-				'label_on'      => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off'     => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'      => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off'     => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value'  => 'yes',
 				'selectors_dictionary' => [
 					'yes' => 'display: none;',
@@ -310,10 +310,10 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'hide_link',
 			[
-				'label'         => __( 'Hide Event Link', 'athemes-addons-elementor' ),
+				'label'         => __( 'Hide Event Link', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::SWITCHER,
-				'label_on'      => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off'     => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'      => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off'     => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value'  => 'yes',
 				'selectors_dictionary' => [
 					'yes' => 'display: none;',
@@ -329,7 +329,7 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => __( 'Calendar', 'athemes-addons-elementor' ),
+				'label' => __( 'Calendar', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -337,7 +337,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_responsive_control(
 			'calendar_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -349,7 +349,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'calendar_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-events-calendar' => 'background-color: {{VALUE}};',
@@ -360,7 +360,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'calendar_text_color',
 			[
-				'label'     => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-events-calendar' => '--fc-text-color: {{VALUE}};',
@@ -379,7 +379,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'calendar_border_radius',
 			[
-				'label'     => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label'     => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-events-calendar' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -400,7 +400,7 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_section(
 			'section_toolbar_style',
 			[
-				'label' => __( 'Toolbar', 'athemes-addons-elementor' ),
+				'label' => __( 'Toolbar', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -408,7 +408,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'toolbar_heading',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -416,7 +416,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-toolbar-title' => 'color: {{VALUE}};',
@@ -435,7 +435,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'button_heading',
 			[
-				'label' => __( 'Buttons', 'athemes-addons-elementor' ),
+				'label' => __( 'Buttons', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -443,7 +443,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'button_border_radius',
 			[
-				'label'     => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label'     => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .fc-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -454,7 +454,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_responsive_control(
 			'button_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -476,14 +476,14 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_toolbar_buttons_normal',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'button_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-button' => 'color: {{VALUE}};',
@@ -494,7 +494,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'button_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-button' => 'background-color: {{VALUE}};',
@@ -507,14 +507,14 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_toolbar_buttons_hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'button_hover_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-button:hover' => 'color: {{VALUE}};',
@@ -525,7 +525,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'button_hover_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-button:hover' => 'background-color: {{VALUE}};',
@@ -538,14 +538,14 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_toolbar_buttons_active',
 			[
-				'label' => __( 'Active', 'athemes-addons-elementor' ),
+				'label' => __( 'Active', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'button_active_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-button.fc-button-active' => 'color: {{VALUE}};',
@@ -556,7 +556,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'button_active_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-button.fc-button-active' => 'background-color: {{VALUE}};',
@@ -573,7 +573,7 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_section(
 			'section_table_header_style',
 			[
-				'label' => __( 'Table Header', 'athemes-addons-elementor' ),
+				'label' => __( 'Table Header', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -581,7 +581,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_responsive_control(
 			'table_header_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -601,7 +601,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'table_header_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-col-header-cell,{{WRAPPER}} .fc-col-header-cell a' => 'color: {{VALUE}};',
@@ -612,7 +612,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'table_header_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-col-header-cell' => 'background-color: {{VALUE}};',
@@ -623,19 +623,19 @@ class Events_Calendar extends Widget_Base {
 		$this->add_responsive_control(
 			'table_header_text_align',
 			[
-				'label' => __( 'Text Align', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Align', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'athemes-addons-elementor' ),
+						'title' => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -650,7 +650,7 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_section(
 			'section_table_cell_style',
 			[
-				'label' => __( 'Table Cell', 'athemes-addons-elementor' ),
+				'label' => __( 'Table Cell', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -658,7 +658,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_responsive_control(
 			'table_cell_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -678,7 +678,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'table_cell_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-daygrid-day-top:not(.fc-day-today) a' => 'color: {{VALUE}};',
@@ -689,7 +689,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'table_cell_today_color',
 			[
-				'label'     => __( 'Today Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Today Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-day-today .fc-daygrid-day-top a' => 'color: {{VALUE}};',
@@ -700,7 +700,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'table_cell_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-daygrid-day:not(.fc-day-today)' => 'background-color: {{VALUE}};',
@@ -711,7 +711,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'table_cell_today_bg_color',
 			[
-				'label'     => __( 'Today Background', 'athemes-addons-elementor' ),
+				'label'     => __( 'Today Background', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-day-today' => 'background-color: {{VALUE}};',
@@ -724,7 +724,7 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_section(
 			'section_event_style',
 			[
-				'label' => __( 'Event', 'athemes-addons-elementor' ),
+				'label' => __( 'Event', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -740,7 +740,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_responsive_control(
 			'event_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -753,7 +753,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'event_border_radius',
 			[
-				'label'     => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label'     => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .fc-event' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -766,14 +766,14 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_event_normal',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'event_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-event,{{WRAPPER}} .fc-h-event .fc-event-main' => 'color: {{VALUE}};',
@@ -784,7 +784,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'event_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-event' => 'background-color: {{VALUE}};',
@@ -797,14 +797,14 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_event_hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'event_hover_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-event:hover,{{WRAPPER}} .fc-event:hover .fc-event-main' => 'color: {{VALUE}};',
@@ -815,7 +815,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'event_hover_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .fc-event:hover' => 'background-color: {{VALUE}};',
@@ -832,7 +832,7 @@ class Events_Calendar extends Widget_Base {
 		$this->start_controls_section(
 			'section_modal_style',
 			[
-				'label' => __( 'Modal', 'athemes-addons-elementor' ),
+				'label' => __( 'Modal', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -840,7 +840,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_responsive_control(
 			'modal_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -852,7 +852,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'modal_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .event-modal' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -863,7 +863,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'modal_background_color',
 			[
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .event-modal' => 'background-color: {{VALUE}};',
@@ -874,7 +874,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'modal_title_color',
 			[
-				'label' => __( 'Title Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .event-modal .modal-header h3' => 'color: {{VALUE}};',
@@ -885,7 +885,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'modal_text_color',
 			[
-				'label'     => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-events-calendar .modal-meta span' => 'color: {{VALUE}};',
@@ -896,7 +896,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'modal_link_color',
 			[
-				'label'     => __( 'Link Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Link Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .event-modal a' => 'color: {{VALUE}};',
@@ -907,7 +907,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'modal_link_hover_color',
 			[
-				'label'     => __( 'Link Hover Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Link Hover Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .event-modal a:hover' => 'color: {{VALUE}};',
@@ -918,7 +918,7 @@ class Events_Calendar extends Widget_Base {
 		$this->add_control(
 			'modal_close_color',
 			[
-				'label'     => __( 'Close Button Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Close Button Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .event-modal .close-modal' => 'color: {{VALUE}};border-color: {{VALUE}};',

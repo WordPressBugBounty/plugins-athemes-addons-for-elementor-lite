@@ -109,8 +109,33 @@
 		var categoryFilter = $('.athemes-addons-modules-filter-button-category');
 		categoryFilter.on('change', function (e) {
 			var category = $(this).val();
-			appliedFilters.category = category;
-			filterModules();
+			
+			// Reset status/type filters to "all" when changing category
+			appliedFilters.status = 'all';
+			appliedFilters.freePro = 'all';
+			$('input[name="athemes-addons-status-filter"][value="all"]').prop('checked', true);
+			$('input[name="athemes-addons-free-pro-filter"][value="all"]').prop('checked', true);
+			
+			if (category === 'all') {
+				// Show all categories
+				$('.athemes-addons-modules-category').show();
+				$('.athemes-addons-modules-list-item').show();
+				return;
+			}
+			
+			// Find the category section to scroll to
+			var $targetCategory = $('.athemes-addons-modules-category').filter(function() {
+				// Find a category that has modules matching the selected category
+				var hasMatchingModules = $(this).find('.athemes-addons-modules-list-item[data-category="' + category + '"]').length > 0;
+				return hasMatchingModules;
+			}).first();
+			
+			if ($targetCategory.length) {			
+				// Scroll to the category
+				$('html, body').animate({
+					scrollTop: $targetCategory.offset().top - 100 // Increased offset to account for 80px sticky header plus some padding
+				}, 500);
+			}
 		});
 
 		// Status filter.
@@ -132,17 +157,38 @@
 		// Function to filter modules based on applied filters
 		function filterModules() {
 			var $modules = $('.athemes-addons-modules-list-item');
-
+			
+			// First reset all modules to hidden
 			$modules.hide();
 
+			// Show modules that match all filters
 			$modules.each(function () {
 				var module = $(this);
 				var meetsCategoryFilter = (appliedFilters.category === 'all') || (module.data('category') === appliedFilters.category);
 				var meetsStatusFilter = (appliedFilters.status === 'all') || (module.data('status') === appliedFilters.status);
 				var meetsFreeProFilter = (appliedFilters.freePro === 'all') || (module.data('type') === appliedFilters.freePro);
 
-				if (meetsCategoryFilter && meetsStatusFilter && meetsFreeProFilter) {
-					module.fadeIn();
+				if (meetsStatusFilter && meetsFreeProFilter) {
+					module.show();
+				}
+			});
+
+			// Update category visibility based on visible modules
+			updateCategoryVisibility();
+		}
+
+		// Function to update category visibility
+		function updateCategoryVisibility() {
+			// Make all categories visible first
+			$('.athemes-addons-modules-category').show();
+			
+			// Then hide the ones with no visible modules
+			$('.athemes-addons-modules-category').each(function() {
+				var $category = $(this);
+				var $visibleModules = $category.find('.athemes-addons-modules-list-item:visible');
+				
+				if ($visibleModules.length === 0) {
+					$category.hide();
 				}
 			});
 		}
@@ -153,17 +199,22 @@
 			var search = $(this).val().toLowerCase();
 			var $modules = $('.athemes-addons-modules-list-item');
 
+			// Reset module visibility
 			$modules.hide();
 
+			// Show modules that match the search
 			$modules.each(function () {
 				var module = $(this);
 				var title = module.data('title').toLowerCase();
-				var description = module.data('keywords').toLowerCase();
+				var description = module.data('keywords') ? module.data('keywords').toLowerCase() : '';
 
 				if (title.indexOf(search) > -1 || description.indexOf(search) > -1) {
 					module.show();
 				}
 			});
+
+			// Update category visibility
+			updateCategoryVisibility();
 		});
 
 		// Settings page.

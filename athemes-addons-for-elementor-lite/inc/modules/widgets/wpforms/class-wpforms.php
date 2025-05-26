@@ -52,7 +52,7 @@ class WPForms extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'WPForms', 'athemes-addons-elementor' );
+		return __( 'WPForms', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -130,7 +130,7 @@ class WPForms extends Widget_Base {
             $this->start_controls_section(
                 'missing_plugin_notice_section',
                 [
-                    'label' => __( 'Missing plugin: WPForms', 'athemes-addons-elementor' ),
+                    'label' => __( 'Missing plugin: WPForms', 'athemes-addons-for-elementor-lite' ),
                 ]
             );
 
@@ -138,8 +138,7 @@ class WPForms extends Widget_Base {
                 'missing_plugin_notice',
                 [
                     'type'            => Controls_Manager::RAW_HTML,
-                    'raw'             => __('Please install <a href="plugin-install.php?s=wpforms&tab=search&type=term" target="_blank">WPForms</a> to use this widget.',
-                        'athemes-addons-elementor'),
+                    'raw'             => __('Please install <a href="plugin-install.php?s=wpforms&tab=search&type=term" target="_blank">WPForms</a> to use this widget.', 'athemes-addons-for-elementor-lite'),
                 ]
             );
 
@@ -150,14 +149,14 @@ class WPForms extends Widget_Base {
 		$this->start_controls_section(
 			'section_forms',
 			[
-				'label' => __( 'WPForms', 'athemes-addons-elementor' ),
+				'label' => __( 'WPForms', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'contact_title_heading',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -165,7 +164,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'form_title',
 			[
-				'label' => __( 'Form title', 'athemes-addons-elementor' ),
+				'label' => __( 'Form title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'placeholder' => '',
@@ -175,19 +174,19 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'form_title_tag',
 			[
-				'label' => __('Form title tag', 'athemes-addons-elementor'),
+				'label' => __('Form title tag', 'athemes-addons-for-elementor-lite'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'h2',
 				'options' => [
-					'h1'    => __('H1', 'athemes-addons-elementor'),
-					'h2'    => __('H2', 'athemes-addons-elementor'),
-					'h3'    => __('H3', 'athemes-addons-elementor'),
-					'h4'    => __('H4', 'athemes-addons-elementor'),
-					'h5'    => __('H5', 'athemes-addons-elementor'),
-					'h6'    => __('H6', 'athemes-addons-elementor'),
-					'span'  => __('Span', 'athemes-addons-elementor'),
-					'p'     => __('P', 'athemes-addons-elementor'),
-					'div'   => __('Div', 'athemes-addons-elementor'),
+					'h1'    => __('H1', 'athemes-addons-for-elementor-lite'),
+					'h2'    => __('H2', 'athemes-addons-for-elementor-lite'),
+					'h3'    => __('H3', 'athemes-addons-for-elementor-lite'),
+					'h4'    => __('H4', 'athemes-addons-for-elementor-lite'),
+					'h5'    => __('H5', 'athemes-addons-for-elementor-lite'),
+					'h6'    => __('H6', 'athemes-addons-for-elementor-lite'),
+					'span'  => __('Span', 'athemes-addons-for-elementor-lite'),
+					'p'     => __('P', 'athemes-addons-for-elementor-lite'),
+					'div'   => __('Div', 'athemes-addons-for-elementor-lite'),
 				],
 			]
 		);  
@@ -195,7 +194,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'contact_forms_heading',
 			[
-				'label' => __( 'Form', 'athemes-addons-elementor' ),
+				'label' => __( 'Form', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -204,7 +203,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'contact_forms',
 			[
-				'label' => __('Select your form', 'athemes-addons-elementor'),
+				'label' => __('Select your form', 'athemes-addons-for-elementor-lite'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 0,
 				'options' => $this->forms(),
@@ -214,19 +213,19 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => esc_html__( 'Form alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Form alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -246,19 +245,19 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'content_align',
 			[
-				'label' => esc_html__( 'Content alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Content alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -272,7 +271,7 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'size',
 			[
-				'label' => __( 'Form width', 'athemes-addons-elementor' ),
+				'label' => __( 'Form width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -309,7 +308,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'contact_button_heading',
 			[
-				'label' => __( 'Button', 'athemes-addons-elementor' ),
+				'label' => __( 'Button', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -318,10 +317,10 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'stretch_button',
 			[
-				'label' => __( 'Stretch button?', 'athemes-addons-elementor' ),
+				'label' => __( 'Stretch button?', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'  => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'selectors_dictionary' => [
@@ -337,7 +336,7 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'button_size',
 			[
-				'label' => __( 'Button max. width', 'athemes-addons-elementor' ),
+				'label' => __( 'Button max. width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -365,19 +364,19 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'align_button',
 			[
-				'label' => esc_html__( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -400,7 +399,7 @@ class WPForms extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_container',
 			[
-				'label' => __( 'Container', 'athemes-addons-elementor' ),
+				'label' => __( 'Container', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -409,7 +408,7 @@ class WPForms extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'container_background',
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .athemes-addons-form-inner',
 			]
@@ -418,7 +417,7 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'container_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],
@@ -453,7 +452,7 @@ class WPForms extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'container_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-form-inner',
 			]
 		);
@@ -462,7 +461,7 @@ class WPForms extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'container_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-form-inner',
 			]
 		);
@@ -473,7 +472,7 @@ class WPForms extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_title',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -481,7 +480,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'form_title_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-contact-form-title' => 'color: {{VALUE}};',
@@ -503,7 +502,7 @@ class WPForms extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_labels',
 			[
-				'label' => __( 'Labels', 'athemes-addons-elementor' ),
+				'label' => __( 'Labels', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -511,7 +510,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'form_labels_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-form-inner label' => 'color: {{VALUE}};',
@@ -534,7 +533,7 @@ class WPForms extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_fields',
 			[
-				'label' => __( 'Fields', 'athemes-addons-elementor' ),
+				'label' => __( 'Fields', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -542,7 +541,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'field_background_color',
 			[
-				'label'     => __( 'Background color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-form-inner input:not([type="submit"]), {{WRAPPER}} .athemes-addons-form-inner textarea, {{WRAPPER}} .athemes-addons-form-inner select' => 'background-color: {{VALUE}};',
@@ -553,7 +552,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'field_text_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-form-inner input:not([type="submit"]), {{WRAPPER}} .athemes-addons-form-inner textarea, {{WRAPPER}} .athemes-addons-form-inner select' => 'color: {{VALUE}};',
@@ -564,7 +563,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'field_placeholder_color',
 			[
-				'label'     => __( 'Placeholder color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Placeholder color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} input:not([type="submit"])::placeholder,
@@ -576,7 +575,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'field_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -590,7 +589,7 @@ class WPForms extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'field_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-form-inner input:not([type="submit"]), {{WRAPPER}} .athemes-addons-form-inner textarea, {{WRAPPER}} .athemes-addons-form-inner select',
 			]
 		);
@@ -598,7 +597,7 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'field_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],         
@@ -611,7 +610,7 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'field_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -633,7 +632,7 @@ class WPForms extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => esc_html__( 'Button', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Button', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -659,14 +658,14 @@ class WPForms extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -679,9 +678,9 @@ class WPForms extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'label' => esc_html__( 'Background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} button[type="submit"],{{WRAPPER}} div.wpforms-container-full button[type=submit]:not(:hover):not(:active)',
 				'fields_options' => [
 					'background' => [
@@ -697,14 +696,14 @@ class WPForms extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} button[type="submit"]:hover, {{WRAPPER}} button[type="submit"]:focus' => 'color: {{VALUE}};',
@@ -717,9 +716,9 @@ class WPForms extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'button_background_hover',
-				'label' => esc_html__( 'Background', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} button[type="submit"]:hover, {{WRAPPER}} button[type="submit"]:focus',
 				'fields_options' => [
 					'background' => [
@@ -732,7 +731,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'button_hover_border_color',
 			[
-				'label' => esc_html__( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'border_border!' => '',
@@ -760,7 +759,7 @@ class WPForms extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -780,7 +779,7 @@ class WPForms extends Widget_Base {
 		$this->add_responsive_control(
 			'text_padding',
 			[
-				'label' => esc_html__( 'Padding', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -808,7 +807,7 @@ class WPForms extends Widget_Base {
 			$forms = wpforms()->form->get();
 
 			if ( ! empty( $forms ) ) {
-				$forms_list[0] = esc_html__( 'Select a form', 'athemes-addons-elementor' );
+				$forms_list[0] = esc_html__( 'Select a form', 'athemes-addons-for-elementor-lite' );
 				foreach ( $forms as $form ) {
 					$forms_list[ $form->ID ] = mb_strlen( $form->post_title ) > 100 ? mb_substr( $form->post_title, 0, 97 ) . '...' : $form->post_title;
 				}

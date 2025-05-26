@@ -55,7 +55,7 @@ class Progress_Bar extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Progress Bar', 'athemes-addons-elementor' );
+		return esc_html__( 'Progress Bar', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -136,18 +136,18 @@ class Progress_Bar extends Widget_Base {
 		$this->start_controls_section(
 			'section_progress',
 			[
-				'label' => esc_html__( 'Progress Bar', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Progress Bar', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'progress_layout',
 			[
-				'label' => esc_html__( 'Layout', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Layout', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'line'          => esc_html__( 'Line', 'athemes-addons-elementor' ),
-					'circle'        => esc_html__( 'Circle', 'athemes-addons-elementor' ),
+					'line'          => esc_html__( 'Line', 'athemes-addons-for-elementor-lite' ),
+					'circle'        => esc_html__( 'Circle', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'line',
 				'separator' => 'after',
@@ -157,13 +157,13 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => esc_html__( 'Title', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => esc_html__( 'Enter your title', 'athemes-addons-elementor' ),
-				'default' => esc_html__( 'My Skill', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'Enter your title', 'athemes-addons-for-elementor-lite' ),
+				'default' => esc_html__( 'My Skill', 'athemes-addons-for-elementor-lite' ),
 				'label_block' => true,
 			]
 		);
@@ -171,7 +171,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'title_tag',
 			[
-				'label' => esc_html__( 'Title HTML Tag', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Title HTML Tag', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -194,19 +194,19 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'icon_type',
 			[
-				'label' => __( 'Icon Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Icon Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'none' => [
-						'title' => __( 'None', 'athemes-addons-elementor' ),
+						'title' => __( 'None', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-ban',
 					],
 					'icon' => [
-						'title' => __( 'Icon', 'athemes-addons-elementor' ),
+						'title' => __( 'Icon', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-star',
 					],
 					'lottie' => [
-						'title' => __( 'Lottie', 'athemes-addons-elementor' ),
+						'title' => __( 'Lottie', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-lottie',
 					],
 				],
@@ -222,7 +222,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'default' => [
@@ -239,12 +239,12 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'source_type',
 			[
-				'label' => __( 'Source Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Source Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'url',
 				'options' => [
-					'library'   => __( 'Media Library', 'athemes-addons-elementor' ),
-					'url'       => __( 'URL', 'athemes-addons-elementor' ),
+					'library'   => __( 'Media Library', 'athemes-addons-for-elementor-lite' ),
+					'url'       => __( 'URL', 'athemes-addons-for-elementor-lite' ),
 				],
 				'condition' => [
 					'icon_type'         => 'lottie',
@@ -256,11 +256,11 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'json_url',
 			[
-				'label'       => __( 'JSON URL', 'athemes-addons-elementor' ),
+				'label'       => __( 'JSON URL', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => 'https://lottie.host/b1c5822f-b67f-4161-a3b4-1add55a317c1/sVz6yzXAwE.json',
 				/* translators: %1$s: <a> tag open, %2$s: <a> tag close */
-				'description' => sprintf( __( 'Enter the URL of your Lottie JSON file. Find Lottie animations %1$shere%2$s.', 'athemes-addons-elementor' ),'<a href="https://lottiefiles.com/" target="_blank">','</a>' ),
+				'description' => sprintf( __( 'Enter the URL of your Lottie JSON file. Find Lottie animations %1$shere%2$s.', 'athemes-addons-for-elementor-lite' ),'<a href="https://lottiefiles.com/" target="_blank">','</a>' ),
 				'label_block' => true,
 				'condition'   => [
 					'icon_type'     => 'lottie',
@@ -273,11 +273,11 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'json_id',
 			[
-				'label'       => __( 'JSON File', 'athemes-addons-elementor' ),
+				'label'       => __( 'JSON File', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::MEDIA,
 				'media_type'  => 'application/json',
 				/* translators: %1$s: <a> tag open, %2$s: <a> tag close */
-				'description' => sprintf( __( 'Upload your Lottie JSON file. Find Lottie animations %1$shere%2$s.', 'athemes-addons-elementor' ),'<a href="https://lottiefiles.com/" target="_blank">','</a>'
+				'description' => sprintf( __( 'Upload your Lottie JSON file. Find Lottie animations %1$shere%2$s.', 'athemes-addons-for-elementor-lite' ),'<a href="https://lottiefiles.com/" target="_blank">','</a>'
 				),
 				'label_block' => true,
 				'condition'   => [
@@ -291,7 +291,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'percent',
 			[
-				'label' => esc_html__( 'Percentage', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Percentage', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 60,
@@ -307,10 +307,10 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'display_percentage',
 			[
-				'label' => esc_html__( 'Display Percentage', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Display Percentage', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'show',
 				'default' => 'show',
 			]
@@ -319,13 +319,13 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'inner_text',
 			[
-				'label' => esc_html__( 'Inner Text', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Inner Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => esc_html__( 'e.g. Web Designer', 'athemes-addons-elementor' ),
-				'default' => esc_html__( 'Web Designer', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'e.g. Web Designer', 'athemes-addons-for-elementor-lite' ),
+				'default' => esc_html__( 'Web Designer', 'athemes-addons-for-elementor-lite' ),
 				'label_block' => true,
 				'separator' => 'before',
 			]
@@ -334,11 +334,11 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'content_position',
 			[
-				'label' => esc_html__( 'Text Position', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Position', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'inside'    => esc_html__( 'Inside', 'athemes-addons-elementor' ),
-					'outside'   => esc_html__( 'Outside', 'athemes-addons-elementor' ),
+					'inside'    => esc_html__( 'Inside', 'athemes-addons-for-elementor-lite' ),
+					'outside'   => esc_html__( 'Outside', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'inside',
 				'separator' => 'before',
@@ -353,7 +353,7 @@ class Progress_Bar extends Widget_Base {
 		$this->start_controls_section(
 			'section_progress_style',
 			[
-				'label' => esc_html__( 'Progress', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Progress', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -361,7 +361,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'bar_color',
 			[
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-progress-wrapper' => '--accent-color: {{VALUE}};',
@@ -376,11 +376,9 @@ class Progress_Bar extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'bar_line_color',
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [
-					'image',
-				],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} .aafe-progress-bar',
 				'condition' => [
 					'progress_layout' => 'line',
@@ -391,7 +389,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'bar_bg_color',
 			[
-				'label' => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-progress-wrapper' => '--bg-color: {{VALUE}};',
@@ -402,7 +400,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'bar_height',
 			[
-				'label' => esc_html__( 'Height', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'selectors' => [
@@ -417,7 +415,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'bar_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
@@ -432,7 +430,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_responsive_control(
 			'circle_size',
 			[
-				'label' => esc_html__( 'Circle Size', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Circle Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -456,7 +454,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'stroke_width',
 			[
-				'label' => esc_html__( 'Stroke Width', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Stroke Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -475,10 +473,10 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'bar_stripes',
 			[
-				'label' => esc_html__( 'Stripes', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Stripes', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'striped',
 				'condition' => [
 					'progress_layout' => 'line',
@@ -489,10 +487,10 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'bar_animated',
 			[
-				'label' => esc_html__( 'Animated stripes?', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Animated stripes?', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => esc_html__( 'No', 'athemes-addons-elementor' ),
+				'label_on' => esc_html__( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => esc_html__( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'animated',
 				'condition' => [
 					'bar_stripes'       => 'striped',
@@ -504,7 +502,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'inner_padding',
 			[
-				'label' => esc_html__( 'Inner Padding', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Inner Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -528,7 +526,7 @@ class Progress_Bar extends Widget_Base {
 		$this->start_controls_section(
 			'section_title',
 			[
-				'label' => esc_html__( 'Content', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -536,7 +534,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'title_heading',
 			[
-				'label' => esc_html__( 'Title', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -544,7 +542,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .progress-title' => 'color: {{VALUE}};',
@@ -571,7 +569,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'inner_text_heading',
 			[
-				'label' => esc_html__( 'Text', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -580,7 +578,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'bar_inline_color',
 			[
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .progress-text' => 'color: {{VALUE}};',
@@ -593,9 +591,7 @@ class Progress_Bar extends Widget_Base {
 			[
 				'name' => 'bar_inner_typography',
 				'selector' => '{{WRAPPER}} .progress-text',
-				'exclude' => [
-					'line_height',
-				],
+				'exclude' => [ 'line_height' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 			]
 		);
 
@@ -610,7 +606,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'percentage_heading',
 			[
-				'label' => esc_html__( 'Percentage', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Percentage', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -619,7 +615,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'percentage_color',
 			[
-				'label' => esc_html__( 'Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .progress-percentage' => 'color: {{VALUE}};',
@@ -632,9 +628,7 @@ class Progress_Bar extends Widget_Base {
 			[
 				'name' => 'percentage_typography',
 				'selector' => '{{WRAPPER}} .progress-percentage',
-				'exclude' => [
-					'line_height',
-				],
+				'exclude' => [ 'line_height' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 			]
 		);
 

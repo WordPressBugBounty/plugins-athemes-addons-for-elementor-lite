@@ -44,7 +44,7 @@ class Gallery_Skin2 extends Skin_Base {
 	 * Get the title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Card', 'athemes-addons-elementor' );
+		return esc_html__( 'Card', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**

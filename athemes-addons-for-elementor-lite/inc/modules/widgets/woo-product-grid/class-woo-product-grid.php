@@ -57,7 +57,7 @@ class Woo_Product_Grid extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Woo Product Grid', 'athemes-addons-elementor' );
+		return __( 'Woo Product Grid', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -140,14 +140,14 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_layout',
 			[
-				'label' => __( 'Layout', 'athemes-addons-elementor' ),
+				'label' => __( 'Layout', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label' => esc_html__( 'Columns', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Columns', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '3',
 				'options' => [
@@ -168,7 +168,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'item_gap',
 			[
-				'label' => __( 'Item Gap', 'athemes-addons-elementor' ),
+				'label' => __( 'Item Gap', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'range' => [
@@ -194,14 +194,14 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_template',
 			[
-				'label' => __( 'Product Template', 'athemes-addons-elementor' ),
+				'label' => __( 'Product Template', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'style1',
 				'options' => [
-					'style1'    => __( 'Style 1', 'athemes-addons-elementor' ),
-					'style2'    => __( 'Style 2', 'athemes-addons-elementor' ),
-					'style3'    => __( 'Style 3', 'athemes-addons-elementor' ),
-					'style4'    => __( 'Style 4', 'athemes-addons-elementor' ),
+					'style1'    => __( 'Style 1', 'athemes-addons-for-elementor-lite' ),
+					'style2'    => __( 'Style 2', 'athemes-addons-for-elementor-lite' ),
+					'style3'    => __( 'Style 3', 'athemes-addons-for-elementor-lite' ),
+					'style4'    => __( 'Style 4', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'before',
 			]
@@ -212,22 +212,22 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_query',
 			[
-				'label' => __( 'Query', 'athemes-addons-elementor' ),
+				'label' => __( 'Query', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'display_mode',
 			[
-				'label' => __( 'Query type', 'athemes-addons-elementor' ),
+				'label' => __( 'Query type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'recent',
 				'options' => [
-					'recent'        => __( 'Recent products', 'athemes-addons-elementor' ),
-					'featured'      => __( 'Featured products', 'athemes-addons-elementor' ),
-					'sale'          => __( 'Products on sale', 'athemes-addons-elementor' ),
-					'best_selling'  => __( 'Best Selling', 'athemes-addons-elementor' ),
-					'top_rated'     => __( 'Top Rated', 'athemes-addons-elementor' ),
+					'recent'        => __( 'Recent products', 'athemes-addons-for-elementor-lite' ),
+					'featured'      => __( 'Featured products', 'athemes-addons-for-elementor-lite' ),
+					'sale'          => __( 'Products on sale', 'athemes-addons-for-elementor-lite' ),
+					'best_selling'  => __( 'Best Selling', 'athemes-addons-for-elementor-lite' ),
+					'top_rated'     => __( 'Top Rated', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'after',
 			]
@@ -236,7 +236,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'products_per_page',
 			[
-				'label' => __( 'Products Per Page', 'athemes-addons-elementor' ),
+				'label' => __( 'Products Per Page', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 3,
 			]
@@ -245,7 +245,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'offset',
 			[
-				'label' => __( 'Offset', 'athemes-addons-elementor' ),
+				'label' => __( 'Offset', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 0,
 				'separator' => 'after',
@@ -255,16 +255,16 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label' => __( 'Order By', 'athemes-addons-elementor' ),
+				'label' => __( 'Order By', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'date',
 				'options' => [
-					'date'       => __( 'Date', 'athemes-addons-elementor' ),
-					'title'      => __( 'Title', 'athemes-addons-elementor' ),
-					'price'      => __( 'Price', 'athemes-addons-elementor' ),
-					'popularity' => __( 'Popularity', 'athemes-addons-elementor' ),
-					'rating'     => __( 'Rating', 'athemes-addons-elementor' ),
-					'random'     => __( 'Random', 'athemes-addons-elementor' ),
+					'date'       => __( 'Date', 'athemes-addons-for-elementor-lite' ),
+					'title'      => __( 'Title', 'athemes-addons-for-elementor-lite' ),
+					'price'      => __( 'Price', 'athemes-addons-for-elementor-lite' ),
+					'popularity' => __( 'Popularity', 'athemes-addons-for-elementor-lite' ),
+					'rating'     => __( 'Rating', 'athemes-addons-for-elementor-lite' ),
+					'random'     => __( 'Random', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -272,12 +272,12 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label' => __( 'Order', 'athemes-addons-elementor' ),
+				'label' => __( 'Order', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'desc',
 				'options' => [
-					'asc'   => __( 'ASC', 'athemes-addons-elementor' ),
-					'desc'  => __( 'DESC', 'athemes-addons-elementor' ),
+					'asc'   => __( 'ASC', 'athemes-addons-for-elementor-lite' ),
+					'desc'  => __( 'DESC', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'after',
 			]
@@ -286,7 +286,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'categories',
 			[
-				'label'     => __( 'Categories', 'athemes-addons-elementor' ),
+				'label'     => __( 'Categories', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SELECT2,
 				'multiple'  => true,
 				'options'   => Posts_Helper::get_terms_list( 'product_cat', 'slug' ),
@@ -296,7 +296,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'tags',
 			[
-				'label'     => __( 'Tags', 'athemes-addons-elementor' ),
+				'label'     => __( 'Tags', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SELECT2,
 				'multiple'  => true,
 				'options'   => Posts_Helper::get_terms_list( 'product_tag', 'slug' ),
@@ -307,8 +307,8 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_filter',
 			[
-				'label' => __( 'Show Filter', 'athemes-addons-elementor' ),
-				'description' => __( 'Requires categories to be selected', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Filter', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'Requires categories to be selected', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 				'separator' => 'before',
@@ -318,9 +318,9 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_filter_all_text',
 			[
-				'label' => __( 'Show All Text', 'athemes-addons-elementor' ),
+				'label' => __( 'Show All Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Show all', 'athemes-addons-elementor' ),
+				'default' => __( 'Show all', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'show_filter' => 'yes',
 				],
@@ -330,7 +330,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_category_thumbs',
 			[
-				'label' => __( 'Show Category Thumbs', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Category Thumbs', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 			]
@@ -339,7 +339,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'all_products_thumb',
 			[
-				'label' => __( 'Show All Thumb', 'athemes-addons-elementor' ),
+				'label' => __( 'Show All Thumb', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -353,7 +353,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_load_more',
 			[
-				'label' => __( 'Show Load More', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Load More', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 				'separator' => 'before',
@@ -363,7 +363,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'load_more_text',
 			[
-				'label' => __( 'Load More Text', 'athemes-addons-elementor' ),
+				'label' => __( 'Load More Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Load More',
 				'condition' => [
@@ -377,14 +377,14 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_elements',
 			[
-				'label' => __( 'Product elements', 'athemes-addons-elementor' ),
+				'label' => __( 'Product elements', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'show_image',
 			[
-				'label' => __( 'Show Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -393,7 +393,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_category',
 			[
-				'label' => __( 'Show Category', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Category', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 			]
@@ -402,7 +402,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'title_html_tag',
 			[
-				'label' => __( 'Title HTML Tag', 'athemes-addons-elementor' ),
+				'label' => __( 'Title HTML Tag', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'h2',
 				'options' => [
@@ -422,7 +422,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_rating',
 			[
-				'label' => __( 'Show Rating', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Rating', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -431,7 +431,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_short_description',
 			[
-				'label' => __( 'Show Short Description', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Short Description', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 			]
@@ -440,7 +440,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_price',
 			[
-				'label' => __( 'Show Price', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Price', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -449,7 +449,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'show_add_to_cart',
 			[
-				'label' => __( 'Show Add to Cart', 'athemes-addons-elementor' ),
+				'label' => __( 'Show Add to Cart', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -458,15 +458,15 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'sale_badge_alignment',
 			[
-				'label' => __( 'Sale badge alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Sale badge alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left'      => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-order-start',
 					],
 					'right'     => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-order-end',
 					],
 				],
@@ -484,9 +484,9 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'sale_badge_text',
 			[
-				'label' => __( 'Sale badge text', 'athemes-addons-elementor' ),
+				'label' => __( 'Sale badge text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Sale!', 'athemes-addons-elementor' ),
+				'default' => __( 'Sale!', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -497,7 +497,7 @@ class Woo_Product_Grid extends Widget_Base {
 					'type' => Controls_Manager::RAW_HTML,
 					'raw' => sprintf(
 						/* translators: %s: Merchant plugin install URL */
-						__( 'Get extra elements for your product cards like: Quick View, Buy Now, Wishlist, Product Swatches & more. Click to <a target="_blank" href="%s">install Merchant</a>.', 'athemes-addons-elementor' ),
+						__( 'Get extra elements for your product cards like: Quick View, Buy Now, Wishlist, Product Swatches & more. Click to <a target="_blank" href="%s">install Merchant</a>.', 'athemes-addons-for-elementor-lite' ),
 						esc_url( admin_url( 'plugin-install.php?s=merchant+toolkit+athemes&tab=search&type=term' ) )
 					),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
@@ -507,7 +507,7 @@ class Woo_Product_Grid extends Widget_Base {
 			$this->add_control(
 				'more_options',
 				[
-					'label' => esc_html__( 'Merchant', 'athemes-addons-elementor' ),
+					'label' => esc_html__( 'Merchant', 'athemes-addons-for-elementor-lite' ),
 					'type' => Controls_Manager::HEADING,
 					'separator' => 'before',
 				]
@@ -517,7 +517,7 @@ class Woo_Product_Grid extends Widget_Base {
 				'notice_merchant',
 				[
 					'type' => Controls_Manager::RAW_HTML,
-					'raw' => __( 'Make sure you first enable the modules you want to use in Merchant\'s settings.', 'athemes-addons-elementor' ),
+					'raw' => __( 'Make sure you first enable the modules you want to use in Merchant\'s settings.', 'athemes-addons-for-elementor-lite' ),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 				]
 			);
@@ -525,7 +525,7 @@ class Woo_Product_Grid extends Widget_Base {
 			$this->add_control(
 				'enable_merchant_buy_now',
 				[
-					'label' => __( 'Enable Buy Now', 'athemes-addons-elementor' ),
+					'label' => __( 'Enable Buy Now', 'athemes-addons-for-elementor-lite' ),
 					'type' => Controls_Manager::SWITCHER,
 					'default' => 'no',
 				]
@@ -534,7 +534,7 @@ class Woo_Product_Grid extends Widget_Base {
 			$this->add_control(
 				'enable_merchant_wishlist',
 				[
-					'label' => __( 'Enable Wishlist', 'athemes-addons-elementor' ),
+					'label' => __( 'Enable Wishlist', 'athemes-addons-for-elementor-lite' ),
 					'type' => Controls_Manager::SWITCHER,
 					'default' => 'no',
 				]
@@ -543,7 +543,7 @@ class Woo_Product_Grid extends Widget_Base {
 			$this->add_control(
 				'enable_merchant_quick_view',
 				[
-					'label' => __( 'Enable Quick View', 'athemes-addons-elementor' ),
+					'label' => __( 'Enable Quick View', 'athemes-addons-for-elementor-lite' ),
 					'type' => Controls_Manager::SWITCHER,
 					'default' => 'no',
 				]
@@ -552,7 +552,7 @@ class Woo_Product_Grid extends Widget_Base {
 			$this->add_control(
 				'enable_merchant_product_swatches',
 				[
-					'label' => __( 'Enable Product Swatches', 'athemes-addons-elementor' ),
+					'label' => __( 'Enable Product Swatches', 'athemes-addons-for-elementor-lite' ),
 					'type' => Controls_Manager::SWITCHER,
 					'default' => 'no',
 				]
@@ -564,7 +564,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -572,7 +572,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -584,7 +584,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -596,7 +596,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'wrapper_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-products-grid' => 'background-color: {{VALUE}};',
@@ -607,7 +607,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -637,7 +637,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_filter_style',
 			[
-				'label' => __( 'Filter', 'athemes-addons-elementor' ),
+				'label' => __( 'Filter', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_filter' => 'yes',
@@ -648,7 +648,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_style_heading',
 			[
-				'label' => __( 'General', 'athemes-addons-elementor' ),
+				'label' => __( 'General', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -656,19 +656,19 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_alignment',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'flex-end' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -682,7 +682,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter' => 'background-color: {{VALUE}};',
@@ -693,7 +693,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -705,7 +705,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -723,7 +723,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_items_style_heading',
 			[
-				'label' => __( 'Filter items', 'athemes-addons-elementor' ),
+				'label' => __( 'Filter items', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -740,7 +740,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_items_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -752,7 +752,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_items_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -771,7 +771,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'filter_items_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -782,12 +782,12 @@ class Woo_Product_Grid extends Widget_Base {
 
 		$this->start_controls_tabs( 'filter_items_style_tabs' );
 
-		$this->start_controls_tab( 'filter_items_style_normal_tab', [ 'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'filter_items_style_normal_tab', [ 'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_control(
 			'filter_items_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span:not(.active)' => 'color: {{VALUE}};',
@@ -798,7 +798,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_items_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span:not(.active)' => 'background-color: {{VALUE}};',
@@ -809,7 +809,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_items_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span:not(.active)' => 'border-color: {{VALUE}};',
@@ -819,12 +819,12 @@ class Woo_Product_Grid extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'filter_items_style_hover_tab', [ 'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'filter_items_style_hover_tab', [ 'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_control(
 			'filter_items_hover_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span:not(.active):hover' => 'color: {{VALUE}};',
@@ -835,7 +835,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_items_hover_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span:not(.active):hover' => 'background-color: {{VALUE}};',
@@ -846,7 +846,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_items_hover_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span:not(.active):hover' => 'border-color: {{VALUE}};',
@@ -856,12 +856,12 @@ class Woo_Product_Grid extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'filter_items_style_active_tab', [ 'label' => esc_html__( 'Active', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'filter_items_style_active_tab', [ 'label' => esc_html__( 'Active', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_control(
 			'filter_items_active_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span.active' => 'color: {{VALUE}};',
@@ -872,7 +872,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_items_active_background',
 			[
-				'label' => __( 'Background', 'athemes-addons-elementor' ),
+				'label' => __( 'Background', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span.active' => 'background-color: {{VALUE}};',
@@ -883,7 +883,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'filter_items_active_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .product-filter span.active' => 'border-color: {{VALUE}};',
@@ -900,7 +900,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_product_card_style',
 			[
-				'label' => __( 'Product Card', 'athemes-addons-elementor' ),
+				'label' => __( 'Product Card', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -908,7 +908,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'product_card_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -920,7 +920,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_card_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product' => 'background-color: {{VALUE}};',
@@ -931,7 +931,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'product_card_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -950,7 +950,7 @@ class Woo_Product_Grid extends Widget_Base {
 
 		$this->start_controls_tabs( 'product_card_style_tabs' );
 
-		$this->start_controls_tab( 'product_card_style_normal_tab', [ 'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'product_card_style_normal_tab', [ 'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
@@ -962,7 +962,7 @@ class Woo_Product_Grid extends Widget_Base {
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'product_card_style_hover_tab', [ 'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ) ] );
+		$this->start_controls_tab( 'product_card_style_hover_tab', [ 'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ) ] );
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
@@ -975,7 +975,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_card_hover_border_color',
 			[
-				'label' => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product:hover' => 'border-color: {{VALUE}};',
@@ -992,7 +992,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_product_image_style',
 			[
-				'label' => __( 'Image', 'athemes-addons-elementor' ),
+				'label' => __( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1000,7 +1000,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'product_image_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -1018,7 +1018,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'product_image_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -1032,7 +1032,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_product_content_style',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1040,7 +1040,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_title_heading',
 			[
-				'label' => __( 'Title', 'athemes-addons-elementor' ),
+				'label' => __( 'Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -1056,7 +1056,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_title_color',
 			[
-				'label' => __( 'Title Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .woocommerce-loop-product__title' => 'color: {{VALUE}};',
@@ -1067,7 +1067,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'product_title_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1080,7 +1080,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_short_desc_heading',
 			[
-				'label' => __( 'Short Description', 'athemes-addons-elementor' ),
+				'label' => __( 'Short Description', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1097,7 +1097,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_short_desc_color',
 			[
-				'label' => __( 'Short Description Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Short Description Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .product-short-description' => 'color: {{VALUE}};',
@@ -1108,7 +1108,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_price_heading',
 			[
-				'label' => __( 'Price', 'athemes-addons-elementor' ),
+				'label' => __( 'Price', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1125,7 +1125,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_price_color',
 			[
-				'label' => __( 'Price Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Price Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .price' => 'color: {{VALUE}};',
@@ -1136,7 +1136,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_discounted_price_color',
 			[
-				'label' => __( 'Full Price Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Full Price Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .price del' => 'color: {{VALUE}};',
@@ -1147,7 +1147,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_desc_heading',
 			[
-				'label' => __( 'Short description', 'athemes-addons-elementor' ),
+				'label' => __( 'Short description', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'condition' => [
 					'show_short_description' => 'yes',
@@ -1170,7 +1170,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_short_description_color',
 			[
-				'label' => __( 'Short Description Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Short Description Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .product-short-description' => 'color: {{VALUE}};',
@@ -1184,7 +1184,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_rating_heading',
 			[
-				'label' => __( 'Rating', 'athemes-addons-elementor' ),
+				'label' => __( 'Rating', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'condition' => [
 					'show_rating' => 'yes',
@@ -1196,7 +1196,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_rating_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .star-rating,{{WRAPPER}} .products li.product .star-rating::before' => 'color: {{VALUE}};',
@@ -1210,7 +1210,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_category_heading',
 			[
-				'label' => __( 'Category', 'athemes-addons-elementor' ),
+				'label' => __( 'Category', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'condition' => [
 					'show_category' => 'yes',
@@ -1222,7 +1222,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_category_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .aafe-product-category' => 'color: {{VALUE}};',
@@ -1236,7 +1236,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'product_category_color_hover',
 			[
-				'label' => __( 'Hover Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .aafe-product-category:hover' => 'color: {{VALUE}};',
@@ -1252,7 +1252,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_sale_badge_style',
 			[
-				'label' => __( 'Sale Badge', 'athemes-addons-elementor' ),
+				'label' => __( 'Sale Badge', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1260,7 +1260,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'sale_badge_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1272,7 +1272,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'sale_badge_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1284,7 +1284,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'sale_badge_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .onsale' => 'background-color: {{VALUE}};',
@@ -1295,7 +1295,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_control(
 			'sale_badge_color',
 			[
-				'label' => __( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .products li.product .onsale' => 'color: {{VALUE}};',
@@ -1306,7 +1306,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'sale_badge_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -1320,7 +1320,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			[
-				'label' => __( 'Add to cart button', 'athemes-addons-elementor' ),
+				'label' => __( 'Add to cart button', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1332,7 +1332,7 @@ class Woo_Product_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_load_more_button_style',
 			[
-				'label' => __( 'Load More Button', 'athemes-addons-elementor' ),
+				'label' => __( 'Load More Button', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_load_more' => 'yes',
@@ -1502,7 +1502,7 @@ class Woo_Product_Grid extends Widget_Base {
 							$this->load_product_template( $settings );
 						}
 					} else {
-						echo esc_html__( 'No products found', 'athemes-addons-elementor' );
+						echo esc_html__( 'No products found', 'athemes-addons-for-elementor-lite' );
 					}
 					wp_reset_postdata();
 					?>

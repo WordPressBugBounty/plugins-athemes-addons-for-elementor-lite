@@ -53,7 +53,7 @@ class Testimonials extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Testimonials', 'athemes-addons-elementor' );
+		return __( 'Testimonials', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -133,7 +133,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_slides',
 			[
-				'label' => __( 'Testimonials', 'athemes-addons-elementor' ),
+				'label' => __( 'Testimonials', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -142,7 +142,7 @@ class Testimonials extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label' => __( 'Choose image', 'athemes-addons-elementor' ),
+				'label' => __( 'Choose image', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -153,9 +153,9 @@ class Testimonials extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label'         => __( 'Review title', 'athemes-addons-elementor' ),
+				'label'         => __( 'Review title', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::TEXT,
-				'placeholder'   => __( 'Enter the review title', 'athemes-addons-elementor' ),
+				'placeholder'   => __( 'Enter the review title', 'athemes-addons-for-elementor-lite' ),
 				'separator'     => 'after',
 			]
 		);      
@@ -163,7 +163,7 @@ class Testimonials extends Widget_Base {
 		$repeater->add_control(
 			'name',
 			[
-				'label' => __( 'Name', 'athemes-addons-elementor' ),
+				'label' => __( 'Name', 'athemes-addons-for-elementor-lite' ),
 				'type'  => Controls_Manager::TEXT,
 				'placeholder' => 'John Doe',
 			]
@@ -172,7 +172,7 @@ class Testimonials extends Widget_Base {
 		$repeater->add_control(
 			'position',
 			[
-				'label' => __( 'Position', 'athemes-addons-elementor' ),
+				'label' => __( 'Position', 'athemes-addons-for-elementor-lite' ),
 				'type'  => Controls_Manager::TEXT,
 				'placeholder' => 'CEO, Company Name',
 				'separator' => 'after',
@@ -182,16 +182,16 @@ class Testimonials extends Widget_Base {
 		$repeater->add_control(
 			'content',
 			[
-				'label'         => __( 'Content', 'athemes-addons-elementor' ),
+				'label'         => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::WYSIWYG,
-				'placeholder'   => __( 'Add the review content here', 'athemes-addons-elementor' ),
+				'placeholder'   => __( 'Add the review content here', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$repeater->add_control(
 			'rating',
 			[
-				'label' => __( 'Rating', 'athemes-addons-elementor' ),
+				'label' => __( 'Rating', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],        
 				'range' => [
@@ -211,7 +211,7 @@ class Testimonials extends Widget_Base {
 		$repeater->add_control(
 			'review_date',
 			[
-				'label' => __( 'Review date', 'athemes-addons-elementor' ),
+				'label' => __( 'Review date', 'athemes-addons-for-elementor-lite' ),
 				'type'  => Controls_Manager::TEXT,
 				'separator' => 'after',
 			]
@@ -220,38 +220,38 @@ class Testimonials extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'athemes-addons-elementor' ),
+				'label' => __( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => __( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'slides',
 			[
-				'label' => __( 'Slides', 'athemes-addons-elementor' ),
+				'label' => __( 'Slides', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::REPEATER,
 				'default' => [
 					[
 						'image'     => [ 'url' => Utils::get_placeholder_image_src() ],
-						'title'     => __( 'Awesome plugin!', 'athemes-addons-elementor' ),
+						'title'     => __( 'Awesome plugin!', 'athemes-addons-for-elementor-lite' ),
 						'name'      => 'John Doe',
 						'position'  => 'CEO @ Cool Company',
-						'content'   => __( 'aThemes Addons for Elementor enhances my workflow seamlessly. Impressive support, swift loading, and impeccable code quality. A must-have!', 'athemes-addons-elementor' ),
+						'content'   => __( 'aThemes Addons for Elementor enhances my workflow seamlessly. Impressive support, swift loading, and impeccable code quality. A must-have!', 'athemes-addons-for-elementor-lite' ),
 					],
 					[
 						'image'     => [ 'url' => Utils::get_placeholder_image_src() ],
-						'title'     => __( 'Great support!', 'athemes-addons-elementor' ),
+						'title'     => __( 'Great support!', 'athemes-addons-for-elementor-lite' ),
 						'name'      => 'Jane Doe',
 						'position'  => 'CTO @ Cool Company',
-						'content'   => __( 'Incredible support from aThemes Addons team. Noticed a significant speed boost on my site. Clean code makes customization a breeze.', 'athemes-addons-elementor' ),
+						'content'   => __( 'Incredible support from aThemes Addons team. Noticed a significant speed boost on my site. Clean code makes customization a breeze.', 'athemes-addons-for-elementor-lite' ),
 					],
 					[
 						'image'     => [ 'url' => Utils::get_placeholder_image_src() ],
-						'title'     => __( 'Excellent work!', 'athemes-addons-elementor' ),
+						'title'     => __( 'Excellent work!', 'athemes-addons-for-elementor-lite' ),
 						'name'      => 'John Smith',
 						'position'  => 'CEO @ Great Company',
-						'content'   => __( 'aThemes Addons for Elementor exceeded my expectations. Top-notch support, lightning-fast speed, and well-structured codebase. Highly recommended for all Elementor users!', 'athemes-addons-elementor' ),
+						'content'   => __( 'aThemes Addons for Elementor exceeded my expectations. Top-notch support, lightning-fast speed, and well-structured codebase. Highly recommended for all Elementor users!', 'athemes-addons-for-elementor-lite' ),
 					],
 				],
 				'fields' => $repeater->get_controls(),
@@ -262,15 +262,15 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'slides_to_show',
 			[
-				'label' => __( 'Columns', 'athemes-addons-elementor' ),
+				'label' => __( 'Columns', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					1 => __( '1', 'athemes-addons-elementor' ),
-					2 => __( '2', 'athemes-addons-elementor' ),
-					3 => __( '3', 'athemes-addons-elementor' ),
-					4 => __( '4', 'athemes-addons-elementor' ),
-					5 => __( '5', 'athemes-addons-elementor' ),
-					6 => __( '6', 'athemes-addons-elementor' ),
+					1 => __( '1', 'athemes-addons-for-elementor-lite' ),
+					2 => __( '2', 'athemes-addons-for-elementor-lite' ),
+					3 => __( '3', 'athemes-addons-for-elementor-lite' ),
+					4 => __( '4', 'athemes-addons-for-elementor-lite' ),
+					5 => __( '5', 'athemes-addons-for-elementor-lite' ),
+					6 => __( '6', 'athemes-addons-for-elementor-lite' ),
 				],
 				'desktop_default' => 2,
 				'tablet_default' => 2,
@@ -287,7 +287,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
@@ -304,10 +304,10 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'show_arrows',
 			[
-				'label' => __( 'Arrows', 'athemes-addons-elementor' ),
+				'label' => __( 'Arrows', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -317,10 +317,10 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'show_dots',
 			[
-				'label' => __( 'Dots', 'athemes-addons-elementor' ),
+				'label' => __( 'Dots', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Hide', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -330,7 +330,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'transition_speed',
 			[
-				'label' => __( 'Transition Speed', 'athemes-addons-elementor' ),
+				'label' => __( 'Transition Speed', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 500,
 				'separator' => 'before',
@@ -341,10 +341,10 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label' => __( 'Autoplay', 'athemes-addons-elementor' ),
+				'label' => __( 'Autoplay', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Off', 'athemes-addons-elementor' ),
+				'label_on' => __( 'On', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Off', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -354,7 +354,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label' => __( 'Autoplay Speed', 'athemes-addons-elementor' ),
+				'label' => __( 'Autoplay Speed', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 5000,
 				'condition' => [
@@ -367,10 +367,10 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label' => __( 'Infinite Loop', 'athemes-addons-elementor' ),
+				'label' => __( 'Infinite Loop', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Off', 'athemes-addons-elementor' ),
+				'label_on' => __( 'On', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Off', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'default' => 'true',
 				'frontend_available' => true,
@@ -381,10 +381,10 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'pause_on_hover',
 			[
-				'label' => __( 'Pause on Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Pause on Hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'athemes-addons-elementor' ),
-				'label_off' => __( 'Off', 'athemes-addons-elementor' ),
+				'label_on' => __( 'On', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'Off', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -393,7 +393,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'show_thumbs',
 			[
-				'label' => __( 'Show thumbs', 'athemes-addons-elementor' ),
+				'label' => __( 'Show thumbs', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',  
 				'return_value' => 'yes',
@@ -406,7 +406,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_wrapper_style',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -414,7 +414,7 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -427,7 +427,7 @@ class Testimonials extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'wrapper_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-testimonials',
 				'separator' => 'before',
 			]
@@ -436,7 +436,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -456,7 +456,7 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'carousel_width',
 			[
-				'label' => __( 'Max. carousel width', 'athemes-addons-elementor' ),
+				'label' => __( 'Max. carousel width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 85,
@@ -481,7 +481,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_items',
 			[
-				'label' => __( 'Items', 'athemes-addons-elementor' ),
+				'label' => __( 'Items', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -489,7 +489,7 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'items_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -502,7 +502,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'items_bg_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .swiper-slide' => 'background-color: {{VALUE}};',
@@ -515,7 +515,7 @@ class Testimonials extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'items_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-testimonials .swiper-slide',
 			]
 		);
@@ -523,7 +523,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'items_border_color_hover',
 			[
-				'label' => __( 'Border hover color', 'athemes-addons-elementor' ),
+				'label' => __( 'Border hover color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .swiper-slide:hover' => 'border-color: {{VALUE}};',
@@ -535,7 +535,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'items_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -557,7 +557,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_quote_icon',
 			[
-				'label' => __( 'Quote Icon', 'athemes-addons-elementor' ),
+				'label' => __( 'Quote Icon', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -565,7 +565,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'quote_icon_size',
 			[
-				'label' => __( 'Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -584,7 +584,7 @@ class Testimonials extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'quote_icon_border',
-				'label' => __( 'Border', 'athemes-addons-elementor' ),
+				'label' => __( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .athemes-addons-testimonials .quote-icon',
 				'separator' => 'after',
 			]
@@ -593,7 +593,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'quote_icon_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .quote-icon svg' => 'fill: {{VALUE}};',
@@ -604,7 +604,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'quote_icon_bg_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .quote-icon' => 'background-color: {{VALUE}};',
@@ -625,7 +625,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_content',
 			[
-				'label' => __( 'Content', 'athemes-addons-elementor' ),
+				'label' => __( 'Content', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -633,7 +633,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Title Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Title Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .review-title' => 'color: {{VALUE}};',
@@ -652,7 +652,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'name_color',
 			[
-				'label' => __( 'Name Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Name Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .author-name' => 'color: {{VALUE}};',
@@ -672,7 +672,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'position_color',
 			[
-				'label' => __( 'Position Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Position Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .author-position' => 'color: {{VALUE}};',
@@ -692,7 +692,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'content_color',
 			[
-				'label' => __( 'Content Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Content Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .review-content' => 'color: {{VALUE}};',
@@ -712,7 +712,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'rating_color',
 			[
-				'label' => __( 'Rating Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Rating Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .review-icon-marked svg' => 'fill: {{VALUE}};',
@@ -726,7 +726,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_arrows',
 			[
-				'label' => __( 'Arrows', 'athemes-addons-elementor' ),
+				'label' => __( 'Arrows', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -735,7 +735,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'arrows_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .swiper-button-prev svg' => 'fill: {{VALUE}};',
@@ -748,7 +748,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'arrows_bg_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .swiper-button-prev' => 'background-color: {{VALUE}};',
@@ -761,7 +761,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'arrows_color_hover',
 			[
-				'label' => __( 'Color Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Color Hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .swiper-button-prev:hover svg' => 'fill: {{VALUE}};',
@@ -775,7 +775,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'arrows_bg_color_hover',
 			[
-				'label' => __( 'Background Color Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color Hover', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .athemes-addons-testimonials .swiper-button-prev:hover' => 'background-color: {{VALUE}};',
@@ -791,7 +791,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_dots',
 			[
-				'label' => __( 'Dots', 'athemes-addons-elementor' ),
+				'label' => __( 'Dots', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -800,7 +800,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'dots_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-pagination-bullet' => 'background-color: {{VALUE}};',
@@ -812,7 +812,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'dots_color_active',
 			[
-				'label' => __( 'Color Active', 'athemes-addons-elementor' ),
+				'label' => __( 'Color Active', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper-pagination-bullet-active' => 'background-color: {{VALUE}};',
@@ -823,7 +823,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'dots_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -842,7 +842,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'dots_width',
 			[
-				'label' => __( 'Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -860,7 +860,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'dots_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -878,7 +878,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'dots_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -900,7 +900,7 @@ class Testimonials extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_thumbs',
 			[
-				'label' => __( 'Thumbs', 'athemes-addons-elementor' ),
+				'label' => __( 'Thumbs', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_thumbs' => 'yes',
@@ -911,7 +911,7 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'default' => [
@@ -932,7 +932,7 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_max_width',
 			[
-				'label' => __( 'Max width', 'athemes-addons-elementor' ),
+				'label' => __( 'Max width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'units' => [ '%' ],
 				'default' => [
@@ -957,7 +957,7 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_height',
 			[
-				'label' => __( 'Height', 'athemes-addons-elementor' ),
+				'label' => __( 'Height', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 80,
@@ -980,7 +980,7 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_width',
 			[
-				'label' => __( 'Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 80,
@@ -1003,7 +1003,7 @@ class Testimonials extends Widget_Base {
 		$this->add_responsive_control(
 			'thumbs_border_radius',
 			[
-				'label' => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px' ],
 				'selectors' => [
@@ -1018,7 +1018,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'active_thumb_border_color',
 			[
-				'label' => __( 'Active thumb border color', 'athemes-addons-elementor' ),
+				'label' => __( 'Active thumb border color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#dddddd',
 				'selectors' => [
@@ -1033,7 +1033,7 @@ class Testimonials extends Widget_Base {
 		$this->add_control(
 			'grayscale_effect',
 			[
-				'label' => __( 'Grayscale effect', 'athemes-addons-elementor' ),
+				'label' => __( 'Grayscale effect', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',  
 				'return_value' => 'yes',

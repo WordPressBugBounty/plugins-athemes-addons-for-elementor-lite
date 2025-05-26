@@ -60,7 +60,7 @@ class Video_Popup extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Video Popup', 'athemes-addons-elementor' );
+		return __( 'Video Popup', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -137,19 +137,19 @@ class Video_Popup extends Widget_Base {
 		$this->start_controls_section(
 			'section_trigger',
 			[
-				'label' => esc_html__( 'Trigger', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Trigger', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'trigger',
 			[
-				'label' => esc_html__( 'Trigger', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Trigger', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'text'      => esc_html__( 'Text', 'athemes-addons-elementor' ),
-					'icon'      => esc_html__( 'Icon', 'athemes-addons-elementor' ),
-					'text_icon' => esc_html__( 'Text & Icon', 'athemes-addons-elementor' ),
+					'text'      => esc_html__( 'Text', 'athemes-addons-for-elementor-lite' ),
+					'icon'      => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
+					'text_icon' => esc_html__( 'Text & Icon', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'icon',
 			]
@@ -158,9 +158,9 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'text',
 			[
-				'label' => esc_html__( 'Text', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Play Video', 'athemes-addons-elementor' ),
+				'default' => esc_html__( 'Play Video', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'trigger' => [ 'text', 'text_icon' ],
 				],
@@ -170,7 +170,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label' => esc_html__( 'Select Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Select Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'skin' => 'inline',
 				'default' => [
@@ -195,7 +195,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'separate_lines',
 			[
-				'label' => esc_html__( 'Separate lines?', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Separate lines?', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 				'return_value' => 'yes',
@@ -209,11 +209,11 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'trigger_style',
 			[
-				'label' => esc_html__( 'Trigger Style', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Trigger Style', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'button'    => esc_html__( 'Button', 'athemes-addons-elementor' ),
-					'link'      => esc_html__( 'Link', 'athemes-addons-elementor' ),
+					'button'    => esc_html__( 'Button', 'athemes-addons-for-elementor-lite' ),
+					'link'      => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				],
 				'default' => 'button',
 				'separator' => 'after',
@@ -223,7 +223,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'glow',
 			[
-				'label' => esc_html__( 'Glow', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Glow', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 				'return_value' => 'yes',
@@ -237,19 +237,19 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'align',
 			[
-				'label' => esc_html__( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -269,22 +269,22 @@ class Video_Popup extends Widget_Base {
 		$this->start_controls_section(
 			'section_video',
 			[
-				'label' => esc_html__( 'Video', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Video', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'video_type',
 			[
-				'label' => esc_html__( 'Source', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Source', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'youtube',
 				'options' => [
-					'youtube' => esc_html__( 'YouTube', 'athemes-addons-elementor' ),
-					'vimeo' => esc_html__( 'Vimeo', 'athemes-addons-elementor' ),
-					'dailymotion' => esc_html__( 'Dailymotion', 'athemes-addons-elementor' ),
-					'videopress' => esc_html__( 'VideoPress', 'athemes-addons-elementor' ),
-					'hosted' => esc_html__( 'Self Hosted', 'athemes-addons-elementor' ),
+					'youtube' => esc_html__( 'YouTube', 'athemes-addons-for-elementor-lite' ),
+					'vimeo' => esc_html__( 'Vimeo', 'athemes-addons-for-elementor-lite' ),
+					'dailymotion' => esc_html__( 'Dailymotion', 'athemes-addons-for-elementor-lite' ),
+					'videopress' => esc_html__( 'VideoPress', 'athemes-addons-for-elementor-lite' ),
+					'hosted' => esc_html__( 'Self Hosted', 'athemes-addons-for-elementor-lite' ),
 				],
 				'frontend_available' => true,
 			]
@@ -293,7 +293,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'youtube_url',
 			[
-				'label' => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
@@ -302,7 +302,7 @@ class Video_Popup extends Widget_Base {
 						TagsModule::URL_CATEGORY,
 					],
 				],
-				'placeholder' => esc_html__( 'Enter your URL', 'athemes-addons-elementor' ) . ' (YouTube)',
+				'placeholder' => esc_html__( 'Enter your URL', 'athemes-addons-for-elementor-lite' ) . ' (YouTube)',
 				'default' => 'https://www.youtube.com/watch?v=XHOmBV4js_E',
 				'label_block' => true,
 				'condition' => [
@@ -318,7 +318,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'vimeo_url',
 			[
-				'label' => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
@@ -327,7 +327,7 @@ class Video_Popup extends Widget_Base {
 						TagsModule::URL_CATEGORY,
 					],
 				],
-				'placeholder' => esc_html__( 'Enter your URL', 'athemes-addons-elementor' ) . ' (Vimeo)',
+				'placeholder' => esc_html__( 'Enter your URL', 'athemes-addons-for-elementor-lite' ) . ' (Vimeo)',
 				'default' => 'https://vimeo.com/235215203',
 				'label_block' => true,
 				'condition' => [
@@ -342,7 +342,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'dailymotion_url',
 			[
-				'label' => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
@@ -351,7 +351,7 @@ class Video_Popup extends Widget_Base {
 						TagsModule::URL_CATEGORY,
 					],
 				],
-				'placeholder' => esc_html__( 'Enter your URL', 'athemes-addons-elementor' ) . ' (Dailymotion)',
+				'placeholder' => esc_html__( 'Enter your URL', 'athemes-addons-for-elementor-lite' ) . ' (Dailymotion)',
 				'default' => 'https://www.dailymotion.com/video/x6tqhqb',
 				'label_block' => true,
 				'condition' => [
@@ -366,7 +366,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'insert_url',
 			[
-				'label' => esc_html__( 'External URL', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'External URL', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'video_type' => [ 'hosted', 'videopress' ],
@@ -377,7 +377,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'hosted_url',
 			[
-				'label' => esc_html__( 'Choose Video File', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Choose Video File', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
@@ -398,7 +398,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'external_url',
 			[
-				'label' => esc_html__( 'URL', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'URL', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
 				'autocomplete' => false,
 				'options' => false,
@@ -411,7 +411,7 @@ class Video_Popup extends Widget_Base {
 						TagsModule::URL_CATEGORY,
 					],
 				],
-				'placeholder' => esc_html__( 'Enter your URL', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'Enter your URL', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'video_type' => 'hosted',
 					'insert_url' => 'yes',
@@ -422,7 +422,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'videopress_url',
 			[
-				'label' => esc_html__( 'URL', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'URL', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'show_label' => false,
@@ -434,7 +434,7 @@ class Video_Popup extends Widget_Base {
 						TagsModule::URL_CATEGORY,
 					],
 				],
-				'placeholder' => esc_html__( 'VideoPress URL', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'VideoPress URL', 'athemes-addons-for-elementor-lite' ),
 				'ai' => [
 					'active' => false,
 				],
@@ -449,9 +449,9 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'start',
 			[
-				'label' => esc_html__( 'Start Time', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Start Time', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
-				'description' => esc_html__( 'Specify a start time (in seconds)', 'athemes-addons-elementor' ),
+				'description' => esc_html__( 'Specify a start time (in seconds)', 'athemes-addons-for-elementor-lite' ),
 				'frontend_available' => true,
 				'separator' => 'before',
 			]
@@ -460,9 +460,9 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'end',
 			[
-				'label' => esc_html__( 'End Time', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'End Time', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
-				'description' => esc_html__( 'Specify an end time (in seconds)', 'athemes-addons-elementor' ),
+				'description' => esc_html__( 'Specify an end time (in seconds)', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'video_type' => [ 'youtube', 'hosted' ],
 				],
@@ -473,7 +473,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'video_options',
 			[
-				'label' => esc_html__( 'Video Options', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Video Options', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -482,7 +482,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label' => esc_html__( 'Autoplay', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Autoplay', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'frontend_available' => true,
 			]
@@ -491,7 +491,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'play_on_mobile',
 			[
-				'label' => esc_html__( 'Play On Mobile', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Play On Mobile', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'autoplay' => 'yes',
@@ -503,7 +503,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'mute',
 			[
-				'label' => esc_html__( 'Mute', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Mute', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'frontend_available' => true,
 			]
@@ -512,7 +512,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'loop',
 			[
-				'label' => esc_html__( 'Loop', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Loop', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'video_type!' => 'dailymotion',
@@ -524,10 +524,10 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'controls',
 			[
-				'label' => esc_html__( 'Player Controls', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Player Controls', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
 				'default' => 'yes',
 				'condition' => [
 					'video_type!' => 'vimeo',
@@ -539,10 +539,10 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'showinfo',
 			[
-				'label' => esc_html__( 'Video Info', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Video Info', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
 				'default' => 'yes',
 				'condition' => [
 					'video_type' => [ 'dailymotion' ],
@@ -553,7 +553,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'modestbranding',
 			[
-				'label' => esc_html__( 'Modest Branding', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Modest Branding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'video_type' => [ 'youtube' ],
@@ -566,10 +566,10 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'logo',
 			[
-				'label' => esc_html__( 'Logo', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Logo', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
 				'default' => 'yes',
 				'condition' => [
 					'video_type' => [ 'dailymotion' ],
@@ -581,9 +581,9 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'yt_privacy',
 			[
-				'label' => esc_html__( 'Privacy Mode', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Privacy Mode', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'description' => esc_html__( 'When you turn on privacy mode, YouTube/Vimeo won\'t store information about visitors on your website unless they play the video.', 'athemes-addons-elementor' ),
+				'description' => esc_html__( 'When you turn on privacy mode, YouTube/Vimeo won\'t store information about visitors on your website unless they play the video.', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'video_type' => [ 'youtube', 'vimeo' ],
 				],
@@ -594,7 +594,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'lazy_load',
 			[
-				'label' => esc_html__( 'Lazy Load', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Lazy Load', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'conditions' => [
 					'relation' => 'or',
@@ -623,11 +623,11 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'rel',
 			[
-				'label' => esc_html__( 'Suggested Videos', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Suggested Videos', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' => esc_html__( 'Current Video Channel', 'athemes-addons-elementor' ),
-					'yes' => esc_html__( 'Any Video', 'athemes-addons-elementor' ),
+					'' => esc_html__( 'Current Video Channel', 'athemes-addons-for-elementor-lite' ),
+					'yes' => esc_html__( 'Any Video', 'athemes-addons-for-elementor-lite' ),
 				],
 				'condition' => [
 					'video_type' => 'youtube',
@@ -639,10 +639,10 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'vimeo_title',
 			[
-				'label' => esc_html__( 'Intro Title', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Intro Title', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
 				'default' => 'yes',
 				'condition' => [
 					'video_type' => 'vimeo',
@@ -653,10 +653,10 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'vimeo_portrait',
 			[
-				'label' => esc_html__( 'Intro Portrait', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Intro Portrait', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
 				'default' => 'yes',
 				'condition' => [
 					'video_type' => 'vimeo',
@@ -667,10 +667,10 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'vimeo_byline',
 			[
-				'label' => esc_html__( 'Intro Byline', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Intro Byline', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
 				'default' => 'yes',
 				'condition' => [
 					'video_type' => 'vimeo',
@@ -681,7 +681,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'color',
 			[
-				'label' => esc_html__( 'Controls Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Controls Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'condition' => [
@@ -693,10 +693,10 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'download_button',
 			[
-				'label' => esc_html__( 'Download Button', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Download Button', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__( 'Hide', 'athemes-addons-elementor' ),
-				'label_on' => esc_html__( 'Show', 'athemes-addons-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
+				'label_on' => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
 				'condition' => [
 					'video_type' => 'hosted',
 				],
@@ -706,17 +706,17 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'preload',
 			[
-				'label' => esc_html__( 'Preload', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Preload', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'metadata' => esc_html__( 'Metadata', 'athemes-addons-elementor' ),
-					'auto' => esc_html__( 'Auto', 'athemes-addons-elementor' ),
-					'none' => esc_html__( 'None', 'athemes-addons-elementor' ),
+					'metadata' => esc_html__( 'Metadata', 'athemes-addons-for-elementor-lite' ),
+					'auto' => esc_html__( 'Auto', 'athemes-addons-for-elementor-lite' ),
+					'none' => esc_html__( 'None', 'athemes-addons-for-elementor-lite' ),
 				],
 				'description' => sprintf(
 					'%1$s <a target="_blank" href="https://go.elementor.com/preload-video/">%2$s</a>',
-					esc_html__( 'Preload attribute lets you specify how the video should be loaded when the page loads.', 'athemes-addons-elementor' ),
-					esc_html__( 'Learn more', 'athemes-addons-elementor' ),
+					esc_html__( 'Preload attribute lets you specify how the video should be loaded when the page loads.', 'athemes-addons-for-elementor-lite' ),
+					esc_html__( 'Learn more', 'athemes-addons-for-elementor-lite' ),
 				),
 				'default' => 'metadata',
 				'condition' => [
@@ -729,7 +729,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'poster',
 			[
-				'label' => esc_html__( 'Poster', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Poster', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
@@ -745,7 +745,7 @@ class Video_Popup extends Widget_Base {
 		$this->start_controls_section(
 			'section_trigger_style',
 			[
-				'label' => esc_html__( 'Trigger', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Trigger', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);      
@@ -753,7 +753,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => esc_html__( 'Icon Size', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'range' => [
@@ -774,7 +774,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'glow_color',
 			[
-				'label' => esc_html__( 'Glow Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Glow Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .aafe-custom-embed-button-wrapper' => '--glow-color: {{VALUE}};',
@@ -792,7 +792,7 @@ class Video_Popup extends Widget_Base {
 		$this->start_controls_section(
 			'section_video_style',
 			[
-				'label' => esc_html__( 'Video', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Video', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -800,7 +800,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'aspect_ratio',
 			[
-				'label' => esc_html__( 'Aspect Ratio', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Aspect Ratio', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'169' => '16:9',
@@ -838,7 +838,7 @@ class Video_Popup extends Widget_Base {
 		$this->start_controls_section(
 			'section_lightbox_style',
 			[
-				'label' => esc_html__( 'Lightbox', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Lightbox', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -846,7 +846,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'lightbox_color',
 			[
-				'label' => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'#elementor-lightbox-{{ID}}' => 'background-color: {{VALUE}};',
@@ -857,7 +857,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'lightbox_ui_color',
 			[
-				'label' => esc_html__( 'UI Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'UI Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'#elementor-lightbox-{{ID}} .dialog-lightbox-close-button' => 'color: {{VALUE}}',
@@ -869,7 +869,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_control(
 			'lightbox_ui_color_hover',
 			[
-				'label' => esc_html__( 'UI Hover Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'UI Hover Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'#elementor-lightbox-{{ID}} .dialog-lightbox-close-button:hover' => 'color: {{VALUE}}',
@@ -881,7 +881,7 @@ class Video_Popup extends Widget_Base {
 		$this->add_responsive_control(
 			'lightbox_content_animation',
 			[
-				'label' => esc_html__( 'Entrance Animation', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Entrance Animation', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ANIMATION,
 				'frontend_available' => true,
 				'separator' => 'before',
@@ -1006,9 +1006,9 @@ class Video_Popup extends Widget_Base {
 			?>
 			<div <?php $this->print_render_attribute_string( 'button-wrapper' ); ?>>
 				<?php if ( 'icon' === $settings['trigger'] || 'text_icon' === $settings['trigger'] ) : ?>
-					<div class="aafe-custom-embed-play" role="button" aria-label="<?php echo esc_html__( 'Play Video', 'athemes-addons-elementor' ); ?>" tabindex="0">
+					<div class="aafe-custom-embed-play" role="button" aria-label="<?php echo esc_html__( 'Play Video', 'athemes-addons-for-elementor-lite' ); ?>" tabindex="0">
 						<?php Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-						<span class="elementor-screen-only"><?php echo esc_html__( 'Play Video', 'athemes-addons-elementor' ); ?></span>
+						<span class="elementor-screen-only"><?php echo esc_html__( 'Play Video', 'athemes-addons-for-elementor-lite' ); ?></span>
 					</div>
 				<?php endif; ?>
 				<?php if ( 'text' === $settings['trigger'] || 'text_icon' === $settings['trigger'] ) : ?>

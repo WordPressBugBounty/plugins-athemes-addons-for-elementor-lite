@@ -52,7 +52,7 @@ class Dual_Heading extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dual heading', 'athemes-addons-elementor' );
+		return __( 'Dual heading', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -121,48 +121,48 @@ class Dual_Heading extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Dual heading', 'athemes-addons-elementor' ),
+				'label' => __( 'Dual heading', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'first_text',
 			[
-				'label' => __( 'First part', 'athemes-addons-elementor' ),
+				'label' => __( 'First part', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'placeholder' => '',
-				'default' => __( 'Dual', 'athemes-addons-elementor' ),      
+				'default' => __( 'Dual', 'athemes-addons-for-elementor-lite' ),      
 			]
 		);
 		
 		$this->add_control(
 			'second_text',
 			[
-				'label' => __( 'Second part', 'athemes-addons-elementor' ),
+				'label' => __( 'Second part', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'placeholder' => '',
-				'default' => __( 'Heading', 'athemes-addons-elementor' ),       
+				'default' => __( 'Heading', 'athemes-addons-for-elementor-lite' ),       
 			]
 		);  
 		
 		$this->add_control(
 			'title_tag',
 			[
-				'label' => __('HTML Tag', 'athemes-addons-elementor'),
+				'label' => __('HTML Tag', 'athemes-addons-for-elementor-lite'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'h2',
 				'options' => [
-					'h1'    => __('H1', 'athemes-addons-elementor'),
-					'h2'    => __('H2', 'athemes-addons-elementor'),
-					'h3'    => __('H3', 'athemes-addons-elementor'),
-					'h4'    => __('H4', 'athemes-addons-elementor'),
-					'h5'    => __('H5', 'athemes-addons-elementor'),
-					'h6'    => __('H6', 'athemes-addons-elementor'),
-					'span'  => __('Span', 'athemes-addons-elementor'),
-					'p'     => __('P', 'athemes-addons-elementor'),
-					'div'   => __('Div', 'athemes-addons-elementor'),
+					'h1'    => __('H1', 'athemes-addons-for-elementor-lite'),
+					'h2'    => __('H2', 'athemes-addons-for-elementor-lite'),
+					'h3'    => __('H3', 'athemes-addons-for-elementor-lite'),
+					'h4'    => __('H4', 'athemes-addons-for-elementor-lite'),
+					'h5'    => __('H5', 'athemes-addons-for-elementor-lite'),
+					'h6'    => __('H6', 'athemes-addons-for-elementor-lite'),
+					'span'  => __('Span', 'athemes-addons-for-elementor-lite'),
+					'p'     => __('P', 'athemes-addons-for-elementor-lite'),
+					'div'   => __('Div', 'athemes-addons-for-elementor-lite'),
 				],
 				'separator' => 'before',
 			]
@@ -171,10 +171,10 @@ class Dual_Heading extends Widget_Base {
 		$this->add_control(
 			'block_display',
 			[
-				'label'         => __('Display on separate lines', 'athemes-addons-elementor'),
+				'label'         => __('Display on separate lines', 'athemes-addons-for-elementor-lite'),
 				'type'          => Controls_Manager::SWITCHER,
-				'label_on'      => __('Yes', 'athemes-addons-elementor'),
-				'label_off'     => __('No', 'athemes-addons-elementor'),
+				'label_on'      => __('Yes', 'athemes-addons-for-elementor-lite'),
+				'label_off'     => __('No', 'athemes-addons-for-elementor-lite'),
 				'return_value'  => 'true',
 				'selectors_dictionary' => [
 					'false'         => 'inline',
@@ -190,7 +190,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
@@ -205,23 +205,23 @@ class Dual_Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => esc_html__( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => esc_html__( 'Justified', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Justified', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-justify',
 					],
 				],
@@ -238,7 +238,7 @@ class Dual_Heading extends Widget_Base {
 		$this->start_controls_section(
 			'section_first_part_style',
 			[
-				'label' => __( 'First part', 'athemes-addons-elementor' ),
+				'label' => __( 'First part', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -246,7 +246,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'first_part_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -258,7 +258,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'first_part_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -279,7 +279,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_control(
 			'first_part_border_radius',
 			[
-				'label'         => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label'         => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::DIMENSIONS,
 				'size_units'    => [ 'px', '%' ],
 				'selectors'     => [
@@ -301,10 +301,10 @@ class Dual_Heading extends Widget_Base {
 		$this->add_control(
 			'first_clip_text',
 			[
-				'label'         => __( 'Clip text', 'athemes-addons-elementor' ),
+				'label'         => __( 'Clip text', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::SWITCHER,
-				'label_on'      => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off'     => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'      => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off'     => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value'  => 'true',
 				'default'       => 'false',
 				'selectors_dictionary' => [
@@ -320,7 +320,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_control(
 			'first_part_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'default'   => '#c687ff',
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
@@ -342,7 +342,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
-				'label'     => __( 'Text Shadow', 'athemes-addons-elementor' ),
+				'label'     => __( 'Text Shadow', 'athemes-addons-for-elementor-lite' ),
 				'name'      => 'first_part_text_shadow',
 				'selector'  => '{{WRAPPER}} .h-first-part',
 			]
@@ -354,7 +354,7 @@ class Dual_Heading extends Widget_Base {
 		$this->start_controls_section(
 			'section_second_part_style',
 			[
-				'label' => __( 'Second part', 'athemes-addons-elementor' ),
+				'label' => __( 'Second part', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -362,7 +362,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'second_part_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -374,7 +374,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'second_part_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -395,7 +395,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_control(
 			'second_part_border_radius',
 			[
-				'label'         => __( 'Border radius', 'athemes-addons-elementor' ),
+				'label'         => __( 'Border radius', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::DIMENSIONS,
 				'size_units'    => [ 'px', '%' ],
 				'selectors'     => [
@@ -417,10 +417,10 @@ class Dual_Heading extends Widget_Base {
 		$this->add_control(
 			'second_clip_text',
 			[
-				'label'         => __( 'Clip text', 'athemes-addons-elementor' ),
+				'label'         => __( 'Clip text', 'athemes-addons-for-elementor-lite' ),
 				'type'          => Controls_Manager::SWITCHER,
-				'label_on'      => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off'     => __( 'No', 'athemes-addons-elementor' ),
+				'label_on'      => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off'     => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value'  => 'true',
 				'default'       => 'false',
 				'selectors_dictionary' => [
@@ -436,7 +436,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_control(
 			'second_part_color',
 			[
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'default'   => '',
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
@@ -458,7 +458,7 @@ class Dual_Heading extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
-				'label'     => __( 'Text Shadow', 'athemes-addons-elementor' ),
+				'label'     => __( 'Text Shadow', 'athemes-addons-for-elementor-lite' ),
 				'name'      => 'second_part_text_shadow',
 				'selector'  => '{{WRAPPER}} .h-second-part',
 			]

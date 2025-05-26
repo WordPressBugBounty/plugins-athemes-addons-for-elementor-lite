@@ -11,64 +11,64 @@ function athemes_addons_templates_display_conditions_script_template() {
 
 	$settings['types'][] = array(
 		'id'   => 'include',
-		'text' => esc_html__( 'Include', 'athemes-addons-elementor' ),
+		'text' => esc_html__( 'Include', 'athemes-addons-for-elementor-lite' ),
 	);
 
 	$settings['types'][] = array(
 		'id'   => 'exclude',
-		'text' => esc_html__( 'Exclude', 'athemes-addons-elementor' ),
+		'text' => esc_html__( 'Exclude', 'athemes-addons-for-elementor-lite' ),
 	);
 
 	$settings['display'][] = array(
 		'id'   => 'all',
-		'text' => esc_html__( 'Entire Site', 'athemes-addons-elementor' ),
+		'text' => esc_html__( 'Entire Site', 'athemes-addons-for-elementor-lite' ),
 	);
 
 	$settings['display'][] = array(
 		'id'      => 'basic',
-		'text'    => esc_html__( 'Basic', 'athemes-addons-elementor' ),
+		'text'    => esc_html__( 'Basic', 'athemes-addons-for-elementor-lite' ),
 		'options' => array(
 			array(
 				'id'   => 'singular',
-				'text' => esc_html__( 'Singulars', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Singulars', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'archive',
-				'text' => esc_html__( 'Archives', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Archives', 'athemes-addons-for-elementor-lite' ),
 			),
 		),
 	);
 
 	$settings['display'][] = array(
 		'id'      => 'posts',
-		'text'    => esc_html__( 'Posts', 'athemes-addons-elementor' ),
+		'text'    => esc_html__( 'Posts', 'athemes-addons-for-elementor-lite' ),
 		'options' => array(
 			array(
 				'id'   => 'single-post',
-				'text' => esc_html__( 'Single Post', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Single Post', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'post-archives',
-				'text' => esc_html__( 'Post Archives', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Post Archives', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'post-categories',
-				'text' => esc_html__( 'Post Categories', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Post Categories', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'post-tags',
-				'text' => esc_html__( 'Post Tags', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Post Tags', 'athemes-addons-for-elementor-lite' ),
 			),
 		),
 	);
 
 	$settings['display'][] = array(
 		'id'      => 'pages',
-		'text'    => esc_html__( 'Pages', 'athemes-addons-elementor' ),
+		'text'    => esc_html__( 'Pages', 'athemes-addons-for-elementor-lite' ),
 		'options' => array(
 			array(
 				'id'   => 'single-page',
-				'text' => esc_html__( 'Single Page', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Single Page', 'athemes-addons-for-elementor-lite' ),
 			),
 		),
 	);
@@ -77,40 +77,40 @@ function athemes_addons_templates_display_conditions_script_template() {
 
 		$settings['display'][] = array(
 			'id'      => 'woocommerce',
-			'text'    => esc_html__( 'WooCommerce', 'athemes-addons-elementor' ),
+			'text'    => esc_html__( 'WooCommerce', 'athemes-addons-for-elementor-lite' ),
 			'options' => array(
 				array(
 					'id'   => 'shop',
-					'text' => esc_html__( 'Shop', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'Shop', 'athemes-addons-for-elementor-lite' ),
 				),
 				array(
 					'id'   => 'single-product',
-					'text' => esc_html__( 'Single Product', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'Single Product', 'athemes-addons-for-elementor-lite' ),
 				),
 				array(
 					'id'   => 'product-archives',
-					'text' => esc_html__( 'Product Archives', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'Product Archives', 'athemes-addons-for-elementor-lite' ),
 				),
 				array(
 					'id'   => 'product-categories',
-					'text' => esc_html__( 'Product Categories', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'Product Categories', 'athemes-addons-for-elementor-lite' ),
 				),
 				array(
 					'id'   => 'product-tags',
-					'text' => esc_html__( 'Product Tags', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'Product Tags', 'athemes-addons-for-elementor-lite' ),
 				),
 				array(
 					'id'   => 'product-id',
-					'text' => esc_html__( 'Product name', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'Product name', 'athemes-addons-for-elementor-lite' ),
 					'ajax' => true,
 				),
 				array(
 					'id'   => 'cart',
-					'text' => esc_html__( 'Cart', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'Cart', 'athemes-addons-for-elementor-lite' ),
 				),
 				array(
 					'id'   => 'checkout',
-					'text' => esc_html__( 'Checkout', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'Checkout', 'athemes-addons-for-elementor-lite' ),
 				),
 			),
 		);
@@ -119,31 +119,31 @@ function athemes_addons_templates_display_conditions_script_template() {
 
 	$settings['display'][] = array(
 		'id'      => 'specifics',
-		'text'    => esc_html__( 'Specific', 'athemes-addons-elementor' ),
+		'text'    => esc_html__( 'Specific', 'athemes-addons-for-elementor-lite' ),
 		'options' => array(
 			array(
 				'id'   => 'post-id',
-				'text' => esc_html__( 'Post name', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Post name', 'athemes-addons-for-elementor-lite' ),
 				'ajax' => true,
 			),
 			array(
 				'id'   => 'page-id',
-				'text' => esc_html__( 'Page name', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Page name', 'athemes-addons-for-elementor-lite' ),
 				'ajax' => true,
 			),
 			array(
 				'id'   => 'category-id',
-				'text' => esc_html__( 'Category name', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Category name', 'athemes-addons-for-elementor-lite' ),
 				'ajax' => true,
 			),
 			array(
 				'id'   => 'tag-id',
-				'text' => esc_html__( 'Tag name', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Tag name', 'athemes-addons-for-elementor-lite' ),
 				'ajax' => true,
 			),
 			array(
 				'id'   => 'author-id',
-				'text' => esc_html__( 'Author name', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Author name', 'athemes-addons-for-elementor-lite' ),
 				'ajax' => true,
 			),
 		),
@@ -165,11 +165,11 @@ function athemes_addons_templates_display_conditions_script_template() {
 				'options' => array(
 					array(
 						'id'   => 'cpt-'. $post_type .'-single',
-						'text' => esc_html__( $post_type_label .' Single', 'athemes-addons-elementor' ),
+						'text' => esc_html__( $post_type_label .' Single', 'athemes-addons-for-elementor-lite' ), // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
 					),
 					array(
 						'id'   => 'cpt-'. $post_type .'-archives',
-						'text' => esc_html__( $post_type_label .' Archives', 'athemes-addons-elementor' ),
+						'text' => esc_html__( $post_type_label .' Archives', 'athemes-addons-for-elementor-lite' ), // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
 					),
 				),
 			);
@@ -177,21 +177,21 @@ function athemes_addons_templates_display_conditions_script_template() {
 
 		$settings['display'][] = array(
 			'id'      => 'cpt',
-			'text'    => esc_html__( 'Custom Post Types', 'athemes-addons-elementor' ),
+			'text'    => esc_html__( 'Custom Post Types', 'athemes-addons-for-elementor-lite' ),
 			'options' => array(
 				array(
 					'id'   => 'cpt-post-id',
-					'text' => esc_html__( 'CPT: Post name', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'CPT: Post name', 'athemes-addons-for-elementor-lite' ),
 					'ajax' => true,
 				),
 				array(
 					'id'   => 'cpt-term-id',
-					'text' => esc_html__( 'CPT: Term name', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'CPT: Term name', 'athemes-addons-for-elementor-lite' ),
 					'ajax' => true,
 				),
 				array(
 					'id'   => 'cpt-taxonomy-id',
-					'text' => esc_html__( 'CPT: Taxonomy name', 'athemes-addons-elementor' ),
+					'text' => esc_html__( 'CPT: Taxonomy name', 'athemes-addons-for-elementor-lite' ),
 					'ajax' => true,
 				),
 			),
@@ -201,31 +201,31 @@ function athemes_addons_templates_display_conditions_script_template() {
 
 	$settings['display'][] = array(
 		'id'      => 'other',
-		'text'    => esc_html__( 'Other', 'athemes-addons-elementor' ),
+		'text'    => esc_html__( 'Other', 'athemes-addons-for-elementor-lite' ),
 		'options' => array(
 			array(
 				'id'   => 'front-page',
-				'text' => esc_html__( 'Front Page', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Front Page', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'blog',
-				'text' => esc_html__( 'Blog', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Blog', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'search',
-				'text' => esc_html__( 'Search', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Search', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => '404',
-				'text' => esc_html__( '404', 'athemes-addons-elementor' ),
+				'text' => esc_html__( '404', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'author',
-				'text' => esc_html__( 'Author', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Author', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'privacy-policy-page',
-				'text' => esc_html__( 'Privacy Policy Page', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Privacy Policy Page', 'athemes-addons-for-elementor-lite' ),
 			),
 		),
 	);
@@ -244,32 +244,32 @@ function athemes_addons_templates_display_conditions_script_template() {
 
 	$settings['user'][] = array(
 		'id'      => 'user-auth',
-		'text'    => esc_html__( 'User Auth', 'athemes-addons-elementor' ),
+		'text'    => esc_html__( 'User Auth', 'athemes-addons-for-elementor-lite' ),
 		'options' => array(
 			array(
 				'id'   => 'logged-in',
-				'text' => esc_html__( 'User Logged In', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'User Logged In', 'athemes-addons-for-elementor-lite' ),
 			),
 			array(
 				'id'   => 'logged-out',
-				'text' => esc_html__( 'User Logged Out', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'User Logged Out', 'athemes-addons-for-elementor-lite' ),
 			),
 		),
 	);
 
 	$settings['user'][] = array(
 		'id'      => 'user-roles',
-		'text'    => esc_html__( 'User Roles', 'athemes-addons-elementor' ),
+		'text'    => esc_html__( 'User Roles', 'athemes-addons-for-elementor-lite' ),
 		'options' => $user_roles,
 	);
 
 	$settings['user'][] = array(
 		'id'      => 'other',
-		'text'    => esc_html__( 'Other', 'athemes-addons-elementor' ),
+		'text'    => esc_html__( 'Other', 'athemes-addons-for-elementor-lite' ),
 		'options' => array(
 			array(
 				'id'   => 'author',
-				'text' => esc_html__( 'Author', 'athemes-addons-elementor' ),
+				'text' => esc_html__( 'Author', 'athemes-addons-for-elementor-lite' ),
 				'ajax' => true,
 			),
 		),
@@ -389,12 +389,12 @@ function athemes_addons_templates_display_conditions_script_template() {
 							<# }); #>
 						</ul>
 						<div class="athemes-addons-display-conditions-modal-content-footer">
-							<a href="#" class="button athemes-addons-display-conditions-modal-add" data-condition-group="display"><?php esc_html_e( 'Add Display Condition', 'athemes-addons-elementor' ); ?></a>
-							<a href="#" class="button athemes-addons-display-conditions-modal-add" data-condition-group="user"><?php esc_html_e( 'Add User Condition', 'athemes-addons-elementor' ); ?></a>
+							<a href="#" class="button athemes-addons-display-conditions-modal-add" data-condition-group="display"><?php esc_html_e( 'Add Display Condition', 'athemes-addons-for-elementor-lite' ); ?></a>
+							<a href="#" class="button athemes-addons-display-conditions-modal-add" data-condition-group="user"><?php esc_html_e( 'Add User Condition', 'athemes-addons-for-elementor-lite' ); ?></a>
 						</div>
 					</div>
 					<div class="athemes-addons-display-conditions-modal-footer">
-						<a href="#" class="button button-primary athemes-addons-display-conditions-modal-save athemes-addons-display-conditions-modal-toggle"><?php esc_html_e( 'Save Conditions', 'athemes-addons-elementor' ); ?></a>
+						<a href="#" class="button button-primary athemes-addons-display-conditions-modal-save athemes-addons-display-conditions-modal-toggle"><?php esc_html_e( 'Save Conditions', 'athemes-addons-for-elementor-lite' ); ?></a>
 					</div>
 				</div>
 			</div>

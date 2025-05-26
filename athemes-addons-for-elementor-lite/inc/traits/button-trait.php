@@ -26,8 +26,8 @@ trait Button_Trait {
 			'class' => '',
 			'default_class' => '.button',
 			'section_condition' => [],
-			'button_default_text' => esc_html__( 'Click here', 'athemes-addons-elementor' ),
-			'text_control_label' => esc_html__( 'Text', 'athemes-addons-elementor' ),
+			'button_default_text' => esc_html__( 'Click here', 'athemes-addons-for-elementor-lite' ),
+			'text_control_label' => esc_html__( 'Text', 'athemes-addons-for-elementor-lite' ),
 			'alignment_control_prefix_class' => 'elementor%s-align-',
 			'alignment_default' => '',
 			'icon_exclude_inline_options' => [],
@@ -59,7 +59,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'link',
 			[
-				'label' => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
@@ -74,23 +74,23 @@ trait Button_Trait {
 		$this->add_responsive_control(
 			$prefix . 'align',
 			[
-				'label' => esc_html__( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left'    => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => esc_html__( 'Justified', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Justified', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-justify',
 					],
 				],
@@ -103,7 +103,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'selected_icon',
 			[
-				'label' => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'skin' => 'inline',
@@ -116,12 +116,12 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'icon_align',
 			[
-				'label' => esc_html__( 'Icon Position', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Position', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'left',
 				'options' => [
-					'left' => esc_html__( 'Before', 'athemes-addons-elementor' ),
-					'right' => esc_html__( 'After', 'athemes-addons-elementor' ),
+					'left' => esc_html__( 'Before', 'athemes-addons-for-elementor-lite' ),
+					'right' => esc_html__( 'After', 'athemes-addons-for-elementor-lite' ),
 				],
 				'condition' => array_merge( $args['section_condition'], [ $prefix . 'selected_icon[value]!' => '' ] ),
 			]
@@ -130,7 +130,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'icon_indent',
 			[
-				'label' => esc_html__( 'Icon Spacing', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Icon Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -148,7 +148,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'view',
 			[
-				'label' => esc_html__( 'View', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'View', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'condition' => $args['section_condition'],
@@ -158,7 +158,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'button_css_id',
 			[
-				'label' => esc_html__( 'Button ID', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Button ID', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
@@ -167,10 +167,10 @@ trait Button_Trait {
 					'active' => false,
 				],
 				'default' => '',
-				'title' => esc_html__( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'athemes-addons-elementor' ),
+				'title' => esc_html__( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'athemes-addons-for-elementor-lite' ),
 				'description' => sprintf(
 					/* translators: %1$s: opening code tag, %2$s: closing code tag */
-					esc_html__( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows %1$sA-z 0-9%2$s & underscore chars without spaces.', 'athemes-addons-elementor' ),
+					esc_html__( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows %1$sA-z 0-9%2$s & underscore chars without spaces.', 'athemes-addons-for-elementor-lite' ),
 					'<code>',
 					'</code>'
 				),
@@ -222,7 +222,7 @@ trait Button_Trait {
 		$this->start_controls_tab(
 			$prefix . 'tab_button_normal',
 			[
-				'label' => esc_html__( 'Normal', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Normal', 'athemes-addons-for-elementor-lite' ),
 				'condition' => $args['section_condition'],
 			]
 		);
@@ -230,7 +230,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'button_text_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -245,7 +245,7 @@ trait Button_Trait {
 			[
 				'name' => $prefix . 'background',
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} ' .$args['class'] . $args['default_class'],
 				'fields_options' => [
 					'background' => [
@@ -264,7 +264,7 @@ trait Button_Trait {
 		$this->start_controls_tab(
 			$prefix . 'tab_button_hover',
 			[
-				'label' => esc_html__( 'Hover', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover', 'athemes-addons-for-elementor-lite' ),
 				'condition' => $args['section_condition'],
 			]
 		);
@@ -272,7 +272,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'hover_color',
 			[
-				'label' => esc_html__( 'Text Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Text Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':hover, {{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':focus' => 'color: {{VALUE}};',
@@ -287,7 +287,7 @@ trait Button_Trait {
 			[
 				'name' => $prefix . 'button_background_hover',
 				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
+				'exclude' => [ 'image' ], // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				'selector' => '{{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':hover, {{WRAPPER}} ' . $args['class'] . $args['default_class'] . ':focus',
 				'fields_options' => [
 					'background' => [
@@ -301,7 +301,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'button_hover_border_color',
 			[
-				'label' => esc_html__( 'Border Color', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'border_border!' => '',
@@ -315,7 +315,7 @@ trait Button_Trait {
 		$this->add_control(
 			$prefix . 'hover_animation',
 			[
-				'label' => esc_html__( 'Hover Animation', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Hover Animation', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 				'condition' => $args['section_condition'],
 			]
@@ -338,7 +338,7 @@ trait Button_Trait {
 		$this->add_responsive_control(
 			$prefix . 'border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
@@ -360,7 +360,7 @@ trait Button_Trait {
 		$this->add_responsive_control(
 			$prefix . 'text_padding',
 			[
-				'label' => esc_html__( 'Padding', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'selectors' => [

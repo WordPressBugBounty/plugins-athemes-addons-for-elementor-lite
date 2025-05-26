@@ -37,14 +37,14 @@ class Custom_JS {
 			'aafe_custom_js_section',
 			[
                 'tab'   => Controls_Manager::TAB_ADVANCED,
-				'label' => '<i style="top:1px;" class="aafe-ele-svg-logo"></i>' . __( 'Custom JS', 'athemes-addons-elementor' ),
+				'label' => '<i style="top:1px;" class="aafe-ele-svg-logo"></i>' . __( 'Custom JS', 'athemes-addons-for-elementor-lite' ),
 			]
         );
         
 		$element->add_control(
 			'aafe_custom_js',
 			[
-				'label' => __( 'Custom JS', 'athemes-addons-elementor' ),
+				'label' => __( 'Custom JS', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CODE,
 				'language' => 'javascript',
 				'rows' => 30,

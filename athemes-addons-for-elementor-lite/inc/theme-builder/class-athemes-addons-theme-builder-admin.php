@@ -104,7 +104,7 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 			}
 
 			$template_id    = isset( $_POST['template_id'] ) ? absint( $_POST['template_id'] ) : 0;
-			$header_type    = isset( $_POST['header_type'] ) ? sanitize_text_field( $_POST['header_type'] ) : '';
+			$header_type    = isset( $_POST['header_type'] ) ? sanitize_text_field( wp_unslash( $_POST['header_type'] ) ) : '';
 
 			if ( $template_id ) {
 				update_post_meta( $template_id, '_ahf_header_type', $header_type );
@@ -123,15 +123,15 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 				wp_send_json_error();
 			}
 
-			$template_type  = isset( $_POST['template_type'] ) ? sanitize_text_field( $_POST['template_type'] ) : '';
-			$template_label = isset( $_POST['template_label'] ) ? sanitize_text_field( $_POST['template_label'] ) : '';
+			$template_type  = isset( $_POST['template_type'] ) ? sanitize_text_field( wp_unslash( $_POST['template_type'] ) ) : '';
+			$template_label = isset( $_POST['template_label'] ) ? sanitize_text_field( wp_unslash( $_POST['template_label'] ) ) : '';
 
 			if ( empty( $template_type ) ) {
 				wp_send_json_error();
 			}
 
 			// translators: %1$s represents the template label, %2$s represents the current date and time.
-			$template_title = sprintf( esc_html__( '%1$s Template - %2$s', 'athemes-addons-elementor' ), $template_label, gmdate( 'Y-m-d H:i:s' ) );
+			$template_title = sprintf( esc_html__( '%1$s Template - %2$s', 'athemes-addons-for-elementor-lite' ), $template_label, gmdate( 'Y-m-d H:i:s' ) );
 
 			$template_id = wp_insert_post( array(
 				'post_title'    => $template_title,
@@ -201,11 +201,11 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 								<?php if ('header' === $template_type) : ?>
 									<label class="athemes-addons-header-type-select">
 										<select name="ahf_header_type" class="aafe-header-type-select">
-											<option value="regular" <?php selected( $header_type, 'regular' ); ?>><?php esc_html_e( 'Regular', 'athemes-addons-elementor' ); ?></option>
-											<option value="transparent" <?php selected( $header_type, 'transparent' ); ?>><?php esc_html_e( 'Transparent', 'athemes-addons-elementor' ); ?></option>
-											<option value="sticky" <?php selected( $header_type, 'sticky' ); ?>><?php esc_html_e( 'Sticky', 'athemes-addons-elementor' ); ?></option>
+											<option value="regular" <?php selected( $header_type, 'regular' ); ?>><?php esc_html_e( 'Regular', 'athemes-addons-for-elementor-lite' ); ?></option>
+											<option value="transparent" <?php selected( $header_type, 'transparent' ); ?>><?php esc_html_e( 'Transparent', 'athemes-addons-for-elementor-lite' ); ?></option>
+											<option value="sticky" <?php selected( $header_type, 'sticky' ); ?>><?php esc_html_e( 'Sticky', 'athemes-addons-for-elementor-lite' ); ?></option>
 										</select>
-										<span class="tooltip"><?php esc_html_e( 'Note: if you create a sticky header, you also need a regular or transparent header.', 'athemes-addons-elementor' ); ?></span>
+										<span class="tooltip"><?php esc_html_e( 'Note: if you create a sticky header, you also need a regular or transparent header.', 'athemes-addons-for-elementor-lite' ); ?></span>
 									</label>									
 								<?php endif; ?>
 
@@ -213,7 +213,7 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 									<div class="athemes-addons-display-conditions-control" data-condition-settings="<?php echo esc_attr(json_encode($settings)); // phpcs:ignore WordPress.WP.AlternativeFunctions.json_encode_json_encode ?>">
 										<span class="athemes-addons-display-conditions-modal-toggle">
 											<span class="dashicons dashicons-admin-generic"></span>
-											<span style="min-width:130px;margin-left:-65px;" class="tooltip"><?php esc_html_e('Display conditions', 'athemes-addons-elementor'); ?></span>
+											<span style="min-width:130px;margin-left:-65px;" class="tooltip"><?php esc_html_e('Display conditions', 'athemes-addons-for-elementor-lite'); ?></span>
 										</span>
 										<div class="athemes-addons-display-conditions-modal">
 											<!-- Modal content goes here -->
@@ -224,12 +224,12 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 
 								<div class="aafe-edit-template">
 									<span class="dashicons dashicons-edit"></span>
-									<span class="tooltip"><?php esc_html_e('Edit', 'athemes-addons-elementor'); ?></span>
+									<span class="tooltip"><?php esc_html_e('Edit', 'athemes-addons-for-elementor-lite'); ?></span>
 								</div>
 
 								<div class="aafe-delete-template">
 									<span class="dashicons dashicons-trash"></span>
-									<span class="tooltip"><?php esc_html_e('Delete', 'athemes-addons-elementor'); ?></span>
+									<span class="tooltip"><?php esc_html_e('Delete', 'athemes-addons-for-elementor-lite'); ?></span>
 								</div>
 							</div>
 						</div>

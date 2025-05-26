@@ -55,9 +55,9 @@ if ( ! class_exists( 'aThemes_Addons_Plugin_Installer' ) ) {
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
                 'nonce' => wp_create_nonce( 'addons_plugin_installer_nonce' ),
                 'i18n' => array(
-                    'defaultText' => esc_html__( 'Install and Activate', 'athemes-addons-elementor' ),
-                    'installingText' => esc_html__( 'Installing...', 'athemes-addons-elementor' ),
-                    'activatingText' => esc_html__( 'Activating...', 'athemes-addons-elementor' ),
+                    'defaultText' => esc_html__( 'Install and Activate', 'athemes-addons-for-elementor-lite' ),
+                    'installingText' => esc_html__( 'Installing...', 'athemes-addons-for-elementor-lite' ),
+                    'activatingText' => esc_html__( 'Activating...', 'athemes-addons-for-elementor-lite' ),
                 ),
             ) );
         }
@@ -82,17 +82,17 @@ if ( ! class_exists( 'aThemes_Addons_Plugin_Installer' ) ) {
             check_ajax_referer( 'addons_plugin_installer_nonce', 'nonce' );
 
             if ( ! current_user_can( 'install_plugins' ) ) {
-                wp_send_json_error( array( 'message' => esc_html__( 'You do not have permission to install plugins.', 'athemes-addons-elementor' ) ) );
+                wp_send_json_error( array( 'message' => esc_html__( 'You do not have permission to install plugins.', 'athemes-addons-for-elementor-lite' ) ) );
             }
 
             if ( empty( $_POST['url'] ) ) {
-                wp_send_json_error( array( 'message' => esc_html__( 'Plugin URL is required.', 'athemes-addons-elementor' ) ) );
+                wp_send_json_error( array( 'message' => esc_html__( 'Plugin URL is required.', 'athemes-addons-for-elementor-lite' ) ) );
             }
 
-            $url = esc_url_raw( $_POST['url'] );
+            $url = esc_url_raw( wp_unslash( $_POST['url'] ) );
             
             if ( empty( $_POST['plugin_name'] ) ) {
-                wp_send_json_error( array( 'message' => esc_html__( 'Plugin name is required.', 'athemes-addons-elementor' ) ) );
+                wp_send_json_error( array( 'message' => esc_html__( 'Plugin name is required.', 'athemes-addons-for-elementor-lite' ) ) );
             }
 
             $plugin_name = sanitize_text_field( wp_unslash( $_POST['plugin_name'] ) );
@@ -115,7 +115,7 @@ if ( ! class_exists( 'aThemes_Addons_Plugin_Installer' ) ) {
 
             wp_send_json_success( 
                 array( 
-                    'message' => esc_html__( 'Plugin activated successfully.', 'athemes-addons-elementor' ), 
+                    'message' => esc_html__( 'Plugin activated successfully.', 'athemes-addons-for-elementor-lite' ), 
                 ) 
             );
         }

@@ -50,14 +50,14 @@ class Custom_CSS {
 			'aafe_custom_css_section',
 			[
                 'tab'   => Controls_Manager::TAB_ADVANCED,
-				'label' => '<i style="top:1px;" class="aafe-ele-svg-logo"></i>' . __( 'Custom CSS', 'athemes-addons-elementor' ),
+				'label' => '<i style="top:1px;" class="aafe-ele-svg-logo"></i>' . __( 'Custom CSS', 'athemes-addons-for-elementor-lite' ),
 			]
         );
         
 			$element->add_control(
 				'aafe_custom_css',
 				[
-					'label' => __( 'Custom CSS', 'athemes-addons-elementor' ),
+					'label' => __( 'Custom CSS', 'athemes-addons-for-elementor-lite' ),
 					'type' => Controls_Manager::CODE,
 					'language' => 'css',
 					'rows' => 30,
@@ -70,7 +70,7 @@ class Custom_CSS {
 				[
 					'type' => Controls_Manager::RAW_HTML,
 					'raw' => __( '<p>Example:</p><br>
-					<kbd> selector {<br> &nbsp;&nbsp;&nbsp;&nbsp;background-color: red; <br>} </kbd>', 'athemes-addons-elementor' ),
+					<kbd> selector {<br> &nbsp;&nbsp;&nbsp;&nbsp;background-color: red; <br>} </kbd>', 'athemes-addons-for-elementor-lite' ),
 				]
 			);
 

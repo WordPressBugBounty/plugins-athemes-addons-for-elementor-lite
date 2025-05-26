@@ -45,7 +45,7 @@ class Business_Hours extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Business hours', 'athemes-addons-elementor' );
+		return __( 'Business hours', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -121,7 +121,7 @@ class Business_Hours extends Widget_Base {
 		$this->start_controls_section(
 			'section_business_hours',
 			[
-				'label' => __( 'Business hours', 'athemes-addons-elementor' ),
+				'label' => __( 'Business hours', 'athemes-addons-for-elementor-lite' ),
 			]
 		);  
 
@@ -130,9 +130,9 @@ class Business_Hours extends Widget_Base {
 		$repeater->add_control(
 			'day',
 			[
-				'label' => __( 'Day', 'athemes-addons-elementor' ),
+				'label' => __( 'Day', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Monday', 'athemes-addons-elementor' ),
+				'default' => __( 'Monday', 'athemes-addons-for-elementor-lite' ),
 				'show_label' => true,
 			]
 		);  
@@ -140,9 +140,9 @@ class Business_Hours extends Widget_Base {
 		$repeater->add_control(
 			'hours',
 			[
-				'label' => __( 'Hours', 'athemes-addons-elementor' ),
+				'label' => __( 'Hours', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( '9:00 - 17:00', 'athemes-addons-elementor' ),
+				'default' => __( '9:00 - 17:00', 'athemes-addons-for-elementor-lite' ),
 				'show_label' => true,
 			]
 		);
@@ -150,7 +150,7 @@ class Business_Hours extends Widget_Base {
 		$repeater->add_control(
 			'highlight_day',
 			[
-				'label' => __( 'Highlight this day', 'athemes-addons-elementor' ),
+				'label' => __( 'Highlight this day', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 				'show_label' => true,
@@ -164,32 +164,32 @@ class Business_Hours extends Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'day' => __( 'Monday', 'athemes-addons-elementor' ),
-						'hours' => __( '9:00 - 17:00', 'athemes-addons-elementor' ),
+						'day' => __( 'Monday', 'athemes-addons-for-elementor-lite' ),
+						'hours' => __( '9:00 - 17:00', 'athemes-addons-for-elementor-lite' ),
 					],
 					[
-						'day' => __( 'Tuesday', 'athemes-addons-elementor' ),
-						'hours' => __( '9:00 - 17:00', 'athemes-addons-elementor' ),
+						'day' => __( 'Tuesday', 'athemes-addons-for-elementor-lite' ),
+						'hours' => __( '9:00 - 17:00', 'athemes-addons-for-elementor-lite' ),
 					],
 					[
-						'day' => __( 'Wednesday', 'athemes-addons-elementor' ),
-						'hours' => __( '9:00 - 17:00', 'athemes-addons-elementor' ),
+						'day' => __( 'Wednesday', 'athemes-addons-for-elementor-lite' ),
+						'hours' => __( '9:00 - 17:00', 'athemes-addons-for-elementor-lite' ),
 					],
 					[
-						'day' => __( 'Thursday', 'athemes-addons-elementor' ),
-						'hours' => __( '9:00 - 17:00', 'athemes-addons-elementor' ),
+						'day' => __( 'Thursday', 'athemes-addons-for-elementor-lite' ),
+						'hours' => __( '9:00 - 17:00', 'athemes-addons-for-elementor-lite' ),
 					],
 					[
-						'day' => __( 'Friday', 'athemes-addons-elementor' ),
-						'hours' => __( '9:00 - 17:00', 'athemes-addons-elementor' ),
+						'day' => __( 'Friday', 'athemes-addons-for-elementor-lite' ),
+						'hours' => __( '9:00 - 17:00', 'athemes-addons-for-elementor-lite' ),
 					],
 					[
-						'day' => __( 'Saturday', 'athemes-addons-elementor' ),
-						'hours' => __( 'Closed', 'athemes-addons-elementor' ),
+						'day' => __( 'Saturday', 'athemes-addons-for-elementor-lite' ),
+						'hours' => __( 'Closed', 'athemes-addons-for-elementor-lite' ),
 					],
 					[
-						'day' => __( 'Sunday', 'athemes-addons-elementor' ),
-						'hours' => __( 'Closed', 'athemes-addons-elementor' ),
+						'day' => __( 'Sunday', 'athemes-addons-for-elementor-lite' ),
+						'hours' => __( 'Closed', 'athemes-addons-for-elementor-lite' ),
 					],
 				],              
 				'title_field' => '{{{ day }}}',
@@ -202,7 +202,7 @@ class Business_Hours extends Widget_Base {
 		$this->start_controls_section(
 			'section_wrapper_style',
 			[
-				'label' => __( 'Wrapper', 'athemes-addons-elementor' ),
+				'label' => __( 'Wrapper', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -210,7 +210,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -222,7 +222,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_margin',
 			[
-				'label' => __( 'Margin', 'athemes-addons-elementor' ),
+				'label' => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -234,7 +234,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_control(
 			'wrapper_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .business-hours-inner' => 'background-color: {{VALUE}};',
@@ -247,7 +247,7 @@ class Business_Hours extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'wrapper_border',
-				'label'     => esc_html__( 'Border', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .business-hours-inner',
 				'separator' => 'before',
 			]
@@ -256,7 +256,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .business-hours-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -268,7 +268,7 @@ class Business_Hours extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'wrapper_box_shadow',
-				'label' => __( 'Box Shadow', 'athemes-addons-elementor' ),
+				'label' => __( 'Box Shadow', 'athemes-addons-for-elementor-lite' ),
 				'selector' => '{{WRAPPER}} .business-hours-inner',
 			]
 		);
@@ -277,7 +277,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_max_width',
 			[
-				'label' => __( 'Max Width', 'athemes-addons-elementor' ),
+				'label' => __( 'Max Width', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -295,19 +295,19 @@ class Business_Hours extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_text_align',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => esc_html__( 'Left', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'flex-end' => [
-						'title' => esc_html__( 'Right', 'athemes-addons-elementor' ),
+						'title' => esc_html__( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -322,7 +322,7 @@ class Business_Hours extends Widget_Base {
 		$this->start_controls_section(
 			'section_items_style',
 			[
-				'label' => __( 'Rows', 'athemes-addons-elementor' ),
+				'label' => __( 'Rows', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -330,7 +330,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_responsive_control(
 			'items_padding',
 			[
-				'label' => __( 'Padding', 'athemes-addons-elementor' ),
+				'label' => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .aafe-single-day' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -341,7 +341,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_responsive_control(
 			'items_spacing',
 			[
-				'label' => __( 'Spacing', 'athemes-addons-elementor' ),
+				'label' => __( 'Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,             
 				'selectors' => [
 					'{{WRAPPER}} .aafe-single-day:not(:last-of-type)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
@@ -352,7 +352,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_control(
 			'items_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,              
 				'selectors' => [
 					'{{WRAPPER}} .aafe-single-day' => 'background-color: {{VALUE}};',
@@ -365,7 +365,7 @@ class Business_Hours extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'item_border',
-				'label'     => esc_html__( 'Border', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Border', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .aafe-single-day',
 				'fields_options' => [
 					'border' => [
@@ -391,7 +391,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_responsive_control(
 			'items_border_radius',
 			[
-				'label' => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label' => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::DIMENSIONS,             
 				'selectors' => [
 					'{{WRAPPER}} .aafe-single-day' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -402,7 +402,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_control(
 			'highlighted_heading',
 			[
-				'label' => __( 'Highlighted rows', 'athemes-addons-elementor' ),
+				'label' => __( 'Highlighted rows', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -411,8 +411,8 @@ class Business_Hours extends Widget_Base {
 		$this->add_control(
 			'highlighted_background_color',
 			[
-				'label' => __( 'Background Color', 'athemes-addons-elementor' ),
-				'description' => __( 'This applies if you have set any day as highlighted.', 'athemes-addons-elementor' ),
+				'label' => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'This applies if you have set any day as highlighted.', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,              
 				'selectors' => [
 					'{{WRAPPER}} .aafe-single-day.highlighted-day' => 'background-color: {{VALUE}};',
@@ -425,7 +425,7 @@ class Business_Hours extends Widget_Base {
 		$this->start_controls_section(
 			'section_day_style',
 			[
-				'label' => __( 'Day', 'athemes-addons-elementor' ),
+				'label' => __( 'Day', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -433,7 +433,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_control(
 			'day_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,              
 				'selectors' => [
 					'{{WRAPPER}} .aafe-single-day .day' => 'color: {{VALUE}};',
@@ -445,7 +445,7 @@ class Business_Hours extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'      => 'day_typography',
-				'label'     => esc_html__( 'Typography', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Typography', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .aafe-single-day .day',
 			]
 		);
@@ -453,8 +453,8 @@ class Business_Hours extends Widget_Base {
 		$this->add_control(
 			'highlighted_day_color',
 			[
-				'label' => __( 'Highlighted Color', 'athemes-addons-elementor' ),
-				'description' => __( 'This applies if you have set any day as highlighted.', 'athemes-addons-elementor' ),
+				'label' => __( 'Highlighted Color', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'This applies if you have set any day as highlighted.', 'athemes-addons-for-elementor-lite' ),
 				'default' => '#D13E3E',
 				'type' => Controls_Manager::COLOR,              
 				'selectors' => [
@@ -469,7 +469,7 @@ class Business_Hours extends Widget_Base {
 		$this->start_controls_section(
 			'section_hours_style',
 			[
-				'label' => __( 'Hours', 'athemes-addons-elementor' ),
+				'label' => __( 'Hours', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -477,7 +477,7 @@ class Business_Hours extends Widget_Base {
 		$this->add_control(
 			'hours_color',
 			[
-				'label' => __( 'Color', 'athemes-addons-elementor' ),
+				'label' => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,              
 				'selectors' => [
 					'{{WRAPPER}} .aafe-single-day .hours' => 'color: {{VALUE}};',
@@ -489,7 +489,7 @@ class Business_Hours extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'      => 'hours_typography',
-				'label'     => esc_html__( 'Typography', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Typography', 'athemes-addons-for-elementor-lite' ),
 				'selector'  => '{{WRAPPER}} .aafe-single-day .hours',
 			]
 		);
@@ -497,8 +497,8 @@ class Business_Hours extends Widget_Base {
 		$this->add_control(
 			'highlighted_hours_color',
 			[
-				'label' => __( 'Highlighted Color', 'athemes-addons-elementor' ),
-				'description' => __( 'This applies if you have set any day as highlighted.', 'athemes-addons-elementor' ),
+				'label' => __( 'Highlighted Color', 'athemes-addons-for-elementor-lite' ),
+				'description' => __( 'This applies if you have set any day as highlighted.', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::COLOR,              
 				'default' => '#D13E3E',
 				'selectors' => [

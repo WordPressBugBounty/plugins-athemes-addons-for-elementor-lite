@@ -54,7 +54,7 @@ class Team_Member extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Team member', 'athemes-addons-elementor' );
+		return __( 'Team member', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -128,14 +128,14 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_image',
 			[
-				'label' => esc_html__( 'Image', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Image', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'image',
 			array(
-				'label'   => esc_html__( 'Image', 'athemes-addons-elementor' ),
+				'label'   => esc_html__( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => array(
 					'url' => Utils::get_placeholder_image_src(),
@@ -146,11 +146,11 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'object_fit',
 			array(
-				'label'                => __( 'Image Fit', 'athemes-addons-elementor' ),
+				'label'                => __( 'Image Fit', 'athemes-addons-for-elementor-lite' ),
 				'type'                 => Controls_Manager::SELECT,
 				'options'              => array(
-					'cover'   => __( 'Cover', 'athemes-addons-elementor' ),
-					'contain' => __( 'Contain', 'athemes-addons-elementor' ),
+					'cover'   => __( 'Cover', 'athemes-addons-for-elementor-lite' ),
+					'contain' => __( 'Contain', 'athemes-addons-for-elementor-lite' ),
 				),
 				'default'              => 'cover',
 				'selectors_dictionary' => array(
@@ -166,7 +166,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			array(
-				'label'      => __( 'Image Height', 'athemes-addons-elementor' ),
+				'label'      => __( 'Image Height', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'vh' ),
 				'range'      => array(
@@ -206,7 +206,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_tab(
 			'normal',
 			array(
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			)
 		);
 
@@ -223,7 +223,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_tab(
 			'hover',
 			array(
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			)
 		);
 
@@ -238,13 +238,13 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'image_hover_effect',
 			array(
-				'label'   => __( 'Image Hover Effect', 'athemes-addons-elementor' ),
+				'label'   => __( 'Image Hover Effect', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
-					'none'      => __( 'None', 'athemes-addons-elementor' ),
-					'zoomin'    => __( 'Zoom in', 'athemes-addons-elementor' ),
-					'opacity'   => __( 'Opacity', 'athemes-addons-elementor' ),
-					'rotate'    => __( 'Zoom & Rotate', 'athemes-addons-elementor' ),
+					'none'      => __( 'None', 'athemes-addons-for-elementor-lite' ),
+					'zoomin'    => __( 'Zoom in', 'athemes-addons-for-elementor-lite' ),
+					'opacity'   => __( 'Opacity', 'athemes-addons-for-elementor-lite' ),
+					'rotate'    => __( 'Zoom & Rotate', 'athemes-addons-for-elementor-lite' ),
 				),
 				'default' => 'none',
 			)
@@ -257,7 +257,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'image_hover_transition_duration',
 			array(
-				'label'      => __( 'Transition Duration', 'athemes-addons-elementor' ),
+				'label'      => __( 'Transition Duration', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'ms' ),
 				'range'      => array(
@@ -282,17 +282,17 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_team_member_content',
 			[
-				'label' => esc_html__( 'Content', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Content', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'name',
 			array(
-				'label'       => esc_html__( 'Name', 'athemes-addons-elementor' ),
+				'label'       => esc_html__( 'Name', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'John Doe', 'athemes-addons-elementor' ),
-				'placeholder' => esc_html__( 'John Doe', 'athemes-addons-elementor' ),
+				'default'     => esc_html__( 'John Doe', 'athemes-addons-for-elementor-lite' ),
+				'placeholder' => esc_html__( 'John Doe', 'athemes-addons-for-elementor-lite' ),
 				'label_block' => true,
 				'dynamic'     => array(
 					'active' => true,
@@ -304,18 +304,18 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'title_tag',
 			array(
-				'label'     => __( 'Name HTML Tag', 'athemes-addons-elementor' ),
+				'label'     => __( 'Name HTML Tag', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
-					'h1'   => __( 'H1', 'athemes-addons-elementor' ),
-					'h2'   => __( 'H2', 'athemes-addons-elementor' ),
-					'h3'   => __( 'H3', 'athemes-addons-elementor' ),
-					'h4'   => __( 'H4', 'athemes-addons-elementor' ),
-					'h5'   => __( 'H5', 'athemes-addons-elementor' ),
-					'h6'   => __( 'H6', 'athemes-addons-elementor' ),
-					'div'  => __( 'div', 'athemes-addons-elementor' ),
-					'span' => __( 'span', 'athemes-addons-elementor' ),
-					'p'    => __( 'p', 'athemes-addons-elementor' ),
+					'h1'   => __( 'H1', 'athemes-addons-for-elementor-lite' ),
+					'h2'   => __( 'H2', 'athemes-addons-for-elementor-lite' ),
+					'h3'   => __( 'H3', 'athemes-addons-for-elementor-lite' ),
+					'h4'   => __( 'H4', 'athemes-addons-for-elementor-lite' ),
+					'h5'   => __( 'H5', 'athemes-addons-for-elementor-lite' ),
+					'h6'   => __( 'H6', 'athemes-addons-for-elementor-lite' ),
+					'div'  => __( 'div', 'athemes-addons-for-elementor-lite' ),
+					'span' => __( 'span', 'athemes-addons-for-elementor-lite' ),
+					'p'    => __( 'p', 'athemes-addons-for-elementor-lite' ),
 				),
 				'default'   => 'h3',
 			)
@@ -324,9 +324,9 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'short_bio',
 			array(
-				'label'       => esc_html__( 'Short bio', 'athemes-addons-elementor' ),
+				'label'       => esc_html__( 'Short bio', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::WYSIWYG,
-				'placeholder' => esc_html__( 'Short bio', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'Short bio', 'athemes-addons-for-elementor-lite' ),
 				'label_block' => true,
 				'dynamic'     => array(
 					'active' => true,
@@ -338,9 +338,9 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'position',
 			array(
-				'label'       => esc_html__( 'Position', 'athemes-addons-elementor' ),
+				'label'       => esc_html__( 'Position', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'CEO', 'athemes-addons-elementor' ),
+				'default'     => esc_html__( 'CEO', 'athemes-addons-for-elementor-lite' ),
 				'label_block' => true,
 				'dynamic'     => array(
 					'active' => true,
@@ -352,9 +352,9 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'experience',
 			array(
-				'label'       => esc_html__( 'Experience', 'athemes-addons-elementor' ),
+				'label'       => esc_html__( 'Experience', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( '10 years experience', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( '10 years experience', 'athemes-addons-for-elementor-lite' ),
 				'label_block' => true,
 				'dynamic'     => array(
 					'active' => true,
@@ -365,19 +365,19 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'athemes-addons-elementor' ),
+						'title' => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -394,17 +394,17 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_team_member_social',
 			[
-				'label' => esc_html__( 'Social', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Social', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'show_social',
 			array(
-				'label'        => esc_html__( 'Show Social Icons', 'athemes-addons-elementor' ),
+				'label'        => esc_html__( 'Show Social Icons', 'athemes-addons-for-elementor-lite' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'athemes-addons-elementor' ),
-				'label_off'    => esc_html__( 'Hide', 'athemes-addons-elementor' ),
+				'label_on'     => esc_html__( 'Show', 'athemes-addons-for-elementor-lite' ),
+				'label_off'    => esc_html__( 'Hide', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -416,7 +416,7 @@ class Team_Member extends Widget_Base {
 		$repeater->add_control(
 			'icon',
 			array(
-				'label'   => esc_html__( 'Icon', 'athemes-addons-elementor' ),
+				'label'   => esc_html__( 'Icon', 'athemes-addons-for-elementor-lite' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => array(
 					'value'   => 'fas fa-facebook-f',
@@ -428,9 +428,9 @@ class Team_Member extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			array(
-				'label'       => esc_html__( 'Link', 'athemes-addons-elementor' ),
+				'label'       => esc_html__( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'default'     => array(
 					'url' => '#',
 				),
@@ -442,7 +442,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'social',
 			array(
-				'label'       => esc_html__( 'Social', 'athemes-addons-elementor' ),
+				'label'       => esc_html__( 'Social', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'default'     => array(
@@ -483,7 +483,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_card_style',
 			[
-				'label' => esc_html__( 'Card', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Card', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -491,7 +491,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'card_padding',
 			array(
-				'label'      => __( 'Padding', 'athemes-addons-elementor' ),
+				'label'      => __( 'Padding', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -503,7 +503,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'card_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label'      => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -518,14 +518,14 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_tab(
 			'card_normal',
 			array(
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			)
 		);
 
 		$this->add_control(
 			'card_background_color',
 			array(
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => array(
@@ -555,14 +555,14 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_tab(
 			'card_hover',
 			array(
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			)
 		);
 
 		$this->add_control(
 			'card_hover_background_color',
 			array(
-				'label'     => __( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => array(
@@ -574,7 +574,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'card_hover_border_color',
 			array(
-				'label'     => __( 'Border Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Border Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .athemes-addons-team-member .team-member-inner:hover' => 'border-color: {{VALUE}};',
@@ -599,7 +599,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_image_style',
 			[
-				'label' => esc_html__( 'Image', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Image', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -607,7 +607,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'image_width',
 			array(
-				'label'      => __( 'Image Width', 'athemes-addons-elementor' ),
+				'label'      => __( 'Image Width', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( '%' ),
 				'range'      => array(
@@ -637,7 +637,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'image_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label'      => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -660,7 +660,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_name_style',
 			[
-				'label' => esc_html__( 'Name', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Name', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -668,7 +668,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'name_color',
 			array(
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .athemes-addons-team-member .team-member-name' => 'color: {{VALUE}};',
@@ -687,7 +687,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'name_margin',
 			array(
-				'label'      => __( 'Margin', 'athemes-addons-elementor' ),
+				'label'      => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -702,7 +702,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_position_style',
 			[
-				'label' => esc_html__( 'Position', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Position', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -710,7 +710,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'position_color',
 			array(
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#A6A9B0',
 				'selectors' => array(
@@ -730,7 +730,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'position_margin',
 			array(
-				'label'      => __( 'Margin', 'athemes-addons-elementor' ),
+				'label'      => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -745,7 +745,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_experience_style',
 			[
-				'label' => esc_html__( 'Experience', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Experience', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -753,7 +753,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'experience_color',
 			array(
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#A6A9B0',
 				'selectors' => array(
@@ -773,7 +773,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'experience_margin',
 			array(
-				'label'      => __( 'Margin', 'athemes-addons-elementor' ),
+				'label'      => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -788,7 +788,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_short_bio_style',
 			[
-				'label' => esc_html__( 'Short Bio', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Short Bio', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -796,7 +796,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'short_bio_color',
 			array(
-				'label'     => __( 'Color', 'athemes-addons-elementor' ),
+				'label'     => __( 'Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#A6A9B0',
 				'selectors' => array(
@@ -816,7 +816,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'short_bio_margin',
 			array(
-				'label'      => __( 'Margin', 'athemes-addons-elementor' ),
+				'label'      => __( 'Margin', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -831,7 +831,7 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_section(
 			'section_social_style',
 			[
-				'label' => esc_html__( 'Social', 'athemes-addons-elementor' ),
+				'label' => esc_html__( 'Social', 'athemes-addons-for-elementor-lite' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -839,7 +839,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'social_icon_size',
 			array(
-				'label'      => __( 'Icon Size', 'athemes-addons-elementor' ),
+				'label'      => __( 'Icon Size', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -862,7 +862,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'social_icon_container_size',
 			array(
-				'label'      => __( 'Icon Container Size', 'athemes-addons-elementor' ),
+				'label'      => __( 'Icon Container Size', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -885,7 +885,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'social_icon_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'athemes-addons-elementor' ),
+				'label'      => __( 'Border Radius', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'em', 'px', '%' ),
 				'selectors'  => array(
@@ -898,7 +898,7 @@ class Team_Member extends Widget_Base {
 		$this->add_responsive_control(
 			'social_icon_spacing',
 			array(
-				'label'      => __( 'Icon Spacing', 'athemes-addons-elementor' ),
+				'label'      => __( 'Icon Spacing', 'athemes-addons-for-elementor-lite' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -923,14 +923,14 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_tab(
 			'social_icon_normal',
 			array(
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			)
 		);
 
 		$this->add_control(
 			'social_icon_color',
 			array(
-				'label'     => esc_html__( 'Icon Color', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Icon Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .athemes-addons-team-member .team-member-social a' => 'fill: {{VALUE}};color: {{VALUE}};',
@@ -941,7 +941,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'social_icon_background_color',
 			array(
-				'label'     => esc_html__( 'Background Color', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .athemes-addons-team-member .team-member-social a' => 'background-color: {{VALUE}};',
@@ -954,14 +954,14 @@ class Team_Member extends Widget_Base {
 		$this->start_controls_tab(
 			'social_icon_hover',
 			array(
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			)
 		);
 
 		$this->add_control(
 			'social_icon_hover_color',
 			array(
-				'label'     => esc_html__( 'Icon Hover Color', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Icon Hover Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .athemes-addons-team-member .team-member-social a:hover' => 'fill: {{VALUE}};color: {{VALUE}};',
@@ -972,7 +972,7 @@ class Team_Member extends Widget_Base {
 		$this->add_control(
 			'social_icon_hover_background_color',
 			array(
-				'label'     => esc_html__( 'Background Hover Color', 'athemes-addons-elementor' ),
+				'label'     => esc_html__( 'Background Hover Color', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .athemes-addons-team-member .team-member-social a:hover' => 'background-color: {{VALUE}};',

@@ -58,7 +58,7 @@ class Lottie extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Lottie', 'athemes-addons-elementor' );
+		return __( 'Lottie', 'athemes-addons-for-elementor-lite' );
 	}
 
 	/**
@@ -134,19 +134,19 @@ class Lottie extends Widget_Base {
 		$this->start_controls_section(
 			'section_source',
 			[
-				'label' => __( 'Lottie file', 'athemes-addons-elementor' ),
+				'label' => __( 'Lottie file', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'source_type',
 			[
-				'label' => __( 'Source Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Source Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'url',
 				'options' => [
-					'library'   => __( 'Media Library', 'athemes-addons-elementor' ),
-					'url'       => __( 'URL', 'athemes-addons-elementor' ),
+					'library'   => __( 'Media Library', 'athemes-addons-for-elementor-lite' ),
+					'url'       => __( 'URL', 'athemes-addons-for-elementor-lite' ),
 				],
 			]
 		);
@@ -154,11 +154,11 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'json_url',
 			[
-				'label'       => __( 'JSON URL', 'athemes-addons-elementor' ),
+				'label'       => __( 'JSON URL', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => 'https://lottie.host/b1c5822f-b67f-4161-a3b4-1add55a317c1/sVz6yzXAwE.json',
 				/* translators: %1$s: <a> tag open, %2$s: <a> tag close */
-				'description' => sprintf( __( 'Enter the URL of your Lottie JSON file. Find Lottie animations %1$shere%2$s.', 'athemes-addons-elementor' ),'<a href="https://lottiefiles.com/" target="_blank">','</a>' ),
+				'description' => sprintf( __( 'Enter the URL of your Lottie JSON file. Find Lottie animations %1$shere%2$s.', 'athemes-addons-for-elementor-lite' ),'<a href="https://lottiefiles.com/" target="_blank">','</a>' ),
 				'label_block' => true,
 				'condition'   => [
 					'source_type' => 'url',
@@ -169,11 +169,11 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'json_id',
 			[
-				'label'       => __( 'JSON File', 'athemes-addons-elementor' ),
+				'label'       => __( 'JSON File', 'athemes-addons-for-elementor-lite' ),
 				'type'        => Controls_Manager::MEDIA,
 				'media_type'  => 'application/json',
 				/* translators: %1$s: <a> tag open, %2$s: <a> tag close */
-				'description' => sprintf( __( 'Upload your Lottie JSON file. Find Lottie animations %1$shere%2$s.', 'athemes-addons-elementor' ),'<a href="https://lottiefiles.com/" target="_blank">','</a>'
+				'description' => sprintf( __( 'Upload your Lottie JSON file. Find Lottie animations %1$shere%2$s.', 'athemes-addons-for-elementor-lite' ),'<a href="https://lottiefiles.com/" target="_blank">','</a>'
 				),
 				'label_block' => true,
 				'condition'   => [
@@ -187,17 +187,17 @@ class Lottie extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'athemes-addons-elementor' ),
+				'label' => __( 'Settings', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'autoplay',
 			[
-				'label' => __( 'Autoplay', 'athemes-addons-elementor' ),
+				'label' => __( 'Autoplay', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -206,10 +206,10 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'loop',
 			[
-				'label' => __( 'Loop', 'athemes-addons-elementor' ),
+				'label' => __( 'Loop', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'default' => 'true',
 			]
@@ -218,10 +218,10 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'reverse',
 			[
-				'label' => __( 'Reverse', 'athemes-addons-elementor' ),
+				'label' => __( 'Reverse', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'athemes-addons-elementor' ),
-				'label_off' => __( 'No', 'athemes-addons-elementor' ),
+				'label_on' => __( 'Yes', 'athemes-addons-for-elementor-lite' ),
+				'label_off' => __( 'No', 'athemes-addons-for-elementor-lite' ),
 				'return_value' => 'true',
 				'default' => 'false',
 			]
@@ -230,7 +230,7 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label' => __( 'Speed', 'athemes-addons-elementor' ),
+				'label' => __( 'Speed', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 1,
 				'min' => 0.1,
@@ -242,15 +242,15 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'trigger_type',
 			[
-				'label' => __( 'Trigger Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Trigger Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => [
-					'none'      => __( 'None', 'athemes-addons-elementor' ),
-					'viewport'  => __( 'Viewport', 'athemes-addons-elementor' ),
-					'hover'     => __( 'Hover', 'athemes-addons-elementor' ),
-					'scroll'    => __( 'Scroll', 'athemes-addons-elementor' ),
-					'click'     => __( 'Click', 'athemes-addons-elementor' ),
+					'none'      => __( 'None', 'athemes-addons-for-elementor-lite' ),
+					'viewport'  => __( 'Viewport', 'athemes-addons-for-elementor-lite' ),
+					'hover'     => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
+					'scroll'    => __( 'Scroll', 'athemes-addons-for-elementor-lite' ),
+					'click'     => __( 'Click', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'before',
 			]
@@ -259,7 +259,7 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'viewport_position',
 			array(
-				'label'     => __( 'Viewport', 'athemes-addons-elementor' ),
+				'label'     => __( 'Viewport', 'athemes-addons-for-elementor-lite' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => array(
 					'sizes' => array(
@@ -269,8 +269,8 @@ class Lottie extends Widget_Base {
 					'unit'  => '%',
 				),
 				'labels'    => array(
-					__( 'Bottom', 'athemes-addons-elementor' ),
-					__( 'Top', 'athemes-addons-elementor' ),
+					__( 'Bottom', 'athemes-addons-for-elementor-lite' ),
+					__( 'Top', 'athemes-addons-for-elementor-lite' ),
 				),
 				'scales'    => 1,
 				'handles'   => 'range',
@@ -283,7 +283,7 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'size',
 			[
-				'label' => __( 'Size', 'athemes-addons-elementor' ),
+				'label' => __( 'Size', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'vw' ],
 				'range' => [
@@ -314,19 +314,19 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'athemes-addons-elementor' ),
+				'label' => __( 'Alignment', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'athemes-addons-elementor' ),
+						'title' => __( 'Left', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'athemes-addons-elementor' ),
+						'title' => __( 'Center', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'athemes-addons-elementor' ),
+						'title' => __( 'Right', 'athemes-addons-for-elementor-lite' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -340,7 +340,7 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'rotate',
 			[
-				'label' => __( 'Rotate', 'athemes-addons-elementor' ),
+				'label' => __( 'Rotate', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'deg' ],
 				'range' => [
@@ -362,12 +362,12 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'render_type',
 			[
-				'label' => __( 'Render Type', 'athemes-addons-elementor' ),
+				'label' => __( 'Render Type', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'svg',
 				'options' => [
-					'canvas'    => __( 'Canvas', 'athemes-addons-elementor' ),
-					'svg'       => __( 'SVG', 'athemes-addons-elementor' ),
+					'canvas'    => __( 'Canvas', 'athemes-addons-for-elementor-lite' ),
+					'svg'       => __( 'SVG', 'athemes-addons-for-elementor-lite' ),
 				],
 				'separator' => 'before',
 			]
@@ -376,9 +376,9 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'athemes-addons-elementor' ),
+				'label' => __( 'Link', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'athemes-addons-elementor' ),
+				'placeholder' => __( 'https://your-link.com', 'athemes-addons-for-elementor-lite' ),
 				'separator' => 'before',
 			]
 		);
@@ -388,7 +388,7 @@ class Lottie extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_lottie',
 			[
-				'label' => __( 'Styles', 'athemes-addons-elementor' ),
+				'label' => __( 'Styles', 'athemes-addons-for-elementor-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -398,14 +398,14 @@ class Lottie extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_lottie_normal',
 			[
-				'label' => __( 'Normal', 'athemes-addons-elementor' ),
+				'label' => __( 'Normal', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'opacity',
 			[
-				'label' => __( 'Opacity', 'athemes-addons-elementor' ),
+				'label' => __( 'Opacity', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '' ],
 				'range' => [
@@ -428,7 +428,7 @@ class Lottie extends Widget_Base {
 		$this->add_control(
 			'transition_duration',
 			[
-				'label' => __( 'Transition Duration', 'athemes-addons-elementor' ),
+				'label' => __( 'Transition Duration', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 1000,
 				'min' => 0,
@@ -453,14 +453,14 @@ class Lottie extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_lottie_hover',
 			[
-				'label' => __( 'Hover', 'athemes-addons-elementor' ),
+				'label' => __( 'Hover', 'athemes-addons-for-elementor-lite' ),
 			]
 		);
 
 		$this->add_control(
 			'opacity_hover',
 			[
-				'label' => __( 'Opacity', 'athemes-addons-elementor' ),
+				'label' => __( 'Opacity', 'athemes-addons-for-elementor-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '' ],
 				'range' => [

@@ -1,11 +1,11 @@
 === aThemes Addons for Elementor ===
 Tags: elementor, widgets, addons, extensions, athemes
 Requires at least: 5.5
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 1.0.16
+Stable tag: 1.1.0
 Contributors: aThemes
-License: GPLv3 or later
+License: GPLv3 or later License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 A collection of 30+ essential Elementor addons that let you create galleries, sliders, calls to action, forms, pricing tables, animations, and more.
