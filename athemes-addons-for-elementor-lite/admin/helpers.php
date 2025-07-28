@@ -14,7 +14,7 @@ if ( ! function_exists( 'athemes_addons_module_activation_switcher' ) ) {
 	function athemes_addons_module_activation_switcher( $module_id, $value, $is_upsell = false ) {
 		?>
 			<div class="athemes-addons-toggle-switch athemes-addons-module-page-button-action-<?php echo ( $value ) ? 'deactivate' : 'activate'; ?> " data-module="<?php echo esc_attr( $module_id ); ?>">
-				<span class="saved-label"><?php echo esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ); ?></span>
+				<span class="saved-label"><?php echo esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ); ?><span class="saved-label-emoji">🎉</span></span>
 				<input type="checkbox" id="<?php echo esc_attr( $module_id ); ?>" name="aafe[<?php echo esc_attr( $module_id ); ?>]" value="1" <?php checked( $value, 1, true ); ?>
 						class="toggle-switch-checkbox"/>
 				<label class="toggle-switch-label" for="<?php echo esc_attr( $module_id ); ?>">

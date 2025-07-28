@@ -412,8 +412,8 @@ class Step_Flow extends Widget_Base {
 				'type' => Controls_Manager::SELECT,
 				'default' => 'horizontal',
 				'options' => [
-					'horizontal' 			=> esc_html__( 'Horizontal', 'athemes-addons-for-elementor-lite' ),
-					'vertical' 				=> esc_html__( 'Vertical', 'athemes-addons-for-elementor-lite' ),
+					'horizontal'            => esc_html__( 'Horizontal', 'athemes-addons-for-elementor-lite' ),
+					'vertical'              => esc_html__( 'Vertical', 'athemes-addons-for-elementor-lite' ),
 				],
 				'prefix_class' => 'step-flow-layout-',
 			]

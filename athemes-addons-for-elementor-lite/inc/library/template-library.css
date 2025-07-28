@@ -1,7 +1,6 @@
-.elementor-templates-modal__header__menu-area {
+#aafeTemplateLibraryModal .elementor-templates-modal__header__menu-area {
 	display: none; /* Hide the menu until we have pages too */
 }
-
 
 .athemes-addons-templateLibrary-preview {
 	overflow: hidden;

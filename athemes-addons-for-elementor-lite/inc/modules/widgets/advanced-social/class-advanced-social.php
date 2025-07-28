@@ -749,7 +749,7 @@ class Advanced_Social extends Widget_Base {
 		$class_animation = '';
 
 		if ( ! empty( $settings['hover_animation'] ) ) {
-			$class_animation = ' elementor-animation-' . $settings['hover_animation'];
+			$class_animation = ' elementor-animation-' . esc_attr( $settings['hover_animation'] );
 		}
 
 		$migration_allowed = Icons_Manager::is_migration_allowed();
@@ -793,9 +793,9 @@ class Advanced_Social extends Widget_Base {
 				$this->add_render_attribute( $link_key, 'class', [
 					'elementor-icon',
 					'aafe-social-icon',
-					'aafe-social-icon-type-' . $settings['display_mode'],
-					'aafe-social-icon-' . $social . $class_animation,
-					'elementor-repeater-item-' . $item['_id'],
+					'aafe-social-icon-type-' . esc_attr( $settings['display_mode'] ),
+					'aafe-social-icon-' . esc_attr( $social ) . $class_animation,
+					'elementor-repeater-item-' . esc_attr( $item['_id'] ),
 				] );
 
 				$this->add_link_attributes( $link_key, $item['link'] );

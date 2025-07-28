@@ -325,9 +325,9 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 				'athemes-addons-elementor-editor',
 				'AAFESettings',
 				array(
-					'ajaxurl'   			=> esc_url( admin_url( 'admin-ajax.php' ) ),
-					'admin_url' 			=> esc_url( admin_url() ),
-					'nonce'     			=> wp_create_nonce( 'aafe-posts-widget-nonce' ),
+					'ajaxurl'               => esc_url( admin_url( 'admin-ajax.php' ) ),
+					'admin_url'             => esc_url( admin_url() ),
+					'nonce'                 => wp_create_nonce( 'aafe-posts-widget-nonce' ),
 					'edit_template'         => esc_html__( 'Edit Template', 'athemes-addons-for-elementor-lite' ),
 					'no_template_selected'  => esc_html__( 'No template selected', 'athemes-addons-for-elementor-lite' ),
 				)
