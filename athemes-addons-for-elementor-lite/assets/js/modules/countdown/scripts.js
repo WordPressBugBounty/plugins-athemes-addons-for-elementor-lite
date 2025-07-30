@@ -35,7 +35,8 @@
         var separator = element.data('separator') === 'yes' ? '<span class="countdown-separator">:</span>' : ' ';
 
         var createLabelElement = function (value, label, singularLabel, pluralLabel) {
-            return '<span class="timer-element">' + value + '</span><span class="label-element">' + (value > 1 ? pluralLabel : singularLabel) + '</span>';
+            var label = $('<div>').text(value > 1 ? pluralLabel : singularLabel).html();
+            return '<span class="timer-element">' + value + '</span><span class="label-element">' + label + '</span>';
         };
 
         var createWrapper = function (content) {
