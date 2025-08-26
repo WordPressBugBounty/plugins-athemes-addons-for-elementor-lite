@@ -26,7 +26,7 @@ $aafe_dashboard_tabs = $this->dashboard_tabs();
 ?>
 
 <div class="athemes-addons-top-bar">
-	<a href="https://athemes.com/?utm_source=plugin_dashboard&utm_medium=athemes_addons_dashboard&utm_campaign=aThemes_Addons" class="athemes-addons-top-bar-logo" target="_blank">
+	<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/', array( 'utm_source' => 'plugin_dashboard', 'utm_medium' => 'athemes_addons_dashboard', 'utm_campaign' => 'aThemes_Addons' ), 'dashboard-top-bar-logo' ) ); ?>" class="athemes-addons-top-bar-logo" target="_blank">
 		<svg width="96" height="24" viewBox="0 0 96 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path fill-rule="evenodd" clip-rule="evenodd" d="M23.4693 1.32313L8.45381 14.3107L0.67962 4.82163L23.4693 1.32313Z" fill="#335EEA"/>
 			<path fill-rule="evenodd" clip-rule="evenodd" d="M23.2942 1.17329L8.23868 14.112L16.0129 23.601L23.2942 1.17329Z" fill="#BECCF9"/>
@@ -51,7 +51,7 @@ $aafe_dashboard_tabs = $this->dashboard_tabs();
 			</a>
 		</div>
 		<div class="athemes-addons-top-bar-info-item">
-			<a href="https://athemes.com/athemes-addons-elementor?utm_source=plugin_dashboard&utm_medium=athemes_addons_dashboard&utm_campaign=aThemes_Addons" class="athemes-addons-website" target="_blank">
+			<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/addons', array( 'utm_source' => 'plugin_dashboard', 'utm_medium' => 'athemes_addons_dashboard', 'utm_campaign' => 'aThemes_Addons' ), 'dashboard-website-link' ) ); ?>" class="athemes-addons-website" target="_blank">
 				<?php esc_html_e( 'Website', 'athemes-addons-for-elementor-lite' ); ?>
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6 2.40002H7.20002L8.00002 4.00002H11.264L6.39202 8.88002L7.52002 10.008L12 5.53602V8.00002L13.6 8.80002V2.40002ZM9.60002 9.60002V12H4.00002V6.40002H7.20002L8.80002 4.80002H2.40002V13.6H11.2V8.00002L9.60002 9.60002Z" fill="#3858E9"/>
@@ -212,7 +212,7 @@ $aafe_dashboard_tabs = $this->dashboard_tabs();
 			<ul class="athemes-addons-modules-header-shortlinks">
 
 				<li class="athemes-addons-modules-header-shortlinks-get-help">
-					<a href="https://athemes.com/support/" target="_blank">
+					<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/support/', array(), 'dashboard-support-link' ) ); ?>" target="_blank">
 
 						<span><?php esc_html_e( 'Get', 'athemes-addons-for-elementor-lite' ); ?> <strong><?php esc_html_e( 'help and support', 'athemes-addons-for-elementor-lite' ); ?></strong></span>
 
@@ -236,7 +236,7 @@ $aafe_dashboard_tabs = $this->dashboard_tabs();
 				</li>
 
 				<li class="athemes-addons-modules-header-shortlinks-feedback">
-					<a href="https://athemes.com/feature-request/" target="_blank">
+					<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/feature-request/', array(), 'dashboard-feature-request-link' ) ); ?>" target="_blank">
 
 						<span><?php esc_html_e( 'Have an', 'athemes-addons-for-elementor-lite' ); ?> <strong><?php esc_html_e( 'idea or feedback?', 'athemes-addons-for-elementor-lite' ); ?></strong></span>
 

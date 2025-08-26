@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </script>
 
 <script type="text/template" id="template-athemes-addons-templateLibrary-pro-button">
-	<a class="elementor-template-library-template-action elementor-button athemes-addons-templateLibrary-pro-button" href="https://athemes.com/addons/" target="_blank">
+	<a class="elementor-template-library-template-action elementor-button athemes-addons-templateLibrary-pro-button" href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/addons/', array( 'utm_source' => 'template-library', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'template-library-pro-button' ) ); ?>" target="_blank">
 		<i class="eicon-external-link-square" aria-hidden="true"></i>
 		<span class="elementor-button-title"><?php esc_html_e( 'Get Pro', 'athemes-addons-for-elementor-lite' ); ?></span>
 	</a>

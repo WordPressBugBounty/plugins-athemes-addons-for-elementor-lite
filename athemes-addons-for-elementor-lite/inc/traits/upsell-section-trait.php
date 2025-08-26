@@ -24,7 +24,7 @@ trait Upsell_Section_Trait {
 			'description'   => esc_html__( 'Take your site to the next level with aThemes Addons Pro.', 'athemes-addons-for-elementor-lite' ),
 			'description2'  => esc_html__( 'You\'ll get access to:', 'athemes-addons-for-elementor-lite' ),
 			'button_text'   => esc_html__( 'Upgrade to Pro', 'athemes-addons-for-elementor-lite' ),
-			'button_url'    => 'https://athemes.com/addons?utm_source=widget_upsell&utm_medium=button&utm_campaign=Addons',
+			'button_url'    => athemes_addons_admin_upgrade_link( 'https://athemes.com/addons', array( 'utm_source' => 'widget_upsell', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'widget-upsell-section' ),
 		];
 	
 		$args = wp_parse_args( $args, $default_args );

@@ -152,7 +152,7 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 					esc_html__('Upgrade to Pro', 'athemes-addons-for-elementor-lite'),
 					esc_html__('Upgrade to Pro', 'athemes-addons-for-elementor-lite'), 
 					'manage_options',
-					'https://athemes.com/addons?utm_source=theme_submenu_page&utm_medium=button&utm_campaign=Addons',
+					athemes_addons_admin_upgrade_link( 'https://athemes.com/addons', array( 'utm_source' => 'theme_submenu_page', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'dashboard-submenu-upgrade-link' ),
 					'',
 					4
 				);
@@ -266,13 +266,7 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 				);
 			}
 	
-
-			/**
-			 * Hook: athemes_addons_dashboard_tabs
-			 * 
-			 * @since 1.0
-			 */
-			return apply_filters( 'athemes_addons_dashboard_tabs', $tabs );
+			return $tabs;
 		}
 
 				/**
@@ -283,6 +277,9 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 		public function footer_internal_scripts() {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? str_replace( '/wp-admin/', '', wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+			
+			// Generate upgrade link URL
+			$upgrade_url = athemes_addons_admin_upgrade_link( 'https://athemes.com/addons', array( 'utm_source' => 'theme_submenu_page', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'dashboard-submenu-upgrade-link' );
 			?>
 			<style>
 				#adminmenu .toplevel_page_athemes-addons .wp-submenu li.current a {
@@ -295,7 +292,7 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
                     font-weight: 600;
 				}
 
-				#adminmenu .toplevel_page_athemes-addons .wp-submenu a[href="https://athemes.com/addons?utm_source=theme_submenu_page&utm_medium=button&utm_campaign=Addons"] {
+				#adminmenu .toplevel_page_athemes-addons .wp-submenu a[href="<?php echo esc_url( $upgrade_url ); ?>"] {
 					color: #05d105;
 				}
 			</style>
@@ -317,7 +314,7 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 						}
 					}
 
-                    const AddonsUpsellMenuItem = document.querySelector('#adminmenu .toplevel_page_athemes-addons .wp-submenu a[href="https://athemes.com/addons?utm_source=theme_submenu_page&utm_medium=button&utm_campaign=Addons"]');
+                    const AddonsUpsellMenuItem = document.querySelector('#adminmenu .toplevel_page_athemes-addons .wp-submenu a[href="<?php echo esc_js( $upgrade_url ); ?>"]');
 
                     if (AddonsUpsellMenuItem) {
                         AddonsUpsellMenuItem.addEventListener('click', function (e) {

@@ -1243,7 +1243,7 @@ class Gallery extends Widget_Base {
 							</div>
 							<?php else : ?>
 							<div class="gallery-item-video-icon">
-								<<?php echo esc_attr( $settings['title_html_tag'] ); ?> class="item-title"><?php echo esc_html( $item['title'] ); ?></<?php echo esc_attr( $settings['title_html_tag'] ); ?>>
+								<<?php echo tag_escape( $settings['title_html_tag'] ); ?> class="item-title"><?php echo esc_html( $item['title'] ); ?></<?php echo tag_escape( $settings['title_html_tag'] ); ?>>
 
 								<?php if ( ! empty( $item['content'] ) ) : ?>
 									<div class="item-content"><?php echo wp_kses_post( $item['content'] ); ?></div>

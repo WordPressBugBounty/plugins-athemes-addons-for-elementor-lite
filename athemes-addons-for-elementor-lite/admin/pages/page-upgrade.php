@@ -438,7 +438,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 		<div class="freevspro-table__footer">
-			<a class="button button-primary button-hero" href="https://athemes.com/addons?utm_source=upgrade_page&utm_medium=button&utm_campaign=Addons" target="_blank">Upgrade Now</a>
+			<a class="button button-primary button-hero" href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/addons', array( 'utm_source' => 'upgrade_page', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'upgrade-page-footer-link' ) ); ?>" target="_blank"><?php echo esc_html__( 'Upgrade Now', 'athemes-addons-for-elementor-lite' ); ?></a>
 		</div>
 	</div>
 </div>

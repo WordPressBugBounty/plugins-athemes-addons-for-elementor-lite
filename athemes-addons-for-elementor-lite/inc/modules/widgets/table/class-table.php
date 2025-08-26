@@ -1690,7 +1690,7 @@ class Table extends Widget_Base {
 						$cell_tag = 'th';
 					}
 					?>
-					<<?php echo esc_attr( $cell_tag ); ?> <?php $this->print_render_attribute_string( 'cell_' . $index ); ?> colspan="<?php echo esc_attr( $content['cell_span'] ); ?>" rowspan="<?php echo esc_attr( $content['cell_row_span'] ); ?>">
+					<<?php echo tag_escape( $cell_tag ); ?> <?php $this->print_render_attribute_string( 'cell_' . $index ); ?> colspan="<?php echo esc_attr( $content['cell_span'] ); ?>" rowspan="<?php echo esc_attr( $content['cell_row_span'] ); ?>">
 						<?php
 						if ( 'text' === $content['cell_content_type'] ) {
 							echo esc_html( $content['cell_text'] );
@@ -1704,7 +1704,7 @@ class Table extends Widget_Base {
 							echo Plugin::instance()->frontend->get_builder_content_for_display( $content['cell_template'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						}
 						?>
-					</<?php echo esc_attr( $cell_tag ); ?>>
+					</<?php echo tag_escape( $cell_tag ); ?>>
 					<?php
 					$col++;
 				}

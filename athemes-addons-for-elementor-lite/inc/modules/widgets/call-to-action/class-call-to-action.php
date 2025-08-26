@@ -935,7 +935,7 @@ class Call_To_Action extends Widget_Base {
 							<div class="call-to-action-before-title"><?php echo esc_html( $settings['before_title'] ); ?></div>
 						<?php endif; ?>
 						<?php if ( ! empty( $settings['title'] ) ) : ?>
-							<<?php echo esc_html( $settings['title_html_tag'] ); ?> class="call-to-action-title"><?php echo wp_kses_post( $settings['title'] ); ?></<?php echo esc_html( $settings['title_html_tag'] ); ?>>
+							<<?php echo tag_escape( $settings['title_html_tag'] ); ?> class="call-to-action-title"><?php echo wp_kses_post( $settings['title'] ); ?></<?php echo tag_escape( $settings['title_html_tag'] ); ?>>
 						<?php endif; ?>
 						<?php if ( ! empty( $settings['content'] ) ) : ?>
 							<div class="call-to-action-text"><?php echo wp_kses_post( $settings['content'] ); ?></div>

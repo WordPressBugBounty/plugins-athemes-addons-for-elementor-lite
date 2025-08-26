@@ -24,7 +24,7 @@ if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 	<?php if ( !defined( 'ATHEMES_AFE_PRO_VERSION' ) ) : ?>
 	<div class="athemes-addons-tb-upgrade-notice">
 		<p><?php esc_html_e( 'This feature requires aThemes Addons Pro. Upgrade and unlock the theme builder and much more.', 'athemes-addons-for-elementor-lite' ); ?></p>
-		<a href="https://athemes.com/addons/" target="_blank"><?php esc_html_e( 'Upgrade now', 'athemes-addons-for-elementor-lite' ); ?></a>
+		<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/addons/', array( 'utm_source' => 'theme-builder', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'theme-builder-upgrade-link' ) ); ?>" target="_blank"><?php esc_html_e( 'Upgrade now', 'athemes-addons-for-elementor-lite' ); ?></a>
 	</div>
 	<?php endif; ?>
 

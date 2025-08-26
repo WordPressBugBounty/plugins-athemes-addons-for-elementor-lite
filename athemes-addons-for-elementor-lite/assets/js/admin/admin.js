@@ -562,7 +562,7 @@
 		$(document).on('click', '.aafe-upgrade', function (e) {
 			e.preventDefault();
 
-			window.open('https://athemes.com/addons/', '_blank');
+			window.open(window.athemes_addons_elementor.upgrade_url, '_blank');
 		} );
 	});
 })(jQuery, window, document);

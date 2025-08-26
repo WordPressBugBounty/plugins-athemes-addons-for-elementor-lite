@@ -850,9 +850,9 @@ class Ninja_Forms extends Widget_Base {
 		<div class="athemes-addons-contact-form athemes-addons-ninjaforms">
 			<div class="athemes-addons-form-inner">
 				<?php if ( $settings['form_title'] ) : ?>
-					<<?php echo esc_attr( $settings['form_title_tag'] ); ?> class="athemes-addons-contact-form-title">
+					<<?php echo tag_escape( $settings['form_title_tag'] ); ?> class="athemes-addons-contact-form-title">
 						<?php echo esc_html( $settings['form_title'] ); ?>
-					</<?php echo esc_attr( $settings['form_title_tag'] ); ?>>
+					</<?php echo tag_escape( $settings['form_title_tag'] ); ?>>
 				<?php endif; ?>
 				<?php echo do_shortcode( '[ninja_form id="' . $settings['contact_forms'] . '" ]' ); ?>
 			</div>

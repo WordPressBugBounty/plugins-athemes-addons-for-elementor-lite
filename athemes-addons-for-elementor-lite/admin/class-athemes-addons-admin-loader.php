@@ -81,6 +81,7 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 					'save'     => esc_html__( 'Save', 'athemes-addons-for-elementor-lite' ),
 					'saving'   => esc_html__( 'Saving...', 'athemes-addons-for-elementor-lite' ),
 					'saved'    => esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ),
+					'upgrade_url' => esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/addons/', array( 'utm_source' => 'theme-builder', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'theme-builder-upgrade-js-link' ) ),
 				) );
 
 				wp_enqueue_script( 'athemes-addons-admin-select2', ATHEMES_AFE_URI . 'assets/js/vendor/select2.min.js', array( 'jquery' ), ATHEMES_AFE_VERSION, true );

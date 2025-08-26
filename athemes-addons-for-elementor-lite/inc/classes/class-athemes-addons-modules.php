@@ -115,7 +115,7 @@ if ( ! class_exists( 'aThemes_Addons_Modules' ) ) {
 			}
 
 			if ( wp_verify_nonce( $nonce, 'athemes-addons-elementor' ) ) {
-				$response = wp_remote_post( 'https://athemes.com/athemes-addons-elementor/', array(
+				$response = wp_remote_post( 'https://athemes.com/addons/', array(
 					'body' => array(
 						'mailsender' => true,
 						'from'    => $from,

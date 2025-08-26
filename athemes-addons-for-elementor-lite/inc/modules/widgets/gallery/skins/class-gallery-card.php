@@ -167,7 +167,7 @@ class Gallery_Skin2 extends Skin_Base {
 						</div>
 						
 						<div class="gallery-item-ext-content">
-						<<?php echo esc_attr( $settings['title_html_tag'] ); ?> class="item-title">
+						<<?php echo tag_escape( $settings['title_html_tag'] ); ?> class="item-title">
 							<?php if ( ! empty( $item['link']['url'] ) ) : ?>
 								<a <?php $this->parent->print_render_attribute_string( 'button-' . $c ); ?>>
 							<?php endif; ?>	
@@ -175,7 +175,7 @@ class Gallery_Skin2 extends Skin_Base {
 							<?php if ( ! empty( $item['link']['url'] ) ) : ?>
 								</a>
 							<?php endif; ?>
-						</<?php echo esc_attr( $settings['title_html_tag'] ); ?>>
+						</<?php echo tag_escape( $settings['title_html_tag'] ); ?>>
 
 						<?php if ( ! empty( $item['content'] ) ) : ?>
 							<div class="item-content"><?php echo wp_kses_post( $item['content'] ); ?></div>

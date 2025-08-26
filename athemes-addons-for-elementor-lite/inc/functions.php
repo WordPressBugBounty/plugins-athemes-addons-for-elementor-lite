@@ -655,7 +655,17 @@ function athemes_addons_get_widgets() {
 			'has_styles'    => false,
 			'has_scripts'   => false,
 			'default'       => false,
-		),  
+		),
+		'table-of-contents' => array(
+			'pro'           => false,
+			'category'      => 'content',
+			'tutorial_url'  => 'https://docs.athemes.com/article/table-of-contents/',
+			'preview_url'   => 'https://addons.athemes.com/widget/table-of-contents/',
+			'class'         => 'aThemes_Addons\Widgets\Table_Of_Contents',
+			'has_styles'    => true,
+			'has_scripts'   => true,
+			'default'       => false,
+		),
 	);
 
 	return apply_filters( 'athemes_addons_widgets', $widgets );
@@ -956,6 +966,10 @@ function athemes_addons_get_widgets_translation_data() {
 		'template' => array(
 			'title' => esc_html__( 'Template', 'athemes-addons-for-elementor-lite' ),
 			'desc'  => esc_html__( 'Display any Elementor template', 'athemes-addons-for-elementor-lite' ),
+		),
+		'table-of-contents' => array(
+			'title' => esc_html__( 'Table of Contents', 'athemes-addons-for-elementor-lite' ),
+			'desc'  => esc_html__( 'Automatically generate a navigational table of contents', 'athemes-addons-for-elementor-lite' ),
 		),
 	) );
 }
@@ -1348,4 +1362,30 @@ function athemes_addons_woo_categories() {
 			?>
 		</span>
 	<?php
+}
+
+/**
+ * Build an upgrade/upsell URL with UTM parameters and allow filtering per placement.
+ *
+ * @param string $url  Base URL for the upgrade link (e.g., https://athemes.com/addons).
+ * @param array  $args Key/value query arguments to append (e.g., utm_* params). Optional.
+ * @param string $type Link placement/type identifier (e.g., 'athemes-addons-dashboard'). Optional.
+ *
+ * @return string Final upgrade link URL.
+ */
+if ( ! function_exists( 'athemes_addons_admin_upgrade_link' ) ) {
+    function athemes_addons_admin_upgrade_link( $url, $args = array(), $type = 'upgrade-link' ) {
+        if ( ! empty( $args ) ) {
+            $url = add_query_arg( $args, $url );
+        }
+
+        /**
+         * Filter: Modify generated upgrade link before output.
+         *
+         * @param string $url  The generated upgrade link URL.
+         * @param string $type The link placement/type identifier.
+         * @param array  $args The arguments used to build the link.
+         */
+        return apply_filters( 'athemes_addons_upgrade_link', $url, $type, $args );
+    }
 }
