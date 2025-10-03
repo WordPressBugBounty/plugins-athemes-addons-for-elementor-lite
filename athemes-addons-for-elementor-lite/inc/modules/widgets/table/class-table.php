@@ -1750,6 +1750,13 @@ class Table extends Widget_Base {
 			echo '<p>' . esc_html__( 'Please select a CSV file.', 'athemes-addons-for-elementor-lite' ) . '</p>';
 			return;
 		}
+		
+		// Validate file extension
+		$file_extension = strtolower( pathinfo( $csv, PATHINFO_EXTENSION ) );
+		if ( 'csv' !== $file_extension ) {
+			echo '<p>' . esc_html__( 'Please select a valid CSV file.', 'athemes-addons-for-elementor-lite' ) . '</p>';
+			return;
+		}
 	
 		$delimiter = $settings['csv_delimiter'];
 		if ( empty( $delimiter ) ) {

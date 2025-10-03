@@ -181,6 +181,15 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 
 					$products->the_post();
 				
+					// Define allowed templates
+					$allowed_templates = array( 'style1', 'style2', 'style3', 'style4' );
+					
+					// Validate against allowlist
+					if ( ! in_array( $settings['product_template'], $allowed_templates, true ) ) {
+						// Fallback to default template if invalid value provided
+						$settings['product_template'] = 'style1';
+					}
+				
 					ob_start();
 					include ATHEMES_AFE_DIR . 'inc/modules/widgets/woo-product-grid/templates/product-template-' . $settings['product_template'] . '.php';
 					$content .= ob_get_clean();

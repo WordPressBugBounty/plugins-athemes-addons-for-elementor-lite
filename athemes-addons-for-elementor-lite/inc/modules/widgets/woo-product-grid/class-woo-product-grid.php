@@ -1536,13 +1536,22 @@ class Woo_Product_Grid extends Widget_Base {
 	/**
 	 * Load product template.
 	 *
-	 * @param string $template
+	 * @param array $settings Widget settings.
 	 */
 	protected function load_product_template( $settings ) { 
 
-		$file = ATHEMES_AFE_DIR . 'inc/modules/widgets/woo-product-grid/templates/product-template-' . esc_attr( $settings['product_template'] ) . '.php';
+		// Define allowed templates
+		$allowed_templates = array( 'style1', 'style2', 'style3', 'style4' );
+		
+		// Validate against allowlist
+		if ( ! in_array( $settings['product_template'], $allowed_templates, true ) ) {
+			// Fallback to default template if invalid value provided
+			$settings['product_template'] = 'style1';
+		}
 
-		if ( !file_exists( $file ) ) {
+		$file = ATHEMES_AFE_DIR . 'inc/modules/widgets/woo-product-grid/templates/product-template-' . $settings['product_template'] . '.php';
+
+		if ( ! file_exists( $file ) ) {
 			return;
 		}
 
