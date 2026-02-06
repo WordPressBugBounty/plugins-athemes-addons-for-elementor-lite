@@ -377,7 +377,8 @@ function athemes_addons_templates_display_conditions_script_template() {
 										<div class="athemes-addons-display-conditions-select2-id hidden">
 											<select name="id">
 												<# if ( ! _.isEmpty( value.id ) ) { #>
-													<option value="{{ value.id }}" selected="selected">{{ data.labels[ value.id ] }}</option>
+													<# var idLabel = ( data.labels && data.labels[ value.id ] ) ? data.labels[ value.id ] : value.id; #>
+													<option value="{{ value.id }}" selected="selected">{{ idLabel }}</option>
 												<# } #>
 											</select>
 										</div>

@@ -1,9 +1,9 @@
 === aThemes Addons for Elementor ===
 Tags: elementor, widgets, addons, extensions, athemes
 Requires at least: 5.5
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.1.4
+Stable tag: 1.1.7
 Contributors: aThemes
 License: GPLv3 or later License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -140,6 +140,9 @@ Absolutely not. You can enable and customize modules without any coding knowledg
 == Screenshots ==
 
 == Changelog ==
+
+= 1.1.6 =
+* Improved tag validation
 
 = 1.1.4 =
 * Improved some checks regarding file loading

@@ -2,6 +2,85 @@
 /**
  * Display conditions ajax callback
  */
+
+/**
+ * Get labels for display condition IDs.
+ *
+ * @param array $conditions Array of conditions with 'condition' and 'id' keys.
+ * @return array Array of id => label mappings.
+ */
+function athemes_addons_get_display_conditions_labels( $conditions ) {
+	$labels = array();
+
+	if ( empty( $conditions ) || ! is_array( $conditions ) ) {
+		return $labels;
+	}
+
+	foreach ( $conditions as $condition ) {
+		if ( empty( $condition['id'] ) || empty( $condition['condition'] ) ) {
+			continue;
+		}
+
+		$id     = $condition['id'];
+		$source = $condition['condition'];
+		$label  = '';
+
+		switch ( $source ) {
+			case 'post-id':
+			case 'page-id':
+			case 'product-id':
+			case 'cpt-post-id':
+				$post = get_post( $id );
+				if ( $post ) {
+					$label = esc_html( $post->post_title );
+				}
+				break;
+
+			case 'tag-id':
+				$term = get_term( $id, 'post_tag' );
+				if ( $term && ! is_wp_error( $term ) ) {
+					$label = esc_html( $term->name );
+				}
+				break;
+
+			case 'category-id':
+				$term = get_term( $id, 'category' );
+				if ( $term && ! is_wp_error( $term ) ) {
+					$label = esc_html( $term->name );
+				}
+				break;
+
+			case 'author':
+			case 'author-id':
+				$user = get_user_by( 'id', $id );
+				if ( $user ) {
+					$label = esc_html( $user->display_name );
+				}
+				break;
+
+			case 'cpt-term-id':
+				$term = get_term( $id );
+				if ( $term && ! is_wp_error( $term ) ) {
+					$label = esc_html( $term->name );
+				}
+				break;
+
+			case 'cpt-taxonomy-id':
+				$taxonomy = get_taxonomy( $id );
+				if ( $taxonomy ) {
+					$label = esc_html( $taxonomy->label );
+				}
+				break;
+		}
+
+		if ( ! empty( $label ) ) {
+			$labels[ $id ] = $label;
+		}
+	}
+
+	return $labels;
+}
+
 function athemes_addons_templates_display_conditions_select_ajax() {
 
     $term   = ( isset( $_GET['term'] ) ) ? sanitize_text_field( wp_unslash( $_GET['term'] ) ) : '';

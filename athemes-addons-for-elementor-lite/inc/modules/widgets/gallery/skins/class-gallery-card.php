@@ -167,6 +167,7 @@ class Gallery_Skin2 extends Skin_Base {
 						</div>
 						
 						<div class="gallery-item-ext-content">
+						<?php $settings['title_html_tag'] = athemes_addons_validate_html_tag( $settings['title_html_tag'] ); ?>
 						<<?php echo tag_escape( $settings['title_html_tag'] ); ?> class="item-title">
 							<?php if ( ! empty( $item['link']['url'] ) ) : ?>
 								<a <?php $this->parent->print_render_attribute_string( 'button-' . $c ); ?>>

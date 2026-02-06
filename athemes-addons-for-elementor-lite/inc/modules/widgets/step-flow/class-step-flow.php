@@ -1292,6 +1292,7 @@ class Step_Flow extends Widget_Base {
 									if ( $has_link ) : ?>
 										<a <?php $this->print_render_attribute_string( 'link_' . $index ); ?>>
 									<?php endif; ?>
+										<?php $settings['title_tag'] = athemes_addons_validate_html_tag( $settings['title_tag'] ); ?>
 										<<?php echo tag_escape( $settings['title_tag'] ); ?> class="step-flow-title"><?php echo esc_html( $item['step_title'] ); ?></<?php echo tag_escape( $settings['title_tag'] ); ?>>
 									<?php if ( $has_link ) : ?>
 										</a>

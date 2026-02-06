@@ -261,8 +261,28 @@
 		$( '.athemes-addons-module-page-setting-field-multicheckbox' ).each(function () {
 			var $control = $(this);
 			var $checkboxes = $control.find( 'input[type="checkbox"]' );
+			var $allCheckbox = $checkboxes.filter( '[value="all"]' );
+			var $specificCheckboxes = $checkboxes.not( '[value="all"]' );
 
 			$checkboxes.on( 'change', function () {
+				var $changedCheckbox = $(this);
+				
+				// If "All" was checked, uncheck all specific options
+				if ( $changedCheckbox.val() === 'all' && $changedCheckbox.is( ':checked' ) ) {
+					$specificCheckboxes.prop( 'checked', false );
+				}
+				// If any specific option was checked, uncheck "All"
+				else if ( $changedCheckbox.val() !== 'all' && $changedCheckbox.is( ':checked' ) ) {
+					$allCheckbox.prop( 'checked', false );
+				}
+				// If all specific options are unchecked, check "All"
+				else if ( $changedCheckbox.val() !== 'all' && !$changedCheckbox.is( ':checked' ) ) {
+					var hasCheckedSpecific = $specificCheckboxes.filter( ':checked' ).length > 0;
+					if ( !hasCheckedSpecific ) {
+						$allCheckbox.prop( 'checked', true );
+					}
+				}
+
 				var values = [];
 
 				$checkboxes.each( function () {

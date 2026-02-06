@@ -187,6 +187,7 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 						$conditions = (isset($template_conditions)) ? json_decode($template_conditions, true) : array();
 						$settings = array(
 							'values' => $conditions,
+							'labels' => athemes_addons_get_display_conditions_labels( $conditions ),
 						);
 
 						// Build HTML content as a string

@@ -81,6 +81,7 @@ if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 
 					$settings = array(
 						'values' => $conditions,
+						'labels' => athemes_addons_get_display_conditions_labels( $conditions ),
 					);
 	
 					?>

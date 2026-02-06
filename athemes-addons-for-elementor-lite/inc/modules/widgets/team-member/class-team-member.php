@@ -1009,6 +1009,7 @@ class Team_Member extends Widget_Base {
 					<?php Group_Control_Image_Size::print_attachment_image_html( $settings, 'thumb', 'image' ); ?>
 				</div>
 				<div class="team-member-content">
+					<?php $settings['title_tag'] = athemes_addons_validate_html_tag( $settings['title_tag'] ); ?>
 					<<?php echo tag_escape( $settings['title_tag'] ); ?> class="team-member-name"><?php echo esc_html( $settings['name'] ); ?></<?php echo tag_escape( $settings['title_tag'] ); ?>>
 					<?php if ( ! empty( $settings['position'] ) ) : ?>
 						<div class="team-member-position"><?php echo esc_html( $settings['position'] ); ?></div>

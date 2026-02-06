@@ -29,6 +29,12 @@ class Testimonials extends Widget_Base {
 	use Upsell_Section_Trait;
 	
 	/**
+	 * Lightbox slide index for image navigation
+	 * @var int
+	 */
+	public $lightbox_slide_index;
+	
+	/**
 	 * Get widget name.
 	 *
 	 * Retrieve icon list widget name.

@@ -29,6 +29,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Testimonials_Skin2 extends Skin_Base {
 
 	/**
+	 * Lightbox slide index for image navigation
+	 * @var int
+	 */
+	public $lightbox_slide_index;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct( Widget_Base $parent ) {

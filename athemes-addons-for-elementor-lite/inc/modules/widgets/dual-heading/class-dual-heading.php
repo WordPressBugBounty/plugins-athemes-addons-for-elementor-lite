@@ -485,6 +485,7 @@ class Dual_Heading extends Widget_Base {
 		?>
 
 		<div <?php $this->print_render_attribute_string( 'wrapper' ); ?>>
+			<?php $settings['title_tag'] = athemes_addons_validate_html_tag( $settings['title_tag'] ); ?>
 			<<?php echo tag_escape( $settings['title_tag'] ); ?> class="athemes-dual-heading">
 				<?php
 				if ( ! empty( $settings['link']['url'] ) ) {

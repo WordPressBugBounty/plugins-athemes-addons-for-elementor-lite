@@ -768,6 +768,7 @@ class News_Ticker extends Widget_Base {
 					</span>
 				<?php endif; ?>					
 				<?php if ( ! empty( $settings['title'] ) ) : ?>
+					<?php $settings['main_title_tag'] = athemes_addons_validate_html_tag( $settings['main_title_tag'] ); ?>
 					<<?php echo tag_escape( $settings['main_title_tag'] ); ?> class="title"><?php echo esc_html( $settings['title'] ); ?></<?php echo tag_escape( $settings['main_title_tag'] ); ?>>
 				<?php endif; ?>
 				</div>
@@ -800,7 +801,8 @@ class News_Ticker extends Widget_Base {
 			<?php endif; ?>		
 
 			<div class="post-content">
-				<?php the_title( '<' . esc_attr( $settings['title_tag'] ) . ' class="item-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . esc_attr( $settings['title_tag'] ) . '>' ); ?>
+				<?php $settings['title_tag'] = athemes_addons_validate_html_tag( $settings['title_tag'] ); ?>
+				<?php the_title( '<' . tag_escape( $settings['title_tag'] ) . ' class="item-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . tag_escape( $settings['title_tag'] ) . '>' ); ?>
 				<div class="post-info">
 					<?php if ( $settings['show_date'] ) : ?>
 						<?php athemes_addons_get_post_date(); ?>

@@ -1666,6 +1666,7 @@ class Posts_List extends Widget_Base {
 				<?php endif; ?>	
 
 				<?php if ( $settings['show_title'] ) {
+						$settings['title_tag'] = athemes_addons_validate_html_tag( $settings['title_tag'] );
 						the_title( '<' . tag_escape( $settings['title_tag'] ) . ' class="item-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . tag_escape( $settings['title_tag'] ) . '>' );
 					}
 				?>

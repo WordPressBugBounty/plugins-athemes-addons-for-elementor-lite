@@ -48,6 +48,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				athemes_addons_woo_categories();
 			}
 
+			$settings['title_html_tag'] = athemes_addons_validate_html_tag( $settings['title_html_tag'] );
 			echo '<' . tag_escape( $settings['title_html_tag'] ) . ' class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . esc_html( get_the_title() ) . '</' . tag_escape( $settings['title_html_tag'] ) . '>';
 
 			if ( $settings['show_short_description'] ) {

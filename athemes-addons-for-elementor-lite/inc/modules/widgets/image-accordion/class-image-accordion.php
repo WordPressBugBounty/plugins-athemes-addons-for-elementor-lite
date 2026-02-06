@@ -747,6 +747,7 @@ class Image_Accordion extends Widget_Base {
 					<div class="image-accordion-item <?php echo esc_attr( $active_item ); ?> elementor-repeater-item-<?php echo esc_attr($item['_id']); ?>">
 						<?php Group_Control_Image_Size::print_attachment_image_html( $item, 'thumb', 'image' ); ?>
 						<div class="image-accordion-content">
+							<?php $settings['title_html_tag'] = athemes_addons_validate_html_tag( $settings['title_html_tag'] ); ?>
 							<<?php echo tag_escape( $settings['title_html_tag'] ); ?> class="image-accordion-title"><?php echo esc_html( $item['title'] ); ?></<?php echo tag_escape( $settings['title_html_tag'] ); ?>>
 							<div class="image-accordion-text"><?php echo wp_kses_post( $item['text'] ); ?></div>
 							<?php if ( 'yes' === $item['show_button'] ) : ?>

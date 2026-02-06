@@ -1365,6 +1365,25 @@ function athemes_addons_woo_categories() {
 }
 
 /**
+ * Validate HTML tag against allowed tags list.
+ *
+ * @param string $tag The HTML tag to validate.
+ *
+ * @return string Validated HTML tag or 'h2' if validation fails.
+ */
+if ( ! function_exists( 'athemes_addons_validate_html_tag' ) ) {
+	function athemes_addons_validate_html_tag( $tag ) {
+		if ( empty( $tag ) ) {
+			return 'h2';
+		}
+
+		$allowed_tags = array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p' );
+
+		return in_array( $tag, $allowed_tags, true ) ? $tag : 'h2';
+	}
+}
+
+/**
  * Build an upgrade/upsell URL with UTM parameters and allow filtering per placement.
  *
  * @param string $url  Base URL for the upgrade link (e.g., https://athemes.com/addons).

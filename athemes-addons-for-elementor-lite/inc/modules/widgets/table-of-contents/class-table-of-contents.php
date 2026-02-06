@@ -806,6 +806,7 @@ class Table_Of_Contents extends Widget_Base {
 			
 			<div class="toc-header">
 				<?php if ( ! empty( $settings['title'] ) ) : ?>
+					<?php $settings['title_tag'] = athemes_addons_validate_html_tag( $settings['title_tag'] ); ?>
 					<<?php echo tag_escape( $settings['title_tag'] ); ?> class="toc-title">
 						<?php echo esc_html( $settings['title'] ); ?>
 					</<?php echo tag_escape( $settings['title_tag'] ); ?>>

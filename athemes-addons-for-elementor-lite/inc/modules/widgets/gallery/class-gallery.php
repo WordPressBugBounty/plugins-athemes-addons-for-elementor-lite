@@ -1221,6 +1221,7 @@ class Gallery extends Widget_Base {
 
 							<?php if ( 'image' === $item['lightbox_content'] ) : ?>
 							<div class="gallery-item-content">
+								<?php $settings['title_html_tag'] = athemes_addons_validate_html_tag( $settings['title_html_tag'] ); ?>
 								<<?php echo tag_escape( $settings['title_html_tag'] ); ?> class="item-title"><?php echo esc_html( $item['title'] ); ?></<?php echo tag_escape( $settings['title_html_tag'] ); ?>>
 
 								<?php if ( ! empty( $item['content'] ) ) : ?>
@@ -1243,6 +1244,7 @@ class Gallery extends Widget_Base {
 							</div>
 							<?php else : ?>
 							<div class="gallery-item-video-icon">
+								<?php $settings['title_html_tag'] = athemes_addons_validate_html_tag( $settings['title_html_tag'] ); ?>
 								<<?php echo tag_escape( $settings['title_html_tag'] ); ?> class="item-title"><?php echo esc_html( $item['title'] ); ?></<?php echo tag_escape( $settings['title_html_tag'] ); ?>>
 
 								<?php if ( ! empty( $item['content'] ) ) : ?>

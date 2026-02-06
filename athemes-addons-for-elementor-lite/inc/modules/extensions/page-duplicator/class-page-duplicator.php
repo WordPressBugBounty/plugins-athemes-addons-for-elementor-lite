@@ -44,7 +44,11 @@ class Page_Duplicator {
 
 		$settings = get_option( 'athemes-addons-settings' );
 
-		$enabled_on = ( empty( $settings ) ) ? 'all' : $settings['aafe_duplicator_post_types'];
+		$enabled_on = 'all'; // Default to 'all' post types
+
+		if ( ! empty( $settings ) && isset( $settings['aafe_duplicator_post_types'] ) && ! empty( $settings['aafe_duplicator_post_types'] ) ) {
+			$enabled_on = $settings['aafe_duplicator_post_types'];
+		}
 
 		$enabled_on = explode( ',', $enabled_on );
 
@@ -77,6 +81,8 @@ class Page_Duplicator {
 		if ( ! $post ) {
 			return;
 		}
+
+		$current_user = wp_get_current_user();
 
 		$new_post_id = wp_insert_post( array(
 			'post_title'    => $post->post_title . ' - ' . __( 'Copy', 'athemes-addons-for-elementor-lite' ),
