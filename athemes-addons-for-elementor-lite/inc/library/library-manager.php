@@ -36,17 +36,41 @@ class Template_Library_Manager {
 			$isProActive = true;
 		}
 
+		$required_widgets_map = require ATHEMES_AFE_DIR . 'inc/library/required-widgets.php';
+
+		// Collect every unique widget type referenced across all templates
+		$all_referenced = [];
+		foreach ( $required_widgets_map as $widget_types ) {
+			foreach ( $widget_types as $widget_type ) {
+				$all_referenced[ $widget_type ] = true;
+			}
+		}
+
+		// Determine which of those are currently inactive
+		$inactive_widgets = [];
+		foreach ( array_keys( $all_referenced ) as $widget_type ) {
+			$module_id = str_replace( 'athemes-addons-', '', $widget_type );
+			if ( ! \aThemes_Addons_Modules::is_module_active( $module_id ) ) {
+				$inactive_widgets[] = $widget_type;
+			}
+		}
+
 		$localized_data = [
-            'aafeProWidgets' => [],
-			'isProActive' => $isProActive,
-			'i18n' => [
-				'templatesEmptyTitle' => esc_html__( 'No Templates Found', 'athemes-addons-for-elementor-lite' ),
-				'templatesEmptyMessage' => esc_html__( 'Try different category or sync for new templates.', 'athemes-addons-for-elementor-lite' ),
-				'templatesNoResultsTitle' => esc_html__( 'No Results Found', 'athemes-addons-for-elementor-lite' ),
+			'aafeProWidgets'  => [],
+			'isProActive'     => $isProActive,
+			'requiredWidgets' => $required_widgets_map,
+			'inactiveWidgets' => $inactive_widgets,
+			'dashboardUrl'    => current_user_can( 'manage_options' ) ? esc_url( admin_url( 'admin.php?page=athemes-addons&section=widgets' ) ) : '',
+			'i18n'            => [
+				'templatesEmptyTitle'       => esc_html__( 'No Templates Found', 'athemes-addons-for-elementor-lite' ),
+				'templatesEmptyMessage'     => esc_html__( 'Try different category or sync for new templates.', 'athemes-addons-for-elementor-lite' ),
+				'templatesNoResultsTitle'   => esc_html__( 'No Results Found', 'athemes-addons-for-elementor-lite' ),
 				'templatesNoResultsMessage' => esc_html__( 'Please make sure your search is spelled correctly or try a different word.', 'athemes-addons-for-elementor-lite' ),
+				'missingWidgetsLabel'       => esc_html__( 'Required widgets are disabled:', 'athemes-addons-for-elementor-lite' ),
+				'enableWidgetsDashboard'    => esc_html__( 'Enable in Dashboard', 'athemes-addons-for-elementor-lite' ),
+				'insertLabel'               => esc_html__( 'Insert', 'athemes-addons-for-elementor-lite' ),
 			],
-	
-        ];
+		];
 
 		wp_localize_script( 'athemes-addons-template-library-script', 'aafeEditor', $localized_data );
 	}

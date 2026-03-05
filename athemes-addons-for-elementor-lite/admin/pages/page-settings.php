@@ -51,6 +51,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 		),
 	) );
 
+	// Usage tracking settings.
+	if ( ! defined('ATHEMES_AFE_PRO_DIR') ) {
+		Admin_Settings::create( array(
+			'title'    => __( 'Improve aThemes Addons', 'athemes-addons-for-elementor-lite' ),
+			'subtitle' => __( 'By allowing us to track usage data, we can better help you, as we will know which WordPress configurations, themes, and plugins we should test. No sensitive data is collected.', 'athemes-addons-for-elementor-lite' ),
+			'fields'   => array(
+				array(
+					'id'      => 'usage-tracking-enabled',
+					'type'    => 'toggle',
+					'default' => '',
+				),
+			),
+		) );
+	}
+
 	Admin_Settings::save_button();
 	?>
 

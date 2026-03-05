@@ -234,6 +234,13 @@
 				var fieldValue = $(this).find('input[type="hidden"]').val();
 				fields[fieldId] = fieldValue;
 			} );
+
+			// Toggle field.
+			$('.athemes-addons-module-page-setting-field-toggle input[type="checkbox"]').each(function() {
+				var fieldId = $(this).attr('name');
+				var fieldValue = $(this).is(':checked') ? 'on' : '';
+				fields[fieldId] = fieldValue;
+			});
 	
 			var data = {
 				'action': 'aafe_save_settings',

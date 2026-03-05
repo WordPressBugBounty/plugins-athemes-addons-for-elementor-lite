@@ -240,6 +240,13 @@
         },
     })),
     (i.Modal = elementorModules.common.views.modal.Layout.extend({
+        escHtml: function ( str ) {
+            return String( str )
+                .replace( /&/g, '&amp;' )
+                .replace( /</g, '&lt;' )
+                .replace( />/g, '&gt;' )
+                .replace( /"/g, '&quot;' );
+        },
         getModalOptions: function () {
             return {
                 id: "aafeTemplateLibraryModal",
@@ -250,9 +257,50 @@
                 }
             };
         },
+        widgetSlugToLabel: function ( slug ) {
+            return slug
+                .replace( 'athemes-addons-', '' )
+                .replace( /-/g, ' ' )
+                .replace( /\b\w/g, function ( c ) { return c.toUpperCase(); } );
+        },
+
+        getMissingWidgets: function ( templateId ) {
+            var requiredWidgets = aafeEditor.requiredWidgets || {};
+            var inactiveWidgets = aafeEditor.inactiveWidgets || [];
+            var required = requiredWidgets[ templateId ] || [];
+            return required.filter( function ( widget ) {
+                return inactiveWidgets.indexOf( widget ) !== -1;
+            } );
+        },
+
+        buildDisabledButton: function ( missingWidgets ) {
+            var self = this;
+            var widgetLabels = missingWidgets.map( function ( w ) {
+                return '<li>' + self.escHtml( self.widgetSlugToLabel( w ) ) + '</li>';
+            } ).join( '' );
+
+            return '<div class="athemes-addons-templateLibrary-disabled-wrap">' +
+                '<span class="elementor-template-library-template-action athemes-addons-templateLibrary-disabled-button" aria-disabled="true">' +
+                    '<i class="eicon-file-download" aria-hidden="true"></i>' +
+                    '<span class="elementor-button-title">' + aafeEditor.i18n.insertLabel + '</span>' +
+                '</span>' +
+                '<div class="athemes-addons-missing-widgets-tooltip">' +
+                    '<span class="athemes-addons-missing-widgets-label">' + aafeEditor.i18n.missingWidgetsLabel + '</span>' +
+                    '<ul class="athemes-addons-missing-widgets-list">' + widgetLabels + '</ul>' +
+                    ( aafeEditor.dashboardUrl ? '<a href="' + aafeEditor.dashboardUrl + '" target="_blank" rel="noopener noreferrer" class="athemes-addons-dashboard-link">' + aafeEditor.i18n.enableWidgetsDashboard + '</a>' : '' ) +
+                '</div>' +
+            '</div>';
+        },
+
         getTemplateActionButton: function (e) {
+            var missingWidgets = this.getMissingWidgets( e.template_id );
+            if ( missingWidgets.length > 0 ) {
+                return this.buildDisabledButton( missingWidgets );
+            }
             var t = e.isPro && !aafeEditor.isProActive ? "pro-button" : "insert-button";
-            return (viewId = "#template-athemes-addons-templateLibrary-" + t), (template = Marionette.TemplateCache.get(viewId)), Marionette.Renderer.render(template);
+            var viewId = "#template-athemes-addons-templateLibrary-" + t;
+            var template = Marionette.TemplateCache.get( viewId );
+            return Marionette.Renderer.render( template );
         },
 
         proLabel: function (e) {

@@ -50,6 +50,9 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 			// Get extensions.
 			$this->extensions = athemes_addons_get_extensions();
 
+			// Load Action Scheduler and usage tracking.
+			add_action( 'plugins_loaded', array( $this, 'include_usage_tracking' ) );
+
 			// Register widget category.
 			add_action( 'elementor/elements/categories_registered', array( $this, 'register_widget_category' ) );
 
@@ -132,6 +135,21 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 			 * @since 1.0
 			 */
 			do_action( 'athemes_addons_admin_after_include_modules_classes' );
+		}
+
+		/**
+		 * Include usage tracking on plugins_loaded.
+		 */
+		public function include_usage_tracking() {
+
+			// Load Action Scheduler if not already loaded.
+			if ( file_exists( ATHEMES_AFE_DIR . 'vendor/woocommerce/action-scheduler/action-scheduler.php' ) ) {
+				require_once ATHEMES_AFE_DIR . 'vendor/woocommerce/action-scheduler/action-scheduler.php';
+			}
+
+			// Usage tracking classes.
+			require_once ATHEMES_AFE_DIR . 'inc/usage-tracking/class-athemes-addons-usage-tracking.php';
+			require_once ATHEMES_AFE_DIR . 'inc/usage-tracking/class-athemes-addons-send-usage-task.php';
 		}
 
 		/**

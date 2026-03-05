@@ -339,3 +339,72 @@
 #aafeTemplateLibraryModal .dialog-message {
 	overflow: hidden;
 }
+
+/* Disabled insert button (required widgets inactive) */
+.athemes-addons-templateLibrary-disabled-wrap {
+	position: relative;
+	display: inline-block;
+}
+
+.athemes-addons-templateLibrary-disabled-button {
+	opacity: 0.5;
+	cursor: not-allowed !important;
+	pointer-events: none;
+}
+
+.athemes-addons-missing-widgets-tooltip {
+	display: none;
+	position: absolute;
+	bottom: 100%;
+	left: 25%;
+	background: #1a1a2e;
+	color: #fff;
+	font-size: 11px;
+	line-height: 1.5;
+	padding: 8px;
+	border-radius: 4px;
+	white-space: nowrap;
+	z-index: 9999;
+	min-width: 180px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	pointer-events: auto;
+}
+
+.athemes-addons-missing-widgets-tooltip::after {
+	content: '';
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	border: 5px solid transparent;
+	border-top-color: #1a1a2e;
+}
+
+.athemes-addons-templateLibrary-disabled-wrap:hover .athemes-addons-missing-widgets-tooltip {
+	display: block;
+}
+
+.athemes-addons-missing-widgets-label {
+	display: block;
+	margin-bottom: 4px;
+	font-weight: 600;
+}
+
+.athemes-addons-missing-widgets-list {
+	margin: 0 0 8px 0;
+	padding: 0 0 0 14px;
+}
+
+.athemes-addons-missing-widgets-list li {
+	margin-bottom: 2px;
+}
+
+.athemes-addons-dashboard-link {
+	display: inline-block;
+	color: #a0b4ff;
+	text-decoration: underline;
+	font-size: 11px;
+}
+
+.athemes-addons-dashboard-link:hover {
+	color: #fff;
+}

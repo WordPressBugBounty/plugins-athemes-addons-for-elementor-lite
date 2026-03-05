@@ -128,6 +128,8 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 									self::text( $field, $value );
 								} elseif ( 'multicheckbox' === $field['type'] ) {
 									self::multicheckbox( $field, $value );
+								} elseif ( 'toggle' === $field['type'] ) {
+									self::toggle( $field, $value );
 								}
 							}
 						}
@@ -151,43 +153,71 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 			<?php
 		}
 
-		/**
-		 * Field: Multiple checkbox that allows multiple selection
-		 */
-		public static function multicheckbox( $settings, $value ) {
-			?>
-			<div class="athemes-addons-module-page-setting-field athemes-addons-module-page-setting-field-multicheckbox">
-				<div>
-				<?php
-				if ( ! is_array( $value ) ) {
-					$value = explode( ',', $value );
-				}
-				if ( ! empty( $settings['options'] ) ) : ?>
-					<?php
-					foreach ( $settings['options'] as $key => $option ) : ?>
-						<label>
-							<input 
-								type="checkbox" name="<?php echo esc_attr( $settings['id'] ); ?>[]" 
-								value="<?php echo esc_attr( $key ); ?>" 
-								<?php checked( in_array( $key, $value, true ), true ); ?>
-							/>
-							<span><?php echo esc_html( $option ); ?></span>
-						</label>
-					<?php
-					endforeach; ?>
-				<?php
-				endif; 
-				?>
-				</div>
-				<input type="hidden" name="<?php echo esc_attr( $settings['id'] ); ?>" value="" />
-			</div>
+	/**
+	 * Field: Multiple checkbox that allows multiple selection
+	 */
+	public static function multicheckbox( $settings, $value ) {
+		?>
+		<div class="athemes-addons-module-page-setting-field athemes-addons-module-page-setting-field-multicheckbox">
+			<div>
 			<?php
-		}   
+			if ( ! is_array( $value ) ) {
+				$value = explode( ',', $value );
+			}
+			if ( ! empty( $settings['options'] ) ) : ?>
+				<?php
+				foreach ( $settings['options'] as $key => $option ) : ?>
+					<label>
+						<input 
+							type="checkbox" name="<?php echo esc_attr( $settings['id'] ); ?>[]" 
+							value="<?php echo esc_attr( $key ); ?>" 
+							<?php checked( in_array( $key, $value, true ), true ); ?>
+						/>
+						<span><?php echo esc_html( $option ); ?></span>
+					</label>
+				<?php
+				endforeach; ?>
+			<?php
+			endif; 
+			?>
+			</div>
+			<input type="hidden" name="<?php echo esc_attr( $settings['id'] ); ?>" value="" />
+		</div>
+		<?php
+	}
 
-		/**
-		 * Save button.
-		 */
-		public static function save_button() {
+	/**
+	 * Field: Toggle switch
+	 */
+	public static function toggle( $settings, $value ) {
+		$checked = ( 'on' === $value ) ? 1 : 0;
+		?>
+		<div class="athemes-addons-module-page-setting-field athemes-addons-module-page-setting-field-toggle">
+			<div class="athemes-addons-toggle-switch">
+				<input 
+					type="checkbox" 
+					id="<?php echo esc_attr( $settings['id'] ); ?>" 
+					name="<?php echo esc_attr( $settings['id'] ); ?>" 
+					value="on" 
+					<?php checked( $checked, 1 ); ?>
+					class="toggle-switch-checkbox"
+				/>
+				<label class="toggle-switch-label" for="<?php echo esc_attr( $settings['id'] ); ?>">
+					<span class="toggle-switch-inner"></span>
+					<span class="toggle-switch-switch"></span>
+				</label>
+				<?php if ( ! empty( $settings['label'] ) ) : ?>
+					<span><?php echo esc_html( $settings['label'] ); ?></span>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Save button.
+	 */
+	public static function save_button() {
 			?>
 			<div class="athemes-addons-module-page-setting-save">
 				<button class="button button-primary button-hero aafe-save-settings"><?php esc_html_e( 'Save', 'athemes-addons-for-elementor-lite' ); ?></button>
