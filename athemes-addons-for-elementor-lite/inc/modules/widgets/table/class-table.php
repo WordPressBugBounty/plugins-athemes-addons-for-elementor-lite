@@ -1745,15 +1745,20 @@ class Table extends Widget_Base {
 	protected function render_csv_table() {
 		$settings = $this->get_settings_for_display();
 	
-		$csv = $settings['csv_file']['url'];
-		if ( empty( $csv ) ) {
+		// Resolve to a local uploaded file by attachment ID; never open a client-supplied URL/path (prevents SSRF and stream-wrapper abuse).
+		$csv_id = ! empty( $settings['csv_file']['id'] ) ? absint( $settings['csv_file']['id'] ) : 0;
+		$csv    = $csv_id ? get_attached_file( $csv_id ) : '';
+
+		if ( empty( $csv ) || ! @is_file( $csv ) ) { // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
 			echo '<p>' . esc_html__( 'Please select a CSV file.', 'athemes-addons-for-elementor-lite' ) . '</p>';
 			return;
 		}
-		
-		// Validate file extension
-		$file_extension = strtolower( pathinfo( $csv, PATHINFO_EXTENSION ) );
-		if ( 'csv' !== $file_extension ) {
+
+		// Confirm the resolved path is a .csv inside the uploads directory.
+		$uploads  = wp_get_upload_dir();
+		$real_csv = realpath( $csv );
+		$base_dir = realpath( $uploads['basedir'] );
+		if ( false === $real_csv || false === $base_dir || 0 !== strpos( $real_csv, trailingslashit( $base_dir ) ) || 'csv' !== strtolower( pathinfo( $real_csv, PATHINFO_EXTENSION ) ) ) {
 			echo '<p>' . esc_html__( 'Please select a valid CSV file.', 'athemes-addons-for-elementor-lite' ) . '</p>';
 			return;
 		}

@@ -3,7 +3,6 @@ namespace aThemes_Addons\Widgets;
 
 use Elementor\Plugin;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
@@ -854,7 +853,7 @@ class Countdown extends Widget_Base {
 			<?php if ( 'text' === $settings['expire_action'] ) : ?>
 				<div class="countdown-expired-content"><?php echo wp_kses_post( $settings['expire_text'] ); ?></div>
 			<?php elseif ( 'template' === $settings['expire_action'] ) : ?>
-				<div class="countdown-expired-content"><?php echo Plugin::instance()->frontend->get_builder_content_for_display( $settings['expire_template'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+				<div class="countdown-expired-content"><?php if ( \aThemes_Addons_Helper::is_renderable_template( $settings['expire_template'] ) ) { echo Plugin::instance()->frontend->get_builder_content_for_display( absint( $settings['expire_template'] ) ); } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
 			<?php endif; ?>
 
 		</div>

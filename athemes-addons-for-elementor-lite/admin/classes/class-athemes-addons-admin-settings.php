@@ -32,6 +32,7 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'wp_ajax_aafe_save_settings', array( $this, 'save_settings_callback' ) );
+			add_action( 'wp_ajax_athemes_addons_abilities_mode', array( $this, 'ajax_abilities_mode' ) );
 		}
 
 		/**
@@ -60,8 +61,43 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 		
 				wp_send_json_success();
 			}
-		
+
 			wp_send_json_error();
+		}
+
+		/**
+		 * Set the AI Abilities mode from the Settings radio.
+		 *
+		 * Maps a single 3-way choice to the two gating options that
+		 * `aThemes_Addons_Abilities` reads, so the radio stays a single
+		 * atomic control:
+		 *   off   -> enabled 0, allow-writes 0
+		 *   read  -> enabled 1, allow-writes 0
+		 *   write -> enabled 1, allow-writes 1
+		 *
+		 * This is a dedicated handler rather than routing through
+		 * save_settings_callback() above: that saver has no allowlist and
+		 * writes any posted field id into the generic settings option, which
+		 * would let it flip the write-access gate outside of this explicit
+		 * off/read/write mapping.
+		 */
+		public function ajax_abilities_mode() {
+			check_ajax_referer( 'athemes-addons-elementor', 'nonce' );
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error();
+			}
+
+			$mode = ( isset( $_POST['mode'] ) ) ? sanitize_text_field( wp_unslash( $_POST['mode'] ) ) : '';
+
+			if ( ! in_array( $mode, array( 'off', 'read', 'write' ), true ) ) {
+				wp_send_json_error();
+			}
+
+			update_option( \aThemes_Addons_Abilities::OPTION_ENABLED, ( 'off' === $mode ) ? 0 : 1 );
+			update_option( \aThemes_Addons_Abilities::OPTION_WRITES, ( 'write' === $mode ) ? 1 : 0 );
+
+			wp_send_json_success();
 		}
 
 		/**

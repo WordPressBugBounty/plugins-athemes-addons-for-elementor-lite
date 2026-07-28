@@ -81,6 +81,7 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 					'save'     => esc_html__( 'Save', 'athemes-addons-for-elementor-lite' ),
 					'saving'   => esc_html__( 'Saving...', 'athemes-addons-for-elementor-lite' ),
 					'saved'    => esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ),
+					'failed'   => esc_html__( 'Something went wrong, please try again.', 'athemes-addons-for-elementor-lite' ),
 					'upgrade_url' => esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/addons/', array( 'utm_source' => 'theme-builder', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'theme-builder-upgrade-js-link' ) ),
 				) );
 

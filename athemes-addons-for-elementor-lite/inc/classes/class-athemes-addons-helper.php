@@ -51,6 +51,17 @@ if ( ! class_exists( 'aThemes_Addons_Helper' ) ) {
 		}
 
 		/**
+		 * Whether a template ID is a published Elementor library template safe to render.
+		 */
+		public static function is_renderable_template( $template_id ) {
+			$template_id = absint( $template_id );
+
+			return $template_id
+				&& 'elementor_library' === get_post_type( $template_id )
+				&& 'publish' === get_post_status( $template_id );
+		}
+
+		/**
 		 * Find an element in the elements data.
 		 */
 		public static function find_element_recursive( $elements, $element_id ) {

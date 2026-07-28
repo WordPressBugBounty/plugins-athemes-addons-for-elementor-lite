@@ -76,11 +76,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<option class="athemes-addons-templateLibrary-category-filter-item active" value="" data-tag=""><?php esc_html_e( 'Filter', 'athemes-addons-for-elementor-lite' ); ?></option>
 
 				<?php
-					$aafe_cats = aThemesAddons\Template_Library_Source::get_library_data()['categories'];
-					foreach ( $aafe_cats as $aafe_cat  ) : ?>
+					$aafe_cats = aThemesAddons\Template_Library_Manager::get_source()->get_categories();
+					foreach ( (array) $aafe_cats as $aafe_cat ) : ?>
 						<option class="athemes-addons-templateLibrary-category-filter-item" value="<?php echo esc_html( $aafe_cat['slug'] ); ?>" data-tag="<?php echo esc_attr( $aafe_cat['slug'] ); ?>"><?php echo esc_html( $aafe_cat['name'] ); ?></option>
 					<?php endforeach;
 				?>
+			</select>
+		</div>
+
+		<div id="athemes-addons-templateLibrary-toolbar-filter-pro">
+			<select id="athemes-addons-templateLibrary-filter-pro" class="athemes-addons-templateLibrary-filter-pro">
+				<option value=""><?php esc_html_e( 'All', 'athemes-addons-for-elementor-lite' ); ?></option>
+				<option value="free"><?php esc_html_e( 'Free', 'athemes-addons-for-elementor-lite' ); ?></option>
+				<option value="pro"><?php esc_html_e( 'Pro', 'athemes-addons-for-elementor-lite' ); ?></option>
 			</select>
 		</div>
 

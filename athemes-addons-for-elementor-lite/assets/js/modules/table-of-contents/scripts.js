@@ -104,9 +104,14 @@
                  */
                 getContainer() {
             if (this.settings.containerSelector) {
-                const $container = $(this.settings.containerSelector);
-                if ($container.length > 0) {
-                    return $container.first();
+                let el = null;
+                try {
+                    el = document.querySelector(this.settings.containerSelector);
+                } catch (err) {
+                    el = null;
+                }
+                if (el) {
+                    return $(el);
                 }
             }
             

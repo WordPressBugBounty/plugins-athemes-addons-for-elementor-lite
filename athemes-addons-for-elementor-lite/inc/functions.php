@@ -8,6 +8,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Whether the active theme ships its own template builder that should
+ * suppress this plugin's Theme Builder (tab + CPT).
+ *
+ * Currently detects Sydney Pro's "Template Builder" module (slug `templates`).
+ *
+ * @return bool
+ */
+function athemes_addons_host_theme_has_template_builder() {
+	if ( class_exists( 'Sydney_Modules' ) && Sydney_Modules::is_module_active( 'templates' ) ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
  * List all available widgets.
  * 
  * @return array

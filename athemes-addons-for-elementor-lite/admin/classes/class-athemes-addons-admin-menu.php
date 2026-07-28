@@ -259,6 +259,10 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 				
 			);
 
+			if ( \athemes_addons_host_theme_has_template_builder() ) {
+				unset( $tabs['theme-builder'] );
+			}
+
 			if ( ! defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 				$tabs['upgrade'] = array(
 					'title' => __( 'Free vs Pro', 'athemes-addons-for-elementor-lite' ),

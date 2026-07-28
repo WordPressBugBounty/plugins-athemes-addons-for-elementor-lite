@@ -76,9 +76,10 @@
         ui: { menuItem: ".elementor-template-library-menu-item" },
         events: { "click @ui.menuItem": "onMenuItemClick" },
         onMenuItemClick: function (e) {
-            aafe.library.setFilter("category", ""), 
-            aafe.library.setFilter("text", ""), 
-            aafe.library.setFilter("type", e.currentTarget.dataset.tab, !0), 
+            aafe.library.setFilter("category", ""),
+            aafe.library.setFilter("text", ""),
+            aafe.library.setFilter("pro", ""),
+            aafe.library.setFilter("type", e.currentTarget.dataset.tab, !0),
             aafe.library.showTemplatesView();
         },
     })),
@@ -166,11 +167,13 @@
             templatesWindow: ".athemes-addons-templateLibrary-templates-window",
             textFilter: "#athemes-addons-templateLibrary-search",
             categoryFilter: "#athemes-addons-templateLibrary-filter-category",
+            proFilter: "#athemes-addons-templateLibrary-filter-pro",
             filterBar: "#athemes-addons-templateLibrary-toolbar-filter"
         },
         events: {
             "input @ui.textFilter": "onTextFilterInput",
-            "change @ui.categoryFilter": "onCategoryFilterClick"
+            "change @ui.categoryFilter": "onCategoryFilterClick",
+            "change @ui.proFilter": "onProFilterClick"
         },
         getChildView: function (e) {
             return i.LibraryViews.Template;
@@ -211,6 +214,9 @@
         onCategoryFilterClick: function (t) {
             var i = t.currentTarget.selectedOptions[0].value;
             aafe.library.setFilter("category", i);
+        },
+        onProFilterClick: function (t) {
+            aafe.library.setFilter("pro", t.currentTarget.value);
         },
         updatePerfectScrollbar: function () {
             this.perfectScrollbar || (this.perfectScrollbar = new PerfectScrollbar(this.ui.templatesWindow[0], {
@@ -374,7 +380,7 @@
         (this.atIndex = -1),
         (this.channels = { tabs: Backbone.Radio.channel("tabs"), templates: Backbone.Radio.channel("templates") }),
         (this.updateBlocksView = function () {
-            m.setFilter("category", "", !0), m.setFilter("text", "", !0), m.getModal().showTemplatesView(d);
+            m.setFilter("category", "", !0), m.setFilter("text", "", !0), m.setFilter("pro", "", !0), m.getModal().showTemplatesView(d);
         }),
         (this.setFilter = function (e, t, i) {
             m.channels.templates.reply("filter:" + e, t), i || m.channels.templates.trigger("filter:change");
@@ -405,6 +411,11 @@
                 type: {
                     callback: function (e) {
                         return this.get("type") === e;
+                    },
+                },
+                pro: {
+                    callback: function (e) {
+                        return "pro" === e ? !!this.get("isPro") : !this.get("isPro");
                     },
                 },
             };
@@ -441,6 +452,7 @@
         (this.showTemplatesView = function () {
             m.setFilter("category", "", !0),
                 m.setFilter("text", "", !0),
+                m.setFilter("pro", "", !0),
                 d
                     ? m.getModal().showTemplatesView(d)
                     : m.loadTemplates(function () {

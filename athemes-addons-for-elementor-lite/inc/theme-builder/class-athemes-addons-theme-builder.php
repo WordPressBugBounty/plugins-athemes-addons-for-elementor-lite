@@ -130,6 +130,10 @@ if ( ! class_exists( 'Theme_Builder' ) ) {
 		 * Include theme builder CPT.
 		 */
 		public function include_theme_builder_cpt() {
+			if ( \athemes_addons_host_theme_has_template_builder() ) {
+				return;
+			}
+
 			if ( defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
 				require_once ATHEMES_AFE_DIR . 'inc/theme-builder/class-athemes-addons-theme-builder-cpt.php';
 			}

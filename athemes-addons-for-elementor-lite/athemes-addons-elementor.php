@@ -3,7 +3,7 @@
  * Plugin Name: aThemes Addons for Elementor Lite
  * Plugin URI:  https://athemes.com/addons-for-elementor
  * Description: Widgets and extensions for the Elementor page builder
- * Version:     1.1.9
+ * Version:     1.2.0
  * Author:      aThemes
  * Author URI:  https://athemes.com
  * License:     GPLv3 or later License
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // AAFE constants.
-define( 'ATHEMES_AFE_VERSION', '1.1.9' );
+define( 'ATHEMES_AFE_VERSION', '1.2.0' );
 define( 'ATHEMES_AFE_FILE', __FILE__ );
 define( 'ATHEMES_AFE_BASE', trailingslashit( plugin_basename( ATHEMES_AFE_FILE ) ) );
 define( 'ATHEMES_AFE_DIR', trailingslashit( plugin_dir_path( ATHEMES_AFE_FILE ) ) );
@@ -69,6 +69,7 @@ class aThemes_Addons_Elementor {
 			require_once ATHEMES_AFE_DIR . 'admin/class-athemes-addons-admin-loader.php';
 		}
 		require_once ATHEMES_AFE_DIR . 'inc/class-athemes-addons-loader.php';
+		require_once ATHEMES_AFE_DIR . 'inc/abilities/bootstrap.php';
 	}
 
 	/**

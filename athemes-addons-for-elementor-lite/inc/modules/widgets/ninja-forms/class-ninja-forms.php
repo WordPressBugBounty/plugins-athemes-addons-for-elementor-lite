@@ -855,7 +855,7 @@ class Ninja_Forms extends Widget_Base {
 						<?php echo esc_html( $settings['form_title'] ); ?>
 					</<?php echo tag_escape( $settings['form_title_tag'] ); ?>>
 				<?php endif; ?>
-				<?php echo do_shortcode( '[ninja_form id="' . $settings['contact_forms'] . '" ]' ); ?>
+				<?php echo do_shortcode( '[ninja_form id="' . absint( $settings['contact_forms'] ) . '" ]' ); ?>
 			</div>
 		</div>
 		<style>

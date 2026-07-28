@@ -856,7 +856,7 @@ class Contact_Form7 extends Widget_Base {
 
 				<?php 
 				if ( !empty( $settings['contact_forms'] ) ) {
-					echo do_shortcode( '[contact-form-7 id="' . $settings['contact_forms'] . '" ]' );
+					echo do_shortcode( '[contact-form-7 id="' . absint( $settings['contact_forms'] ) . '" ]' );
 				} 
 				?>
 			</div>

@@ -1341,7 +1341,7 @@ class Slider extends Widget_Base {
 									}
 									?>
 								<?php else : ?>
-									<?php echo Plugin::instance()->frontend->get_builder_content_for_display( $item['template_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<?php if ( \aThemes_Addons_Helper::is_renderable_template( $item['template_id'] ) ) { echo Plugin::instance()->frontend->get_builder_content_for_display( absint( $item['template_id'] ) ); } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 								<?php endif; ?>
 							</div>
 						</div>

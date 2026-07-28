@@ -846,7 +846,7 @@ class weForms extends Widget_Base {
 
 				<?php 
 				if ( !empty( $settings['contact_forms'] ) ) {
-					echo do_shortcode( '[weforms id="' . $settings['contact_forms'] . '"]' );
+					echo do_shortcode( '[weforms id="' . absint( $settings['contact_forms'] ) . '"]' );
 				}
 				?>
 			</div>

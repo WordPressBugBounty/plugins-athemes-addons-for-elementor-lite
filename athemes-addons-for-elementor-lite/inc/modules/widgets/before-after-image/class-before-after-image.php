@@ -3,7 +3,6 @@ namespace aThemes_Addons\Widgets;
 
 use Elementor\Plugin;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;

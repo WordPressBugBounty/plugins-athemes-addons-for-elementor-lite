@@ -403,7 +403,7 @@ class Advanced_Social extends Widget_Base {
 				'prefix_class' => 'e-grid-align%s-',
 				'default' => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-widget-container' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}}' => 'text-align: {{VALUE}}',
 				],
 			]
 		);

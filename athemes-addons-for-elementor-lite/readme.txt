@@ -1,145 +1,189 @@
-=== aThemes Addons for Elementor ===
-Tags: elementor, widgets, addons, extensions, athemes
+=== aThemes Addons for Elementor - Widgets, Sliders, Galleries & Form Styler ===
+Tags: elementor, elementor addons, elementor widgets, form styler, page builder
 Requires at least: 5.5
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 Contributors: aThemes
 License: GPLv3 or later License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-A collection of 30+ essential Elementor addons that let you create galleries, sliders, calls to action, forms, pricing tables, animations, and more.
+Elementor addons with 34 free widgets: galleries, sliders, form styler, carousels, pricing tables, countdowns, and lightweight Elementor extensions.
 
 == Description ==
-**Introducing aThemes Addons for Elementor — Boost Your Elementor Website Building**
 
-We've put together a set of essential widgets to make building pages with Elementor even better. Our goal was simple: creating a plugin that's easy to use and avoids the unnecessary bloat found in other plugins. With aThemes Addons, you can bring your Elementor projects to life more creatively and efficiently than ever.
+**aThemes Addons for Elementor gives you 34 free Elementor widgets and a set of workflow extensions, without the bloat.**
 
-### Enhance **Your Elementor Page Building Experience with 30+ Essential Widgets**
+Build richer pages in Elementor with widgets you actually use: galleries, sliders, carousels, pricing tables, forms styling, countdowns, team members, and more. aThemes Addons is built to stay light. You enable only the Elementor widgets and extensions you need from a single control panel, so your pages load the CSS and JavaScript for those, and nothing else. It works with any theme and only needs the free [Elementor](https://wordpress.org/plugins/elementor/) page builder.
 
-Whether you’re putting together galleries or sliders, sharing testimonials, or linking up your social media, each widget is made with real website needs in mind. We've included plenty of customization options, so you can get every detail just right without any fuss.
+> <strong>aThemes Addons for Elementor Pro</strong><br />
+> This is the Lite version. [aThemes Addons for Elementor Pro](https://athemes.com/addons/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin) adds an Elementor Theme Builder for custom headers, footers, and archives, 35+ more Elementor widgets (WhatsApp Chat, Google Reviews, Advanced Tabs, Charts, PDF Viewer, and more), Display Conditions, Dynamic Tags, and effects like Sticky, Particles, and Glassmorphism. [Get aThemes Addons Pro and unlock every premium Elementor widget and extension.](https://athemes.com/addons/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin)
 
-### Plugin Features
+= 🪶 Lightweight Elementor Addons, Loaded Only When Used =
 
-**Modular and Lightweight**
+Most addon packs load everything whether you use it or not. aThemes Addons does the opposite. Turn each widget and extension on or off from the aThemes Addons control panel, and only the assets for what you enabled get loaded. Your Elementor pages stay fast, and you keep the editor uncluttered.
 
-Our plugin is designed with optimization in mind, so you can choose exactly what you need for your site. You can enable and disable each addon from the aThemes Addons control panel. This prevents your site from being weighed down by unnecessary CSS and JavaScript, keeping it fast and smooth.
+= 🎨 Full Styling Control on Every Elementor Widget =
 
-**Full Styling Control**
+Every widget is built for real websites, with the design controls to match. Adjust colors, typography, spacing, borders, and hover states so each element fits your brand. Several widgets ship with ready-made skins and templates you can drop in and adapt, so you get a finished look faster.
 
-Every widget we offer lets you tweak its design down to the last detail. Want to change the colors, fonts, or amount of space between the elements? You got it — it's all up to you.
+= 📝 Elementor Form Styler for Contact Form 7, WPForms & More =
 
-**Template and Skin Support**
+Form plugins output plain, hard-to-style markup. The form styler widgets fix that. Style Contact Form 7, WPForms, Ninja Forms, Gravity Forms, and weForms to match your design, all from the Elementor editor. Drop the widget in, point it at your form, and control the fields, labels, and buttons visually. No custom CSS required.
 
-Some of our widgets let you start with template or skin support that you can then make your own. Pick one, adjust it however you like, and see how fast you can get the perfect look.
+= 🖼️ Elementor Gallery, Sliders & Carousels =
 
-**Responsive Design**
+Show your work the way it deserves. Build filterable galleries, full-width sliders, logo carousels, and post carousels, and control the layout, spacing, and animation for each. The Before/After Image widget adds a draggable comparison slider, and Image Scroll and Lottie animation bring movement to the page while staying light.
 
-We've made sure our widgets adapt to any screen size. So whether someone's looking at your site on their phone, tablet, or computer, everything will look just right.
+= 🛒 WooCommerce & Blog Widgets =
 
-**[Elementor](https://wordpress.org/plugins/elementor/) is required for this plugin.**
+Turn posts and products into layouts that convert. The Woo Product Grid widget displays your WooCommerce products in a customizable grid, while Posts List, Post Carousel, and Post Timeline give your blog content flexible, styled layouts. Add a Table of Contents to long posts so readers can jump straight to what they need.
 
-### **Widget Library**
+= ⏱️ Conversion Widgets: Countdown, Pricing Table, Call to Action =
 
-**30+ FREE ELEMENTOR ADDONS AND COUNTING**
+Push visitors toward the next step. Set up a Countdown timer for launches and offers, lay out plans with the Pricing Table, and drive clicks with the Call to Action and Dual Buttons widgets. Progress bars, business hours, testimonials, and team member widgets round out the set for service and business sites.
 
-Find everything you need in one convenient package and supercharge your **Elementor** website.
+= 🧩 Free Elementor Extensions =
 
-1. **Gallery**: Create user-friendly galleries that you can filter. Adjust the layout, space between the images, and more to make them look great on any device.
-2. **Slider**: Set up beautiful sliders and add as many slides as you want to. You get to control the design and can even use templates.
-3. **Testimonials**: Share what people say about you in a carousel. You can change how each part looks to make those words stand out.
-4. **Posts List**: Display your blog posts or articles in a grid. Pick a style that matches your site.
-5. **Woo Products Grid**: Show off your WooCommerce products in a grid layout. There are lots of customization options and styles to choose from.
-6. **Call to Action**: Encourage your visitors to take action with buttons and messages you can customize, including the option to use two buttons together.
-7. **Countdown**: Set up a countdown timer for events or offers. You can decide what happens when the time runs out.
-8. **Flip Box**: Create boxes that flip to reveal more information when hovered over. Change how they look and flip.
-9. **Image Accordion**: Display your images in an accordion layout. You can control both the design and behavior.
-10. **Advanced Social**: Link to your social media with customizable icons. You can add tooltips and labels for extra clarity.
-11. **Dual Buttons**: Show two buttons side by side to make stronger calls to action. Customize them to match your site.
-12. **Dual Heading**: Get creative with your headings by styling each part differently. Great for making important text stand out.
-13. **Team Member**: Show off your team members. Add their photos, write a little about them, and link to their social media.
-14. **Pricing Table**: List your prices and plans. There are lots of options to help you clearly show what you offer.
-15. **Business Hours**: Let people know when you’re open. Change the layout and style to match your site.
-16. **Before/After Image**: Compare two images side by side with a slider. It’s a neat way to show off changes or improvements.
-17. **Image Scroll**: Display longer images in a space that lets your visitors scroll through them.
-18. **Page List**: Make a list of pages or links. Customize its look to grab attention.
-19. **Posts Carousel**: Rotate your posts in a carousel. Choose a style that fits your site’s look.
-20. **Lottie Animation**: Add fun animations to your site with Lottie. They’re lightweight and work with any widget that uses images or icons.
-21. **Contact Form 7**: Take control of your Contact Form 7 forms. Drop the widget in, then style it however you like.
-22. **WPForms**: Style your WPForms easily. Start by dragging the widget in, then customize it.
-23. **Ninja Forms**: Give your Ninja Forms a personalized look. Just drag in the widget and adjust its design.
-24. **Gravity Forms**: Styling your Gravity Forms is simple. Drag the widget in and tweak the design to fit your site.
-25. **WeForms**: Add and style your WeForms easily. Drag the widget over and make it look just right.
-26. **Posts timeline**: Show off your posts in a timeline. You can adjust the design to match your site.
-27. **Video Popup**: Make your videos pop with a lightbox. You can customize the design and behavior.
-28. **Table**: Create tables that match your site’s look. You can adjust the design and layout.
-29. **Google Calendar**: Share your Google Calendar on your site. Customize the design to match your site.
-30. **Logo carousel**: Display your clients logos in a carousel. You can adjust the design and behavior.
-31. **Progress bar**: Show progress bars for your projects or skills. You can customize the design and behavior.
+aThemes Addons is more than widgets. The Lite version includes four workflow extensions that work across your whole site:
 
-Note: The Mailchimp widget uses the [Mailchimp](https://mailchimp.com/) API. Terms of use can be found [here](https://mailchimp.com/legal/terms/)
+* **Custom CSS** - add custom CSS to any Elementor element, section, or page.
+* **Custom JavaScript** - add custom JS without touching theme files.
+* **Page Duplicator** - clone any page or post, Elementor layout included, in one click.
+* **Parallax** - add scrolling parallax effects to sections and columns.
 
-More features and improvements are coming in regular updates.
+= 📚 Elementor Template Library =
 
-**Looking for the most flexible theme?**
+Insert prebuilt sections and page templates straight from the Elementor editor with the built-in template library. The library includes free templates, plus additional templates available with aThemes Addons Pro.
 
-Though aThemes Addons pairs well with any theme, we recommend that you try it out with [Sydney](https://wordpress.org/themes/sydney/) for an optimal experience. Sydney is a fast, multipurpose WordPress theme that complements aThemes Addons perfectly, offering endless customization possibilities. Experience the synergy between Sydney and aThemes Addons for unmatched design potential!
+= 🏗️ Elementor Theme Builder (Pro) =
 
-**Backed by a trusted team**
+Want to design your header, footer, and archive templates visually? The [aThemes Addons Pro](https://athemes.com/addons/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin) Elementor Theme Builder lets you build site-wide headers, footers, single templates, and archives in Elementor and control exactly where each one appears with display conditions. Theme Builder is a Pro feature.
 
-aThemes Addons is brought to you by [aThemes](https://athemes.com/), a WordPress product company trusted by more than 150,000 happy users.
+= 🧰 Full Free Widget List =
 
-**Support**
+The Lite version includes these 34 free Elementor widgets:
 
-– If you have any questions, visit the support forum [here](https://wordpress.org/support/plugin/athemes-addons-for-elementor-lite/).
+* Gallery - filterable image galleries with adjustable layout and spacing.
+* Slider - full-width sliders with unlimited slides and template support.
+* Posts List - display posts and articles in a styled grid.
+* Post Carousel - rotate posts in a customizable carousel.
+* Post Timeline - present posts in a vertical timeline.
+* Woo Product Grid - show WooCommerce products in a flexible grid.
+* Table - build styled, responsive tables.
+* Table of Contents - auto-generated, jump-to headings for long content.
+* Page List - a customizable list of pages or links.
+* Image Accordion - horizontal image accordion with hover behavior.
+* Image Scroll - scroll through tall images inside a fixed frame.
+* News Ticker - a scrolling ticker for headlines and updates.
+* Step Flow - lay out step-by-step processes and how-to flows.
+* Call to Action - headline, text, and buttons in one conversion block.
+* Dual Buttons - two side-by-side buttons for stronger calls to action.
+* Dual Heading - style two parts of a heading differently.
+* Flip Box - boxes that flip on hover to reveal more.
+* Pricing Table - clear pricing plans with feature lists.
+* Countdown - countdown timer for events and offers.
+* Progress Bar - animated progress bars for skills and projects.
+* Business Hours - display opening hours in a styled layout.
+* Logo Carousel - rotate client and partner logos.
+* Testimonials - customer testimonials in a carousel.
+* Team Member - team profiles with photos and social links.
+* Contact Form 7 - style your Contact Form 7 forms visually.
+* WPForms - style your WPForms forms in Elementor.
+* Ninja Forms - restyle Ninja Forms without code.
+* Gravity Forms - design Gravity Forms to match your site.
+* weForms - style weForms forms visually.
+* Lottie - lightweight Lottie animations for icons and images.
+* Video Popup - open videos in a customizable lightbox.
+* Before/After Image - draggable before-and-after comparison slider.
+* Advanced Social Icons - social links with tooltips and labels.
+* Google Calendar - embed and style a Google Calendar.
 
-**Happy user of aThemes Addons?**
+= 🚀 Pro Elementor Widgets & Extensions =
 
-– Join our [Facebook Group](https://www.facebook.com/groups/athemes).
+[aThemes Addons Pro](https://athemes.com/addons/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin) adds 35+ more Elementor widgets, including Advanced Button, Advanced Heading, Animated Heading, Advanced Tabs, Advanced Carousel, Creative Button, WhatsApp Chat, Telegram Chat, Click to Call, Google Reviews, Advanced Google Maps, Image Hotspots, Image Card, Social Proof, Modal, Offcanvas, Service Box, Service Group, Content Switcher, Content Reveal, Team Carousel, Timeline, Video Gallery, Video Playlist, Video Carousel, Audio Player, Pricing List, Food Menu, Coupon Code, PDF Viewer, Charts, Taxonomy Terms, Mailchimp, Content Protection, and a Template widget.
 
-– Or [rate us on WordPress](https://wordpress.org/support/athemes-addons-for-elementor-lite/reviews/) 🙂
+Pro also adds these extensions: Theme Builder, Display Conditions, Dynamic Tags, Sticky, Particles, Glassmorphism, Cursor Effects, Animation Effects, and Tooltips.
 
-**NOTES**
+Note: The Mailchimp widget (Pro) uses the [Mailchimp](https://mailchimp.com/) API. Terms of use can be found [here](https://mailchimp.com/legal/terms/).
 
-We aim to simplify WordPress and boost your site’s growth with our [themes and plugins](https://athemes.com/). With that in mind, we’re so excited to build aThemes Addons. We believe you’ll find aThemes Addons invaluable for designing your website.
+= 🏢 Built by aThemes =
 
-**WHAT’S NEXT**
+aThemes Addons for Elementor is made by [aThemes](https://athemes.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin), a WordPress product company trusted by more than 150,000 users. We build the tools we would want to use ourselves, and we support them.
 
-If you like aThemes Addons, then consider checking out our other WordPress products:
+= aThemes Addons vs Other Elementor Addon Packs =
 
-🚁 [Sydney](https://athemes.com/theme/sydney/) – Simple, fast, and flexible. Build your professional online presence and showcase your business with the easily customizable features of our Sydney theme. Works seamlessly with Elementor and aThemes Addons.
+If you have been comparing Elementor addons, you have probably looked at Essential Addons for Elementor, Happy Addons, Premium Addons for Elementor, ElementsKit, and The Plus Addons for Elementor. They are capable, but many of them load a large amount of code by default. aThemes Addons keeps things modular: enable only the widgets and extensions you use, so your Elementor pages stay lean.
 
-🐝 [Merchant](https://athemes.com/merchant) – An all-in-one modular eCommerce toolkit designed to supercharge your WooCommerce store. Merchant consolidates multiple eCommerce features into one single plugin. With Merchant’s 40+ modules, you can boost your store’s sales, reduce cart abandonment, improve the user experience, and more.
+= Looking for a Theme to Pair With It? =
 
-🛍️ [Botiga](https://athemes.com/theme/botiga/) – Botiga is known as the fastest WooCommerce theme around. Focused on the two things that matter most to eCommerce website owners — speed and conversion optimization. Also mobile shopping ready.
+aThemes Addons works with any theme, but it pairs especially well with [Sydney](https://wordpress.org/themes/sydney/), a fast, multipurpose WordPress theme with deep customization options. Sydney and aThemes Addons together give you a lot of design range with very little overhead.
+
+= Branding Guidelines =
+
+aThemes Addons for Elementor is a product of aThemes. When referring to the plugin, please use the correct branding:
+
+* aThemes Addons for Elementor (correct)
+* aThemes Addons (correct, short form)
+* AthemesAddons (incorrect)
+* athemes addons for elementor (incorrect)
+
+= Support =
+
+Have a question? Visit the [support forum](https://wordpress.org/support/plugin/athemes-addons-for-elementor-lite/). Enjoying aThemes Addons? Join our [Facebook Group](https://www.facebook.com/groups/athemes) or [leave a review](https://wordpress.org/support/plugin/athemes-addons-for-elementor-lite/reviews/).
+
+= More From aThemes =
+
+If you like aThemes Addons, take a look at our other WordPress products:
+
+🚁 [Sydney](https://athemes.com/theme/sydney/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin) - simple, fast, and flexible. Build a professional online presence and showcase your business. Works seamlessly with Elementor and aThemes Addons.
+
+🐝 [Merchant](https://athemes.com/merchant?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin) - an all-in-one modular eCommerce toolkit for WooCommerce. With 40+ modules, Merchant helps you boost sales, reduce cart abandonment, and improve the shopping experience.
+
+🛍️ [Botiga](https://athemes.com/theme/botiga/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin) - a fast WooCommerce theme focused on speed and conversion, and ready for mobile shopping.
 
 == Frequently Asked Questions ==
-= How can I activate more widgets? =
-Go to your admin area, find the aThemes Addons menu item, and click on it. You will see a list of all available widgets. You can activate or deactivate them from there.
+
+= How do I activate more widgets? =
+
+Go to your admin area, open the aThemes Addons menu, and you will see a list of all available widgets and extensions. Turn each one on or off from there.
 
 = Can I use the plugin without Elementor? =
 
-No, you cannot. You must have Elementor installed and activated on your website to use aThemes Addons for Elementor.
+No. You need the free Elementor page builder installed and activated to use aThemes Addons for Elementor. Elementor Pro is not required.
+
+= Which features are free and which are Pro? =
+
+The Lite version you are installing includes 34 Elementor widgets and four extensions (Custom CSS, Custom JavaScript, Page Duplicator, and Parallax). The Theme Builder, Display Conditions, Dynamic Tags, effects such as Sticky and Particles, and 35+ additional widgets are part of aThemes Addons for Elementor Pro.
 
 = Does it work with any theme? =
 
-Absolutely! It will work with any theme, and we have tested it with most of the popular themes in the market. Since we follow WordPress' plugin development guidelines, you can rest assured that aThemes Addons for Elementor should work perfectly, no matter which theme you use. If you've installed aThemes Addons for Elementor and are facing issues, it might not be due to theme incompatibility. Please get in touch with the support team by opening a support ticket in the plugin's support forum, and we will fix it for you.
+Yes. aThemes Addons follows WordPress plugin development guidelines and works with any properly coded theme. We have tested it with the most popular themes on the market. If you run into an issue, open a ticket in the support forum and we will help.
 
-= Will my website slow down if I install aThemes Addons for Elementor? =
+= Will it slow down my website? =
 
-Performance is at the heart of everything we do. aThemes Addons for Elementor's code has been created and optimized for maximum performance. That is why using aThemes Addons for Elementor on your website will not slow it down. On the contrary, there is a good chance that your website will perform better than ever with aThemes Addons for Elementor, as it combines the functionality of multiple plugins. Once you remove unnecessary plugins from your website, its performance is sure to improve.
+No. aThemes Addons only loads the CSS and JavaScript for the widgets and extensions you enable, so you are not shipping code for features you do not use. Consolidating several single-purpose plugins into one can improve performance rather than hurt it.
 
-= Can I use aThemes Addons for Elementor on client sites? =
+= Can I use it on client sites? =
 
-Yes, you can use aThemes Addons for Elementor on client websites.
+Yes. You can use aThemes Addons for Elementor on your own and your clients' websites.
 
-= Do I need to have coding skills to use aThemes Addons for Elementor? =
+= Do I need coding skills? =
 
-Absolutely not. You can enable and customize modules without any coding knowledge. aThemes Addons for Elementor is the most beginner-friendly plugin on the market.
+No. You can enable and customize every widget and extension visually in the Elementor editor, without writing code.
 
 == Screenshots ==
 
 == Changelog ==
+
+= 1.2.0 =
+* Added AI Abilities, letting assistants read and build Elementor pages through the WordPress Abilities API (off by default)
+* Added a Free/Pro filter to the Addons Studio toolbar
+* Addons Studio sections are now ordered by category, Hero first
+* Theme Builder is hidden when Sydney Pro's Template Builder module is active
+* Fixed widget toggles firing duplicate requests
+* Fixed Progress Bar animation on current Elementor versions
+* Fixed Advanced Social styling on current Elementor versions
 
 = 1.1.6 =
 * Improved tag validation
@@ -192,4 +236,4 @@ Absolutely not. You can enable and customize modules without any coding knowledg
 
 == Installation ==
 
-Go to Plugins > Add New and search for aThemes Addons for Elementor. Install and activate it.
+Go to Plugins > Add New and search for aThemes Addons for Elementor. Install and activate it. Make sure the free Elementor page builder is also installed and active.

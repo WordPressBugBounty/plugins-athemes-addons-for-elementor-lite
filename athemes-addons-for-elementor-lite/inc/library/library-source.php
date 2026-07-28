@@ -61,13 +61,114 @@ class Template_Library_Source extends Source_Base {
 			}
 		}
 
-		return $templates;
+		if ( count( $templates ) < 2 ) {
+			return $templates;
+		}
+
+		// slug => display name map for alphabetical tiebreaking.
+		$names = [];
+		foreach ( (array) $this->get_categories() as $cat ) {
+			$names[ strtolower( $cat['slug'] ) ] = $cat['name'];
+		}
+
+		// Decorate with a sort key (rank, name, original index) for a stable sort.
+		$sortable = [];
+		foreach ( $templates as $index => $template ) {
+			$slugs     = (array) $template['category'];
+			$best_rank = PHP_INT_MAX;
+			$best_slug = isset( $slugs[0] ) ? strtolower( $slugs[0] ) : '';
+
+			foreach ( $slugs as $slug ) {
+				$slug = strtolower( $slug );
+				$rank = self::category_rank( $slug );
+				if ( $rank < $best_rank ) {
+					$best_rank = $rank;
+					$best_slug = $slug;
+				}
+			}
+
+			$sortable[] = [
+				'template' => $template,
+				'rank'     => $best_rank,
+				'name'     => isset( $names[ $best_slug ] ) ? $names[ $best_slug ] : $best_slug,
+				'index'    => $index,
+			];
+		}
+
+		usort(
+			$sortable,
+			function ( $a, $b ) {
+				if ( $a['rank'] !== $b['rank'] ) {
+					return $a['rank'] <=> $b['rank'];
+				}
+				$name = strcasecmp( (string) $a['name'], (string) $b['name'] );
+				if ( 0 !== $name ) {
+					return $name;
+				}
+				return $a['index'] <=> $b['index']; // stable within a category
+			}
+		);
+
+		return array_column( $sortable, 'template' );
 	}
 
 	public function get_categories() {
 		$library_data = self::get_library_data();
+		$categories   = ( ! empty( $library_data['categories'] ) ? $library_data['categories'] : [] );
 
-		return ( ! empty( $library_data['categories'] ) ? $library_data['categories'] : [] );
+		if ( empty( $categories ) ) {
+			return [];
+		}
+
+		// Preserve original index for a stable sort.
+		$indexed = array_values( $categories );
+
+		usort(
+			$indexed,
+			function ( $a, $b ) {
+				$rank_a = self::category_rank( $a['slug'] );
+				$rank_b = self::category_rank( $b['slug'] );
+
+				if ( $rank_a !== $rank_b ) {
+					return $rank_a <=> $rank_b;
+				}
+
+				// Same priority tier: alphabetical by display name (case-insensitive).
+				return strcasecmp( (string) $a['name'], (string) $b['name'] );
+			}
+		);
+
+		return $indexed;
+	}
+
+	/**
+	 * Locally-defined category priority order (slugs). Categories not listed
+	 * here fall back to alphabetical order after the prioritized ones.
+	 *
+	 * @return string[] Lower-cased category slugs in priority order.
+	 */
+	private static function get_category_order() {
+		/**
+		 * Filter the Addons Studio category priority order.
+		 *
+		 * @param string[] $order Category slugs, highest priority first.
+		 */
+		$order = apply_filters( 'athemes_addons_library_category_order', [ 'hero' ] );
+
+		return array_values( array_map( 'strtolower', (array) $order ) );
+	}
+
+	/**
+	 * Rank of a category slug within the priority order.
+	 *
+	 * @param string $slug Category slug.
+	 * @return int Zero-based priority index, or PHP_INT_MAX when not prioritized.
+	 */
+	private static function category_rank( $slug ) {
+		$order = self::get_category_order();
+		$index = array_search( strtolower( (string) $slug ), $order, true );
+
+		return ( false === $index ) ? PHP_INT_MAX : $index;
 	}
 
 	public function get_type_category() {

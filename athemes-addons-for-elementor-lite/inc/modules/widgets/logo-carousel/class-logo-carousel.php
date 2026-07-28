@@ -3,7 +3,6 @@ namespace aThemes_Addons\Widgets;
 
 use Elementor\Plugin;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
@@ -1025,7 +1024,7 @@ class Logo_Carousel extends Widget_Base {
 
 		if ( 'file' === $slide['image_link_to'] ) {
 			$this->add_render_attribute( 'image_slide_' . $index, 'class', 'elementor-clickable' );
-			$this->add_render_attribute( 'image_slide_' . $index, 'href', $slide['image']['url'] );
+			$this->add_render_attribute( 'image_slide_' . $index, 'href', esc_url( $slide['image']['url'] ) );
 			$this->add_render_attribute( 'image_slide_' . $index, 'data-elementor-lightbox-slideshow', $this->get_id() );
 
 			$this->add_lightbox_data_attributes( 'image_slide_' . $index, $slide['image']['id'], 'yes', $this->get_id() );
@@ -1036,7 +1035,7 @@ class Logo_Carousel extends Widget_Base {
 
 			echo '</a>';            
 		} elseif ( 'custom' === $slide['image_link_to'] ) {
-			$this->add_render_attribute( 'image_slide_' . $index, 'href', $slide['image_link'] );
+			$this->add_render_attribute( 'image_slide_' . $index, 'href', esc_url( $slide['image_link']['url'] ) );
 	
 			echo '<a ' . $this->get_render_attribute_string( 'image_slide_' . $index ) . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 											

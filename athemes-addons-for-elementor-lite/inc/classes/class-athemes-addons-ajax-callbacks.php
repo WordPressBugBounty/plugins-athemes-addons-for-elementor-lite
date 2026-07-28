@@ -103,18 +103,28 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 			$categories         = ( isset( $_POST['categories'] ) ) ? sanitize_text_field( wp_unslash( $_POST['categories'] ) ) : array();
 			$display_mode       = ( isset( $_POST['display_mode'] ) ) ? sanitize_text_field( wp_unslash( $_POST['display_mode'] ) ) : '';
 			$filter_term        = ( isset( $_POST['term'] ) ) ? sanitize_text_field( wp_unslash( $_POST['term'] ) ) : '';
-			$posts_per_page     = ( isset( $_POST['posts_per_page'] ) ) ? sanitize_text_field( wp_unslash( $_POST['posts_per_page'] ) ) : 3;
-			$offset             = ( isset( $_POST['offset'] ) ) ? sanitize_text_field( wp_unslash( $_POST['offset'] ) ) : 0;
+			$posts_per_page     = ( isset( $_POST['posts_per_page'] ) ) ? absint( wp_unslash( $_POST['posts_per_page'] ) ) : 3;
+			$posts_per_page     = min( max( 1, $posts_per_page ), 100 ); // Clamp; blocks -1 and oversized values.
+			$offset             = ( isset( $_POST['offset'] ) ) ? absint( wp_unslash( $_POST['offset'] ) ) : 0;
 			$orderby            = ( isset( $_POST['orderby'] ) ) ? sanitize_text_field( wp_unslash( $_POST['orderby'] ) ) : 'date';
 			$order              = ( isset( $_POST['order'] ) ) ? sanitize_text_field( wp_unslash( $_POST['order'] ) ) : 'desc';
 			$load_more          = ( isset( $_POST['load_more'] ) ) ? sanitize_text_field( wp_unslash( $_POST['load_more'] ) ) : false;
 			$max_pages          = ( isset( $_POST['max_pages'] ) ) ? sanitize_text_field( wp_unslash( $_POST['max_pages'] ) ) : 1;
 			$current_page       = ( isset( $_POST['current_page'] ) ) ? sanitize_text_field( wp_unslash( $_POST['current_page'] ) ) : 1;
 			$widget_id          = ( isset( $_POST['widget_id'] ) ) ? sanitize_text_field( wp_unslash( $_POST['widget_id'] ) ) : '';
-			$page_id            = ( isset( $_POST['page_id'] ) ) ? sanitize_text_field( wp_unslash( $_POST['page_id'] ) ) : '';
+			$page_id            = ( isset( $_POST['page_id'] ) ) ? absint( wp_unslash( $_POST['page_id'] ) ) : 0;
 
 			if ( empty( $widget_id ) || empty( $page_id ) ) {
 				wp_send_json_error( __( 'Invalid widget ID or page ID', 'athemes-addons-for-elementor-lite' ) );
+			}
+
+			// Restrict which document a caller can load (handler is also nopriv).
+			$page_status        = get_post_status( $page_id );
+			$page_status_object = $page_status ? get_post_status_object( $page_status ) : null;
+			$page_is_public     = $page_status_object && $page_status_object->public;
+
+			if ( ! $page_is_public && ! current_user_can( 'read_post', $page_id ) ) {
+				wp_send_json_error( __( 'You are not allowed to access this content', 'athemes-addons-for-elementor-lite' ) );
 			}
 
 			// Get widget settings.
@@ -305,8 +315,13 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 					$response = wp_list_pluck( get_terms( $args ), 'name', 'term_id' );
 					break;
 				case 'user':
+					if ( ! current_user_can( 'list_users' ) ) {
+						$response = [];
+						break;
+					}
+
 					$users = [];
-	
+
 					foreach ( get_users( [ 'include' => $ids ] ) as $user ) {
 						$user_id           = $user->ID;
 						$user_name         = $user->display_name;

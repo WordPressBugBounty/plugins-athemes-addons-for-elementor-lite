@@ -1750,10 +1750,6 @@ body.athemes-addons-module-disabled .athemes-addons-module-page-link-preview svg
   font-weight: 600;
   vertical-align: middle;
 }
-.athemes-addons-toggle-switch .saved-label-emoji {
-  font-size: 20px;
-  margin-left: 5px;
-}
 .athemes-addons-toggle-switch input {
   display: none;
 }
@@ -2149,10 +2145,11 @@ body.athemes-addons-module-disabled .athemes-addons-module-page-link-preview svg
   background-color: #f0f1f6;
   padding: 10px 20px;
   border-radius: 5px;
-  max-width: 740px;
+  max-width: 800px;
 }
 .athemes-addons-tb-upgrade-notice p {
   margin: 0;
+  flex: 1;
 }
 /* Display Conditions */
 .athemes-addons-display-conditions-control-buttons {

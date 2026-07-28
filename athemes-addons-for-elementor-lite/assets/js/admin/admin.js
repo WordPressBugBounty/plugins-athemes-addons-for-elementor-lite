@@ -7,12 +7,14 @@
 	var athemes_addons_elementor = athemes_addons_elementor || {};
 	$(document).ready(function () {
 
-		$('.athemes-addons-module-page-button-action-activate, .athemes-addons-module-page-button-action-deactivate').on('click', function (e) {
-			var $button = $(this);
-			var isActivate = $button.hasClass('athemes-addons-module-page-button-action-activate');
-		
-			$button.toggleClass('athemes-addons-module-page-button-action-activate athemes-addons-module-page-button-action-deactivate');
-		
+		$('.athemes-addons-toggle-switch .toggle-switch-checkbox').on('change', function (e) {
+			var $checkbox = $(this);
+			var $button = $checkbox.closest('.athemes-addons-toggle-switch');
+			var isActivate = $checkbox.is(':checked');
+
+			$button.toggleClass('athemes-addons-module-page-button-action-deactivate', isActivate);
+			$button.toggleClass('athemes-addons-module-page-button-action-activate', !isActivate);
+
 			setTimeout(() => {
 				$button.find('.saved-label').css('opacity', '1');
 				setTimeout(() => {
@@ -262,7 +264,46 @@
 					console.error(error);
 				}
 			});
-		});	
+		});
+
+		// AI Abilities mode (off/read/write). Saves immediately via a
+		// dedicated handler, separate from the generic aafe-save-settings
+		// flow above.
+		var abilitiesPreviousMode = $('.athemes-addons-abilities-mode-radio').filter(':checked').val();
+
+		$(document).on('change', '.athemes-addons-abilities-mode-radio', function () {
+			var $radios      = $('.athemes-addons-abilities-mode-radio');
+			var $feedback    = $('.athemes-addons-abilities-mode-feedback');
+			var mode         = $(this).val();
+			var previousMode = abilitiesPreviousMode;
+
+			$radios.prop('disabled', true);
+			$feedback.hide();
+
+			function revertToPreviousMode() {
+				$radios.filter('[value="' + previousMode + '"]').prop('checked', true);
+				$('.athemes-addons-abilities-writes-warning').toggle('write' === previousMode);
+			}
+
+			$.post(window.athemes_addons_elementor.ajax_url, {
+				action: 'athemes_addons_abilities_mode',
+				nonce: window.athemes_addons_elementor.nonce,
+				mode: mode
+			}).done(function (response) {
+				if (!response || !response.success) {
+					$feedback.text(window.athemes_addons_elementor.failed).show();
+					revertToPreviousMode();
+				} else {
+					abilitiesPreviousMode = mode;
+					$('.athemes-addons-abilities-writes-warning').toggle('write' === mode);
+				}
+			}).fail(function () {
+				$feedback.text(window.athemes_addons_elementor.failed).show();
+				revertToPreviousMode();
+			}).always(function () {
+				$radios.prop('disabled', false);
+			});
+		});
 
 		// Multichecbox control.
 		$( '.athemes-addons-module-page-setting-field-multicheckbox' ).each(function () {

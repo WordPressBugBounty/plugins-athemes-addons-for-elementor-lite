@@ -784,7 +784,7 @@ class Table_Of_Contents extends Widget_Base {
 		// Prepare data attributes for JavaScript
 		$data_attrs = [
 			'heading-types' => ! empty( $settings['heading_types'] ) ? implode( ',', $settings['heading_types'] ) : 'h1,h2,h3,h4',
-			'container-selector' => $settings['container_selector'],
+			'container-selector' => str_replace( array( '<', '>' ), '', $settings['container_selector'] ),
 			'exclude-classes' => $settings['exclude_classes'],
 			'max-nesting-level' => $settings['max_nesting_level'],
 		];

@@ -840,7 +840,7 @@ class WPForms extends Widget_Base {
 
 				<?php 
 				if ( !empty( $settings['contact_forms'] ) ) {
-					echo do_shortcode( '[wpforms id="' . $settings['contact_forms'] . '"]' );
+					echo do_shortcode( '[wpforms id="' . absint( $settings['contact_forms'] ) . '"]' );
 				}
 				?>
 			</div>

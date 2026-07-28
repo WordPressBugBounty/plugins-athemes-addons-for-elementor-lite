@@ -3,7 +3,6 @@ namespace aThemes_Addons\Widgets;
 
 use Elementor\Plugin;
 use Elementor\Controls_Manager;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
@@ -151,7 +150,7 @@ class Events_Calendar extends Widget_Base {
 				'type'          => Controls_Manager::TEXT,
 				'description' => sprintf(
 					/* translators: %s: link to the documentation */
-					__( 'Learn how to obtain your API key %s.', 'athemes-addons-for-elementor-lite' ),
+					__( 'Learn how to obtain your API key %s. This key is exposed in the public page source, so restrict it to your domain (HTTP referrer) in the Google Cloud Console.', 'athemes-addons-for-elementor-lite' ),
 					sprintf('<a href="%s" target="_blank">%s</a>', 'https://docs.athemes.com/calendar-id-api-key/#key', __('here', 'athemes-addons-for-elementor-lite'))
 				),
 			]

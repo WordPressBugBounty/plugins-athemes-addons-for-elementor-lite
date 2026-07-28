@@ -9,7 +9,7 @@
         var iconType            = $progressBar.find('.aafe-progress-wrapper').data('icon');
         var duration            = 2000;
 
-        elementorFrontend.waypoint($progressBar, function() {
+        var animateProgress = function() {
             if ( layout === 'circle' ) {
 				$progressBar.find( '.aafe-progress-circle' ).animate({
 					'--progress': value
@@ -18,7 +18,7 @@
 					easing: 'linear',
 					step: function(now) {
 						$progressBar.find('.aafe-progress-circle').css('--progress', now);
-                        progressPercentage.text(Math.round(now) + '%'); 
+                        progressPercentage.text(Math.round(now) + '%');
 					}
 				});
             } else if (layout === 'line') {
@@ -29,12 +29,29 @@
                     easing: 'linear',
                     step: function(now, fx) {
                         var percent = (fx.pos * value);
-                        progressPercentage.text(Math.round(percent) + '%'); 
+                        progressPercentage.text(Math.round(percent) + '%');
                     }
                 });
             }
+        };
 
-        });
+        var progressBarEl = $progressBar[0];
+
+        if ( progressBarEl && 'IntersectionObserver' in window ) {
+            var observer = new IntersectionObserver(function(entries, obs) {
+                entries.forEach(function(entry) {
+                    if ( entry.isIntersecting ) {
+                        animateProgress();
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(progressBarEl);
+        } else {
+            // Fallback for environments without IntersectionObserver.
+            animateProgress();
+        }
 
         if ( 'lottie' === iconType ) {
             var $lottie = $progressBar.find('.aafe-lottie');

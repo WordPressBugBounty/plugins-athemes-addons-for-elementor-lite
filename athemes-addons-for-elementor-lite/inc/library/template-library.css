@@ -37,8 +37,33 @@
 
 #athemes-addons-templateLibrary-toolbar-search,
 #athemes-addons-templateLibrary-toolbar-filter {
-	position: relative; 
+	position: relative;
 	width: 200px;
+}
+
+#athemes-addons-templateLibrary-toolbar-filter-pro {
+	position: relative;
+	width: 160px;
+}
+
+#athemes-addons-templateLibrary-filter-pro {
+	display: block;
+	width: 100%;
+	height: 30px;
+	padding: 8px 15px 8px 0;
+	border: none;
+	border-bottom: 1px solid #d5dadf;
+	border-radius: 0;
+	background: transparent;
+	text-transform: uppercase;
+	font-size: 11px;
+	line-height: 1.4;
+	cursor: pointer;
+}
+
+#athemes-addons-templateLibrary-filter-pro:focus {
+	outline: none;
+	box-shadow: none;
 }
 
 #athemes-addons-templateLibrary-toolbar-search i,
