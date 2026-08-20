@@ -1288,49 +1288,163 @@ function athemes_addons_get_mailchimp_lists() {
 }
 
 /**
+ * Get a Merchant module instance from Merchant's own container.
+ *
+ * Module constructors register hooks, so never instantiate them directly.
+ *
+ * @param string $class_name Module class name.
+ * @param string $module_id  Fallback ID when the class exposes no MODULE_ID.
+ *
+ * @return object|null
+ */
+function athemes_addons_get_merchant_module( $class_name, $module_id ) {
+	if ( ! class_exists( $class_name ) || ! class_exists( 'Merchant_Modules' ) ) {
+		return null;
+	}
+
+	if ( ! method_exists( 'Merchant_Modules', 'get_module' ) ) {
+		return null;
+	}
+
+	// Merchant registers its modules on `init`.
+	if ( ! did_action( 'init' ) ) {
+		return null;
+	}
+
+	if ( defined( $class_name . '::MODULE_ID' ) ) {
+		$module_id = constant( $class_name . '::MODULE_ID' );
+	}
+
+	// Merchant 2.2.x reads its container without an isset() check.
+	$module = @Merchant_Modules::get_module( $module_id ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+
+	return is_object( $module ) ? $module : null;
+}
+
+/**
+ * Render the Merchant buy now button.
+ */
+function athemes_addons_render_merchant_buy_now() {
+	$module = athemes_addons_get_merchant_module( 'Merchant_Buy_Now', 'buy-now' );
+
+	if ( null === $module ) {
+		return;
+	}
+
+	// Both Merchant button renderers dereference the global product unchecked.
+	global $product;
+
+	if ( ! $product instanceof WC_Product ) {
+		return;
+	}
+
+	// Merchant 2.3+ moved the button markup into a dedicated renderer.
+	if ( method_exists( $module, 'get_button_renderer' ) ) {
+		$renderer = $module->get_button_renderer();
+
+		// Null while the module is inactive or not rendering on the frontend.
+		if ( is_object( $renderer ) && method_exists( $renderer, 'shop_archive_button' ) ) {
+			$renderer->shop_archive_button();
+		}
+
+		return;
+	}
+
+	// Merchant 2.2.x and older.
+	if ( method_exists( $module, 'shop_archive_product_buy_now_button' ) ) {
+		$module->shop_archive_product_buy_now_button();
+	}
+}
+
+/**
+ * Render the Merchant quick view button.
+ */
+function athemes_addons_render_merchant_quick_view() {
+	$module = athemes_addons_get_merchant_module( 'Merchant_Quick_View', 'quick-view' );
+
+	if ( null === $module || ! method_exists( $module, 'quick_view_button' ) ) {
+		return;
+	}
+
+	// Merchant prints the shared modal once on wp_footer and the grid has no
+	// replacement markup, so the modal hook is deliberately left in place.
+	$module->quick_view_button();
+}
+
+/**
+ * Render the Merchant Pro wishlist button.
+ */
+function athemes_addons_render_merchant_wishlist() {
+	static $wishlist = false;
+
+	if ( ! function_exists( 'wc_get_product' ) ) {
+		return;
+	}
+
+	// Merchant Pro keeps no retrievable instance, so build one per request.
+	if ( false === $wishlist ) {
+		$wishlist = null;
+
+		$module = athemes_addons_get_merchant_module( 'Merchant_Wishlist', 'wishlist' );
+
+		if ( class_exists( 'Merchant_Pro_Wishlist' ) && null !== $module ) {
+			$wishlist = new Merchant_Pro_Wishlist( $module );
+		}
+	}
+
+	if ( ! is_object( $wishlist ) || ! method_exists( $wishlist, 'wishlist_button' ) ) {
+		return;
+	}
+
+	wp_enqueue_style( 'merchant-wishlist-button' );
+
+	if ( defined( 'MERCHANT_PRO_URI' ) && defined( 'MERCHANT_PRO_VERSION' ) ) {
+		wp_enqueue_script( 'merchant-wishlist-button', MERCHANT_PRO_URI . 'assets/js/modules/wishlist/wishlist-button.min.js', array(), MERCHANT_PRO_VERSION, true );
+	}
+
+	$wishlist->wishlist_button( wc_get_product( get_the_ID() ) );
+}
+
+/**
+ * Render the Merchant Pro product swatches.
+ */
+function athemes_addons_render_merchant_product_swatches() {
+	if ( ! class_exists( 'Merchant_Pro_Product_Swatches' ) || ! method_exists( 'Merchant_Pro_Product_Swatches', 'product_swatch_on_shop_catalog' ) ) {
+		return;
+	}
+
+	// The swatch renderer dereferences the global product without checking it.
+	global $product;
+
+	if ( ! $product instanceof WC_Product ) {
+		return;
+	}
+
+	add_filter( 'merchant_product_swatch_shop_catalog_add_to_cart_button_html', '__return_empty_string' );
+
+	Merchant_Pro_Product_Swatches::product_swatch_on_shop_catalog();
+}
+
+/**
  * Render third-party elements
  */
 function athemes_addons_render_element( $element ) {
-	
+
 	switch ( $element ) {
 		case 'merchant_buy_now':
-			if ( class_exists( 'Merchant_Buy_Now' ) ) {
-				$buy_now = new Merchant_Buy_Now();
-				$buy_now->shop_archive_product_buy_now_button();
-			}
-
+			athemes_addons_render_merchant_buy_now();
 			break;
 
 		case 'merchant_quick_view':
-			if ( class_exists( 'Merchant_Quick_View' ) ) {
-				$quick_view = new Merchant_Quick_View();
-
-				$quick_view->quick_view_button();
-				
-				remove_action( 'wp_footer', array( $quick_view, 'modal_output' ) );
-			}
+			athemes_addons_render_merchant_quick_view();
 			break;
 
 		case 'merchant_wishlist':
-			if ( class_exists( 'Merchant_Pro_Wishlist' ) ) {
-
-				$wishlist = new Merchant_Pro_Wishlist( Merchant_Modules::get_module( Merchant_Wishlist::MODULE_ID ) );
-
-				wp_enqueue_style( 'merchant-wishlist-button' );
-
-				wp_enqueue_script( 'merchant-wishlist-button', MERCHANT_PRO_URI . 'assets/js/modules/wishlist/wishlist-button.min.js', array(), MERCHANT_PRO_VERSION, true );
-
-				$product = wc_get_product( get_the_ID() );
-
-				$wishlist->wishlist_button( $product );
-			}
+			athemes_addons_render_merchant_wishlist();
 			break;
 
 		case 'merchant_product_swatches':
-			if ( class_exists( 'Merchant_Pro_Product_Swatches' ) ) {
-				add_filter( 'merchant_product_swatch_shop_catalog_add_to_cart_button_html', '__return_empty_string' );
-				Merchant_Pro_Product_Swatches::product_swatch_on_shop_catalog();
-			}
+			athemes_addons_render_merchant_product_swatches();
 			break;
 	}
 }

@@ -3,7 +3,7 @@ Tags: elementor, elementor addons, elementor widgets, form styler, page builder
 Requires at least: 5.5
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 Contributors: aThemes
 License: GPLv3 or later License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -175,6 +175,10 @@ No. You can enable and customize every widget and extension visually in the Elem
 == Screenshots ==
 
 == Changelog ==
+
+= 1.2.1 =
+* Fixed a fatal error in the Woo Product Grid widget when the Buy Now module of Merchant 2.3.1 or newer is enabled
+* Fixed duplicate Merchant buttons in the Woo Product Grid
 
 = 1.2.0 =
 * Added AI Abilities, letting assistants read and build Elementor pages through the WordPress Abilities API (off by default)
