@@ -17,10 +17,6 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 		 */
 		public function __construct() {
 
-			// Mailchimp subscribe.
-			add_action( 'wp_ajax_aafe_mailchimp_subscribe', array( $this, 'mailchimp_subscribe' ) );
-			add_action( 'wp_ajax_nopriv_aafe_mailchimp_subscribe', array( $this, 'mailchimp_subscribe' ) );
-
 			//Product filter.
 			add_action( 'wp_ajax_aafe_product_filter', array( $this, 'product_filter' ) );
 			add_action( 'wp_ajax_nopriv_aafe_product_filter', array( $this, 'product_filter' ) );
@@ -28,70 +24,6 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 			//Select 2.
 			add_action( 'wp_ajax_aafe_posts_filter_autocomplete', [ $this, 'posts_filter_autocomplete' ] );
 			add_action( 'wp_ajax_aafe_get_posts_value_titles', [ $this, 'get_posts_value_titles' ] );
-		}
-
-		/**
-		 * Mailchimp subscribe.
-		 */
-		public function mailchimp_subscribe() {
-			$api_key = get_option( 'athemes-addons-settings' )['aafe_mailchimp_api_key'];
-
-			if ( empty( $api_key ) ) {
-				wp_send_json_error( __( 'Mailchimp API key is not set', 'athemes-addons-for-elementor-lite' ) );
-			}
-
-			check_ajax_referer( 'aafe-mailchimp-nonce', 'nonce' );
-
-			if ( !isset($_POST['fields'] ) ) {
-				return;
-			}
-		
-			$list_id    = ( isset( $_POST['listId'] ) ) ? sanitize_text_field( wp_unslash( $_POST['listId'] ) ) : '';
-			$fields     = isset( $_POST['fields'] ) ? urldecode( wp_unslash($_POST['fields'])  ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- fields sanitized below
-
-			parse_str( $fields, $settings);
-			
-			$merge_fields = array(
-				'FNAME' => !empty($settings['aafe-mailchimp-fname']) ? sanitize_text_field($settings['aafe-mailchimp-fname']) : '',
-				'LNAME' => !empty($settings['aafe-mailchimp-lname']) ? sanitize_text_field($settings['aafe-mailchimp-lname']) : '',
-			);
-		
-			$body_params = array(
-				'email_address' => $settings['aafe-mailchimp-email'],
-				'status'        => 'subscribed',
-				'merge_fields'  => $merge_fields,
-			);
-		
-			$response = wp_remote_post(
-				'https://' . substr($api_key, strpos(
-					$api_key,
-					'-'
-				) + 1) . '.api.mailchimp.com/3.0/lists/' . $list_id . '/members/' . md5(strtolower($settings['aafe-mailchimp-email'])),
-				[
-					'method' => 'PUT',
-					'headers' => [
-						'Content-Type' => 'application/json',
-						'Authorization' => 'Basic ' . base64_encode('user:' . $api_key), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
-					],
-					'body' => wp_json_encode( $body_params ),
-				]
-			);
-		
-			if (!is_wp_error($response)) {
-				$response = json_decode(wp_remote_retrieve_body($response));
-		
-				if (!empty($response)) {
-					if ( $response->status === 'subscribed' ) {
-						wp_send_json([
-							'status' => 'subscribed',
-						]);
-					} else {
-						wp_send_json([
-							'status' => $response->title,
-						]);
-					}
-				}
-			}
 		}
 
 		/**
@@ -136,6 +68,7 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 			
 			$query_args = array(
 				'post_type'         => 'product',
+				'post_status'       => 'publish',
 				'posts_per_page'    => $posts_per_page,
 				'offset'            => $offset,
 				'orderby'           => $orderby,
@@ -204,9 +137,9 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 					include ATHEMES_AFE_DIR . 'inc/modules/widgets/woo-product-grid/templates/product-template-' . $settings['product_template'] . '.php';
 					$content .= ob_get_clean();
 
-					$content .= '<span class="maxpages" data-maxpages="' . esc_attr( $max_pages ) . '"></span>';
-
 				}
+
+				$content .= '<span class="maxpages" data-maxpages="' . esc_attr( $max_pages ) . '"></span>';
 			}
 			
 			printf( '%s', $content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -219,6 +152,10 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 		public function posts_filter_autocomplete() {
 
 			check_ajax_referer( 'aafe-posts-widget-nonce', 'nonce' );
+
+			if ( ! current_user_can( 'edit_posts' ) ) {
+				wp_send_json_error( array(), 403 );
+			}
 
 			$post_type   = 'post';
 			$source_name = 'post_type';
@@ -243,8 +180,12 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 						'number'     => '5',
 					];
 	
-					if ( $post_type !== 'all' ) {
+					if ( 'all' === $post_type ) {
+						$args['taxonomy'] = aThemes_Addons_Helper::get_queryable_taxonomies();
+					} elseif ( taxonomy_exists( $post_type ) && is_taxonomy_viewable( $post_type ) ) {
 						$args['taxonomy'] = $post_type;
+					} else {
+						wp_send_json( [ 'results' => [] ] );
 					}
 	
 					$post_list = wp_list_pluck( get_terms( $args ), 'name', 'term_id' );
@@ -266,6 +207,10 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 					$post_list = $users;
 					break;
 				default:
+					if ( ! aThemes_Addons_Helper::is_queryable_post_type( $post_type ) ) {
+						wp_send_json( [ 'results' => [] ] );
+					}
+
 					$post_info = get_posts( [
 						'post_type'      => $post_type,
 						's'              => $search,
@@ -289,6 +234,10 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 
 			check_ajax_referer( 'aafe-posts-widget-nonce', 'nonce' );
 
+			if ( ! current_user_can( 'edit_posts' ) ) {
+				wp_send_json_error( array(), 403 );
+			}
+
 			if ( empty( $_POST['id'] ) ) {
 				wp_send_json_error( [] );
 			}
@@ -308,8 +257,14 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 						'include'    => implode( ',', $ids ),
 					];
 	
-					if ( isset( $_POST['post_type'] ) && $_POST['post_type'] !== 'all' ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-						$args['taxonomy'] = sanitize_text_field( wp_unslash( $_POST['post_type'] ) );
+					$taxonomy = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'all';
+
+					if ( 'all' === $taxonomy ) {
+						$args['taxonomy'] = aThemes_Addons_Helper::get_queryable_taxonomies();
+					} elseif ( taxonomy_exists( $taxonomy ) && is_taxonomy_viewable( $taxonomy ) ) {
+						$args['taxonomy'] = $taxonomy;
+					} else {
+						wp_send_json_error( [] );
 					}
 	
 					$response = wp_list_pluck( get_terms( $args ), 'name', 'term_id' );
@@ -332,6 +287,11 @@ if ( ! class_exists( 'aThemes_Addons_Ajax_Callbacks' ) ) {
 					break;
 				default:
 					$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'post';
+
+					if ( ! aThemes_Addons_Helper::is_queryable_post_type( $post_type ) ) {
+						wp_send_json_error( [] );
+					}
+
 					$post_info = get_posts( [
 						'post_type' => $post_type,
 						'include'   => implode( ',', $ids ),

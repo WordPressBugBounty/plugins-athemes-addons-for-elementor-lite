@@ -14,6 +14,10 @@ use Elementor\Icons_Manager;
 use Elementor\Control_Media;
 use aThemes_Addons\Traits\Upsell_Section_Trait;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Table widget.
  *
@@ -1701,7 +1705,7 @@ class Table extends Widget_Base {
 						} elseif ( 'wywiwyg' === $content['cell_content_type'] ) {
 							echo wp_kses_post( $content['cell_wysiwyg'] );
 						} elseif ( 'template' === $content['cell_content_type'] ) {
-							echo Plugin::instance()->frontend->get_builder_content_for_display( $content['cell_template'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							if ( \aThemes_Addons_Helper::is_renderable_template( $content['cell_template'] ) ) { echo Plugin::instance()->frontend->get_builder_content_for_display( absint( $content['cell_template'] ) ); } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						}
 						?>
 					</<?php echo tag_escape( $cell_tag ); ?>>

@@ -455,7 +455,8 @@
                 escapeHtml(text) {
             const div = document.createElement('div');
             div.textContent = text;
-            return div.innerHTML;
+            // innerHTML leaves quotes as-is; escape them for attribute use.
+            return div.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
         }
 
                 /**

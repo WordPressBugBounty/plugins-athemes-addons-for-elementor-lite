@@ -383,19 +383,25 @@ class aThemes_Addons_Abilities_Pages {
 			$limit = 100; // Clamp: keep responses bounded regardless of caller input.
 		}
 
-		$query = new WP_Query(
-			array(
-				'post_type'      => 'any' === $post_type ? array( 'page', 'post' ) : $post_type,
-				'post_status'    => array( 'publish', 'future', 'draft', 'pending', 'private' ),
-				'meta_key'       => '_elementor_edit_mode', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
-				'meta_value'     => 'builder', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
-				's'              => $search,
-				'orderby'        => 'modified',
-				'order'          => 'DESC',
-				'posts_per_page' => $limit,
-				'no_found_rows'  => false,
-			)
+		$query_args = array(
+			'post_type'      => 'any' === $post_type ? array( 'page', 'post' ) : $post_type,
+			'post_status'    => array( 'publish', 'future', 'draft', 'pending', 'private' ),
+			'meta_key'       => '_elementor_edit_mode', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			'meta_value'     => 'builder', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			's'              => $search,
+			'orderby'        => 'modified',
+			'order'          => 'DESC',
+			'posts_per_page' => $limit,
+			'no_found_rows'  => false,
 		);
+
+		// perm=editable on several post types checks a capability no role has, so it is
+		// only used for a single type. Rows are filtered by edit_post below either way.
+		if ( 'any' !== $post_type ) {
+			$query_args['perm'] = 'editable';
+		}
+
+		$query = new WP_Query( $query_args );
 
 		$pages = array();
 		foreach ( $query->posts as $post ) {
@@ -417,7 +423,7 @@ class aThemes_Addons_Abilities_Pages {
 			'Pages listed. Use an id as post_id in get-page-elements or insert-widget.',
 			array(
 				'pages' => $pages,
-				'total' => $query->found_posts,
+				'total' => count( $pages ),
 			)
 		);
 	}

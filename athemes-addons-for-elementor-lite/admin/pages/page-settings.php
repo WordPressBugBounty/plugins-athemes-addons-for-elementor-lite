@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	Admin_Settings::create( array(
 		'title'     => __( 'Duplicator Post Types', 'athemes-addons-for-elementor-lite' ),
-		'subtitle'  => __( 'Select the post types you want enable the duplicator for.', 'athemes-addons-for-elementor-lite' ),
+		'subtitle'  => __( 'Select the post types you want to enable the duplicator for.', 'athemes-addons-for-elementor-lite' ),
 		'fields'    => array(
 			array(
 				'id'      => 'aafe_duplicator_post_types',
@@ -66,14 +66,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		) );
 	}
 
-	Admin_Settings::save_button();
-
 	/**
 	 * AI Abilities card.
 	 *
 	 * The off/read/write radio saves immediately through its own AJAX
 	 * handler (see Admin_Settings::ajax_abilities_mode()) instead of the
-	 * generic aafe-save-settings flow above, so it is rendered as a bespoke
+	 * generic aafe-save-settings flow, so it is rendered as a bespoke
 	 * block rather than through Admin_Settings::create(). Current state is
 	 * read straight from the gate class (not the generic settings option)
 	 * so the card always reflects what's actually registered.
@@ -88,7 +86,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'write' => __( 'Read & write', 'athemes-addons-for-elementor-lite' ),
 	);
 
-	// Vibe AI plugin (the external MCP bridge). Status drives the install/activate button.
+	// WPVibe plugin (the external MCP bridge). Status drives the install/activate button.
 	$aafe_vibe_ai_path         = 'vibe-ai/vibe-ai.php';
 	$aafe_vibe_ai_can_install  = current_user_can( 'install_plugins' );
 	$aafe_vibe_ai_status       = $aafe_vibe_ai_can_install ? \aThemes_Addons_Plugin_Installer::get_plugin_status( $aafe_vibe_ai_path ) : 'not_installed';
@@ -105,7 +103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 			</div>
 
-			<div class="athemes-addons-module-page-setting-fields" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+			<div class="athemes-addons-module-page-setting-fields">
 				<div class="athemes-addons-module-page-setting-field athemes-addons-module-page-setting-field-radio">
 					<div>
 						<?php foreach ( $aafe_abilities_modes as $aafe_mode_value => $aafe_mode_label ) : ?>
@@ -123,49 +121,56 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 					<span class="athemes-addons-abilities-mode-feedback" style="display:none;"></span>
 				</div>
-
-				<?php if ( $aafe_vibe_ai_can_install ) : ?>
-					<div class="athemes-addons-module-page-setting-field-vibe-ai">
-						<?php if ( 'active' === $aafe_vibe_ai_status ) : ?>
-							<span class="athemes-addons-vibe-ai-active">
-								<?php esc_html_e( 'Vibe AI active', 'athemes-addons-for-elementor-lite' ); ?>
-								&mdash;
-								<a href="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"><?php esc_html_e( 'Manage', 'athemes-addons-for-elementor-lite' ); ?></a>
-							</span>
-						<?php elseif ( 'inactive' === $aafe_vibe_ai_status ) : ?>
-							<a
-								href="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"
-								class="button button-secondary addons-install-plugin"
-								data-type="wporg"
-								data-plugin-slug="vibe-ai"
-								data-plugin-name="<?php echo esc_attr( $aafe_vibe_ai_path ); ?>"
-								data-redirect-to="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"
-							>
-								<?php esc_html_e( 'Activate Vibe AI', 'athemes-addons-for-elementor-lite' ); ?>
-							</a>
-						<?php else : ?>
-							<a
-								href="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"
-								class="button button-secondary addons-install-plugin"
-								data-type="wporg"
-								data-plugin-slug="vibe-ai"
-								data-plugin-name="<?php echo esc_attr( $aafe_vibe_ai_path ); ?>"
-								data-redirect-to="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"
-							>
-								<?php esc_html_e( 'Install Vibe AI', 'athemes-addons-for-elementor-lite' ); ?>
-							</a>
-						<?php endif; ?>
-					</div>
-				<?php endif; ?>
-			</div>
-
-			<div class="athemes-addons-abilities-writes-warning notice notice-warning inline" style="margin: 12px 0 0; padding: 10px 14px;<?php echo ( 'write' === $aafe_abilities_mode ) ? '' : ' display:none;'; ?>">
-				<p style="margin: 0;">
-					<?php esc_html_e( 'Write access is enabled: any AI client connected over REST or MCP that a logged-in admin authorizes can modify widget settings, theme-builder templates, and Elementor pages on this site.', 'athemes-addons-for-elementor-lite' ); ?>
-				</p>
 			</div>
 
 		</div>
+
+		<?php if ( $aafe_vibe_ai_can_install ) : ?>
+			<div class="athemes-addons-abilities-wpvibe">
+				<p class="athemes-addons-abilities-wpvibe-text">
+					<?php
+					printf(
+						/* translators: %1$s, %2$s and %3$s are the Claude, ChatGPT and Cursor logos, each shown immediately before the name it belongs to. */
+						esc_html__( 'Install WPVibe to expose these abilities over MCP, so clients like %1$sClaude, %2$sChatGPT, and %3$sCursor can connect.', 'athemes-addons-for-elementor-lite' ),
+						athemes_addons_brand_icon( 'claude' ),  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in athemes_addons_brand_icon().
+						athemes_addons_brand_icon( 'chatgpt' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in athemes_addons_brand_icon().
+						athemes_addons_brand_icon( 'cursor' )   // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in athemes_addons_brand_icon().
+					);
+					?>
+				</p>
+				<div class="athemes-addons-module-page-setting-field-vibe-ai">
+					<?php if ( 'active' === $aafe_vibe_ai_status ) : ?>
+						<a href="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>" class="button button-primary">
+							<?php esc_html_e( 'Go to WPVibe Settings', 'athemes-addons-for-elementor-lite' ); ?>
+						</a>
+					<?php elseif ( 'inactive' === $aafe_vibe_ai_status ) : ?>
+						<a
+							href="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"
+							class="button button-primary addons-install-plugin"
+							data-type="wporg"
+							data-plugin-slug="vibe-ai"
+							data-plugin-name="<?php echo esc_attr( $aafe_vibe_ai_path ); ?>"
+							data-redirect-to="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"
+						>
+							<?php esc_html_e( 'Activate WPVibe', 'athemes-addons-for-elementor-lite' ); ?>
+						</a>
+					<?php else : ?>
+						<a
+							href="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"
+							class="button button-primary addons-install-plugin"
+							data-type="wporg"
+							data-plugin-slug="vibe-ai"
+							data-plugin-name="<?php echo esc_attr( $aafe_vibe_ai_path ); ?>"
+							data-redirect-to="<?php echo esc_url( $aafe_vibe_ai_settings_url ); ?>"
+						>
+							<?php esc_html_e( 'Install WPVibe', 'athemes-addons-for-elementor-lite' ); ?>
+						</a>
+					<?php endif; ?>
+				</div>
+			</div>
+		<?php endif; ?>
 	</div>
+
+	<?php Admin_Settings::save_button(); ?>
 
 </div>

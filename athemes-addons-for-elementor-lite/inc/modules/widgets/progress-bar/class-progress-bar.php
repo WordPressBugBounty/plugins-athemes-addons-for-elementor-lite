@@ -16,6 +16,10 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
 use aThemes_Addons\Traits\Upsell_Section_Trait;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Progress bar widget.
  *

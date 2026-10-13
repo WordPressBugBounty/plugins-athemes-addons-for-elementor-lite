@@ -111,7 +111,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<img class="athemes-addons-templateLibrary-template-thumbnail" src="{{ thumbnail }}">
 		<div class="athemes-addons-templateLibrary-template-title">
-			<span>{{{ title }}}</span>
+			<span>{{ title }}</span>
 		</div>
 	</div>
 	{{{ aafe.library.getModal().proLabel( obj ) }}}

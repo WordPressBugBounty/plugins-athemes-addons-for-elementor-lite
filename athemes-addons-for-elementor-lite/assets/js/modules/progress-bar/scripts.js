@@ -61,6 +61,7 @@
                 renderer: 'svg',
                 loop: true,
                 path: $lottie.data('json-url'),
+                rendererSettings: { runExpressions: false },
             });
 
             animation.play();

@@ -1,9 +1,9 @@
-=== aThemes Addons for Elementor - Widgets, Sliders, Galleries & Form Styler ===
+=== aThemes Addons for Elementor - Widgets & Elementor Addons ===
 Tags: elementor, elementor addons, elementor widgets, form styler, page builder
-Requires at least: 5.5
-Tested up to: 6.9
-Requires PHP: 5.6
-Stable tag: 1.2.1
+Requires at least: 6.5
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 1.2.2
 Contributors: aThemes
 License: GPLv3 or later License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -175,6 +175,14 @@ No. You can enable and customize every widget and extension visually in the Elem
 == Screenshots ==
 
 == Changelog ==
+
+= 1.2.2 =
+* Improved the dashboard: header, widget cards and bulk actions
+* Removed the Patcher page
+* Fixed admin settings showing "Saved!" without checking the server response
+* Fixed the admin menu icon color and alignment
+* Fixed a PHP warning in the Contact Form 7 widget when the form title is missing
+* Fixed a PHP warning from the Service Box widget when aThemes Addons Pro is inactive
 
 = 1.2.1 =
 * Fixed a fatal error in the Woo Product Grid widget when the Buy Now module of Merchant 2.3.1 or newer is enabled

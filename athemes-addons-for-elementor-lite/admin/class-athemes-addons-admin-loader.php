@@ -49,6 +49,7 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 			require_once ATHEMES_AFE_DIR . 'admin/classes/class-athemes-addons-admin-settings.php';
 			require_once ATHEMES_AFE_DIR . 'admin/classes/class-athemes-addons-admin-notices.php';
 			require_once ATHEMES_AFE_DIR . 'admin/classes/class-athemes-addons-review-notice.php';
+			require_once ATHEMES_AFE_DIR . 'admin/classes/class-athemes-addons-patcher-eol-notice.php';
 			require_once ATHEMES_AFE_DIR . 'admin/helpers.php';
 
 			// Theme Builder.
@@ -67,7 +68,7 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 			
 			$page = ( ! empty( $_GET['page'] ) ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
-			if ( ! empty( $page ) && false !== strpos( $page, 'athemes-addons' ) ) {
+			if ( ! empty( $page ) && false !== strpos( $page, 'athemes-addons' ) && current_user_can( 'manage_options' ) ) {
 
 
 				wp_enqueue_style( 'athemes-addons-admin', ATHEMES_AFE_URI . 'assets/css/admin/admin.min.css', array(), ATHEMES_AFE_VERSION );
@@ -78,10 +79,13 @@ if ( ! class_exists( 'Admin_Loader' ) ) {
 					'nonce'    => wp_create_nonce( 'athemes-addons-elementor' ),
 					'ajax_url' => admin_url( 'admin-ajax.php' ),
 					'admin_url'=> admin_url(),
+					'bulk_failed' => esc_html__( 'Couldn\'t save. Reload the page and try again.', 'athemes-addons-for-elementor-lite' ),
 					'save'     => esc_html__( 'Save', 'athemes-addons-for-elementor-lite' ),
 					'saving'   => esc_html__( 'Saving...', 'athemes-addons-for-elementor-lite' ),
 					'saved'    => esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ),
 					'failed'   => esc_html__( 'Something went wrong, please try again.', 'athemes-addons-for-elementor-lite' ),
+					'save_failed' => esc_html__( 'Couldn\'t save. Reload the page and try again.', 'athemes-addons-for-elementor-lite' ),
+					'delete_failed' => esc_html__( 'Couldn\'t delete the template. Reload the page and try again.', 'athemes-addons-for-elementor-lite' ),
 					'upgrade_url' => esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/addons/', array( 'utm_source' => 'theme-builder', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'theme-builder-upgrade-js-link' ) ),
 				) );
 

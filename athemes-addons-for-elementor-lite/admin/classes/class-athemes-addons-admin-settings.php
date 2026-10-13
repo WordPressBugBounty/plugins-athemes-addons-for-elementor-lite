@@ -17,6 +17,11 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 		private static $instance = null;
 
 		/**
+		 * Keys the settings page may save (see admin/pages/page-settings.php).
+		 */
+		const ALLOWED_SETTINGS = array( 'aafe_mailchimp_api_key', 'aafe_gmaps_api_key', 'aafe_duplicator_post_types', 'usage-tracking-enabled' );
+
+		/**
 		 * Instance.
 		 */
 		public static function instance() {
@@ -52,6 +57,10 @@ if ( ! class_exists( 'Admin_Settings' ) ) {
 				$fields = ( isset( $_POST['fields'] ) ) ? wp_unslash( $_POST['fields'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized in foreach.
 		
 				foreach ( $fields as $field_id => $field_value ) {
+					if ( ! in_array( $field_id, self::ALLOWED_SETTINGS, true ) ) {
+						continue;
+					}
+
 					$sanitized_value  = isset( $field_value ) ? sanitize_text_field( wp_unslash( $field_value ) ) : '';
 
 					$options[ $field_id ] = $sanitized_value;

@@ -62,6 +62,37 @@ if ( ! class_exists( 'aThemes_Addons_Helper' ) ) {
 		}
 
 		/**
+		 * Whether a template ID is a published Theme Builder archive-item template (Posts List items).
+		 */
+		public static function is_renderable_item_template( $template_id ) {
+			$template_id = absint( $template_id );
+
+			return $template_id
+				&& 'aafe_templates' === get_post_type( $template_id )
+				&& 'publish' === get_post_status( $template_id )
+				&& 'archive-item' === get_post_meta( $template_id, '_ahf_template_type', true );
+		}
+
+		/**
+		 * Whether a post type may be listed by the editor query endpoints.
+		 * 'any' is allowed: WP_Query already skips types excluded from search.
+		 */
+		public static function is_queryable_post_type( $post_type ) {
+			if ( 'any' === $post_type ) {
+				return true;
+			}
+
+			return is_string( $post_type ) && post_type_exists( $post_type ) && is_post_type_viewable( $post_type );
+		}
+
+		/**
+		 * Publicly viewable taxonomies.
+		 */
+		public static function get_queryable_taxonomies() {
+			return array_values( array_filter( get_taxonomies(), 'is_taxonomy_viewable' ) );
+		}
+
+		/**
 		 * Find an element in the elements data.
 		 */
 		public static function find_element_recursive( $elements, $element_id ) {

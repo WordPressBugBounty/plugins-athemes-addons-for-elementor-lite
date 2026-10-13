@@ -51,6 +51,15 @@ $aafe_dashboard_tabs = $this->dashboard_tabs();
 			</a>
 		</div>
 		<div class="athemes-addons-top-bar-info-item">
+			<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/support/', array(), 'dashboard-support-link' ) ); ?>" class="athemes-addons-top-bar-link" target="_blank"><?php esc_html_e( 'Get help', 'athemes-addons-for-elementor-lite' ); ?></a>
+		</div>
+		<div class="athemes-addons-top-bar-info-item">
+			<a href="https://wordpress.org/support/plugin/athemes-addons-for-elementor-lite/reviews/?filter=5#new-post" class="athemes-addons-top-bar-link" target="_blank"><?php esc_html_e( 'Leave a review', 'athemes-addons-for-elementor-lite' ); ?></a>
+		</div>
+		<div class="athemes-addons-top-bar-info-item">
+			<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/feature-request/', array(), 'dashboard-feature-request-link' ) ); ?>" class="athemes-addons-top-bar-link" target="_blank"><?php esc_html_e( 'Have an idea?', 'athemes-addons-for-elementor-lite' ); ?></a>
+		</div>
+		<div class="athemes-addons-top-bar-info-item">
 			<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/addons', array( 'utm_source' => 'plugin_dashboard', 'utm_medium' => 'athemes_addons_dashboard', 'utm_campaign' => 'aThemes_Addons' ), 'dashboard-website-link' ) ); ?>" class="athemes-addons-website" target="_blank">
 				<?php esc_html_e( 'Website', 'athemes-addons-for-elementor-lite' ); ?>
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -197,61 +206,6 @@ $aafe_dashboard_tabs = $this->dashboard_tabs();
 	}
 
 	?>
-
-	<div class="athemes-addons-modules-header">
-
-		<div class="athemes-addons-modules-header-left">
-
-			<div class="athemes-addons-modules-header-heading"><?php esc_html_e( 'Welcome To aThemes Addons for Elementor', 'athemes-addons-for-elementor-lite' ); ?> <?php esc_html_e('👋🏻', 'athemes-addons-for-elementor-lite'); ?></div>
-			
-			<div class="athemes-addons-modules-header-subheading"><?php esc_html_e( 'We’re glad to see you :)', 'athemes-addons-for-elementor-lite' ); ?></div>
-		</div>
-
-		<div class="athemes-addons-modules-header-right">
-
-			<ul class="athemes-addons-modules-header-shortlinks">
-
-				<li class="athemes-addons-modules-header-shortlinks-get-help">
-					<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/support/', array(), 'dashboard-support-link' ) ); ?>" target="_blank">
-
-						<span><?php esc_html_e( 'Get', 'athemes-addons-for-elementor-lite' ); ?> <strong><?php esc_html_e( 'help and support', 'athemes-addons-for-elementor-lite' ); ?></strong></span>
-
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M10.8626 8.04102L14.2809 12.0291L10.8626 16.0172L9.72363 15.041L12.3053 12.0291L9.72363 9.01721L10.8626 8.04102Z" fill="#757575"/>
-						</svg>
-
-					</a>
-				</li>
-
-				<li class="athemes-addons-modules-header-shortlinks-leave-review">
-					<a href="https://wordpress.org/support/plugin/athemes-addons-for-elementor-lite/reviews/?filter=5#new-post">
-
-						<span><?php esc_html_e( 'Leave a', 'athemes-addons-for-elementor-lite' ); ?> <strong><?php esc_html_e( 'review', 'athemes-addons-for-elementor-lite' ); ?></strong></span>
-
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M10.8626 8.04102L14.2809 12.0291L10.8626 16.0172L9.72363 15.041L12.3053 12.0291L9.72363 9.01721L10.8626 8.04102Z" fill="#757575"/>
-						</svg>
-
-					</a>
-				</li>
-
-				<li class="athemes-addons-modules-header-shortlinks-feedback">
-					<a href="<?php echo esc_url( athemes_addons_admin_upgrade_link( 'https://athemes.com/feature-request/', array(), 'dashboard-feature-request-link' ) ); ?>" target="_blank">
-
-						<span><?php esc_html_e( 'Have an', 'athemes-addons-for-elementor-lite' ); ?> <strong><?php esc_html_e( 'idea or feedback?', 'athemes-addons-for-elementor-lite' ); ?></strong></span>
-
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M10.8626 8.04102L14.2809 12.0291L10.8626 16.0172L9.72363 15.041L12.3053 12.0291L9.72363 9.01721L10.8626 8.04102Z" fill="#757575"/>
-						</svg>
-
-					</a>
-				</li>
-
-			</ul>
-
-		</div>
-
-	</div>
 
 	<div class="athemes-addons-modules-panel">		
 		<div class="athemes-addons-dashboard-tabs-nav">

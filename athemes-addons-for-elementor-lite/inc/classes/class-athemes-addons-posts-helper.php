@@ -219,9 +219,13 @@ if ( ! class_exists( 'aThemes_Addons_Posts_Helper' ) ) {
 
 			check_ajax_referer( 'aafe-posts-widget-nonce', 'nonce' );
 
+			if ( ! current_user_can( 'edit_posts' ) ) {
+				wp_send_json_error( array(), 403 );
+			}
+
 			$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : '';
 
-			if ( empty( $post_type ) ) {
+			if ( empty( $post_type ) || ! aThemes_Addons_Helper::is_queryable_post_type( $post_type ) ) {
 				wp_send_json_error( __( 'There are no posts.', 'athemes-addons-for-elementor-lite' ) );
 			}
 

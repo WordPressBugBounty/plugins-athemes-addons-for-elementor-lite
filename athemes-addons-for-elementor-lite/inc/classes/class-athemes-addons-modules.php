@@ -42,6 +42,7 @@ if ( ! class_exists( 'aThemes_Addons_Modules' ) ) {
 		public function __construct() {
 			add_action( 'wp_ajax_athemes_addons_module_activate', array( $this, 'activate_module' ) );
 			add_action( 'wp_ajax_athemes_addons_module_deactivate', array( $this, 'deactivate_module' ) );
+			add_action( 'wp_ajax_athemes_addons_modules_bulk', array( $this, 'bulk_modules' ) );
 			add_action( 'wp_ajax_athemes_addons_module_feedback', array( $this, 'feedback_module' ) );
 		}
 
@@ -97,6 +98,49 @@ if ( ! class_exists( 'aThemes_Addons_Modules' ) ) {
 			}
 			
 			wp_send_json_error();
+		}
+
+		/**
+		 * Activate or deactivate several widgets in one request.
+		 */
+		public function bulk_modules() {
+			$nonce   = ( isset( $_POST['nonce'] ) ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+			$status  = ( isset( $_POST['status'] ) ) ? sanitize_key( wp_unslash( $_POST['status'] ) ) : '';
+			$modules = ( isset( $_POST['modules'] ) && is_array( $_POST['modules'] ) ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['modules'] ) ) : array();
+
+			// Check current user capabilities
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( 'You are not allowed to do this.' );
+			}
+
+			if ( ! wp_verify_nonce( $nonce, 'athemes-addons-elementor' ) || ! in_array( $status, array( 'activate', 'deactivate' ), true ) ) {
+				wp_send_json_error();
+			}
+
+			// Only registered widgets, and Pro widgets only when Pro is active.
+			$allowed = array();
+			foreach ( athemes_addons_get_widgets() as $widget_id => $widget ) {
+				if ( empty( $widget['pro'] ) || defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
+					$allowed[] = $widget_id;
+				}
+			}
+
+			$modules = array_intersect( $modules, $allowed );
+
+			if ( empty( $modules ) ) {
+				wp_send_json_error();
+			}
+
+			$saved = get_option( self::$option, array() );
+			$saved = is_array( $saved ) ? $saved : array();
+
+			foreach ( $modules as $module ) {
+				$saved[ $module ] = ( 'activate' === $status );
+			}
+
+			update_option( self::$option, $saved );
+
+			wp_send_json_success();
 		}
 
 		/**

@@ -16,6 +16,10 @@ use Elementor\Control_Media;
 use aThemes_Addons\Traits\Button_Trait;
 use aThemes_Addons\Traits\Upsell_Section_Trait;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Animated heading widget.
  *

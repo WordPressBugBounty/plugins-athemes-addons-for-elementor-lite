@@ -204,7 +204,12 @@ class Template_Library_Source extends Source_Base {
 	private static function request_library_data( $force_update = false ) {
 		$data = get_option( self::LIBRARY_CACHE_ID );
 
-		if ( $force_update || false === $data ) {
+		// After a failed sync, wait before retrying unless the user forces it.
+		if ( ! $force_update && empty( $data ) && get_transient( 'aafe_library_sync_failed' ) ) {
+			return false;
+		}
+
+		if ( $force_update || empty( $data ) ) {
 			$timeout = ( $force_update ) ? 25 : 8;
 
 			$response = wp_remote_get( self::TEMPLATE_LIBRARY_API_INFO, [
@@ -212,18 +217,19 @@ class Template_Library_Source extends Source_Base {
 			] );
 
 			if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
-				update_option( self::LIBRARY_CACHE_ID, [] );
+				set_transient( 'aafe_library_sync_failed', 1, 15 * MINUTE_IN_SECONDS );
 				return false;
 			}
 
 			$data = json_decode( wp_remote_retrieve_body( $response ), true );
 
 			if ( empty( $data ) || ! is_array( $data ) ) {
-				update_option( self::LIBRARY_CACHE_ID, [] );
+				set_transient( 'aafe_library_sync_failed', 1, 15 * MINUTE_IN_SECONDS );
 				return false;
 			}
 
 			update_option( self::LIBRARY_CACHE_ID, $data, 'no' );
+			delete_transient( 'aafe_library_sync_failed' );
 		}
 
 		return $data;

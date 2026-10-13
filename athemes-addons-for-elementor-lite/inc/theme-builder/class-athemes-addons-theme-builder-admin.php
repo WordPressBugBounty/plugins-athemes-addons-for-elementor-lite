@@ -65,13 +65,29 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 			}
 
 			$template_id = isset( $_POST['template_id'] ) ? absint( $_POST['template_id'] ) : 0;
-			$conditions  = isset( $_POST['conditions'] ) ? stripslashes_deep( $_POST['conditions'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			$conditions  = isset( $_POST['conditions'] ) ? wp_unslash( $_POST['conditions'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- JSON, validated below.
+
+			if ( ! $this->is_template( $template_id ) ) {
+				wp_send_json_error();
+			}
+
+			// Conditions are stored as a JSON string and json_decode()d on the front end.
+			if ( ! is_string( $conditions ) || ( '' !== $conditions && ! is_array( json_decode( $conditions, true ) ) ) ) {
+				wp_send_json_error();
+			}
 
 			if ( $template_id ) {
 				update_post_meta( $template_id, '_ahf_template_conditions', $conditions );
 			}
 
 			wp_send_json_success();
+		}
+
+		/**
+		 * Whether a post ID is a Theme Builder template.
+		 */
+		private function is_template( $template_id ) {
+			return $template_id && 'aafe_templates' === get_post_type( $template_id );
 		}
 
 		/**
@@ -85,6 +101,10 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 			}
 
 			$template_id = isset( $_POST['template_id'] ) ? absint( $_POST['template_id'] ) : 0;
+
+			if ( ! $this->is_template( $template_id ) ) {
+				wp_send_json_error();
+			}
 
 			if ( $template_id ) {
 				wp_delete_post( $template_id, true );
@@ -105,6 +125,10 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 
 			$template_id    = isset( $_POST['template_id'] ) ? absint( $_POST['template_id'] ) : 0;
 			$header_type    = isset( $_POST['header_type'] ) ? sanitize_text_field( wp_unslash( $_POST['header_type'] ) ) : '';
+
+			if ( ! $this->is_template( $template_id ) ) {
+				wp_send_json_error();
+			}
 
 			if ( $template_id ) {
 				update_post_meta( $template_id, '_ahf_header_type', $header_type );
@@ -201,6 +225,7 @@ if ( ! class_exists( 'Theme_Builder_Admin' ) ) {
 							<div class="tb-element-actions">
 								<?php if ('header' === $template_type) : ?>
 									<label class="athemes-addons-header-type-select">
+										<span class="saved-label"><?php echo esc_html__( 'Saved!', 'athemes-addons-for-elementor-lite' ); ?></span>
 										<select name="ahf_header_type" class="aafe-header-type-select">
 											<option value="regular" <?php selected( $header_type, 'regular' ); ?>><?php esc_html_e( 'Regular', 'athemes-addons-for-elementor-lite' ); ?></option>
 											<option value="transparent" <?php selected( $header_type, 'transparent' ); ?>><?php esc_html_e( 'Transparent', 'athemes-addons-for-elementor-lite' ); ?></option>

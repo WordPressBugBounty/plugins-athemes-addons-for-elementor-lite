@@ -9,6 +9,7 @@
 			loop: $lottie.data('loop'),
 			autoplay: $lottie.data('autoplay'),
 			path: $lottie.data('json-url'),
+			rendererSettings: { runExpressions: false },
 		});
 
 		animation.setSpeed( $lottie.data('speed') );

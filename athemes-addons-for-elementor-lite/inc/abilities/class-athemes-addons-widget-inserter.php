@@ -190,7 +190,7 @@ class aThemes_Addons_Widget_Inserter {
 
 			$controls       = $instance->get_controls();
 			$input_settings = isset( $item['settings'] ) && is_array( $item['settings'] ) ? $item['settings'] : array();
-			$normalized     = aThemes_Addons_Settings_Normalizer::normalize( $input_settings, $controls, $post_id, array( 'content', 'style' ) );
+			$normalized     = aThemes_Addons_Settings_Normalizer::normalize( $input_settings, $controls, $post_id, array( 'content', 'style' ), (bool) $dry_run );
 
 			foreach ( $normalized['ignored'] as $ig ) {
 				$ig['widget_index'] = $index;
@@ -283,7 +283,7 @@ class aThemes_Addons_Widget_Inserter {
 		}
 
 		$controls   = $instance->get_controls();
-		$normalized = aThemes_Addons_Settings_Normalizer::normalize( $settings_input, $controls, $post_id, array( 'content', 'style' ) );
+		$normalized = aThemes_Addons_Settings_Normalizer::normalize( $settings_input, $controls, $post_id, array( 'content', 'style' ), (bool) $dry_run );
 
 		if ( empty( $normalized['settings'] ) ) {
 			return new WP_Error( 'nothing_to_update', 'No valid settings supplied (all keys were unknown or invalid). Call athemes-addons/describe-widget for the valid keys.' );

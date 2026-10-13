@@ -3,6 +3,10 @@
  * Display conditions ajax callback
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Get labels for display condition IDs.
  *
@@ -87,7 +91,7 @@ function athemes_addons_templates_display_conditions_select_ajax() {
     $nonce  = ( isset( $_GET['nonce'] ) ) ? sanitize_text_field( wp_unslash( $_GET['nonce'] ) ) : '';
     $source = ( isset( $_GET['source'] ) ) ? sanitize_text_field( wp_unslash( $_GET['source'] ) ) : '';
 
-    if ( ! empty( $term ) && ! empty( $source ) && ! empty( $nonce ) && wp_verify_nonce( $nonce, 'athemes-addons-elementor' ) ) {
+    if ( ! empty( $term ) && ! empty( $source ) && ! empty( $nonce ) && wp_verify_nonce( $nonce, 'athemes-addons-elementor' ) && current_user_can( 'manage_options' ) ) {
 
         $options = array();
 
@@ -154,7 +158,8 @@ function athemes_addons_templates_display_conditions_select_ajax() {
             case 'author':
             case 'author-id':
                 $query      = new WP_User_Query( array(
-                    'search'  => '*'. $term .'*',
+                    'search'         => '*'. $term .'*',
+                    'search_columns' => array( 'user_login', 'display_name' ),
                     'number'  => 25,
                     'order'   => 'DESC',
                     'fields'  => array( 'display_name', 'ID' ),
@@ -233,7 +238,7 @@ function athemes_addons_templates_display_conditions_select_ajax() {
                         if ( in_array( $taxonomy_key, array( 'category', 'post_tag', 'post_format' ), true ) ) {
                             continue;
                         }
-                        if ( preg_match( '/'. strtolower( $term ) .'/', strtolower( $taxonomy->label ) ) ) {
+                        if ( false !== stripos( $taxonomy->label, $term ) ) {
                             $options[] = array(
                                 'id'   => $taxonomy_key,
                                 'text' => $taxonomy->label,

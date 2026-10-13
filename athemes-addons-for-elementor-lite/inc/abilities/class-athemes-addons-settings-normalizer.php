@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class aThemes_Addons_Settings_Normalizer {
 
-	public static function normalize( array $input, array $controls, $post_id, array $tabs = array( 'content' ) ) {
+	public static function normalize( array $input, array $controls, $post_id, array $tabs = array( 'content' ), $dry_run = false ) {
 		$settings = array();
 		$ignored  = array();
 
@@ -24,7 +24,7 @@ class aThemes_Addons_Settings_Normalizer {
 				continue;
 			}
 
-			$normalized = self::normalize_value( $value, $controls[ $key ], $post_id );
+			$normalized = self::normalize_value( $value, $controls[ $key ], $post_id, $dry_run );
 
 			if ( null === $normalized ) {
 				$ignored[] = array(
@@ -157,7 +157,7 @@ class aThemes_Addons_Settings_Normalizer {
 	/**
 	 * @return mixed|null Null means "reject" (caller records ignored[]).
 	 */
-	private static function normalize_value( $value, array $control, $post_id ) {
+	private static function normalize_value( $value, array $control, $post_id, $dry_run = false ) {
 		switch ( $control['type'] ) {
 			case 'text':
 			case 'date_time':
@@ -209,7 +209,7 @@ class aThemes_Addons_Settings_Normalizer {
 				);
 
 			case 'media':
-				return self::normalize_media( $value, $post_id );
+				return self::normalize_media( $value, $post_id, $dry_run );
 
 			case 'gallery':
 				if ( ! is_array( $value ) ) {
@@ -217,7 +217,7 @@ class aThemes_Addons_Settings_Normalizer {
 				}
 				$items = array();
 				foreach ( $value as $item ) {
-					$media = self::normalize_media( $item, $post_id );
+					$media = self::normalize_media( $item, $post_id, $dry_run );
 					if ( null === $media ) {
 						return null;
 					}
@@ -248,7 +248,7 @@ class aThemes_Addons_Settings_Normalizer {
 						if ( ! isset( $control['fields'][ $fkey ] ) ) {
 							continue; // Unknown sub-field: drop silently, keep the item.
 						}
-						$fnorm = self::normalize_value( $fval, $control['fields'][ $fkey ], $post_id );
+						$fnorm = self::normalize_value( $fval, $control['fields'][ $fkey ], $post_id, $dry_run );
 						if ( null !== $fnorm ) {
 							$row[ $fkey ] = $fnorm;
 						}
@@ -320,7 +320,7 @@ class aThemes_Addons_Settings_Normalizer {
 		}
 	}
 
-	private static function normalize_media( $value, $post_id ) {
+	private static function normalize_media( $value, $post_id, $dry_run = false ) {
 		if ( is_numeric( $value ) ) {
 			$value = array( 'id' => (int) $value );
 		}
@@ -351,7 +351,8 @@ class aThemes_Addons_Settings_Normalizer {
 			);
 		}
 
-		if ( current_user_can( 'upload_files' ) ) {
+		// A dry run must not download anything into the media library.
+		if ( ! $dry_run && current_user_can( 'upload_files' ) ) {
 			$sideloaded = aThemes_Addons_Remote_Media::sideload( $url, $post_id );
 			if ( ! is_wp_error( $sideloaded ) ) {
 				return array(

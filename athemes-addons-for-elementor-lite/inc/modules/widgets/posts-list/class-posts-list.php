@@ -1594,7 +1594,7 @@ class Posts_List extends Widget_Base {
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php 
 						if ( isset( $settings['item_template'] ) && '' !== $settings['item_template'] ) {
-							echo '<div class="athemes-post-item">' . Plugin::$instance->frontend->get_builder_content_for_display( $settings['item_template'] ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo '<div class="athemes-post-item">' . ( \aThemes_Addons_Helper::is_renderable_item_template( $settings['item_template'] ) ? Plugin::$instance->frontend->get_builder_content_for_display( absint( $settings['item_template'] ) ) : '' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						} else {
 							$this->post_template( $c );
 						}

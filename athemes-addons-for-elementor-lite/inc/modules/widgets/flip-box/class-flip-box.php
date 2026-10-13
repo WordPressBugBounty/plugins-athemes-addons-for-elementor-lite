@@ -1152,7 +1152,7 @@ class FlipBox extends Widget_Base {
 					<div class="flip-box-front">
 						<div class="flip-box-front-inner">
 						<?php if ( 'template' === $settings['front_content_type'] && ! empty( $settings['front_template'] ) ) : ?>
-							<?php echo Plugin::instance()->frontend->get_builder_content_for_display( $settings['front_template'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php if ( \aThemes_Addons_Helper::is_renderable_template( $settings['front_template'] ) ) { echo Plugin::instance()->frontend->get_builder_content_for_display( absint( $settings['front_template'] ) ); } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php else : ?>
 							<?php if ( 'icon' === $settings['front_icon_type'] && ! empty( $settings['front_icon']['value'] ) ) : ?>
 								<div class="flip-box-icon">
@@ -1178,7 +1178,7 @@ class FlipBox extends Widget_Base {
 					<div class="flip-box-back">
 						<div class="flip-box-back-inner">
 						<?php if ( 'template' === $settings['back_content_type'] && ! empty( $settings['back_template'] ) ) : ?>
-							<?php echo Plugin::instance()->frontend->get_builder_content_for_display( $settings['back_template'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php if ( \aThemes_Addons_Helper::is_renderable_template( $settings['back_template'] ) ) { echo Plugin::instance()->frontend->get_builder_content_for_display( absint( $settings['back_template'] ) ); } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php else : ?>
 							<?php if ( 'icon' === $settings['back_icon_type'] && ! empty( $settings['back_icon']['value'] ) ) : ?>
 								<div class="flip-box-icon">

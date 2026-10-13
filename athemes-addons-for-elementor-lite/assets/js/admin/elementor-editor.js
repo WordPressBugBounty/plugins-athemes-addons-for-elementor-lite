@@ -73,6 +73,11 @@
  * Query Control
  */
 (function ($) {
+    // Titles and term names can arrive entity-encoded; decode without inserting markup.
+    var decodeEntities = function (value) {
+        return new DOMParser().parseFromString(String(value), 'text/html').documentElement.textContent;
+    };
+
     $(document).on('aafe_query_control_init', function (event, obj) {
         var ID = '#elementor-control-default-' + obj.data._cid;
         setTimeout(function () {
@@ -122,16 +127,11 @@
                             }
                         }).done(function (response) {
                             if (response.success && typeof response.data.results != 'undefined') {
-                                let eaelSelect2Options = '';
                                 ids.forEach(function (item, index){
                                     if(typeof response.data.results[item] != 'undefined'){
-                                        const key = item;
-                                        const value = response.data.results[item];
-                                        eaelSelect2Options += `<option selected="selected" value="${key}">${value}</option>`;
+                                        element.append(new Option(decodeEntities(response.data.results[item]), item, true, true));
                                     }
                                 })
-
-                                element.append(eaelSelect2Options);
                             }
 							label.siblings('.elementor-control-spinner').remove();
                         });
@@ -221,7 +221,7 @@
                 return;
             }
             
-            var templateId = this.container.settings.get(connectedOption);
+            var templateId = parseInt(this.container.settings.get(connectedOption), 10);
             
             // Clear content if no template is selected
             if (!templateId) {
@@ -230,10 +230,12 @@
             }
             
             // Create the edit link
-            var editUrl = this.getTemplateEditUrl(templateId);
-            var linkHtml = '<a style="margin-top: -10px;border:0!important;" href="' + editUrl + '" target="_blank" class="elementor-button elementor-button-default">' + AAFESettings.edit_template + '</a>';
-            
-            this.ui.templateValue.html(linkHtml);
+            var $link = $('<a>')
+                .attr({ href: this.getTemplateEditUrl(templateId), target: '_blank', style: 'margin-top: -10px;border:0!important;' })
+                .addClass('elementor-button elementor-button-default')
+                .html(AAFESettings.edit_template);
+
+            this.ui.templateValue.empty().append($link);
         },
         
         /**

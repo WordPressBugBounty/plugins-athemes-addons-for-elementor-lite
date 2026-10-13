@@ -60,25 +60,48 @@
 	}
 
 	function createPopoverContent( info, id ) {
-		
-		var popoverContent = $('<div class="event-modal" id="' + id + '" popover>'
-			+ '<div class="modal-header">'
-			+   '<h3>' + info.event.title + '</h3>'
-			+   '<button class="close-modal" popovertarget="' + id + '" popovertargetaction="hide">X</button>'
-			+ '</div>'
-			+ '<div class="modal-body">'
-			+ '<div class="modal-meta">'
-			+   '<span class="event-time">📅 ' + info.event.start.toLocaleString() + ' - ' + info.event.end.toLocaleString() + '</span>'
-			+   (info.event.extendedProps.location ? '<span class="event-location">🗺️ ' + info.event.extendedProps.location + '</span>' : '')
-			+ '</div>'	
-			+   (info.event.extendedProps.description ? '<p class="event-description">' + info.event.extendedProps.description + '</p>' : '')
-			+ '</div>'
-			+ '<div class="modal-footer">'
-			+   '<a href="' + info.event.url + '" class="view-event">' + AAFESettings.view_event + ' &xrarr;</a>'
-			+ '</div>'
-		+ '</div>');
-	
-		return popoverContent;
+		var event       = info.event;
+		var location    = event.extendedProps.location;
+		var description = event.extendedProps.description;
+
+		// Event fields come from the calendar feed, so they are set as text only.
+		var $header = $( '<div>' ).addClass( 'modal-header' ).append(
+			$( '<h3>' ).text( event.title ),
+			$( '<button>' ).addClass( 'close-modal' ).attr( { popovertarget: id, popovertargetaction: 'hide' } ).text( 'X' )
+		);
+
+		var $meta = $( '<div>' ).addClass( 'modal-meta' ).append(
+			$( '<span>' ).addClass( 'event-time' ).text( '📅 ' + event.start.toLocaleString() + ' - ' + event.end.toLocaleString() )
+		);
+
+		if ( location ) {
+			$meta.append( $( '<span>' ).addClass( 'event-location' ).text( '🗺️ ' + location ) );
+		}
+
+		var $body = $( '<div>' ).addClass( 'modal-body' ).append( $meta );
+
+		if ( description ) {
+			// Google descriptions can hold rich text: keep the words and line breaks, drop the markup.
+			var lines        = new DOMParser().parseFromString( description.replace( /<br\s*\/?>|<\/(p|div|li|h[1-6])>/gi, '\n' ), 'text/html' ).body.textContent.trim().split( '\n' );
+			var $description = $( '<p>' ).addClass( 'event-description' );
+
+			lines.forEach( function ( line, index ) {
+				if ( index ) {
+					$description.append( $( '<br>' ) );
+				}
+				$description.append( document.createTextNode( line ) );
+			} );
+
+			$body.append( $description );
+		}
+
+		var $footer = $( '<div>' ).addClass( 'modal-footer' );
+
+		if ( /^https?:\/\//i.test( event.url || '' ) ) {
+			$footer.append( $( '<a>' ).addClass( 'view-event' ).attr( 'href', event.url ).html( AAFESettings.view_event + ' &xrarr;' ) );
+		}
+
+		return $( '<div>' ).addClass( 'event-modal' ).attr( { id: id, popover: '' } ).append( $header, $body, $footer );
 	}
 
 	$(window).on('elementor/frontend/init', function () {

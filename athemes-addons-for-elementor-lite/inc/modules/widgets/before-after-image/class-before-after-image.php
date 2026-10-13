@@ -557,24 +557,6 @@ class Before_After_Image extends Widget_Base {
 		</div>
 
 		<?php
-
-		if ( Plugin::$instance->editor->is_edit_mode() ) {
-			?>
-			<script type="text/javascript">
-				jQuery(document).ready(function($) {
-					$('.athemes-addons-before-after-image').twentytwenty({
-						default_offset_pct: <?php echo esc_attr( $settings['offset']['size'] / 100 ); ?>,
-						orientation: '<?php echo esc_attr( $settings['orientation'] ); ?>',
-						move_on_hover: <?php echo isset( $settings['move_on_hover'] ) ? esc_attr( $settings['move_on_hover'] ) : false; ?>,
-						click_to_move: <?php echo isset( $settings['click_to_move'] ) ? esc_attr( $settings['click_to_move'] ) : true; ?>,
-						no_overlay: <?php echo isset( $settings['no_overlay'] ) ? esc_attr( $settings['no_overlay'] ) : false; ?>,
-						before_label: '<?php echo esc_attr( $settings['image_before_label'] ); ?>',
-						after_label: '<?php echo esc_attr( $settings['image_after_label'] ); ?>',
-					});
-				});
-			</script>
-			<?php
-		}
 	}
 
 	/**

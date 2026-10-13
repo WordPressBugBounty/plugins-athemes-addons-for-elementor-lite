@@ -5,6 +5,10 @@
  * @package aThemes Addons
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 function athemes_addons_templates_display_conditions_script_template() {
 
 	$settings = array();

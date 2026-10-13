@@ -42,8 +42,32 @@ class Page_Duplicator {
 		global $pagenow;
 		global $post;
 
-		$settings = get_option( 'athemes-addons-settings' );
+		if ( current_user_can( 'edit_others_posts' ) && $this->is_allowed_post_type( $post->post_type ) ) {
+			$duplicate_url            = admin_url( 'admin.php?action=aafe_duplicate&post=' . $post->ID );
+			$duplicate_url            = wp_nonce_url( $duplicate_url, 'aafe_duplicator_' . $post->ID );
+			$actions['aafe_duplicate'] = sprintf(
+				'<a href="%s" title="%s">%s</a>',
+				$duplicate_url,
+				/* translators: %s: Post title. */
+				esc_attr( sprintf( __( 'Duplicate %s', 'athemes-addons-for-elementor-lite' ), $post->post_title ) ),
+				esc_html__( 'aThemes Duplicator', 'athemes-addons-for-elementor-lite' )
+			);
+		}
 
+		return $actions;
+	}
+
+	/**
+	 * Whether the duplicator is enabled for a post type.
+	 */
+	private function is_allowed_post_type( $post_type ) {
+		$post_type_object = get_post_type_object( $post_type );
+
+		if ( ! $post_type_object || empty( $post_type_object->show_ui ) ) {
+			return false;
+		}
+
+		$settings   = get_option( 'athemes-addons-settings' );
 		$enabled_on = 'all'; // Default to 'all' post types
 
 		if ( ! empty( $settings ) && isset( $settings['aafe_duplicator_post_types'] ) && ! empty( $settings['aafe_duplicator_post_types'] ) ) {
@@ -52,13 +76,27 @@ class Page_Duplicator {
 
 		$enabled_on = explode( ',', $enabled_on );
 
-		if ( current_user_can( 'edit_others_posts' ) && ( in_array( 'all', $enabled_on, true ) || in_array( $post->post_type, $enabled_on, true ) ) ) {
-			$duplicate_url            = admin_url( 'admin.php?action=aafe_duplicate&post=' . $post->ID );
-			$duplicate_url            = wp_nonce_url( $duplicate_url, 'aafe_duplicator' );
-			$actions['aafe_duplicate'] = sprintf( '<a href="%s" title="%s">%s</a>', $duplicate_url, __( 'Duplicate ' . esc_attr( $post->post_title ), 'athemes-addons-for-elementor-lite' ), __( 'aThemes Duplicator', 'athemes-addons-for-elementor-lite' ) ); // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
+		return in_array( 'all', $enabled_on, true ) || in_array( $post_type, $enabled_on, true );
+	}
+
+	/**
+	 * Meta value to copy. Custom JS is dropped when the source author can't post
+	 * unfiltered HTML, because the copy is owned by the current user.
+	 */
+	public static function copyable_meta_value( $meta_key, $meta_value, $source_author_id ) {
+		if ( '_elementor_page_settings' !== $meta_key || user_can( (int) $source_author_id, 'unfiltered_html' ) ) {
+			return $meta_value;
 		}
 
-		return $actions;
+		$page_settings = maybe_unserialize( $meta_value );
+
+		if ( ! is_array( $page_settings ) || ! isset( $page_settings['aafe_custom_js'] ) ) {
+			return $meta_value;
+		}
+
+		unset( $page_settings['aafe_custom_js'] );
+
+		return maybe_serialize( $page_settings );
 	}
 
 	/**
@@ -72,13 +110,13 @@ class Page_Duplicator {
 
 		$post_id = absint( $_GET['post'] );
 
-		if ( ! current_user_can( 'edit_others_posts' ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'aafe_duplicator' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
+		if ( ! current_user_can( 'edit_others_posts' ) || ! current_user_can( 'edit_post', $post_id ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'aafe_duplicator_' . $post_id ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 			return;
 		}
 
 		$post = get_post( $post_id );
 
-		if ( ! $post ) {
+		if ( ! $post || ! $this->is_allowed_post_type( $post->post_type ) ) {
 			return;
 		}
 
@@ -119,7 +157,7 @@ class Page_Duplicator {
 				foreach ( $post_meta as $meta_info ) {
 
 					$meta_key   = sanitize_text_field( $meta_info->meta_key );
-					$meta_value =  $meta_info->meta_value;
+					$meta_value = self::copyable_meta_value( $meta_key, $meta_info->meta_value, $post->post_author );
 					
 					$exclude_meta_keys = [ '_wc_average_rating', '_wc_review_count', '_wc_rating_count' ];
 					
@@ -142,6 +180,7 @@ class Page_Duplicator {
 			}
 
 			wp_safe_redirect( $redirect_url );
+			exit;
 		}
 	}
 }

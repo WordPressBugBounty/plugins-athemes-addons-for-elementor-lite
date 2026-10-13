@@ -7,7 +7,28 @@
 	var athemes_addons_elementor = athemes_addons_elementor || {};
 	$(document).ready(function () {
 
-		$('.athemes-addons-toggle-switch .toggle-switch-checkbox').on('change', function (e) {
+		// Failed saves are usually an expired nonce, which only a reload fixes.
+		function showSaveError(message) {
+			window.alert(message || window.athemes_addons_elementor.save_failed);
+		}
+
+		// Each save rewrites the whole modules option, so send them one at a time.
+		var moduleSaveQueue = $.Deferred().resolve().promise();
+
+		function queueModuleSave(send) {
+			var saved = $.Deferred();
+
+			moduleSaveQueue.always(function () {
+				send().done(saved.resolve).fail(saved.reject);
+			});
+
+			moduleSaveQueue = saved.promise();
+
+			return moduleSaveQueue;
+		}
+
+		// Module switches only. Settings toggles share the markup but save via the Save button.
+		$('.athemes-addons-toggle-switch[data-module] .toggle-switch-checkbox').on('change', function (e) {
 			var $checkbox = $(this);
 			var $button = $checkbox.closest('.athemes-addons-toggle-switch');
 			var isActivate = $checkbox.is(':checked');
@@ -15,23 +36,33 @@
 			$button.toggleClass('athemes-addons-module-page-button-action-deactivate', isActivate);
 			$button.toggleClass('athemes-addons-module-page-button-action-activate', !isActivate);
 
-			setTimeout(() => {
+			// Lock until the request settles so a failure reverts the right state.
+			$checkbox.prop('disabled', true);
+		
+			var ajaxAction = isActivate ? 'athemes_addons_module_activate' : 'athemes_addons_module_deactivate';
+		
+			queueModuleSave(function () {
+				return window.wp.ajax.post(ajaxAction, {
+					module: $button.data('module'),
+					nonce: window.athemes_addons_elementor.nonce
+				});
+			}).done(function () {
 				$button.find('.saved-label').css('opacity', '1');
 				setTimeout(() => {
 					$button.find('.saved-label').css('opacity', '0');
 				}, 2000);
-			}, 1000);
-		
-			var ajaxAction = isActivate ? 'athemes_addons_module_activate' : 'athemes_addons_module_deactivate';
-		
-			window.wp.ajax.post(ajaxAction, {
-				module: $button.data('module'),
-				nonce: window.athemes_addons_elementor.nonce
-			}).done(function () {
+
 				var isModuleEnabled = isActivate;
 				$('body').toggleClass('athemes-addons-module-disabled', !isModuleEnabled).toggleClass('athemes-addons-module-enabled', isModuleEnabled);
 				$('.athemes-addons-module-action').toggleClass('athemes-addons-enabled', isModuleEnabled);
 				$('.athemes-addons-module-question-list-dropdown').toggleClass('athemes-addons-show', !isModuleEnabled);
+			}).fail(function () {
+				$checkbox.prop('checked', !isActivate);
+				$button.toggleClass('athemes-addons-module-page-button-action-deactivate', !isActivate);
+				$button.toggleClass('athemes-addons-module-page-button-action-activate', isActivate);
+				showSaveError();
+			}).always(function () {
+				$checkbox.prop('disabled', false);
 			});
 		});	
 
@@ -122,6 +153,7 @@
 				// Show all categories
 				$('.athemes-addons-modules-category').show();
 				$('.athemes-addons-modules-list-item').show();
+				$('.athemes-addons-modules-bulk').show();
 				return;
 			}
 			
@@ -188,6 +220,9 @@
 			$('.athemes-addons-modules-category').each(function() {
 				var $category = $(this);
 				var $visibleModules = $category.find('.athemes-addons-modules-list-item:visible');
+
+				// Bulk links only act on visible switches.
+				$category.find('.athemes-addons-modules-bulk').toggle($visibleModules.find('.athemes-addons-toggle-switch[data-module]').length > 0);
 				
 				if ($visibleModules.length === 0) {
 					$category.hide();
@@ -217,6 +252,114 @@
 
 			// Update category visibility
 			updateCategoryVisibility();
+		});
+
+		// Enable all / Disable all per category.
+		$('.athemes-addons-modules-bulk-action').on('click', function () {
+			var $bulk     = $(this).closest('.athemes-addons-modules-bulk');
+			var $actions  = $bulk.find('.athemes-addons-modules-bulk-action');
+			var $feedback = $bulk.find('.athemes-addons-modules-bulk-feedback');
+			var activate  = 'activate' === $(this).data('bulk');
+
+			// Only visible switches that need to change. Locked Pro cards have none.
+			var $checkboxes = $(this).closest('.athemes-addons-modules-category').find('.athemes-addons-modules-list-item:visible .athemes-addons-toggle-switch[data-module] .toggle-switch-checkbox').filter(function () {
+				return $(this).is(':checked') !== activate;
+			});
+
+			if (!$checkboxes.length) {
+				return;
+			}
+
+			var modules = $checkboxes.map(function () {
+				return $(this).closest('.athemes-addons-toggle-switch').data('module');
+			}).get();
+
+			function setActive(isActive) {
+				$checkboxes.prop('checked', isActive).each(function () {
+					$(this).closest('.athemes-addons-toggle-switch')
+						.toggleClass('athemes-addons-module-page-button-action-deactivate', isActive)
+						.toggleClass('athemes-addons-module-page-button-action-activate', !isActive);
+					$(this).closest('.athemes-addons-modules-list-item')
+						.attr('data-status', isActive ? 'active' : 'inactive')
+						.data('status', isActive ? 'active' : 'inactive');
+				});
+			}
+
+			function onBulkFailed() {
+				setActive(!activate);
+				$feedback.addClass('is-error').text(window.athemes_addons_elementor.bulk_failed);
+			}
+
+			setActive(activate);
+			$actions.prop('disabled', true);
+			$checkboxes.prop('disabled', true);
+			// A pending "Saved!" timer must not clear this request's message.
+			clearTimeout($feedback.data('timer'));
+			$feedback.removeClass('is-error').text('');
+
+			queueModuleSave(function () {
+				return $.post(window.athemes_addons_elementor.ajax_url, {
+					action: 'athemes_addons_modules_bulk',
+					nonce: window.athemes_addons_elementor.nonce,
+					status: activate ? 'activate' : 'deactivate',
+					modules: modules
+				});
+			}).done(function (response) {
+				if (!response || !response.success) {
+					onBulkFailed();
+					return;
+				}
+
+				$feedback.text(window.athemes_addons_elementor.saved);
+				$feedback.data('timer', setTimeout(function () {
+					$feedback.text('');
+				}, 2000));
+			}).fail(onBulkFailed).always(function () {
+				$actions.prop('disabled', false);
+				$checkboxes.prop('disabled', false);
+			});
+		});
+
+		// Pro upsell popup on locked cards.
+		function closeProPopups() {
+			$('.athemes-addons-pro-popup').prop('hidden', true);
+			$('.athemes-addons-pro-lock').attr('aria-expanded', 'false');
+		}
+
+		$(document).on('click', '.athemes-addons-modules-list-item.is-locked', function (e) {
+			// Let the popup links and the doc/demo icons work normally.
+			if ($(e.target).closest('.athemes-addons-pro-popup, .athemes-addons-module-help-link').length) {
+				return;
+			}
+
+			var $popup = $(this).find('.athemes-addons-pro-popup');
+			var isOpen = !$popup.prop('hidden');
+
+			closeProPopups();
+
+			if (!isOpen) {
+				$popup.prop('hidden', false);
+				$(this).find('.athemes-addons-pro-lock').attr('aria-expanded', 'true');
+			}
+		});
+
+		$(document).on('click', function (e) {
+			if (!$(e.target).closest('.athemes-addons-modules-list-item.is-locked').length) {
+				closeProPopups();
+			}
+		});
+
+		$(document).on('keydown', function (e) {
+			if ('Escape' !== e.key) {
+				return;
+			}
+
+			var $openLock = $('.athemes-addons-pro-lock[aria-expanded="true"]');
+
+			if ($openLock.length) {
+				closeProPopups();
+				$openLock.trigger('focus');
+			}
 		});
 
 		// Settings page.
@@ -250,11 +393,21 @@
 				'fields': fields
 			};
 	
+			function onSaveFailed() {
+				$('.aafe-save-settings').text(window.athemes_addons_elementor.save);
+				showSaveError();
+			}
+
 			$.ajax({
 				type: 'POST',
 				url: window.athemes_addons_elementor.ajax_url,
 				data: data,
 				success: function(response) {
+					if (!response || !response.success) {
+						onSaveFailed();
+						return;
+					}
+
 					$('.aafe-save-settings').text(window.athemes_addons_elementor.saved);
 					setTimeout(() => {
 						$('.aafe-save-settings').text(window.athemes_addons_elementor.save);
@@ -262,6 +415,7 @@
 				},
 				error: function(error) {
 					console.error(error);
+					onSaveFailed();
 				}
 			});
 		});
@@ -282,7 +436,6 @@
 
 			function revertToPreviousMode() {
 				$radios.filter('[value="' + previousMode + '"]').prop('checked', true);
-				$('.athemes-addons-abilities-writes-warning').toggle('write' === previousMode);
 			}
 
 			$.post(window.athemes_addons_elementor.ajax_url, {
@@ -295,7 +448,6 @@
 					revertToPreviousMode();
 				} else {
 					abilitiesPreviousMode = mode;
-					$('.athemes-addons-abilities-writes-warning').toggle('write' === mode);
 				}
 			}).fail(function () {
 				$feedback.text(window.athemes_addons_elementor.failed).show();
@@ -514,15 +666,23 @@
 
 			$button.children('.dashicons').addClass( 'dashicons-update-alt' ).removeClass( 'dashicons-edit' ).css( 'animation', 'aafe-spin 2s infinite' );
 
+			function onDeleteFailed() {
+				$button.children('.dashicons').removeClass( 'dashicons-update-alt' ).css( 'animation', '' );
+				showSaveError(window.athemes_addons_elementor.delete_failed);
+			}
+
 			$.post(window.athemes_addons_elementor.ajax_url, {
 				action: 'athemes_addons_delete_template',
 				nonce: window.athemes_addons_elementor.nonce,
 				template_id: templateId
-			}, function (response) {
-				if (response.success) {
-					$button.closest('.athemes-addons-tb-element').fadeOut();
+			}).done(function (response) {
+				if (!response || !response.success) {
+					onDeleteFailed();
+					return;
 				}
-			});
+
+				$button.closest('.athemes-addons-tb-element').fadeOut();
+			}).fail(onDeleteFailed);
 		});
 
 		// Edit template.
@@ -608,21 +768,36 @@
 			var $select = $(this);
 			var headerType = $select.val();
 			var templateId = $select.parents( '.athemes-addons-tb-element' ).data('template-id');
+			// Last saved value: the server-rendered option until a save succeeds here.
+			var savedType = $select.data('saved-type') || $select.find('option[selected]').val() || $select.find('option').first().val();
+
+			function onHeaderTypeFailed() {
+				$select.val(savedType);
+				showSaveError();
+			}
+
+			$select.prop('disabled', true);
 
 			$.post(window.athemes_addons_elementor.ajax_url, {
 				action: 'athemes_addons_header_type',
 				nonce: window.athemes_addons_elementor.nonce,
 				template_id: templateId,
 				header_type: headerType
-			}, function (response) {
-				if (response.success) {
-					setTimeout(() => {
-						$select.prev('.saved-label').css('opacity', '1');
-						setTimeout(() => {
-							$select.prev('.saved-label').css('opacity', '0');
-						}, 2000);
-					}, 500);
+			}).done(function (response) {
+				if (!response || !response.success) {
+					onHeaderTypeFailed();
+					return;
 				}
+
+				$select.data('saved-type', headerType);
+				setTimeout(() => {
+					$select.prev('.saved-label').css('opacity', '1');
+					setTimeout(() => {
+						$select.prev('.saved-label').css('opacity', '0');
+					}, 2000);
+				}, 500);
+			}).fail(onHeaderTypeFailed).always(function () {
+				$select.prop('disabled', false);
 			});
 		} );
 

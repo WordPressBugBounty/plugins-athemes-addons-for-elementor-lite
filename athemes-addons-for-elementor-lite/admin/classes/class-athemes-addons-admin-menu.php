@@ -56,35 +56,12 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 		 * Constructor.
 		 */
 		public function __construct() {
-			if( $this->is_patcher_page() ) {
-				add_action('admin_enqueue_scripts', array( $this, 'enqueue_patcher_scripts' ));
-			}
-
 			add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 			add_action( 'wp_ajax_athemes_addons_notifications_read', array( $this, 'ajax_notifications_read' ) );
 
+			add_action( 'admin_head', array( $this, 'admin_menu_icon_style' ) );
+			add_filter( 'submenu_file', array( $this, 'highlight_current_submenu' ), 10, 2 );
 			add_action('admin_footer', array( $this, 'footer_internal_scripts' ));
-		}
-
-		/**
-		 * Is aThemes Patcher page.
-		 * 
-		 * @return bool
-		 */
-		public function is_patcher_page() {
-			global $pagenow;
-
-			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			return $pagenow === 'admin.php' && ( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] === 'athemes-patcher-preview-ap' );
-		}
-
-		/**
-		 * Enqueue aThemes Patcher preview scripts and styles.
-		 * 
-		 * @return void
-		 */
-		public function enqueue_patcher_scripts() {
-			wp_enqueue_style( 'wp-components' );
 		}
 
 		/**
@@ -101,7 +78,7 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 				$this->capability,
 				$this->plugin_slug,
 				array( $this, 'page_dashboard' ),
-				ATHEMES_AFE_URI . 'assets/images/athemes-addons-logo.svg',
+				'none',
 				$this->priority
 			);
 
@@ -133,17 +110,6 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 				'admin.php?page=' . $this->plugin_slug . '&section=settings',
 				'',
 				3
-			);
-
-			// Add 'aThemes Patcher' link
-			add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page
-				$this->plugin_slug,
-				esc_html__('Patcher', 'athemes-addons-for-elementor-lite'),
-				esc_html__('Patcher', 'athemes-addons-for-elementor-lite'),
-				'manage_options',
-				'athemes-patcher-preview-ap',
-				array( $this, 'html_patcher' ),
-				4
 			);
 
 			if ( ! defined( 'ATHEMES_AFE_PRO_VERSION' ) ) {
@@ -273,29 +239,84 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
 			return $tabs;
 		}
 
+		/**
+		 * Paint the top-level menu icon.
+		 *
+		 * The icon is registered as 'none' so core emits no <img>, which it dims
+		 * (opacity .6) and pins low (padding-top 9px). The logo is a CSS mask over
+		 * currentColor so it follows the admin color scheme like core dashicons.
+		 * Percent-encoded, not base64, to pass wordpress.org checks. Keep in sync
+		 * with assets/images/athemes-addons-logo.svg.
+		 *
+		 * @return void
+		 */
+		public function admin_menu_icon_style() {
+			$icon = 'data:image/svg+xml,%3Csvg%20width=%2718%27%20height=%2713%27%20viewBox=%270%200%2018%2013%27%20fill=%27none%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d=%27M4.3371%205.33672L0.0488281%2013.0046H2.47652H5.38975L6.69196%209.80144L4.3371%205.33672ZM7.19206%200.00463867L4.85371%204.44024L9.37116%2013.0046H14.0488L7.19206%200.00463867Z%27%20fill=%27%23F0F6FC%27/%3E%3Cpath%20d=%27M17.8002%200.00463867H8.125L10.1119%203.78976H17.8002V0.00463867Z%27%20fill=%27%23F0F6FC%27/%3E%3Cpath%20d=%27M17.8002%209.20229H12.9784L14.9654%2013.0046H17.8002V9.20229Z%27%20fill=%27%23F0F6FC%27/%3E%3Cpath%20d=%27M17.8002%204.60335H10.5608L12.5477%208.3887H17.8002V4.60335Z%27%20fill=%27%23F0F6FC%27/%3E%3C/svg%3E';
+			?>
+			<style id="athemes-addons-admin-menu-icon">
+				#adminmenu .toplevel_page_<?php echo esc_attr( $this->plugin_slug ); ?> div.wp-menu-image::before {
+					content: "";
+					width: 18px;
+					background-color: currentColor;
+					-webkit-mask-image: url("<?php echo esc_attr( $icon ); ?>");
+					mask-image: url("<?php echo esc_attr( $icon ); ?>");
+					-webkit-mask-repeat: no-repeat;
+					mask-repeat: no-repeat;
+					-webkit-mask-position: center;
+					mask-position: center;
+					-webkit-mask-size: contain;
+					mask-size: contain;
+				}
+				@media (forced-colors: active) {
+					#adminmenu .toplevel_page_<?php echo esc_attr( $this->plugin_slug ); ?> div.wp-menu-image::before {
+						background-color: CanvasText;
+					}
+				}
+			</style>
+			<?php
+		}
+
+		/**
+		 * Mark the submenu item for the current dashboard section as current.
+		 *
+		 * All sections share one page slug, so core would always mark "Widgets".
+		 * Core then styles the item with the active admin color scheme.
+		 *
+		 * @param string|null $submenu_file The submenu file.
+		 * @param string      $parent_file  The parent file.
+		 * @return string|null
+		 */
+		public function highlight_current_submenu( $submenu_file, $parent_file ) {
+			global $submenu;
+
+			if ( $this->plugin_slug !== $parent_file ) {
+				return $submenu_file;
+			}
+
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$section = isset( $_GET['section'] ) ? sanitize_key( wp_unslash( $_GET['section'] ) ) : '';
+
+			if ( '' === $section || 'widgets' === $section ) {
+				return $submenu_file;
+			}
+
+			$slug  = 'admin.php?page=' . $this->plugin_slug . '&section=' . $section;
+			$slugs = isset( $submenu[ $parent_file ] ) ? wp_list_pluck( $submenu[ $parent_file ], 2 ) : array();
+
+			// Sections without a submenu item (e.g. Theme Builder) highlight nothing.
+			return in_array( $slug, $slugs, true ) ? $slug : '';
+		}
+
 				/**
 		 * Footer internal scripts
 		 *
 		 * @return void
 		 */
 		public function footer_internal_scripts() {
-			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-			$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? str_replace( '/wp-admin/', '', wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
-			
 			// Generate upgrade link URL
 			$upgrade_url = athemes_addons_admin_upgrade_link( 'https://athemes.com/addons', array( 'utm_source' => 'theme_submenu_page', 'utm_medium' => 'button', 'utm_campaign' => 'Addons' ), 'dashboard-submenu-upgrade-link' );
 			?>
 			<style>
-				#adminmenu .toplevel_page_athemes-addons .wp-submenu li.current a {
-                    color: rgba(240, 246, 252, 0.7);
-                    font-weight: 400;
-                }
-
-				#adminmenu .toplevel_page_athemes-addons .wp-submenu li a[href="<?php echo $request_uri; //phpcs:ignore ?>"] {
-					color: #fff;
-                    font-weight: 600;
-				}
-
 				#adminmenu .toplevel_page_athemes-addons .wp-submenu a[href="<?php echo esc_url( $upgrade_url ); ?>"] {
 					color: #05d105;
 				}
@@ -331,15 +352,6 @@ if ( ! class_exists( 'Admin_Menu' ) ) {
                 });
             </script>
 			<?php
-		}
-
-		/**
-		 * HTML aThemes Patcher.
-		 *
-		 * @return void 
-		 */
-		public function html_patcher() {
-			require_once ATHEMES_AFE_DIR . 'admin/pages/page-patcher.php';
 		}
 	}
 

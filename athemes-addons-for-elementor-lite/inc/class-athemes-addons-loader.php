@@ -80,11 +80,8 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 			// Add identifier to body class.
 			add_filter( 'body_class', array( $this, 'add_body_class' ) );
 
-			// Print custom JS.
-			add_action( 'wp_footer', array( $this, 'print_custom_js' ) );
-
-			// Delete custom JS transient.
-			add_action( 'elementor/editor/after_save', array( $this, 'delete_custom_js_transient' ) );
+			// Remove the old custom JS transients once.
+			add_action( 'admin_init', array( $this, 'maybe_cleanup_custom_js_transients' ) );
 
 			// Add Elementor custom query control.
 			add_action( 'elementor/controls/controls_registered', function( $controls_manager ) {
@@ -118,6 +115,9 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 
 			// Helper class.
 			require_once ATHEMES_AFE_DIR . 'inc/classes/class-athemes-addons-helper.php';
+
+			// Custom JS write guard (active even when the Custom JS module is off).
+			require_once ATHEMES_AFE_DIR . 'inc/classes/class-athemes-addons-custom-js-guard.php';
 
 			// SVG icons.
 			require_once ATHEMES_AFE_DIR . 'inc/classes/class-athemes-addons-svg-icons.php';
@@ -191,7 +191,12 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 						$athemes_dir = defined('ATHEMES_AFE_PRO_DIR') && true === $widget['pro'] ? ATHEMES_AFE_PRO_DIR : ATHEMES_AFE_DIR;
 
 						$skins_path = $athemes_dir . 'inc/modules/widgets/' . $widget_id . '/skins/';
-						
+
+						// Pro widget skins ship with Pro, so the folder is missing while Pro is inactive.
+						if ( ! is_dir( $skins_path ) ) {
+							continue;
+						}
+
 						$files = scandir( $skins_path );
 						
 						if ( false !== $files ) {
@@ -307,7 +312,6 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 								array(
 									'ajaxurl'               => esc_url( admin_url( 'admin-ajax.php' ) ),
 									'nonce'                 => wp_create_nonce( 'aafe-posts-widget-nonce' ),
-									'nonce_mailchimp'       => wp_create_nonce( 'aafe-mailchimp-nonce' ),
 									'nonce_product_filter'  => wp_create_nonce( 'aafe-product-filter-nonce' ),
 									'view_event'            => esc_html__( 'View Event', 'athemes-addons-for-elementor-lite' ),
 									'search_text'           => esc_html__( 'Search', 'athemes-addons-for-elementor-lite' ),
@@ -353,33 +357,24 @@ if ( ! class_exists( 'aThemes_Addons_Loader' ) ) {
 		}
 
 		/**
-		 * Print custom JS
+		 * Delete the custom JS transients older versions cached per post with no expiry.
 		 */
-		public function print_custom_js() {
-			$post_id = get_the_ID();
-
-			$custom_js = get_transient( 'aafe_custom_js_' . $post_id );
-		
-			if ( false === $custom_js && class_exists( 'Elementor\Plugin' ) ) {
-				$document = Elementor\Plugin::$instance->documents->get_doc_for_frontend($post_id);
-		
-				if ( $document ) {
-					$custom_js = $document->get_settings('aafe_custom_js');
-				}
-		
-				set_transient( 'aafe_custom_js_' . $post_id, $custom_js );
+		public function maybe_cleanup_custom_js_transients() {
+			if ( get_option( 'aafe_custom_js_transients_cleared' ) ) {
+				return;
 			}
-		
-			if ( !empty( $custom_js ) ) {
-				echo '<script id="aafe-custom-js" type="text/javascript">' . wp_kses($custom_js, array()) . '</script>';
-			}
-		}
 
-		/**
-		 * Delete custom JS transient
-		 */
-		public function delete_custom_js_transient( $post_id ) {
-			delete_transient( 'aafe_custom_js_' . $post_id );
+			global $wpdb;
+
+			$wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+				$wpdb->prepare(
+					"DELETE FROM {$wpdb->options} WHERE option_name LIKE %s OR option_name LIKE %s",
+					$wpdb->esc_like( '_transient_aafe_custom_js_' ) . '%',
+					$wpdb->esc_like( '_transient_timeout_aafe_custom_js_' ) . '%'
+				)
+			);
+
+			update_option( 'aafe_custom_js_transients_cleared', 1, true ); // Autoloaded: read on every admin_init.
 		}
 	}
 
